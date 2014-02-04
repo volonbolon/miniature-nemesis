@@ -27,6 +27,7 @@
 		B0ABE26D18A13D1400496AA4 /* ChartFX.Galleries.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0ABE26818A13D1300496AA4 /* ChartFX.Galleries.framework */; };
 		B0ABE26E18A13D1400496AA4 /* ChartFX.HandDrawn.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0ABE26918A13D1300496AA4 /* ChartFX.HandDrawn.framework */; };
 		B0ABE27018A13D6500496AA4 /* ChartFX.bundle in Resources */ = {isa = PBXBuildFile; fileRef = B0ABE26F18A13D6500496AA4 /* ChartFX.bundle */; };
+		B0ABE27318A1447E00496AA4 /* VBDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = B0ABE27218A1447E00496AA4 /* VBDataSource.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +66,8 @@
 		B0ABE26818A13D1300496AA4 /* ChartFX.Galleries.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ChartFX.Galleries.framework; path = Framework/ChartFX.Galleries.framework; sourceTree = "<group>"; };
 		B0ABE26918A13D1300496AA4 /* ChartFX.HandDrawn.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ChartFX.HandDrawn.framework; path = Framework/ChartFX.HandDrawn.framework; sourceTree = "<group>"; };
 		B0ABE26F18A13D6500496AA4 /* ChartFX.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = ChartFX.bundle; sourceTree = "<group>"; };
+		B0ABE27118A1447E00496AA4 /* VBDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VBDataSource.h; sourceTree = "<group>"; };
+		B0ABE27218A1447E00496AA4 /* VBDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VBDataSource.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,6 +144,8 @@
 				B0ABE24618A13B1900496AA4 /* VBViewController.m */,
 				B0ABE24818A13B1A00496AA4 /* Images.xcassets */,
 				B0ABE23718A13B1900496AA4 /* Supporting Files */,
+				B0ABE27118A1447E00496AA4 /* VBDataSource.h */,
+				B0ABE27218A1447E00496AA4 /* VBDataSource.m */,
 			);
 			path = ChartFX;
 			sourceTree = "<group>";
@@ -274,6 +279,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B0ABE27318A1447E00496AA4 /* VBDataSource.m in Sources */,
 				B0ABE24118A13B1900496AA4 /* VBAppDelegate.m in Sources */,
 				B0ABE24718A13B1900496AA4 /* VBViewController.m in Sources */,
 				B0ABE23D18A13B1900496AA4 /* main.m in Sources */,
