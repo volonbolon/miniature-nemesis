@@ -1,0 +1,30 @@
+/* 
+   ChartFX.strings
+   Copyright 2013 Software FX, Inc. All rights reserved.
+ */
+"NoData" = "无可用数据";
+"LicExpired" = "ChartFX 许可已过期";
+"LicMissing" = "找不到许可标签";
+"LicError" = "无效许可 ({0})。请与 SoftwareFX 支持联系";
+"Mask.Percentage" = "%s\n%l\n%v/%t\n(%p%%)";
+"Mask.OHLC" = "%l\n打开:%v2\n高:%v4  - 低:%v1\n闭合:%v3";
+"Mask.HLC" = "%l\n高:%v3 - 低:%v1\n闭合 %v2";
+"Mask.HLC_O" = "%l\n高:%v4 - 低:%v1\n闭合 %v3";
+"Mask.Ini" = "%s\n%l\n从 %i 至\n%v";
+"Mask.XY" = "%s\n%l\nX: %x, Y: %v";
+"Mask.Between" = "%s\n%l - %l\n%v - %v";
+"Mask.Default" = "%s\n%l\n%v";
+"LegMask.Series" = "系列号 {0}";
+"LegMask.Values" = "数值号 {0}";
+"XAxis" = "X 轴";
+"YAxis" = "Y 轴";
+"Series" = "序列";
+"Serial" = "系列 {0}";
+"ErrInvalidSeries" = "调用本方法前，需将系列添加至系列集内";
+"ErrNoDataSource" = "调用本方法前必须分配一个DataSource";
+"ErrAttrCode" = "未知系列/点属性代码";
+"ErrSteps" = "步长应为正数";
+"GalleryInconsistency" = "图库与系列编号不一致} * 图库是指图片库";
+"Scale1000" = "以千计";
+"Scale1000000" = "以百万美元计";
+"Scale1000000000" = "以十亿计";

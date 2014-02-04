@@ -1,0 +1,30 @@
+/* 
+   ChartFX.strings
+   Copyright 2013 Software FX, Inc. All rights reserved.
+ */
+"NoData" = "Aucune donnée valide";
+"LicExpired" = "Licence ChartFX expirée";
+"LicMissing" = "Clé de licence manquante";
+"LicError" = "Licence invalide ({0}). Contacter le support SoftwareFX";
+"Mask.Percentage" = "%s\n%l\n%v sur %t\n(%p%%)";
+"Mask.OHLC" = "%l\nOpen: %v2\nHigh: %v4  - Low: %v1\nClose: %v3";
+"Mask.HLC" = "%l\nHigh: %v3 - Low: %v1\nClose %v2";
+"Mask.HLC_O" = "%l\nHigh: %v4 - Low: %v1\nClose %v3";
+"Mask.Ini" = "%s\n%l\nDe %i A\n%v";
+"Mask.XY" = "%s\n%l\nX: %x, Y: %v";
+"Mask.Between" = "%s\n%l - %l\n%v - %v";
+"Mask.Default" = "%s\n%l\n%v";
+"LegMask.Series" = "Séries #{0}";
+"LegMask.Values" = "Valeur #{0}";
+"XAxis" = "Axe X";
+"YAxis" = "Axe Y";
+"Series" = "Séries";
+"Serial" = "Numéro de série {0}";
+"ErrInvalidSeries" = "La série doit être ajoutée à la collection de séries avant que cette fonction soit appelée.";
+"ErrNoDataSource" = "La source de données doit être spécifiée avant d’appeler cette fonction.";
+"ErrAttrCode" = "Serie/Point inconnu(e)";
+"ErrSteps" = "Les intervalles doivent être positifs.";
+"GalleryInconsistency" = "L’actuelle galerie du graphe n’est pas consistante avec le nombre de séries dans vos données.";
+"Scale1000" = "en milliers";
+"Scale1000000" = "en millions";
+"Scale1000000000" = "en milliards";

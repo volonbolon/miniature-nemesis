@@ -1,0 +1,30 @@
+/* 
+   ChartFX.strings
+   Copyright 2013 Software FX, Inc. All rights reserved.
+ */
+"NoData" = "Keine Daten verfügbar";
+"LicExpired" = "ChartFX Lizenz abgelaufen";
+"LicMissing" = "Keine Lizenz vorhanden";
+"LicError" = "Ungültige Lizenz ({0}). Bitte kontaktieren Sie den SoftwareFX Support";
+"Mask.Percentage" = "%s\n%l\n%v von %t\n(%p%%)";
+"Mask.OHLC" = "%l\nGeöffnet: %v2\nHöchst: %v4  - Tiefst: %v1\nGeschlossen: %v3";
+"Mask.HLC" = "%l\nHöchst: %v3 - Tiefst: %v1\nGeschlossen %v2";
+"Mask.HLC_O" = "%l\nHöchst: %v4 - Tiefst: %v1\nGeschlossen %v3";
+"Mask.Ini" = "%s\n%l\nVon %i bis\n%v";
+"Mask.XY" = "%s\n%l\nX: %x, Y: %v";
+"Mask.Between" = "%s\n%l - %l\n%v - %v";
+"Mask.Default" = "%s\n%l\n%v";
+"LegMask.Series" = "Reihen #{0}";
+"LegMask.Values" = "Wert #{0}";
+"XAxis" = "X-Achse";
+"YAxis" = "Y-Achse";
+"Series" = "Reihen";
+"Serial" = "Serien # {0}";
+"ErrInvalidSeries" = "Die Datenreihe muss erst zur Datenreihen-Kollektion";
+"ErrNoDataSource" = "Vor dem Aufruf dieser Methode muss eine Datenquelle zugewiesen werden";
+"ErrAttrCode" = "Unbekannter Reihen/Punkt-Attribute-Code";
+"ErrSteps" = "Schritte sollten eine positive Zahl sein";
+"GalleryInconsistency" = "Der aktuelle Diagrammtyp ist mit der Anzahl Ihrer Datenreihen nicht kompatibel";
+"Scale1000" = "in Tausenden";
+"Scale1000000" = "in Millionen";
+"Scale1000000000" = "in Milliarden";

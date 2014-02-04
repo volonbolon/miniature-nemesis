@@ -1,0 +1,7 @@
+@interface CFXHighLowArea : NSObject 
+{
+}
+
+
+@end
+

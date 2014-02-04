@@ -1,0 +1,30 @@
+/* 
+   ChartFX.strings
+   Copyright 2013 Software FX, Inc. All rights reserved.
+ */
+"NoData" = "Nessun dato disponibile";
+"LicExpired" = "La Licenza di ChartFX è scaduta";
+"LicMissing" = "Tag di Licenza Mancante";
+"LicError" = "Licenza non Valida ({0}). Contattare l'Assistenza SoftwareFX";
+"Mask.Percentage" = "%s\n%l\n%v di %t\n(%p%%)";
+"Mask.OHLC" = "%l\nApertura: %v2\nMassimo: %v4  - Minimo: %v1\nChiusura: %v3";
+"Mask.HLC" = "%l\nMassimo: %v3 - Minimo: %v1\nChiusura %v2";
+"Mask.HLC_O" = "%l\nMassimo: %v4 - Minimo: %v1\nChiusura %v3";
+"Mask.Ini" = "%s\n%l\nDa %i a\n%v";
+"Mask.XY" = "%s\n%l\nX: %x, Y: %v";
+"Mask.Between" = "%s\n%l - %l\n%v - %v";
+"Mask.Default" = "%s\n%l\n%v";
+"LegMask.Series" = "Serie n.{0}";
+"LegMask.Values" = "Valore n.{0}";
+"XAxis" = "Asse X";
+"YAxis" = "Asse Y";
+"Series" = "Serie";
+"Serial" = "Seriale # {0}";
+"ErrInvalidSeries" = "Le serie devono essere aggiunte alla collezione di Serie prima che questo metodo possa essere invocato";
+"ErrNoDataSource" = "Prima di invocare questo metotodo deve essere assegnata una sorgente di dati";
+"ErrAttrCode" = "Series/Point AttributeCode sconosciuto";
+"ErrSteps" = "Steps dovrebbe essere un numero positivo";
+"GalleryInconsistency" = "La galleria delle chart corrente e' inconsistente con il numero delle serie nei tuoi dati";
+"Scale1000" = "In migliaia";
+"Scale1000000" = "In milioni";
+"Scale1000000000" = "In miliardi";

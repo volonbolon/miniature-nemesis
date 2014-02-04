@@ -1,0 +1,31 @@
+/* 
+   ChartFX.strings
+   Copyright 2013 Software FX, Inc. All rights reserved.
+ */
+"NoData" = "No Data Available";
+"LicExpired" = "ChartFX License has Expired";
+"LicMissing" = "Missing ChartFX License";
+"LicError" = "Invalid License ({0}). Please contact SoftwareFX Support";
+"Mask.Percentage" = "%s\n%l\n%v out of %t\n(%p%%)";
+"Mask.OHLC" = "%l\nOpen: %v2\nHigh: %v4  - Low: %v1\nClose: %v3";
+"Mask.HLC" = "%l\nHigh: %v3 - Low: %v1\nClose %v2";
+"Mask.HLC_O" = "%l\nHigh: %v4 - Low: %v1\nClose %v3";
+"Mask.Ini" = "%s\n%l\nFrom %i to\n%v";
+"Mask.XY" = "%s\n%l\nX: %x, Y: %v";
+"Mask.Between" = "%s\n%l - %l\n%v - %v";
+"Mask.Default" = "%s\n%l\n%v";
+"LegMask.Series" = "Series {0}";
+"LegMask.Values" = "Value {0}";
+"XAxis" = "X Axis";
+"YAxis" = "Y Axis";
+"Series" = "Series";
+"Serial" = "Serial # {0}";
+"ErrInvalidSeries" = "The series needs to be added to the Series collection before this method can be called";
+"ErrNoDataSource" = "A DataSource must be assigned before calling this method";
+"ErrAttrCode" = "Unknown Series/Point AttributeCode";
+"ErrSteps" = "Steps should be a positive number";
+"GalleryInconsistency" = "The current chart gallery settings is inconsistent with the number of series in your data. Some gallery types require a specific number of series.";
+"Scale1000" = "In Thousands";
+"Scale1000000" = "In Millions";
+"Scale1000000000" = "In Billions";
+"TipContentOHLC"=",Open,1,High,3,Low,0,Close,2";

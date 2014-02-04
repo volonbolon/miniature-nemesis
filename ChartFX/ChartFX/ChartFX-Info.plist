@@ -22,6 +22,8 @@
 	<string>????</string>
 	<key>CFBundleVersion</key>
 	<string>1.0</string>
+    <key>ChartFX License</key>
+	<string>T;2014/2/3;30;;Built using Chart FX Trial;16eb192a12d22d5bc856672cd7b7a15bb35c4da4c179edde9a391e44106fcda924c7886415d452b14ca993845b0d38c8e8e596501fcb0d6a79d6fdd5c0179a2e1f4e5b572a38273cd64a874987a31fbc2d352c3ff9105c7f081cce9c5fa31bc0e6c2acb14bce19474e4c4e477d334ba7cd220b8e068292e3c95eb843d4900b64</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>UIMainStoryboardFile</key>

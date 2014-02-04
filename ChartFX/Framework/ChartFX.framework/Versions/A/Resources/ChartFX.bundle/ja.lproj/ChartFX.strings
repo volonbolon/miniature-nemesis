@@ -1,0 +1,30 @@
+/* 
+   ChartFX.strings
+   Copyright 2013 Software FX, Inc. All rights reserved.
+ */
+"NoData" = "データがありません";
+"LicExpired" = "ChartFXのライセンスの有効期限が切れています";
+"LicMissing" = "ライセンスタグの記述に問題があります";
+"LicError" = "ライセンスが正しくありません ({0}). SoftwareFXのサポートに問い合わせてください";
+"Mask.Percentage" = "%s\n%l\n%v 全体 %t\n(%p%%)";
+"Mask.OHLC" = "%l\n初値: %v2\n高値: %v4  - 安値: %v1\n終値: %v3";
+"Mask.HLC" = "%l\n高値: %v3 - 安値: %v1\n終値 %v2";
+"Mask.HLC_O" = "%l\n高値: %v4 - 安値: %v1\n終値 %v3";
+"Mask.Ini" = "%s\n%l\nFrom %i to\n%v";
+"Mask.XY" = "%s\n%l\nX: %x, Y: %v";
+"Mask.Between" = "%s\n%l - %l\n%v - %v";
+"Mask.Default" = "%s\n%l\n%v";
+"LegMask.Series" = "系列 #{0}";
+"LegMask.Values" = "値 #{0}";
+"XAxis" = "Ｘ軸";
+"YAxis" = "Ｙ軸";
+"Series" = "系列";
+"Serial" = "シリアル番号 {0}";
+"ErrInvalidSeries" = "このメソッドをコールする前にデータ系列をコレクションに追加してください";
+"ErrNoDataSource" = "このメソッドをコールする前にデータソースを割当ててください";
+"ErrAttrCode" = "データ系列/データポイントのアトリビュートコードが不明です";
+"ErrSteps" = "ステップ値は正数でなければなりません";
+"GalleryInconsistency" = "現在のチャートギャラリーはデータに格納しているデータ系列の個数をサポートできません";
+"Scale1000" = "千単位";
+"Scale1000000" = "単位：百万ドル";
+"Scale1000000000" = "十億";

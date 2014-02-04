@@ -1,0 +1,30 @@
+/* 
+   ChartFX.strings
+   Copyright 2013 Software FX, Inc. All rights reserved.
+ */
+"NoData" = "Geen Data Beschikbaar";
+"LicExpired" = "ChartFX Licentie is vervallen";
+"LicMissing" = "Ontbrekende Licentie";
+"LicError" = "Verkeerde Licentie ({0}). Contacteer SoftwareFX Support";
+"Mask.Percentage" = "%s\n%l\n%v van de %t\n(%p%%)";
+"Mask.OHLC" = "%l\nOpen: %v2\nHoog: %v4  - Laag: %v1\nSlot: %v3";
+"Mask.HLC" = "%l\nHoog: %v3 - Laag: %v1\nSlot %v2";
+"Mask.HLC_O" = "%l\nHoog: %v4 - Laag: %v1\nSlot %v3";
+"Mask.Ini" = "%s\n%l\nVan %i naar\n%v";
+"Mask.XY" = "%s\n%l\nX: %x, Y: %v";
+"Mask.Between" = "%s\n%l - %l\n%v - %v";
+"Mask.Default" = "%s\n%l\n%v";
+"LegMask.Series" = "Reeksen #{0}";
+"LegMask.Values" = "Waarde #{0}";
+"XAxis" = "X As";
+"YAxis" = "Y As";
+"Series" = "Reeksen";
+"Serial" = "sleutel # {0}";
+"ErrInvalidSeries" = "De reeksen moeten toegevoegd worden aan de reeksen verzameling voordat deze methode kan aangeroepen worden";
+"ErrNoDataSource" = "Er moet een Databron toegekend worden voordat deze methode kan aangeroepen worden";
+"ErrAttrCode" = "Onbekende reeksen/Punt Attribuut code";
+"ErrSteps" = "Stappen moet een positief nummer zijn.";
+"GalleryInconsistency" = "De huidige grafiek gallerij is inconsistent met het aantal reeksen in uw data";
+"Scale1000" = "in duizenden";
+"Scale1000000" = "in miljoenen";
+"Scale1000000000" = "in miljarden";

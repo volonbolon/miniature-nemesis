@@ -1,0 +1,30 @@
+/* 
+   ChartFX.strings
+   Copyright 2013 Software FX, Inc. All rights reserved.
+ */
+"NoData" = "Não há dados disponíveis";
+"LicExpired" = "Licença de Chart FX expirada";
+"LicMissing" = "Licença de Chart FX não encontrada";
+"LicError" = "Licença inválida ({0}). Por favor contate o suporte de Software FX";
+"Mask.Percentage" = "%s\n%l\n%v de %t\n(%p%%)";
+"Mask.OHLC" = "%l\nOpen: %v2\nHigh: %v4  - Low: %v1\nClose: %v3";
+"Mask.HLC" = "%l\nHigh: %v3 - Low: %v1\nClose %v2";
+"Mask.HLC_O" = "%l\nHigh: %v4 - Low: %v1\nClose %v3";
+"Mask.Ini" = "%s\n%l\nDe %i até\n%v";
+"Mask.XY" = "%s\n%l\nX: %x, Y: %v";
+"Mask.Between" = "%s\n%l - %l\n%v - %v";
+"Mask.Default" = "%s\n%l\n%v";
+"LegMask.Series" = "Série #{0}";
+"LegMask.Values" = "Valor #{0}";
+"XAxis" = "Eixo do X";
+"YAxis" = "Eixo do Y";
+"Series" = "Série";
+"Serial" = "Série # {0}";
+"ErrInvalidSeries" = "As séries tem que ser adicionadas às coleção de séries antes de chamar este método";
+"ErrNoDataSource" = "A origem dos dados tem que ser atribuida antes de chamar este método";
+"ErrAttrCode" = "Código AttributeCode desconhecido para a Série ou Ponto";
+"ErrSteps" = "Os passos devem ser um número positivo";
+"GalleryInconsistency" = "A galeria do gráfico atual é inconsistente com o número de série dos seus dados. Algumas galerias requerem um número específico de séries";
+"Scale1000" = "Em Milhares";
+"Scale1000000" = "Em Milhões";
+"Scale1000000000" = "Em Bilhões";
