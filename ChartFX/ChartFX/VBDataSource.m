@@ -54,6 +54,8 @@
 - (int)numberOfObjectsInChart:(CFXChart *)chart
 {
     
+    NSLog(@"%p", chart);
+    
     return (int)[[self items] count];
     
 }
