@@ -407,7 +407,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"/Users/ariel/Apps/miniature-nemesis/Shinobi/ShinobiCharts",
+					"\"$(SRCROOT)/ShinobiCharts\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Shinobi/Shinobi-Prefix.pch";
@@ -424,7 +424,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"/Users/ariel/Apps/miniature-nemesis/Shinobi/ShinobiCharts",
+					"\"$(SRCROOT)/ShinobiCharts\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Shinobi/Shinobi-Prefix.pch";
@@ -495,6 +495,7 @@
 				B0ABE32618A2687800496AA4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B0ABE32718A2687800496AA4 /* Build configuration list for PBXNativeTarget "ShinobiTests" */ = {
 			isa = XCConfigurationList;
@@ -503,6 +504,7 @@
 				B0ABE32918A2687800496AA4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
