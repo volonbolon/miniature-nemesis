@@ -423,7 +423,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"/Users/ariel/Apps/miniature-nemesis/ChartFX/Framework",
+					"\"$(SRCROOT)/Framework\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ChartFX/ChartFX-Prefix.pch";
@@ -444,7 +444,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"/Users/ariel/Apps/miniature-nemesis/ChartFX/Framework",
+					"\"$(SRCROOT)/Framework\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ChartFX/ChartFX-Prefix.pch";
@@ -519,6 +519,7 @@
 				B0ABE26118A13B1A00496AA4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B0ABE26218A13B1A00496AA4 /* Build configuration list for PBXNativeTarget "ChartFXTests" */ = {
 			isa = XCConfigurationList;
@@ -527,6 +528,7 @@
 				B0ABE26418A13B1A00496AA4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
