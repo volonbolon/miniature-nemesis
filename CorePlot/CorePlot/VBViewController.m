@@ -154,6 +154,8 @@ NSString *const kFailPlot = @"fail";
     // 1 - Get graph and plot space
     CPTGraph *graph = self.hostView.hostedGraph;
     CPTXYPlotSpace *plotSpace = (CPTXYPlotSpace *) graph.defaultPlotSpace;
+    
+    [plotSpace setDelegate:self];
 
     CPTScatterPlot *passPlot = [[CPTScatterPlot alloc] init];
     passPlot.dataSource = self;
@@ -287,6 +289,34 @@ NSString *const kFailPlot = @"fail";
     axisSet.yAxis.titleTextStyle = axisTitleStyle;
     axisSet.yAxis.titleOffset = 5.0f;
     axisSet.yAxis.axisLineStyle = axisLineStyle;
+    
+}
+
+#pragma mark - CPTPlotSpaceDelegate
+
+- (BOOL)plotSpace:(CPTPlotSpace *)space
+shouldHandlePointingDeviceDraggedEvent:(CPTNativeEvent *)event
+          atPoint:(CGPoint)point
+{
+    
+    NSSet *allTouches = [event allTouches];
+    
+    NSLog(@"%@", allTouches);
+    
+    return YES;
+    
+}
+
+-(BOOL)plotSpace:(CPTPlotSpace *)space
+shouldHandlePointingDeviceUpEvent:(CPTNativeEvent *)event
+         atPoint:(CGPoint)point
+{
+    
+    NSSet *allTouches = [event allTouches];
+    
+    NSLog(@"%@", allTouches);
+    
+    return YES;
     
 }
 
