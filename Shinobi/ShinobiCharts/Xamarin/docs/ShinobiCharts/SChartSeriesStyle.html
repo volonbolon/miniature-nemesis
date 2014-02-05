@@ -1,0 +1,427 @@
+<html>
+  <head>
+    <title>ShinobiCharts.SChartSeriesStyle</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <style>
+      a { text-decoration: none; color: #AD1015; font-family: Arial }
+
+      div.SideBar {
+        padding-left: 1em;
+        padding-right: 1em;
+        right: 0;
+        float: right;
+        border: thin solid black;
+        background-color: #f2f2f2;
+      }
+    
+      .CollectionTitle { font-family: Arial; font-weight: bold; background: black; color: white; padding: 10px; margin: 0 }
+      .CollectionTitle p { font-size: 150%; }
+      .PageTitle { font-size: 150%; font-weight: bold }
+
+      .Summary { }
+      .Signature { }          
+      .Remarks { }
+      .Members { }
+      .Copyright { }
+      
+      .Section { font-family: Arial; font-size: 125%; font-weight: bold }
+      p.Summary {
+        margin-left: 1em;
+      }
+      .SectionBox { margin-left: 2em }
+      .NamespaceName { font-family: Arial; font-size: 105%; font-weight: bold }
+      .NamespaceSumary { }
+      .MemberName { font-size: 115%; font-weight: bold; margin-top: 1em }
+      .Subsection { font-size: 105%; font-weight: bold }
+      .SubsectionBox { margin-left: 2em; margin-bottom: 1em }
+
+      .CodeExampleTable { background-color: #f5f5dd; border: thin solid black; padding: .25em; }
+      
+      .TypesListing {
+	font-family: Arial;
+        border-collapse: collapse;
+      }
+
+      td {
+	font-family: Arial;
+        vertical-align: top;
+      }
+      th {
+	font-family: Arial;
+        text-align: left;
+      }
+
+      .TypesListing td { 
+        margin: 0px;  
+        padding: .25em;
+        border: solid gray 1px;
+      }
+
+      .TypesListing th { 
+        margin: 0px;  
+        padding: .25em;
+        background-color: #f2f2f2;
+        border: solid gray 1px;
+      }
+
+      div.Footer {
+	font-family: Arial;
+        border-top: 1px solid gray;
+        margin-top: 1.5em;
+        padding-top: 0.6em;
+        text-align: center;
+        color: gray;
+      }
+
+      span.NotEntered /* Documentation for this section has not yet been entered */ {
+	font-family: Arial;
+        font-style: italic;
+        color: 	#C0C0C0;	
+      }
+
+      div.Header {
+	font-family: Arial;
+        background: #B0C4DE;
+        border: double;
+        border-color: white;
+        border-width: 7px;
+        padding: 0.5em;
+      }
+
+      div.Header * {
+	font-family: Arial;
+        font-size: smaller;
+      }
+
+      div.Note {
+      }
+
+      i.ParamRef {
+      }
+
+      i.subtitle {
+      }
+
+      ul.TypeMembersIndex {
+	font-family: Arial;
+        text-align: left;
+        background: #F8F8F8;
+      }
+
+      ul.TypeMembersIndex li {
+        display: inline;
+        margin:  0.5em;
+      }
+
+      table.HeaderTable {
+      }
+
+      table.SignatureTable {
+      }
+
+      table.Documentation, table.Enumeration, table.TypeDocumentation {
+        border-collapse: collapse;
+        width: 100%;
+      }
+
+      table.Documentation tr th, table.TypeMembers tr th, table.Enumeration tr th, table.TypeDocumentation tr th {
+	font-family: Arial;
+        background: whitesmoke;
+        padding: 0.8em;
+        border: 1px solid gray;
+        text-align: left;
+        vertical-align: bottom;
+      }
+
+      table.Documentation tr td, table.TypeMembers tr td, table.Enumeration tr td, table.TypeDocumentation tr td {
+	font-family: Arial;
+        padding: 0.5em;
+        border: 1px solid gray;
+        text-align: left;
+        vertical-align: top;
+      }
+
+      table.TypeMembers {
+        border: 1px solid #C0C0C0;
+        width: 100%;
+      }
+
+      table.TypeMembers tr td {
+        background: #F8F8F8;
+        border: white;
+      }
+
+      table.Documentation {
+      }
+
+      table.TypeMembers {
+      }
+
+      div.CodeExample {
+        width: 100%;
+        border: 1px solid #DDDDDD;
+        background-color: #F8F8F8;
+      }
+
+      div.CodeExample p {
+        margin: 0.5em;
+        border-bottom: 1px solid #DDDDDD;
+      }
+
+      div.CodeExample div {
+        margin: 0.5em;
+      }
+
+      h4 {
+        margin-bottom: 0;
+      }
+
+      div.Signature {
+	font-family: Arial;
+        border: 1px solid #C0C0C0;
+        background: #F2F2F2;
+        padding: 1em;
+      }
+    </style>
+    <script type="text/JavaScript">
+      function toggle_display (block) {
+        var w = document.getElementById (block);
+        var t = document.getElementById (block + ":toggle");
+        if (w.style.display == "none") {
+          w.style.display = "block";
+          t.innerHTML = "⊟";
+        } else {
+          w.style.display = "none";
+          t.innerHTML = "⊞";
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <div class="CollectionTitle">
+      <p>
+		ShinobiControls Xamarin Bindings Documentation
+	</p>
+      <a href="../index.html">ShinobiCharts</a> : <a href="index.html">ShinobiCharts Namespace</a></div>
+    <h1 class="PageTitle" id="T:ShinobiCharts.SChartSeriesStyle">SChartSeriesStyle  Class</h1>
+    <p class="Summary" id="T:ShinobiCharts.SChartSeriesStyle:Summary">SChartSeriesStyle is the base class for all series styles in ShinobiCharts.
+      </p>
+    <div>
+      <h2>Syntax</h2>
+      <div class="Signature" id="T:ShinobiCharts.SChartSeriesStyle:Signature">[MonoTouch.Foundation.Register("SChartSeriesStyle", true)]<br />public abstract class  <b>SChartSeriesStyle</b> : <a href="javascript:alert(&quot;Documentation not found.&quot;)">MonoTouch.Foundation.NSObject</a></div>
+    </div>
+    <div class="Remarks" id="T:ShinobiCharts.SChartSeriesStyle:Docs">
+      <h2 class="Section">Remarks</h2>
+      <div class="SectionBox" id="T:ShinobiCharts.SChartSeriesStyle:Docs:Remarks">
+				Series style objects manage the appearance of series on a chart.
+				SChartSeriesStyle allows you to modify the representation of the series in the chart legend.
+				In order to tweak properties on a series style object which are specific to that kind of series, you should look
+				at the documentation for the concrete series styles which are available.  These are:
+				<ul><li><a href="../ShinobiCharts/SChartBarSeriesStyle.html">ShinobiCharts.SChartBarSeriesStyle</a> - manages the appearance of bar series.</li><li><a href="../ShinobiCharts/SChartColumnSeriesStyle.html">ShinobiCharts.SChartColumnSeriesStyle</a> - manages the appearance of column series.</li><li><a href="../ShinobiCharts/SChartCandlestickSeriesStyle.html">ShinobiCharts.SChartCandlestickSeriesStyle</a> - manages the appearance of candlestick series.</li><li><a href="../ShinobiCharts/SChartDonutSeriesStyle.html">ShinobiCharts.SChartDonutSeriesStyle</a> - manages the appearance of donut series.</li><li><a href="../ShinobiCharts/SChartLineSeriesStyle.html">ShinobiCharts.SChartLineSeriesStyle</a> - manages the appearance of line series.</li><li><a href="../ShinobiCharts/SChartBandSeriesStyle.html">ShinobiCharts.SChartBandSeriesStyle</a> - manages the appearance of band series.</li><li><a href="../ShinobiCharts/SChartOHLCSeriesStyle.html">ShinobiCharts.SChartOHLCSeriesStyle</a> - manages the appearance of Open-High-Low-Closed (OHLC) series.</li><li><a href="../ShinobiCharts/SChartPieSeriesStyle.html">ShinobiCharts.SChartPieSeriesStyle</a> - manages the appearance of pie series.</li><li><a href="../ShinobiCharts/SChartScatterSeriesStyle.html">ShinobiCharts.SChartScatterSeriesStyle</a> - manages the appearance of scatter series.</li></ul></div>
+      <h2 class="Section">Requirements</h2>
+      <div class="SectionBox" id="T:ShinobiCharts.SChartSeriesStyle:Docs:Version Information">
+        <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.5.7.0</div>
+      <h2 class="Section" id="Members">Members</h2>
+      <div class="SectionBox" id="_Members">
+        <p>
+								See Also: Inherited members from
+								<a href="javascript:alert(&quot;Documentation not found.&quot;)">MonoTouch.Foundation.NSObject</a>.
+							</p>
+        <h2 class="Section">Public Constructors</h2>
+        <div class="SectionBox" id="Public Constructors">
+          <div class="SubsectionBox">
+            <table class="TypeMembers">
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <div>
+                    <b>
+                      <a href="#C:ShinobiCharts.SChartSeriesStyle(MonoTouch.Foundation.NSCoder)">SChartSeriesStyle</a>
+                    </b>(<a href="javascript:alert(&quot;Documentation not found.&quot;)">MonoTouch.Foundation.NSCoder</a>)</div>
+                </td>
+                <td>A constructor that initializes the object from the data stored in the unarchiver object.
+      </td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <div>
+                    <b>
+                      <a href="#C:ShinobiCharts.SChartSeriesStyle(MonoTouch.Foundation.NSObjectFlag)">SChartSeriesStyle</a>
+                    </b>(<a href="javascript:alert(&quot;Documentation not found.&quot;)">MonoTouch.Foundation.NSObjectFlag</a>)</div>
+                </td>
+                <td>Constructor to call on derived classes to skip initialization and merely allocate the object.
+      </td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <div>
+                    <b>
+                      <a href="#C:ShinobiCharts.SChartSeriesStyle(System.IntPtr)">SChartSeriesStyle</a>
+                    </b>(<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.IntPtr">IntPtr</a>)</div>
+                </td>
+                <td>A constructor used when creating managed representations of unmanaged objects.
+      </td>
+              </tr>
+            </table>
+          </div>
+        </div>
+        <h2 class="Section">Public Properties</h2>
+        <div class="SectionBox" id="Public Properties">
+          <div class="SubsectionBox">
+            <table class="TypeMembers">
+              <tr valign="top">
+                <td>[read-only]<div>override </div></td>
+                <td>
+                  <b>
+                    <a href="#P:ShinobiCharts.SChartSeriesStyle.ClassHandle">ClassHandle</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.IntPtr">IntPtr</a>
+                  </i>. The handle for this class.
+      </td>
+              </tr>
+              <tr valign="top">
+                <td>[read-only]<div></div></td>
+                <td>
+                  <b>
+                    <a href="#P:ShinobiCharts.SChartSeriesStyle.UseSeriesSymbols">UseSeriesSymbols</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Boolean">bool</a>
+                  </i>. Defines whether the chart legend will display a symbolic representation of the series.
+			</td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="Members" id="T:ShinobiCharts.SChartSeriesStyle:Members">
+      <h2 class="Section" id="MemberDetails">Member Details</h2>
+      <div class="SectionBox" id="_MemberDetails">
+        <h3 id="C:ShinobiCharts.SChartSeriesStyle(MonoTouch.Foundation.NSCoder)">SChartSeriesStyle Constructor</h3>
+        <blockquote id="C:ShinobiCharts.SChartSeriesStyle(MonoTouch.Foundation.NSCoder):member">
+          <p class="Summary">A constructor that initializes the object from the data stored in the unarchiver object.
+      </p>
+          <h2>Syntax</h2>
+          <div class="Signature">[MonoTouch.Foundation.Export("initWithCoder:")]<br />[System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Advanced)]<br />public  <b>SChartSeriesStyle</b> (<a href="javascript:alert(&quot;Documentation not found.&quot;)">MonoTouch.Foundation.NSCoder</a> coder)</div>
+          <h4 class="Subsection">Parameters</h4>
+          <blockquote class="SubsectionBox" id="C:ShinobiCharts.SChartSeriesStyle(MonoTouch.Foundation.NSCoder):Parameters">
+            <dl>
+              <dt>
+                <i>coder</i>
+              </dt>
+              <dd>The unarchiver object</dd>
+            </dl>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="C:ShinobiCharts.SChartSeriesStyle(MonoTouch.Foundation.NSCoder):Remarks">This constructor is provided to allow the class to be initialized from an unarchiver (for example, during NIB deserialization).</div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="C:ShinobiCharts.SChartSeriesStyle(MonoTouch.Foundation.NSCoder):Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.5.7.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="C:ShinobiCharts.SChartSeriesStyle(MonoTouch.Foundation.NSObjectFlag)">SChartSeriesStyle Constructor</h3>
+        <blockquote id="C:ShinobiCharts.SChartSeriesStyle(MonoTouch.Foundation.NSObjectFlag):member">
+          <p class="Summary">Constructor to call on derived classes to skip initialization and merely allocate the object.
+      </p>
+          <h2>Syntax</h2>
+          <div class="Signature">[System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Advanced)]<br />public  <b>SChartSeriesStyle</b> (<a href="javascript:alert(&quot;Documentation not found.&quot;)">MonoTouch.Foundation.NSObjectFlag</a> t)</div>
+          <h4 class="Subsection">Parameters</h4>
+          <blockquote class="SubsectionBox" id="C:ShinobiCharts.SChartSeriesStyle(MonoTouch.Foundation.NSObjectFlag):Parameters">
+            <dl>
+              <dt>
+                <i>t</i>
+              </dt>
+              <dd>Unused sentinel value</dd>
+            </dl>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="C:ShinobiCharts.SChartSeriesStyle(MonoTouch.Foundation.NSObjectFlag):Remarks">You should not invoke this method directly.</div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="C:ShinobiCharts.SChartSeriesStyle(MonoTouch.Foundation.NSObjectFlag):Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.5.7.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="C:ShinobiCharts.SChartSeriesStyle(System.IntPtr)">SChartSeriesStyle Constructor</h3>
+        <blockquote id="C:ShinobiCharts.SChartSeriesStyle(System.IntPtr):member">
+          <p class="Summary">A constructor used when creating managed representations of unmanaged objects.
+      </p>
+          <h2>Syntax</h2>
+          <div class="Signature">[System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Advanced)]<br />public  <b>SChartSeriesStyle</b> (<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.IntPtr">IntPtr</a> handle)</div>
+          <h4 class="Subsection">Parameters</h4>
+          <blockquote class="SubsectionBox" id="C:ShinobiCharts.SChartSeriesStyle(System.IntPtr):Parameters">
+            <dl>
+              <dt>
+                <i>handle</i>
+              </dt>
+              <dd>Handle of the unmanaged object</dd>
+            </dl>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="C:ShinobiCharts.SChartSeriesStyle(System.IntPtr):Remarks">You should not invoke this method directly.</div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="C:ShinobiCharts.SChartSeriesStyle(System.IntPtr):Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.5.7.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="P:ShinobiCharts.SChartSeriesStyle.ClassHandle">ClassHandle Property</h3>
+        <blockquote id="P:ShinobiCharts.SChartSeriesStyle.ClassHandle:member">
+          <p class="Summary">The handle for this class.
+      </p>
+          <h2>Syntax</h2>
+          <div class="Signature">public override <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.IntPtr">IntPtr</a> <b>ClassHandle</b>  { get; }</div>
+          <h4 class="Subsection">Value</h4>
+          <blockquote class="SubsectionBox" id="P:ShinobiCharts.SChartSeriesStyle.ClassHandle:Value">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartSeriesStyle.ClassHandle:Remarks">Not normally used by application code</div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartSeriesStyle.ClassHandle:Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.5.7.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="P:ShinobiCharts.SChartSeriesStyle.UseSeriesSymbols">UseSeriesSymbols Property</h3>
+        <blockquote id="P:ShinobiCharts.SChartSeriesStyle.UseSeriesSymbols:member">
+          <p class="Summary">Defines whether the chart legend will display a symbolic representation of the series.
+			</p>
+          <h2>Syntax</h2>
+          <div class="Signature">public <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Boolean">bool</a> <b>UseSeriesSymbols</b>  { get; }</div>
+          <h4 class="Subsection">Value</h4>
+          <blockquote class="SubsectionBox" id="P:ShinobiCharts.SChartSeriesStyle.UseSeriesSymbols:Value">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartSeriesStyle.UseSeriesSymbols:Remarks">
+				If this is set to true, the legend will display symbols.
+				If this is set to false, the series will be represented by a solid block of color.
+			</div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartSeriesStyle.UseSeriesSymbols:Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.5.7.0</div>
+          <hr size="1" />
+        </blockquote>
+      </div>
+    </div>
+    <div class="Parameter">
+    </div>
+    <hr size="1" />
+    <div class="Copyright"> © 2013 Scott Logic Limited. All rights reserved </div>
+  </body>
+</html>

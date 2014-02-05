@@ -1,0 +1,1550 @@
+<html>
+  <head>
+    <title>ShinobiCharts.SChartSeries</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <style>
+      a { text-decoration: none; color: #AD1015; font-family: Arial }
+
+      div.SideBar {
+        padding-left: 1em;
+        padding-right: 1em;
+        right: 0;
+        float: right;
+        border: thin solid black;
+        background-color: #f2f2f2;
+      }
+    
+      .CollectionTitle { font-family: Arial; font-weight: bold; background: black; color: white; padding: 10px; margin: 0 }
+      .CollectionTitle p { font-size: 150%; }
+      .PageTitle { font-size: 150%; font-weight: bold }
+
+      .Summary { }
+      .Signature { }          
+      .Remarks { }
+      .Members { }
+      .Copyright { }
+      
+      .Section { font-family: Arial; font-size: 125%; font-weight: bold }
+      p.Summary {
+        margin-left: 1em;
+      }
+      .SectionBox { margin-left: 2em }
+      .NamespaceName { font-family: Arial; font-size: 105%; font-weight: bold }
+      .NamespaceSumary { }
+      .MemberName { font-size: 115%; font-weight: bold; margin-top: 1em }
+      .Subsection { font-size: 105%; font-weight: bold }
+      .SubsectionBox { margin-left: 2em; margin-bottom: 1em }
+
+      .CodeExampleTable { background-color: #f5f5dd; border: thin solid black; padding: .25em; }
+      
+      .TypesListing {
+	font-family: Arial;
+        border-collapse: collapse;
+      }
+
+      td {
+	font-family: Arial;
+        vertical-align: top;
+      }
+      th {
+	font-family: Arial;
+        text-align: left;
+      }
+
+      .TypesListing td { 
+        margin: 0px;  
+        padding: .25em;
+        border: solid gray 1px;
+      }
+
+      .TypesListing th { 
+        margin: 0px;  
+        padding: .25em;
+        background-color: #f2f2f2;
+        border: solid gray 1px;
+      }
+
+      div.Footer {
+	font-family: Arial;
+        border-top: 1px solid gray;
+        margin-top: 1.5em;
+        padding-top: 0.6em;
+        text-align: center;
+        color: gray;
+      }
+
+      span.NotEntered /* Documentation for this section has not yet been entered */ {
+	font-family: Arial;
+        font-style: italic;
+        color: 	#C0C0C0;	
+      }
+
+      div.Header {
+	font-family: Arial;
+        background: #B0C4DE;
+        border: double;
+        border-color: white;
+        border-width: 7px;
+        padding: 0.5em;
+      }
+
+      div.Header * {
+	font-family: Arial;
+        font-size: smaller;
+      }
+
+      div.Note {
+      }
+
+      i.ParamRef {
+      }
+
+      i.subtitle {
+      }
+
+      ul.TypeMembersIndex {
+	font-family: Arial;
+        text-align: left;
+        background: #F8F8F8;
+      }
+
+      ul.TypeMembersIndex li {
+        display: inline;
+        margin:  0.5em;
+      }
+
+      table.HeaderTable {
+      }
+
+      table.SignatureTable {
+      }
+
+      table.Documentation, table.Enumeration, table.TypeDocumentation {
+        border-collapse: collapse;
+        width: 100%;
+      }
+
+      table.Documentation tr th, table.TypeMembers tr th, table.Enumeration tr th, table.TypeDocumentation tr th {
+	font-family: Arial;
+        background: whitesmoke;
+        padding: 0.8em;
+        border: 1px solid gray;
+        text-align: left;
+        vertical-align: bottom;
+      }
+
+      table.Documentation tr td, table.TypeMembers tr td, table.Enumeration tr td, table.TypeDocumentation tr td {
+	font-family: Arial;
+        padding: 0.5em;
+        border: 1px solid gray;
+        text-align: left;
+        vertical-align: top;
+      }
+
+      table.TypeMembers {
+        border: 1px solid #C0C0C0;
+        width: 100%;
+      }
+
+      table.TypeMembers tr td {
+        background: #F8F8F8;
+        border: white;
+      }
+
+      table.Documentation {
+      }
+
+      table.TypeMembers {
+      }
+
+      div.CodeExample {
+        width: 100%;
+        border: 1px solid #DDDDDD;
+        background-color: #F8F8F8;
+      }
+
+      div.CodeExample p {
+        margin: 0.5em;
+        border-bottom: 1px solid #DDDDDD;
+      }
+
+      div.CodeExample div {
+        margin: 0.5em;
+      }
+
+      h4 {
+        margin-bottom: 0;
+      }
+
+      div.Signature {
+	font-family: Arial;
+        border: 1px solid #C0C0C0;
+        background: #F2F2F2;
+        padding: 1em;
+      }
+    </style>
+    <script type="text/JavaScript">
+      function toggle_display (block) {
+        var w = document.getElementById (block);
+        var t = document.getElementById (block + ":toggle");
+        if (w.style.display == "none") {
+          w.style.display = "block";
+          t.innerHTML = "⊟";
+        } else {
+          w.style.display = "none";
+          t.innerHTML = "⊞";
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <div class="CollectionTitle">
+      <p>
+		ShinobiControls Xamarin Bindings Documentation
+	</p>
+      <a href="../index.html">ShinobiCharts</a> : <a href="index.html">ShinobiCharts Namespace</a></div>
+    <h1 class="PageTitle" id="T:ShinobiCharts.SChartSeries">SChartSeries  Class</h1>
+    <p class="Summary" id="T:ShinobiCharts.SChartSeries:Summary">Manages the display of a data series on a ShinobiChart.
+			</p>
+    <div>
+      <h2>Syntax</h2>
+      <div class="Signature" id="T:ShinobiCharts.SChartSeries:Signature">[MonoTouch.Foundation.Register("SChartSeries", true)]<br />public abstract class  <b>SChartSeries</b> : <a href="../ShinobiCharts/SChartLegendItem.html">SChartLegendItem</a></div>
+    </div>
+    <div class="Remarks" id="T:ShinobiCharts.SChartSeries:Docs">
+      <h2 class="Section">Remarks</h2>
+      <div class="SectionBox" id="T:ShinobiCharts.SChartSeries:Docs:Remarks">
+        <p>
+					It contains a set of data points.
+				</p>
+        <p>
+					There are various things which you can do to configure the behavior and appearance of a chart series:
+					<ul><li>
+								A series can optionally use animations when it appears and disappears on the chart.
+								You can set whether animation should be enabled, and if so, you can configure the animations
+								which the series uses.
+							</li><li>
+								You can configure whether the series is selectable, and if so, its behavior when it is selected.
+							</li><li>
+								The series contains instances of SChartSeriesStyle, or one of its sub-classes, to manage its appearance.
+								Tweaking these style objects allows you to change the look of the series on the chart.
+							</li><li>
+								You can update the representation of the series in the chart legend, and whether the chart
+								crosshair is enabled for the series.
+							</li></ul></p>
+        <p>
+					We have created sub-classes of SChartSeries for each of the concrete types of chart series which are available
+					on a chart.  These are:
+					<ul><li><a href="../ShinobiCharts/SChartBarSeries.html">ShinobiCharts.SChartBarSeries</a> - represents a bar series.
+							</li><li><a href="../ShinobiCharts/SChartColumnSeries.html">ShinobiCharts.SChartColumnSeries</a> - represents a column series.
+							</li><li><a href="../ShinobiCharts/SChartLineSeries.html">ShinobiCharts.SChartLineSeries</a> - represents a line series.
+							</li><li><a href="../ShinobiCharts/SChartStepLineSeries.html">ShinobiCharts.SChartStepLineSeries</a> - represents a stepped line series.
+							</li><li><a href="../ShinobiCharts/SChartBandSeries.html">ShinobiCharts.SChartBandSeries</a> - represents a band series.
+								These are only available in the premium version of charts.
+							</li><li><a href="../ShinobiCharts/SChartScatterSeries.html">ShinobiCharts.SChartScatterSeries</a> - represents a scatter plots.
+							</li><li><a href="../ShinobiCharts/SChartCandlestickSeries.html">ShinobiCharts.SChartCandlestickSeries</a> - represents a candlestick series.
+								These are only available in the premium version of charts.
+							</li><li><a href="../ShinobiCharts/SChartOHLCSeries.html">ShinobiCharts.SChartOHLCSeries</a> - represents an Open-High-Low-Closed (OHLC) series.
+								These are only available in the premium version of charts.
+							</li><li><a href="../ShinobiCharts/SChartDonutSeries.html">ShinobiCharts.SChartDonutSeries</a> - represents a donut series.
+							</li><li><a href="../ShinobiCharts/SChartPieSeries.html">ShinobiCharts.SChartPieSeries</a> - represents a pie series.
+							</li></ul></p>
+        <p>
+					Series are always drawn in order with the lowest series index first.
+					This means that higher numbered series sit on top and potentially obscure lower numbered series.
+				</p>
+      </div>
+      <h2 class="Section">Requirements</h2>
+      <div class="SectionBox" id="T:ShinobiCharts.SChartSeries:Docs:Version Information">
+        <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.5.7.0</div>
+      <h2 class="Section" id="Members">Members</h2>
+      <div class="SectionBox" id="_Members">
+        <p>
+								See Also: Inherited members from
+								<a href="../ShinobiCharts/SChartLegendItem.html">SChartLegendItem</a>.
+							</p>
+        <h2 class="Section">Public Constructors</h2>
+        <div class="SectionBox" id="Public Constructors">
+          <div class="SubsectionBox">
+            <table class="TypeMembers">
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <div>
+                    <b>
+                      <a href="#C:ShinobiCharts.SChartSeries(MonoTouch.Foundation.NSCoder)">SChartSeries</a>
+                    </b>(<a href="javascript:alert(&quot;Documentation not found.&quot;)">MonoTouch.Foundation.NSCoder</a>)</div>
+                </td>
+                <td>A constructor that initializes the object from the data stored in the unarchiver object.
+      </td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <div>
+                    <b>
+                      <a href="#C:ShinobiCharts.SChartSeries(MonoTouch.Foundation.NSObjectFlag)">SChartSeries</a>
+                    </b>(<a href="javascript:alert(&quot;Documentation not found.&quot;)">MonoTouch.Foundation.NSObjectFlag</a>)</div>
+                </td>
+                <td>Constructor to call on derived classes to skip initialization and merely allocate the object.
+      </td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <div>
+                    <b>
+                      <a href="#C:ShinobiCharts.SChartSeries(System.IntPtr)">SChartSeries</a>
+                    </b>(<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.IntPtr">IntPtr</a>)</div>
+                </td>
+                <td>A constructor used when creating managed representations of unmanaged objects.
+      </td>
+              </tr>
+            </table>
+          </div>
+        </div>
+        <h2 class="Section">Public Properties</h2>
+        <div class="SectionBox" id="Public Properties">
+          <div class="SubsectionBox">
+            <table class="TypeMembers">
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <b>
+                    <a href="#P:ShinobiCharts.SChartSeries.AnimationEnabled">AnimationEnabled</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Boolean">bool</a>
+                  </i>. Whether entry and exit animations are enabled for this series.</td>
+              </tr>
+              <tr valign="top">
+                <td>[read-only]<div></div></td>
+                <td>
+                  <b>
+                    <a href="../ShinobiCharts/SChartLegendItem.html#P:ShinobiCharts.SChartLegendItem.BlockSymbolForSeries">BlockSymbolForSeries</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="../ShinobiCharts/SChartLegendSymbol.html">SChartLegendSymbol</a>
+                  </i>. Returns a solid block of color representing a cartesian series in the legend.
+       (<i>Inherited from <a href="../ShinobiCharts/SChartLegendItem.html">SChartLegendItem</a>.</i>)</td>
+              </tr>
+              <tr valign="top">
+                <td>[read-only]<div>override </div></td>
+                <td>
+                  <b>
+                    <a href="#P:ShinobiCharts.SChartSeries.ClassHandle">ClassHandle</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.IntPtr">IntPtr</a>
+                  </i>. The handle for this class.
+      </td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <b>
+                    <a href="#P:ShinobiCharts.SChartSeries.CrosshairEnabled">CrosshairEnabled</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Boolean">bool</a>
+                  </i>. Display a tooltip with connecting lines after the user taps-and-holds.
+      </td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <b>
+                    <a href="#P:ShinobiCharts.SChartSeries.DataSeries">DataSeries</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="../ShinobiCharts/SChartDataSeries.html">SChartDataSeries</a>
+                  </i>. SChartDataSeries gives you access to the set of data points in the series.
+      </td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <b>
+                    <a href="#P:ShinobiCharts.SChartSeries.EntryAnimation">EntryAnimation</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="../ShinobiCharts/SChartAnimation.html">SChartAnimation</a>
+                  </i>. The animation which describes how the series will enter the chart.</td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <b>
+                    <a href="#P:ShinobiCharts.SChartSeries.ExitAnimation">ExitAnimation</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="../ShinobiCharts/SChartAnimation.html">SChartAnimation</a>
+                  </i>. The animation which describes how the series will exit the chart.</td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <b>
+                    <a href="#P:ShinobiCharts.SChartSeries.Hidden">Hidden</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Boolean">bool</a>
+                  </i>. Dictates whether or not a series is hidden on the chart.</td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <b>
+                    <a href="#P:ShinobiCharts.SChartSeries.LegendItem">LegendItem</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="../ShinobiCharts/SChartLegendItem.html">SChartLegendItem</a>
+                  </i>. 
+				The object responsible for providing the title and <tt>SChartLegendSymbol</tt> item for representing this
+				symbol in the legend.
+			</td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <b>
+                    <a href="#P:ShinobiCharts.SChartSeries.Orientation">Orientation</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="../ShinobiCharts/SChartSeriesOrientation.html">SChartSeriesOrientation</a>
+                  </i>. The orientation of the chart axis which is associated with the series.
+      </td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <b>
+                    <a href="#P:ShinobiCharts.SChartSeries.Selected">Selected</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Boolean">bool</a>
+                  </i>.  Whether or not the series is Selected 
+      </td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <b>
+                    <a href="#P:ShinobiCharts.SChartSeries.SelectionMode">SelectionMode</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="../ShinobiCharts/SChartSelection.html">SChartSelection</a>
+                  </i>. Defines what should be selected when the user taps the chart.
+      </td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <b>
+                    <a href="#P:ShinobiCharts.SChartSeries.ShowInLegend">ShowInLegend</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Boolean">bool</a>
+                  </i>.  Whether or not the series should be represented in the Legend. 
+      </td>
+              </tr>
+              <tr valign="top">
+                <td>[read-only]<div></div></td>
+                <td>
+                  <b>
+                    <a href="../ShinobiCharts/SChartLegendItem.html#P:ShinobiCharts.SChartLegendItem.SymbolForSeries">SymbolForSeries</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="../ShinobiCharts/SChartLegendSymbol.html">SChartLegendSymbol</a>
+                  </i>. Returns the symbol representing a cartesian series in the legend.
+       (<i>Inherited from <a href="../ShinobiCharts/SChartLegendItem.html">SChartLegendItem</a>.</i>)</td>
+              </tr>
+              <tr valign="top">
+                <td>[read-only]<div></div></td>
+                <td>
+                  <b>
+                    <a href="../ShinobiCharts/SChartLegendItem.html#P:ShinobiCharts.SChartLegendItem.TextColorForSeriesTitle">TextColorForSeriesTitle</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="javascript:alert(&quot;Documentation not found.&quot;)">MonoTouch.UIKit.UIColor</a>
+                  </i>. Returns the text color used for series titles in the legend.
+       (<i>Inherited from <a href="../ShinobiCharts/SChartLegendItem.html">SChartLegendItem</a>.</i>)</td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <b>
+                    <a href="#P:ShinobiCharts.SChartSeries.Title">Title</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.String">string</a>
+                  </i>.  The title of the series to be displayed in the Legend. 
+      </td>
+              </tr>
+              <tr valign="top">
+                <td>[read-only]<div></div></td>
+                <td>
+                  <b>
+                    <a href="../ShinobiCharts/SChartLegendItem.html#P:ShinobiCharts.SChartLegendItem.TitleForSeries">TitleForSeries</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.String">string</a>
+                  </i>. Returns the text displayed in the legend for the series. 
+       (<i>Inherited from <a href="../ShinobiCharts/SChartLegendItem.html">SChartLegendItem</a>.</i>)</td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <b>
+                    <a href="#P:ShinobiCharts.SChartSeries.TogglePointSelection">TogglePointSelection</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Boolean">bool</a>
+                  </i>. Dictates whether the series should only allow only one selected point at a time.
+      </td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <b>
+                    <a href="#P:ShinobiCharts.SChartSeries.ToggleSelection">ToggleSelection</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Boolean">bool</a>
+                  </i>. Dictates whether the chart should allow other series to be selected simultaneously.
+      </td>
+              </tr>
+              <tr valign="top">
+                <td>[read-only]<div></div></td>
+                <td>
+                  <b>
+                    <a href="#P:ShinobiCharts.SChartSeries.ValueKeys">ValueKeys</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.String">string</a>[]</i>. 
+				Used for data points which contain values that are independent of axes (e.g. Bubble data points).
+			</td>
+              </tr>
+              <tr valign="top">
+                <td>[read-only]<div></div></td>
+                <td>
+                  <b>
+                    <a href="#P:ShinobiCharts.SChartSeries.XValueKeys">XValueKeys</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.String">string</a>[]</i>. Used for data points which contain multiple values (e.g. OHLC data points).
+      </td>
+              </tr>
+              <tr valign="top">
+                <td>[read-only]<div></div></td>
+                <td>
+                  <b>
+                    <a href="#P:ShinobiCharts.SChartSeries.YValueKeys">YValueKeys</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.String">string</a>[]</i>. Used for data points which contain multiple values (e.g. OHLC data points).
+      </td>
+              </tr>
+            </table>
+          </div>
+        </div>
+        <h2 class="Section">Public Methods</h2>
+        <div class="SectionBox" id="Public Methods">
+          <div class="SubsectionBox">
+            <table class="TypeMembers">
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="#M:ShinobiCharts.SChartSeries.CentreXOfDataPoint(System.Int32,ShinobiCharts.ShinobiChart)">CentreXOfDataPoint</a>
+                  </b>(<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Int32">int</a>, <a href="../ShinobiCharts/ShinobiChart.html">ShinobiChart</a>)<nobr> : <a href="javascript:alert(&quot;Documentation not found.&quot;)">MonoTouch.Foundation.NSObject</a></nobr><blockquote>
+				Returns, in data terms, the x component of the point upon which the datapoint at the given index is centered.
+			</blockquote></td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="#M:ShinobiCharts.SChartSeries.CentreYOfDataPoint(System.Int32,ShinobiCharts.ShinobiChart)">CentreYOfDataPoint</a>
+                  </b>(<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Int32">int</a>, <a href="../ShinobiCharts/ShinobiChart.html">ShinobiChart</a>)<nobr> : <a href="javascript:alert(&quot;Documentation not found.&quot;)">MonoTouch.Foundation.NSObject</a></nobr><blockquote>
+				Returns, in data terms, the y component of the point upon which the datapoint at the given index is centered.
+			</blockquote></td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>override </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="#M:ShinobiCharts.SChartSeries.ConformsToProtocol(System.IntPtr)">ConformsToProtocol</a>
+                  </b>(<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.IntPtr">IntPtr</a>)<nobr> : <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Boolean">bool</a></nobr><blockquote>Internal - checks whether this object conforms to a protocol.
+      </blockquote></td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>override </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="../ShinobiCharts/SChartLegendItem.html#M:ShinobiCharts.SChartLegendItem.ConformsToProtocol(System.IntPtr)">ConformsToProtocol</a>
+                  </b>(<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.IntPtr">IntPtr</a>)<nobr> : <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Boolean">bool</a></nobr><blockquote>Internal - checks whether this object conforms to a protocol.
+       (<i>Inherited from <a href="../ShinobiCharts/SChartLegendItem.html">SChartLegendItem</a>.</i>)</blockquote></td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="../ShinobiCharts/SChartLegendItem.html#M:ShinobiCharts.SChartLegendItem.GetSymbolForSlice(System.Int32)">GetSymbolForSlice</a>
+                  </b>(<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Int32">int</a>)<nobr> : <a href="../ShinobiCharts/SChartLegendSymbol.html">SChartLegendSymbol</a></nobr><blockquote>Returns the symbol representing a slice in the first radial series on the chart.
+       (<i>Inherited from <a href="../ShinobiCharts/SChartLegendItem.html">SChartLegendItem</a>.</i>)</blockquote></td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="../ShinobiCharts/SChartLegendItem.html#M:ShinobiCharts.SChartLegendItem.GetTitleForSlice(System.Int32)">GetTitleForSlice</a>
+                  </b>(<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Int32">int</a>)<nobr> : <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.String">string</a></nobr><blockquote>Returns the text displayed in the legend for the slice at the given index in the first series on the chart.
+       (<i>Inherited from <a href="../ShinobiCharts/SChartLegendItem.html">SChartLegendItem</a>.</i>)</blockquote></td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="#M:ShinobiCharts.SChartSeries.HeightOfDataPoint(System.Int32,ShinobiCharts.ShinobiChart)">HeightOfDataPoint</a>
+                  </b>(<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Int32">int</a>, <a href="../ShinobiCharts/ShinobiChart.html">ShinobiChart</a>)<nobr> : <a href="javascript:alert(&quot;Documentation not found.&quot;)">MonoTouch.Foundation.NSObject</a></nobr><blockquote>Returns the width, in data terms, of the datapoint at the given index.
+			</blockquote></td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="#M:ShinobiCharts.SChartSeries.ResetForReuse()">ResetForReuse</a>
+                  </b>()<blockquote>Resets the chart series for reuse when the data in the chart is reloaded.</blockquote></td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="#M:ShinobiCharts.SChartSeries.ShouldBeDrawn()">ShouldBeDrawn</a>
+                  </b>()<nobr> : <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Boolean">bool</a></nobr><blockquote>DEPRECATED - Use <a href="../ShinobiCharts/SChartSeries.html#P:ShinobiCharts.SChartSeries.Hidden">SChartSeries.Hidden</a> instead.</blockquote></td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="#M:ShinobiCharts.SChartSeries.StringFor(System.String,ShinobiCharts.SChartData)">StringFor</a>
+                  </b>(<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.String">string</a>, <a href="../ShinobiCharts/SChartData.html">SChartData</a>)<nobr> : <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.String">string</a></nobr><blockquote>
+				This method returns a string value that will represent the key of a given datapoint.
+			</blockquote></td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="#M:ShinobiCharts.SChartSeries.StringFor(System.String,ShinobiCharts.SChartData,ShinobiCharts.SChartAxis)">StringFor</a>
+                  </b>(<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.String">string</a>, <a href="../ShinobiCharts/SChartData.html">SChartData</a>, <a href="../ShinobiCharts/SChartAxis.html">SChartAxis</a>)<nobr> : <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.String">string</a></nobr><blockquote>
+				This method returns a string value that will represent the value of a given data point based on its key.
+			</blockquote></td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="#M:ShinobiCharts.SChartSeries.WidthOfDataPoint(System.Int32,ShinobiCharts.ShinobiChart)">WidthOfDataPoint</a>
+                  </b>(<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Int32">int</a>, <a href="../ShinobiCharts/ShinobiChart.html">ShinobiChart</a>)<nobr> : <a href="javascript:alert(&quot;Documentation not found.&quot;)">MonoTouch.Foundation.NSObject</a></nobr><blockquote>Returns the width, in data terms, of the datapoint at the given index.
+			</blockquote></td>
+              </tr>
+            </table>
+          </div>
+        </div>
+        <h2 class="Section">Protected Methods</h2>
+        <div class="SectionBox" id="Protected Methods">
+          <div class="SubsectionBox">
+            <table class="TypeMembers">
+              <tr valign="top">
+                <td>
+                  <div>override </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="#M:ShinobiCharts.SChartSeries.Dispose(System.Boolean)">Dispose</a>
+                  </b>(<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Boolean">bool</a>)<blockquote> Releases unmanaged resources.
+      </blockquote></td>
+              </tr>
+            </table>
+          </div>
+        </div>
+        <h2 class="Section">Extension Methods</h2>
+        <div class="SectionBox" id="Extension Methods">
+          <div class="SubsectionBox">
+            <table class="TypeMembers">
+              <tr valign="top">
+                <td>
+                  <div>static </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="../ShinobiCharts/SChartSeries_DataBins.html#M:ShinobiCharts.SChartSeries_DataBins.NumberOfDataPointsInBin(ShinobiCharts.SChartSeries)">NumberOfDataPointsInBin</a>
+                  </b>(<i>this</i> <a href="../ShinobiCharts/SChartSeries.html">SChartSeries</a>)<nobr> : <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Int32">int</a></nobr><blockquote></blockquote></td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>static </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="../ShinobiCharts/SChartSeries_DataBins.html#M:ShinobiCharts.SChartSeries_DataBins.SetNumberOfDataPointsInBin(ShinobiCharts.SChartSeries,System.Int32)">SetNumberOfDataPointsInBin</a>
+                  </b>(<i>this</i> <a href="../ShinobiCharts/SChartSeries.html">SChartSeries</a>, <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Int32">int</a>)<blockquote></blockquote></td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="Members" id="T:ShinobiCharts.SChartSeries:Members">
+      <h2 class="Section" id="MemberDetails">Member Details</h2>
+      <div class="SectionBox" id="_MemberDetails">
+        <h3 id="C:ShinobiCharts.SChartSeries(MonoTouch.Foundation.NSCoder)">SChartSeries Constructor</h3>
+        <blockquote id="C:ShinobiCharts.SChartSeries(MonoTouch.Foundation.NSCoder):member">
+          <p class="Summary">A constructor that initializes the object from the data stored in the unarchiver object.
+      </p>
+          <h2>Syntax</h2>
+          <div class="Signature">[MonoTouch.Foundation.Export("initWithCoder:")]<br />[System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Advanced)]<br />public  <b>SChartSeries</b> (<a href="javascript:alert(&quot;Documentation not found.&quot;)">MonoTouch.Foundation.NSCoder</a> coder)</div>
+          <h4 class="Subsection">Parameters</h4>
+          <blockquote class="SubsectionBox" id="C:ShinobiCharts.SChartSeries(MonoTouch.Foundation.NSCoder):Parameters">
+            <dl>
+              <dt>
+                <i>coder</i>
+              </dt>
+              <dd>The unarchiver object</dd>
+            </dl>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="C:ShinobiCharts.SChartSeries(MonoTouch.Foundation.NSCoder):Remarks">This constructor is provided to allow the class to be initialized from an unarchiver (for example, during NIB deserialization).</div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="C:ShinobiCharts.SChartSeries(MonoTouch.Foundation.NSCoder):Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.5.7.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="C:ShinobiCharts.SChartSeries(MonoTouch.Foundation.NSObjectFlag)">SChartSeries Constructor</h3>
+        <blockquote id="C:ShinobiCharts.SChartSeries(MonoTouch.Foundation.NSObjectFlag):member">
+          <p class="Summary">Constructor to call on derived classes to skip initialization and merely allocate the object.
+      </p>
+          <h2>Syntax</h2>
+          <div class="Signature">[System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Advanced)]<br />public  <b>SChartSeries</b> (<a href="javascript:alert(&quot;Documentation not found.&quot;)">MonoTouch.Foundation.NSObjectFlag</a> t)</div>
+          <h4 class="Subsection">Parameters</h4>
+          <blockquote class="SubsectionBox" id="C:ShinobiCharts.SChartSeries(MonoTouch.Foundation.NSObjectFlag):Parameters">
+            <dl>
+              <dt>
+                <i>t</i>
+              </dt>
+              <dd>Unused sentinel value</dd>
+            </dl>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="C:ShinobiCharts.SChartSeries(MonoTouch.Foundation.NSObjectFlag):Remarks">You should not invoke this method directly.</div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="C:ShinobiCharts.SChartSeries(MonoTouch.Foundation.NSObjectFlag):Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.5.7.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="C:ShinobiCharts.SChartSeries(System.IntPtr)">SChartSeries Constructor</h3>
+        <blockquote id="C:ShinobiCharts.SChartSeries(System.IntPtr):member">
+          <p class="Summary">A constructor used when creating managed representations of unmanaged objects.
+      </p>
+          <h2>Syntax</h2>
+          <div class="Signature">[System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Advanced)]<br />public  <b>SChartSeries</b> (<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.IntPtr">IntPtr</a> handle)</div>
+          <h4 class="Subsection">Parameters</h4>
+          <blockquote class="SubsectionBox" id="C:ShinobiCharts.SChartSeries(System.IntPtr):Parameters">
+            <dl>
+              <dt>
+                <i>handle</i>
+              </dt>
+              <dd>Handle of the unmanaged object</dd>
+            </dl>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="C:ShinobiCharts.SChartSeries(System.IntPtr):Remarks">You should not invoke this method directly.</div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="C:ShinobiCharts.SChartSeries(System.IntPtr):Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.5.7.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="P:ShinobiCharts.SChartSeries.AnimationEnabled">AnimationEnabled Property</h3>
+        <blockquote id="P:ShinobiCharts.SChartSeries.AnimationEnabled:member">
+          <p class="Summary">Whether entry and exit animations are enabled for this series.</p>
+          <h2>Syntax</h2>
+          <div class="Signature">[get: MonoTouch.Foundation.Export("animationEnabled", MonoTouch.ObjCRuntime.ArgumentSemantic.Assign)]<br />[set: MonoTouch.Foundation.Export("setAnimationEnabled:", MonoTouch.ObjCRuntime.ArgumentSemantic.Assign)]<br />public virtual <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Boolean">bool</a> <b>AnimationEnabled</b>  { get; set; }</div>
+          <h4 class="Subsection">Value</h4>
+          <blockquote class="SubsectionBox" id="P:ShinobiCharts.SChartSeries.AnimationEnabled:Value">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartSeries.AnimationEnabled:Remarks">
+				If this is set to <tt>true</tt>, the series will animate in and out using its entryAnimation and exitAnimation
+				animation properties.
+				If this is set to <tt>false</tt>, the series will appear and disappear instantly, with no animation.
+				The default is <tt>false</tt> - animation disabled.
+			</div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartSeries.AnimationEnabled:Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.5.7.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="M:ShinobiCharts.SChartSeries.CentreXOfDataPoint(System.Int32,ShinobiCharts.ShinobiChart)">CentreXOfDataPoint Method</h3>
+        <blockquote id="M:ShinobiCharts.SChartSeries.CentreXOfDataPoint(System.Int32,ShinobiCharts.ShinobiChart):member">
+          <p class="Summary">
+				Returns, in data terms, the x component of the point upon which the datapoint at the given index is centered.
+			</p>
+          <h2>Syntax</h2>
+          <div class="Signature">[MonoTouch.Foundation.Export("centreXOfDataPointAtIndex:onChart:")]<br />public virtual <a href="javascript:alert(&quot;Documentation not found.&quot;)">MonoTouch.Foundation.NSObject</a> <b>CentreXOfDataPoint</b> (<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Int32">int</a> index, <a href="../ShinobiCharts/ShinobiChart.html">ShinobiChart</a> chart)</div>
+          <h4 class="Subsection">Parameters</h4>
+          <blockquote class="SubsectionBox" id="M:ShinobiCharts.SChartSeries.CentreXOfDataPoint(System.Int32,ShinobiCharts.ShinobiChart):Parameters">
+            <dl>
+              <dt>
+                <i>index</i>
+              </dt>
+              <dd>
+                <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+              </dd>
+              <dt>
+                <i>chart</i>
+              </dt>
+              <dd>
+                <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+              </dd>
+            </dl>
+          </blockquote>
+          <h4 class="Subsection">Returns</h4>
+          <blockquote class="SubsectionBox" id="M:ShinobiCharts.SChartSeries.CentreXOfDataPoint(System.Int32,ShinobiCharts.ShinobiChart):Returns">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="M:ShinobiCharts.SChartSeries.CentreXOfDataPoint(System.Int32,ShinobiCharts.ShinobiChart):Remarks">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="M:ShinobiCharts.SChartSeries.CentreXOfDataPoint(System.Int32,ShinobiCharts.ShinobiChart):Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.5.7.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="M:ShinobiCharts.SChartSeries.CentreYOfDataPoint(System.Int32,ShinobiCharts.ShinobiChart)">CentreYOfDataPoint Method</h3>
+        <blockquote id="M:ShinobiCharts.SChartSeries.CentreYOfDataPoint(System.Int32,ShinobiCharts.ShinobiChart):member">
+          <p class="Summary">
+				Returns, in data terms, the y component of the point upon which the datapoint at the given index is centered.
+			</p>
+          <h2>Syntax</h2>
+          <div class="Signature">[MonoTouch.Foundation.Export("centreYOfDataPointAtIndex:onChart:")]<br />public virtual <a href="javascript:alert(&quot;Documentation not found.&quot;)">MonoTouch.Foundation.NSObject</a> <b>CentreYOfDataPoint</b> (<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Int32">int</a> index, <a href="../ShinobiCharts/ShinobiChart.html">ShinobiChart</a> chart)</div>
+          <h4 class="Subsection">Parameters</h4>
+          <blockquote class="SubsectionBox" id="M:ShinobiCharts.SChartSeries.CentreYOfDataPoint(System.Int32,ShinobiCharts.ShinobiChart):Parameters">
+            <dl>
+              <dt>
+                <i>index</i>
+              </dt>
+              <dd>
+                <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+              </dd>
+              <dt>
+                <i>chart</i>
+              </dt>
+              <dd>
+                <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+              </dd>
+            </dl>
+          </blockquote>
+          <h4 class="Subsection">Returns</h4>
+          <blockquote class="SubsectionBox" id="M:ShinobiCharts.SChartSeries.CentreYOfDataPoint(System.Int32,ShinobiCharts.ShinobiChart):Returns">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="M:ShinobiCharts.SChartSeries.CentreYOfDataPoint(System.Int32,ShinobiCharts.ShinobiChart):Remarks">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="M:ShinobiCharts.SChartSeries.CentreYOfDataPoint(System.Int32,ShinobiCharts.ShinobiChart):Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.5.7.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="P:ShinobiCharts.SChartSeries.ClassHandle">ClassHandle Property</h3>
+        <blockquote id="P:ShinobiCharts.SChartSeries.ClassHandle:member">
+          <p class="Summary">The handle for this class.
+      </p>
+          <h2>Syntax</h2>
+          <div class="Signature">public override <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.IntPtr">IntPtr</a> <b>ClassHandle</b>  { get; }</div>
+          <h4 class="Subsection">Value</h4>
+          <blockquote class="SubsectionBox" id="P:ShinobiCharts.SChartSeries.ClassHandle:Value">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartSeries.ClassHandle:Remarks">Not normally used by application code</div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartSeries.ClassHandle:Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.5.7.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="M:ShinobiCharts.SChartSeries.ConformsToProtocol(System.IntPtr)">ConformsToProtocol Method</h3>
+        <blockquote id="M:ShinobiCharts.SChartSeries.ConformsToProtocol(System.IntPtr):member">
+          <p class="Summary">Internal - checks whether this object conforms to a protocol.
+      </p>
+          <h2>Syntax</h2>
+          <div class="Signature">[MonoTouch.Foundation.Export("conformsToProtocol:")]<br />public override <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Boolean">bool</a> <b>ConformsToProtocol</b> (<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.IntPtr">IntPtr</a> protocol)</div>
+          <h4 class="Subsection">Parameters</h4>
+          <blockquote class="SubsectionBox" id="M:ShinobiCharts.SChartSeries.ConformsToProtocol(System.IntPtr):Parameters">
+            <dl>
+              <dt>
+                <i>protocol</i>
+              </dt>
+              <dd>The protocol</dd>
+            </dl>
+          </blockquote>
+          <h4 class="Subsection">Returns</h4>
+          <blockquote class="SubsectionBox" id="M:ShinobiCharts.SChartSeries.ConformsToProtocol(System.IntPtr):Returns">True if the object conforms to the protocol</blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="M:ShinobiCharts.SChartSeries.ConformsToProtocol(System.IntPtr):Remarks">Not normally called from application code - used by the Shinobi framework.</div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="M:ShinobiCharts.SChartSeries.ConformsToProtocol(System.IntPtr):Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.5.7.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="P:ShinobiCharts.SChartSeries.CrosshairEnabled">CrosshairEnabled Property</h3>
+        <blockquote id="P:ShinobiCharts.SChartSeries.CrosshairEnabled:member">
+          <p class="Summary">Display a tooltip with connecting lines after the user taps-and-holds.
+      </p>
+          <h2>Syntax</h2>
+          <div class="Signature">[get: MonoTouch.Foundation.Export("crosshairEnabled")]<br />[set: MonoTouch.Foundation.Export("setCrosshairEnabled:")]<br />public virtual <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Boolean">bool</a> <b>CrosshairEnabled</b>  { get; set; }</div>
+          <h4 class="Subsection">Value</h4>
+          <blockquote class="SubsectionBox" id="P:ShinobiCharts.SChartSeries.CrosshairEnabled:Value">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartSeries.CrosshairEnabled:Remarks"> For line series, the Tooltip will appear on the nearest series and interpolate values between data points. For column/bar series the Crosshair will snap to the nearest column. 
+				  Once a Crosshair is visible - it is locked to that current series. It will ignore other series until it is dismissed and re-established on a different series. To dismiss the Crosshair 
+				  the user must perform a single tap on the chart. 
+		</div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartSeries.CrosshairEnabled:Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.5.7.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="P:ShinobiCharts.SChartSeries.DataSeries">DataSeries Property</h3>
+        <blockquote id="P:ShinobiCharts.SChartSeries.DataSeries:member">
+          <p class="Summary">SChartDataSeries gives you access to the set of data points in the series.
+      </p>
+          <h2>Syntax</h2>
+          <div class="Signature">public <a href="../ShinobiCharts/SChartDataSeries.html">SChartDataSeries</a> <b>DataSeries</b>  { get; set; }</div>
+          <h4 class="Subsection">Value</h4>
+          <blockquote class="SubsectionBox" id="P:ShinobiCharts.SChartSeries.DataSeries:Value">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartSeries.DataSeries:Remarks">
+				It contains the data values only, it is not concerned with the appearance of the series on the chart.
+				The data series is provided to allow you to query the data values in the series, you should not try and
+				use this to modify the series.
+				If you wish to modify the data in the series, you should update the chart datasource, and then call
+				<a href="../ShinobiCharts/ShinobiChart.html#M:ShinobiCharts.ShinobiChart.ReloadData">ShinobiChart.ReloadData</a>.
+			</div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartSeries.DataSeries:Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.5.7.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="M:ShinobiCharts.SChartSeries.Dispose(System.Boolean)">Dispose Method</h3>
+        <blockquote id="M:ShinobiCharts.SChartSeries.Dispose(System.Boolean):member">
+          <p class="Summary"> Releases unmanaged resources.
+      </p>
+          <h2>Syntax</h2>
+          <div class="Signature">protected override <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Void">void</a> <b>Dispose</b> (<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Boolean">bool</a> disposing)</div>
+          <h4 class="Subsection">Parameters</h4>
+          <blockquote class="SubsectionBox" id="M:ShinobiCharts.SChartSeries.Dispose(System.Boolean):Parameters">
+            <dl>
+              <dt>
+                <i>disposing</i>
+              </dt>
+              <dd>True if called by Dispose, false if called from a finalizer</dd>
+            </dl>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="M:ShinobiCharts.SChartSeries.Dispose(System.Boolean):Remarks">
+          </div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="M:ShinobiCharts.SChartSeries.Dispose(System.Boolean):Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.5.7.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="P:ShinobiCharts.SChartSeries.EntryAnimation">EntryAnimation Property</h3>
+        <blockquote id="P:ShinobiCharts.SChartSeries.EntryAnimation:member">
+          <p class="Summary">The animation which describes how the series will enter the chart.</p>
+          <h2>Syntax</h2>
+          <div class="Signature">[get: MonoTouch.Foundation.Export("entryAnimation", MonoTouch.ObjCRuntime.ArgumentSemantic.Retain)]<br />[set: MonoTouch.Foundation.Export("setEntryAnimation:", MonoTouch.ObjCRuntime.ArgumentSemantic.Retain)]<br />public virtual <a href="../ShinobiCharts/SChartAnimation.html">SChartAnimation</a> <b>EntryAnimation</b>  { get; set; }</div>
+          <h4 class="Subsection">Value</h4>
+          <blockquote class="SubsectionBox" id="P:ShinobiCharts.SChartSeries.EntryAnimation:Value">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartSeries.EntryAnimation:Remarks">The chart series will enter when the chart is first drawn, or when its hidden property is set to false (having previously been true).
+ See <a href="../ShinobiCharts/SChartAnimation.html">ShinobiCharts.SChartAnimation</a> for more details.</div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartSeries.EntryAnimation:Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.5.7.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="P:ShinobiCharts.SChartSeries.ExitAnimation">ExitAnimation Property</h3>
+        <blockquote id="P:ShinobiCharts.SChartSeries.ExitAnimation:member">
+          <p class="Summary">The animation which describes how the series will exit the chart.</p>
+          <h2>Syntax</h2>
+          <div class="Signature">[get: MonoTouch.Foundation.Export("exitAnimation", MonoTouch.ObjCRuntime.ArgumentSemantic.Retain)]<br />[set: MonoTouch.Foundation.Export("setExitAnimation:", MonoTouch.ObjCRuntime.ArgumentSemantic.Retain)]<br />public virtual <a href="../ShinobiCharts/SChartAnimation.html">SChartAnimation</a> <b>ExitAnimation</b>  { get; set; }</div>
+          <h4 class="Subsection">Value</h4>
+          <blockquote class="SubsectionBox" id="P:ShinobiCharts.SChartSeries.ExitAnimation:Value">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartSeries.ExitAnimation:Remarks">The chart series will exit the chart when its hidden property is set to true (having previously been false).
+ See <a href="../ShinobiCharts/SChartAnimation.html">ShinobiCharts.SChartAnimation</a> for more details.</div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartSeries.ExitAnimation:Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.5.7.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="M:ShinobiCharts.SChartSeries.HeightOfDataPoint(System.Int32,ShinobiCharts.ShinobiChart)">HeightOfDataPoint Method</h3>
+        <blockquote id="M:ShinobiCharts.SChartSeries.HeightOfDataPoint(System.Int32,ShinobiCharts.ShinobiChart):member">
+          <p class="Summary">Returns the width, in data terms, of the datapoint at the given index.
+			</p>
+          <h2>Syntax</h2>
+          <div class="Signature">[MonoTouch.Foundation.Export("heightOfDataPointAtIndex:onChart:")]<br />public virtual <a href="javascript:alert(&quot;Documentation not found.&quot;)">MonoTouch.Foundation.NSObject</a> <b>HeightOfDataPoint</b> (<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Int32">int</a> index, <a href="../ShinobiCharts/ShinobiChart.html">ShinobiChart</a> chart)</div>
+          <h4 class="Subsection">Parameters</h4>
+          <blockquote class="SubsectionBox" id="M:ShinobiCharts.SChartSeries.HeightOfDataPoint(System.Int32,ShinobiCharts.ShinobiChart):Parameters">
+            <dl>
+              <dt>
+                <i>index</i>
+              </dt>
+              <dd>
+                <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+              </dd>
+              <dt>
+                <i>chart</i>
+              </dt>
+              <dd>
+                <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+              </dd>
+            </dl>
+          </blockquote>
+          <h4 class="Subsection">Returns</h4>
+          <blockquote class="SubsectionBox" id="M:ShinobiCharts.SChartSeries.HeightOfDataPoint(System.Int32,ShinobiCharts.ShinobiChart):Returns">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="M:ShinobiCharts.SChartSeries.HeightOfDataPoint(System.Int32,ShinobiCharts.ShinobiChart):Remarks">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="M:ShinobiCharts.SChartSeries.HeightOfDataPoint(System.Int32,ShinobiCharts.ShinobiChart):Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.5.7.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="P:ShinobiCharts.SChartSeries.Hidden">Hidden Property</h3>
+        <blockquote id="P:ShinobiCharts.SChartSeries.Hidden:member">
+          <p class="Summary">Dictates whether or not a series is hidden on the chart.</p>
+          <h2>Syntax</h2>
+          <div class="Signature">[get: MonoTouch.Foundation.Export("hidden", MonoTouch.ObjCRuntime.ArgumentSemantic.Assign)]<br />[set: MonoTouch.Foundation.Export("setHidden:", MonoTouch.ObjCRuntime.ArgumentSemantic.Assign)]<br />public virtual <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Boolean">bool</a> <b>Hidden</b>  { get; set; }</div>
+          <h4 class="Subsection">Value</h4>
+          <blockquote class="SubsectionBox" id="P:ShinobiCharts.SChartSeries.Hidden:Value">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartSeries.Hidden:Remarks"> If the Hidden property of a chart series is set to true, then the series will not be drawn on the chart.
+ If this property is set to false, the series will be drawn as usual.  The default setting is false</div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartSeries.Hidden:Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.5.7.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="P:ShinobiCharts.SChartSeries.LegendItem">LegendItem Property</h3>
+        <blockquote id="P:ShinobiCharts.SChartSeries.LegendItem:member">
+          <p class="Summary">
+				The object responsible for providing the title and <tt>SChartLegendSymbol</tt> item for representing this
+				symbol in the legend.
+			</p>
+          <h2>Syntax</h2>
+          <div class="Signature">[get: MonoTouch.Foundation.Export("legendItem", MonoTouch.ObjCRuntime.ArgumentSemantic.Assign)]<br />[set: MonoTouch.Foundation.Export("setLegendItem:", MonoTouch.ObjCRuntime.ArgumentSemantic.Assign)]<br />public virtual <a href="../ShinobiCharts/SChartLegendItem.html">SChartLegendItem</a> <b>LegendItem</b>  { get; set; }</div>
+          <h4 class="Subsection">Value</h4>
+          <blockquote class="SubsectionBox" id="P:ShinobiCharts.SChartSeries.LegendItem:Value">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartSeries.LegendItem:Remarks">
+				By default, this is set to the series itself.
+			</div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartSeries.LegendItem:Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.5.7.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="P:ShinobiCharts.SChartSeries.Orientation">Orientation Property</h3>
+        <blockquote id="P:ShinobiCharts.SChartSeries.Orientation:member">
+          <p class="Summary">The orientation of the chart axis which is associated with the series.
+      </p>
+          <h2>Syntax</h2>
+          <div class="Signature">public <a href="../ShinobiCharts/SChartSeriesOrientation.html">SChartSeriesOrientation</a> <b>Orientation</b>  { get; set; }</div>
+          <h4 class="Subsection">Value</h4>
+          <blockquote class="SubsectionBox" id="P:ShinobiCharts.SChartSeries.Orientation:Value">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartSeries.Orientation:Remarks">
+				The orientation can be either horizontal or vertical.
+				For example, the orientation for column series is SChartSeriesOrientation.Horizontal, and the orientation for
+				bar series is SChartSeriesOrientation.Vertical.
+			</div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartSeries.Orientation:Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.5.7.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="M:ShinobiCharts.SChartSeries.ResetForReuse()">ResetForReuse Method</h3>
+        <blockquote id="M:ShinobiCharts.SChartSeries.ResetForReuse():member">
+          <p class="Summary">Resets the chart series for reuse when the data in the chart is reloaded.</p>
+          <h2>Syntax</h2>
+          <div class="Signature">[MonoTouch.Foundation.Export("resetForReuse")]<br />public virtual <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Void">void</a> <b>ResetForReuse</b> ()</div>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="M:ShinobiCharts.SChartSeries.ResetForReuse():Remarks">
+					By default, this clears the data points in the chart series, while leaving the styling, animation and any other series properties intact.
+					If you subclass SChartSeries, you should add any custom implementation you require to the subclass.
+				</div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="M:ShinobiCharts.SChartSeries.ResetForReuse():Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.5.7.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="P:ShinobiCharts.SChartSeries.Selected">Selected Property</h3>
+        <blockquote id="P:ShinobiCharts.SChartSeries.Selected:member">
+          <p class="Summary"> Whether or not the series is Selected 
+      </p>
+          <h2>Syntax</h2>
+          <div class="Signature">public <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Boolean">bool</a> <b>Selected</b>  { get; set; }</div>
+          <h4 class="Subsection">Value</h4>
+          <blockquote class="SubsectionBox" id="P:ShinobiCharts.SChartSeries.Selected:Value">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartSeries.Selected:Remarks">
+          </div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartSeries.Selected:Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.5.7.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="P:ShinobiCharts.SChartSeries.SelectionMode">SelectionMode Property</h3>
+        <blockquote id="P:ShinobiCharts.SChartSeries.SelectionMode:member">
+          <p class="Summary">Defines what should be selected when the user taps the chart.
+      </p>
+          <h2>Syntax</h2>
+          <div class="Signature">public <a href="../ShinobiCharts/SChartSelection.html">SChartSelection</a> <b>SelectionMode</b>  { get; set; }</div>
+          <h4 class="Subsection">Value</h4>
+          <blockquote class="SubsectionBox" id="P:ShinobiCharts.SChartSeries.SelectionMode:Value">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartSeries.SelectionMode:Remarks">
+				This property defines how the series will respond when a tap gesture indicates a point on this series.
+				There is an important effect of choosing SChartSelection.None - this option will remove this series from the
+				algorithm that searches for the nearest point to the tap.
+				Hence, a user may tap near to this series - but the algorithm will select a different series based upon its proximity.
+				Currently selection is handled separately for radial chart series - SelectionMode, ToggleSelection, and
+				TogglePointSelection are only applicable to cartesian series.
+			</div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartSeries.SelectionMode:Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.5.7.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="M:ShinobiCharts.SChartSeries.ShouldBeDrawn()">ShouldBeDrawn Method</h3>
+        <blockquote id="M:ShinobiCharts.SChartSeries.ShouldBeDrawn():member">
+          <p class="Summary">DEPRECATED - Use <a href="../ShinobiCharts/SChartSeries.html#P:ShinobiCharts.SChartSeries.Hidden">SChartSeries.Hidden</a> instead.</p>
+          <h2>Syntax</h2>
+          <div class="Signature">[MonoTouch.Foundation.Export("shouldBeDrawn")]<br />[System.Obsolete("Use Hidden instead.", false)]<br />public virtual <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Boolean">bool</a> <b>ShouldBeDrawn</b> ()</div>
+          <h4 class="Subsection">Returns</h4>
+          <blockquote class="SubsectionBox" id="M:ShinobiCharts.SChartSeries.ShouldBeDrawn():Returns">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="M:ShinobiCharts.SChartSeries.ShouldBeDrawn():Remarks">
+          </div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="M:ShinobiCharts.SChartSeries.ShouldBeDrawn():Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.5.7.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="P:ShinobiCharts.SChartSeries.ShowInLegend">ShowInLegend Property</h3>
+        <blockquote id="P:ShinobiCharts.SChartSeries.ShowInLegend:member">
+          <p class="Summary"> Whether or not the series should be represented in the Legend. 
+      </p>
+          <h2>Syntax</h2>
+          <div class="Signature">public <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Boolean">bool</a> <b>ShowInLegend</b>  { get; set; }</div>
+          <h4 class="Subsection">Value</h4>
+          <blockquote class="SubsectionBox" id="P:ShinobiCharts.SChartSeries.ShowInLegend:Value">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartSeries.ShowInLegend:Remarks">
+          </div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartSeries.ShowInLegend:Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.5.7.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="M:ShinobiCharts.SChartSeries.StringFor(System.String,ShinobiCharts.SChartData)">StringFor Method</h3>
+        <blockquote id="M:ShinobiCharts.SChartSeries.StringFor(System.String,ShinobiCharts.SChartData):member">
+          <p class="Summary">
+				This method returns a string value that will represent the key of a given datapoint.
+			</p>
+          <h2>Syntax</h2>
+          <div class="Signature">[MonoTouch.Foundation.Export("stringForKey:withDataPoint:")]<br />public virtual <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.String">string</a> <b>StringFor</b> (<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.String">string</a> key, <a href="../ShinobiCharts/SChartData.html">SChartData</a> dataPoint)</div>
+          <h4 class="Subsection">Parameters</h4>
+          <blockquote class="SubsectionBox" id="M:ShinobiCharts.SChartSeries.StringFor(System.String,ShinobiCharts.SChartData):Parameters">
+            <dl>
+              <dt>
+                <i>key</i>
+              </dt>
+              <dd>The key that needs a string representation.</dd>
+              <dt>
+                <i>dataPoint</i>
+              </dt>
+              <dd>The data point that the key corresponds to.</dd>
+            </dl>
+          </blockquote>
+          <h4 class="Subsection">Returns</h4>
+          <blockquote class="SubsectionBox" id="M:ShinobiCharts.SChartSeries.StringFor(System.String,ShinobiCharts.SChartData):Returns">A string that will be used to represent the given key for a data point.</blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="M:ShinobiCharts.SChartSeries.StringFor(System.String,ShinobiCharts.SChartData):Remarks">
+					The multi value tooltip uses this method to decide what string to use in its labels for the key of a given datapoint.
+				</div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="M:ShinobiCharts.SChartSeries.StringFor(System.String,ShinobiCharts.SChartData):Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.5.7.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="M:ShinobiCharts.SChartSeries.StringFor(System.String,ShinobiCharts.SChartData,ShinobiCharts.SChartAxis)">StringFor Method</h3>
+        <blockquote id="M:ShinobiCharts.SChartSeries.StringFor(System.String,ShinobiCharts.SChartData,ShinobiCharts.SChartAxis):member">
+          <p class="Summary">
+				This method returns a string value that will represent the value of a given data point based on its key.
+			</p>
+          <h2>Syntax</h2>
+          <div class="Signature">[MonoTouch.Foundation.Export("stringForValueWithKey:withDataPoint:usingAxis:")]<br />public virtual <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.String">string</a> <b>StringFor</b> (<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.String">string</a> key, <a href="../ShinobiCharts/SChartData.html">SChartData</a> dataPoint, <a href="../ShinobiCharts/SChartAxis.html">SChartAxis</a> axis)</div>
+          <h4 class="Subsection">Parameters</h4>
+          <blockquote class="SubsectionBox" id="M:ShinobiCharts.SChartSeries.StringFor(System.String,ShinobiCharts.SChartData,ShinobiCharts.SChartAxis):Parameters">
+            <dl>
+              <dt>
+                <i>key</i>
+              </dt>
+              <dd>The key that corresponds to the value needing a string representation.</dd>
+              <dt>
+                <i>dataPoint</i>
+              </dt>
+              <dd>The data point that the value corresponds to.</dd>
+              <dt>
+                <i>axis</i>
+              </dt>
+              <dd>The axis that the value corresponds to, where null represents an axis independent value.</dd>
+            </dl>
+          </blockquote>
+          <h4 class="Subsection">Returns</h4>
+          <blockquote class="SubsectionBox" id="M:ShinobiCharts.SChartSeries.StringFor(System.String,ShinobiCharts.SChartData,ShinobiCharts.SChartAxis):Returns">A string that will be used to represent a value for a data point.</blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="M:ShinobiCharts.SChartSeries.StringFor(System.String,ShinobiCharts.SChartData,ShinobiCharts.SChartAxis):Remarks">
+				This relies on the data point responding to the appropriate optional method (<a href="../ShinobiCharts/SChartData.html#M:ShinobiCharts.SChartData.GetValue(System.String)">SChartData.GetValue(string)</a>,
+				<a href="../ShinobiCharts/SChartData.html#M:ShinobiCharts.SChartData.GetXValue(System.String)">SChartData.GetXValue(string)</a> or <a href="../ShinobiCharts/SChartData.html#M:ShinobiCharts.SChartData.GetYValue(System.String)">SChartData.GetYValue(string)</a>).
+			</div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="M:ShinobiCharts.SChartSeries.StringFor(System.String,ShinobiCharts.SChartData,ShinobiCharts.SChartAxis):Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.5.7.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="P:ShinobiCharts.SChartSeries.Title">Title Property</h3>
+        <blockquote id="P:ShinobiCharts.SChartSeries.Title:member">
+          <p class="Summary"> The title of the series to be displayed in the Legend. 
+      </p>
+          <h2>Syntax</h2>
+          <div class="Signature">[get: MonoTouch.Foundation.Export("title", MonoTouch.ObjCRuntime.ArgumentSemantic.Retain)]<br />[set: MonoTouch.Foundation.Export("setTitle:", MonoTouch.ObjCRuntime.ArgumentSemantic.Retain)]<br />public virtual <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.String">string</a> <b>Title</b>  { get; set; }</div>
+          <h4 class="Subsection">Value</h4>
+          <blockquote class="SubsectionBox" id="P:ShinobiCharts.SChartSeries.Title:Value">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartSeries.Title:Remarks">
+          </div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartSeries.Title:Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.5.7.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="P:ShinobiCharts.SChartSeries.TogglePointSelection">TogglePointSelection Property</h3>
+        <blockquote id="P:ShinobiCharts.SChartSeries.TogglePointSelection:member">
+          <p class="Summary">Dictates whether the series should only allow only one selected point at a time.
+      </p>
+          <h2>Syntax</h2>
+          <div class="Signature">public <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Boolean">bool</a> <b>TogglePointSelection</b>  { get; set; }</div>
+          <h4 class="Subsection">Value</h4>
+          <blockquote class="SubsectionBox" id="P:ShinobiCharts.SChartSeries.TogglePointSelection:Value">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartSeries.TogglePointSelection:Remarks">
+				If this is set to false, the series will de-select all other points in this series before selecting the tapped point.
+				Setting true will allow multiple points to be selected ("toggled") as they are tapped.
+				NOTE: This is per series and will allow multiple points to be selected across series regardless of value.
+				To enable single point selection across all of the series for the chart, use the chart delegate.
+				Defaults to false.
+		</div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartSeries.TogglePointSelection:Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.5.7.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="P:ShinobiCharts.SChartSeries.ToggleSelection">ToggleSelection Property</h3>
+        <blockquote id="P:ShinobiCharts.SChartSeries.ToggleSelection:member">
+          <p class="Summary">Dictates whether the chart should allow other series to be selected simultaneously.
+      </p>
+          <h2>Syntax</h2>
+          <div class="Signature">public <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Boolean">bool</a> <b>ToggleSelection</b>  { get; set; }</div>
+          <h4 class="Subsection">Value</h4>
+          <blockquote class="SubsectionBox" id="P:ShinobiCharts.SChartSeries.ToggleSelection:Value">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartSeries.ToggleSelection:Remarks">
+				If this is set to false, the chart will de-select all other series before selecting the tapped series.
+				Setting true will allow multiple series to be selected ("toggled") as they are tapped.
+				Defaults to false.
+			</div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartSeries.ToggleSelection:Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.5.7.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="P:ShinobiCharts.SChartSeries.ValueKeys">ValueKeys Property</h3>
+        <blockquote id="P:ShinobiCharts.SChartSeries.ValueKeys:member">
+          <p class="Summary">
+				Used for data points which contain values that are independent of axes (e.g. Bubble data points).
+			</p>
+          <h2>Syntax</h2>
+          <div class="Signature">[get: MonoTouch.Foundation.Export("valueKeys")]<br />public virtual <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.String">string</a>[] <b>ValueKeys</b>  { get; }</div>
+          <h4 class="Subsection">Value</h4>
+          <blockquote class="SubsectionBox" id="P:ShinobiCharts.SChartSeries.ValueKeys:Value">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartSeries.ValueKeys:Remarks">
+					Returns the keys for the axis independent values of the data point.
+				</div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartSeries.ValueKeys:Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.5.7.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="M:ShinobiCharts.SChartSeries.WidthOfDataPoint(System.Int32,ShinobiCharts.ShinobiChart)">WidthOfDataPoint Method</h3>
+        <blockquote id="M:ShinobiCharts.SChartSeries.WidthOfDataPoint(System.Int32,ShinobiCharts.ShinobiChart):member">
+          <p class="Summary">Returns the width, in data terms, of the datapoint at the given index.
+			</p>
+          <h2>Syntax</h2>
+          <div class="Signature">[MonoTouch.Foundation.Export("widthOfDataPointAtIndex:onChart:")]<br />public virtual <a href="javascript:alert(&quot;Documentation not found.&quot;)">MonoTouch.Foundation.NSObject</a> <b>WidthOfDataPoint</b> (<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Int32">int</a> index, <a href="../ShinobiCharts/ShinobiChart.html">ShinobiChart</a> chart)</div>
+          <h4 class="Subsection">Parameters</h4>
+          <blockquote class="SubsectionBox" id="M:ShinobiCharts.SChartSeries.WidthOfDataPoint(System.Int32,ShinobiCharts.ShinobiChart):Parameters">
+            <dl>
+              <dt>
+                <i>index</i>
+              </dt>
+              <dd>
+                <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+              </dd>
+              <dt>
+                <i>chart</i>
+              </dt>
+              <dd>
+                <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+              </dd>
+            </dl>
+          </blockquote>
+          <h4 class="Subsection">Returns</h4>
+          <blockquote class="SubsectionBox" id="M:ShinobiCharts.SChartSeries.WidthOfDataPoint(System.Int32,ShinobiCharts.ShinobiChart):Returns">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="M:ShinobiCharts.SChartSeries.WidthOfDataPoint(System.Int32,ShinobiCharts.ShinobiChart):Remarks">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="M:ShinobiCharts.SChartSeries.WidthOfDataPoint(System.Int32,ShinobiCharts.ShinobiChart):Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.5.7.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="P:ShinobiCharts.SChartSeries.XValueKeys">XValueKeys Property</h3>
+        <blockquote id="P:ShinobiCharts.SChartSeries.XValueKeys:member">
+          <p class="Summary">Used for data points which contain multiple values (e.g. OHLC data points).
+      </p>
+          <h2>Syntax</h2>
+          <div class="Signature">public <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.String">string</a>[] <b>XValueKeys</b>  { get; }</div>
+          <h4 class="Subsection">Value</h4>
+          <blockquote class="SubsectionBox" id="P:ShinobiCharts.SChartSeries.XValueKeys:Value">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartSeries.XValueKeys:Remarks">
+				Returns the keys for the x values of the data point.
+			</div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartSeries.XValueKeys:Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.5.7.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="P:ShinobiCharts.SChartSeries.YValueKeys">YValueKeys Property</h3>
+        <blockquote id="P:ShinobiCharts.SChartSeries.YValueKeys:member">
+          <p class="Summary">Used for data points which contain multiple values (e.g. OHLC data points).
+      </p>
+          <h2>Syntax</h2>
+          <div class="Signature">public <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.String">string</a>[] <b>YValueKeys</b>  { get; }</div>
+          <h4 class="Subsection">Value</h4>
+          <blockquote class="SubsectionBox" id="P:ShinobiCharts.SChartSeries.YValueKeys:Value">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartSeries.YValueKeys:Remarks">
+				Returns the keys for the y values of the data point.
+			</div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartSeries.YValueKeys:Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.5.7.0</div>
+          <hr size="1" />
+        </blockquote>
+      </div>
+    </div>
+    <div class="Parameter">
+    </div>
+    <hr size="1" />
+    <div class="Copyright"> © 2013 Scott Logic Limited. All rights reserved </div>
+  </body>
+</html>

@@ -1,0 +1,701 @@
+<html>
+  <head>
+    <title>ShinobiCharts.SChartBasePointStyle</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <style>
+      a { text-decoration: none; color: #AD1015; font-family: Arial }
+
+      div.SideBar {
+        padding-left: 1em;
+        padding-right: 1em;
+        right: 0;
+        float: right;
+        border: thin solid black;
+        background-color: #f2f2f2;
+      }
+    
+      .CollectionTitle { font-family: Arial; font-weight: bold; background: black; color: white; padding: 10px; margin: 0 }
+      .CollectionTitle p { font-size: 150%; }
+      .PageTitle { font-size: 150%; font-weight: bold }
+
+      .Summary { }
+      .Signature { }          
+      .Remarks { }
+      .Members { }
+      .Copyright { }
+      
+      .Section { font-family: Arial; font-size: 125%; font-weight: bold }
+      p.Summary {
+        margin-left: 1em;
+      }
+      .SectionBox { margin-left: 2em }
+      .NamespaceName { font-family: Arial; font-size: 105%; font-weight: bold }
+      .NamespaceSumary { }
+      .MemberName { font-size: 115%; font-weight: bold; margin-top: 1em }
+      .Subsection { font-size: 105%; font-weight: bold }
+      .SubsectionBox { margin-left: 2em; margin-bottom: 1em }
+
+      .CodeExampleTable { background-color: #f5f5dd; border: thin solid black; padding: .25em; }
+      
+      .TypesListing {
+	font-family: Arial;
+        border-collapse: collapse;
+      }
+
+      td {
+	font-family: Arial;
+        vertical-align: top;
+      }
+      th {
+	font-family: Arial;
+        text-align: left;
+      }
+
+      .TypesListing td { 
+        margin: 0px;  
+        padding: .25em;
+        border: solid gray 1px;
+      }
+
+      .TypesListing th { 
+        margin: 0px;  
+        padding: .25em;
+        background-color: #f2f2f2;
+        border: solid gray 1px;
+      }
+
+      div.Footer {
+	font-family: Arial;
+        border-top: 1px solid gray;
+        margin-top: 1.5em;
+        padding-top: 0.6em;
+        text-align: center;
+        color: gray;
+      }
+
+      span.NotEntered /* Documentation for this section has not yet been entered */ {
+	font-family: Arial;
+        font-style: italic;
+        color: 	#C0C0C0;	
+      }
+
+      div.Header {
+	font-family: Arial;
+        background: #B0C4DE;
+        border: double;
+        border-color: white;
+        border-width: 7px;
+        padding: 0.5em;
+      }
+
+      div.Header * {
+	font-family: Arial;
+        font-size: smaller;
+      }
+
+      div.Note {
+      }
+
+      i.ParamRef {
+      }
+
+      i.subtitle {
+      }
+
+      ul.TypeMembersIndex {
+	font-family: Arial;
+        text-align: left;
+        background: #F8F8F8;
+      }
+
+      ul.TypeMembersIndex li {
+        display: inline;
+        margin:  0.5em;
+      }
+
+      table.HeaderTable {
+      }
+
+      table.SignatureTable {
+      }
+
+      table.Documentation, table.Enumeration, table.TypeDocumentation {
+        border-collapse: collapse;
+        width: 100%;
+      }
+
+      table.Documentation tr th, table.TypeMembers tr th, table.Enumeration tr th, table.TypeDocumentation tr th {
+	font-family: Arial;
+        background: whitesmoke;
+        padding: 0.8em;
+        border: 1px solid gray;
+        text-align: left;
+        vertical-align: bottom;
+      }
+
+      table.Documentation tr td, table.TypeMembers tr td, table.Enumeration tr td, table.TypeDocumentation tr td {
+	font-family: Arial;
+        padding: 0.5em;
+        border: 1px solid gray;
+        text-align: left;
+        vertical-align: top;
+      }
+
+      table.TypeMembers {
+        border: 1px solid #C0C0C0;
+        width: 100%;
+      }
+
+      table.TypeMembers tr td {
+        background: #F8F8F8;
+        border: white;
+      }
+
+      table.Documentation {
+      }
+
+      table.TypeMembers {
+      }
+
+      div.CodeExample {
+        width: 100%;
+        border: 1px solid #DDDDDD;
+        background-color: #F8F8F8;
+      }
+
+      div.CodeExample p {
+        margin: 0.5em;
+        border-bottom: 1px solid #DDDDDD;
+      }
+
+      div.CodeExample div {
+        margin: 0.5em;
+      }
+
+      h4 {
+        margin-bottom: 0;
+      }
+
+      div.Signature {
+	font-family: Arial;
+        border: 1px solid #C0C0C0;
+        background: #F2F2F2;
+        padding: 1em;
+      }
+    </style>
+    <script type="text/JavaScript">
+      function toggle_display (block) {
+        var w = document.getElementById (block);
+        var t = document.getElementById (block + ":toggle");
+        if (w.style.display == "none") {
+          w.style.display = "block";
+          t.innerHTML = "⊟";
+        } else {
+          w.style.display = "none";
+          t.innerHTML = "⊞";
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <div class="CollectionTitle">
+      <p>
+		ShinobiControls Xamarin Bindings Documentation
+	</p>
+      <a href="../index.html">ShinobiCharts</a> : <a href="index.html">ShinobiCharts Namespace</a></div>
+    <h1 class="PageTitle" id="T:ShinobiCharts.SChartBasePointStyle">SChartBasePointStyle  Class</h1>
+    <p class="Summary" id="T:ShinobiCharts.SChartBasePointStyle:Summary">This is an abstract base class for other point style classes.</p>
+    <div>
+      <h2>Syntax</h2>
+      <div class="Signature" id="T:ShinobiCharts.SChartBasePointStyle:Signature">[MonoTouch.Foundation.Register("SChartBasePointStyle", true)]<br />public class  <b>SChartBasePointStyle</b> : <a href="javascript:alert(&quot;Documentation not found.&quot;)">MonoTouch.Foundation.NSObject</a></div>
+    </div>
+    <div class="Remarks" id="T:ShinobiCharts.SChartBasePointStyle:Docs">
+      <h2 class="Section">Remarks</h2>
+      <div class="SectionBox" id="T:ShinobiCharts.SChartBasePointStyle:Docs:Remarks">
+				This abstract style corresponds to the abstract series SChartPointSeries.
+			</div>
+      <h2 class="Section">Requirements</h2>
+      <div class="SectionBox" id="T:ShinobiCharts.SChartBasePointStyle:Docs:Version Information">
+        <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.5.7.0</div>
+      <h2 class="Section" id="Members">Members</h2>
+      <div class="SectionBox" id="_Members">
+        <p>
+								See Also: Inherited members from
+								<a href="javascript:alert(&quot;Documentation not found.&quot;)">MonoTouch.Foundation.NSObject</a>.
+							</p>
+        <h2 class="Section">Public Constructors</h2>
+        <div class="SectionBox" id="Public Constructors">
+          <div class="SubsectionBox">
+            <table class="TypeMembers">
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <div>
+                    <b>
+                      <a href="#C:ShinobiCharts.SChartBasePointStyle()">SChartBasePointStyle</a>
+                    </b>()</div>
+                </td>
+                <td>Default constructor.</td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <div>
+                    <b>
+                      <a href="#C:ShinobiCharts.SChartBasePointStyle(MonoTouch.Foundation.NSCoder)">SChartBasePointStyle</a>
+                    </b>(<a href="javascript:alert(&quot;Documentation not found.&quot;)">MonoTouch.Foundation.NSCoder</a>)</div>
+                </td>
+                <td>
+				A constructor that initializes the object from the data stored in the unarchiver object.
+			</td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <div>
+                    <b>
+                      <a href="#C:ShinobiCharts.SChartBasePointStyle(MonoTouch.Foundation.NSObjectFlag)">SChartBasePointStyle</a>
+                    </b>(<a href="javascript:alert(&quot;Documentation not found.&quot;)">MonoTouch.Foundation.NSObjectFlag</a>)</div>
+                </td>
+                <td>
+				Constructor to call on derived classes to skip initialization and merely allocate the object.
+			</td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <div>
+                    <b>
+                      <a href="#C:ShinobiCharts.SChartBasePointStyle(System.IntPtr)">SChartBasePointStyle</a>
+                    </b>(<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.IntPtr">IntPtr</a>)</div>
+                </td>
+                <td>
+				A constructor used when creating managed representations of unmanaged objects.
+			</td>
+              </tr>
+            </table>
+          </div>
+        </div>
+        <h2 class="Section">Public Properties</h2>
+        <div class="SectionBox" id="Public Properties">
+          <div class="SubsectionBox">
+            <table class="TypeMembers">
+              <tr valign="top">
+                <td>[read-only]<div>override </div></td>
+                <td>
+                  <b>
+                    <a href="#P:ShinobiCharts.SChartBasePointStyle.ClassHandle">ClassHandle</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.IntPtr">IntPtr</a>
+                  </i>. 
+				The handle for this class.
+			</td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <b>
+                    <a href="#P:ShinobiCharts.SChartBasePointStyle.Color">Color</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="javascript:alert(&quot;Documentation not found.&quot;)">MonoTouch.UIKit.UIColor</a>
+                  </i>. 
+				The color of the data points.
+			</td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <b>
+                    <a href="#P:ShinobiCharts.SChartBasePointStyle.ColorBelowBaseline">ColorBelowBaseline</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="javascript:alert(&quot;Documentation not found.&quot;)">MonoTouch.UIKit.UIColor</a>
+                  </i>. 
+				The color of the data points when the chart series goes below its baseline.
+			</td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <b>
+                    <a href="#P:ShinobiCharts.SChartBasePointStyle.Radius">Radius</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="javascript:alert(&quot;Documentation not found.&quot;)">MonoTouch.Foundation.NSNumber</a>
+                  </i>. 
+				The radius of the outer section of a data point.
+			</td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <b>
+                    <a href="#P:ShinobiCharts.SChartBasePointStyle.ShowPoints">ShowPoints</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Boolean">bool</a>
+                  </i>. 
+				Defines whether points should be displayed on our chart series.
+			</td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <b>
+                    <a href="#P:ShinobiCharts.SChartBasePointStyle.Texture">Texture</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="javascript:alert(&quot;Documentation not found.&quot;)">MonoTouch.UIKit.UIImage</a>
+                  </i>. 
+				An image to be used for each data point.
+			</td>
+              </tr>
+            </table>
+          </div>
+        </div>
+        <h2 class="Section">Public Methods</h2>
+        <div class="SectionBox" id="Public Methods">
+          <div class="SubsectionBox">
+            <table class="TypeMembers">
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="#M:ShinobiCharts.SChartBasePointStyle.SupplementStyleFromStyle(ShinobiCharts.SChartBasePointStyle)">SupplementStyleFromStyle</a>
+                  </b>(<a href="../ShinobiCharts/SChartBasePointStyle.html">SChartBasePointStyle</a>)<blockquote>
+				Supplements this style object by taking styles this object doesn't have, from the argument, style
+			</blockquote></td>
+              </tr>
+            </table>
+          </div>
+        </div>
+        <h2 class="Section">Protected Methods</h2>
+        <div class="SectionBox" id="Protected Methods">
+          <div class="SubsectionBox">
+            <table class="TypeMembers">
+              <tr valign="top">
+                <td>
+                  <div>override </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="#M:ShinobiCharts.SChartBasePointStyle.Dispose(System.Boolean)">Dispose</a>
+                  </b>(<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Boolean">bool</a>)<blockquote>Releases unmanaged resources.</blockquote></td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="Members" id="T:ShinobiCharts.SChartBasePointStyle:Members">
+      <h2 class="Section" id="MemberDetails">Member Details</h2>
+      <div class="SectionBox" id="_MemberDetails">
+        <h3 id="C:ShinobiCharts.SChartBasePointStyle()">SChartBasePointStyle Constructor</h3>
+        <blockquote id="C:ShinobiCharts.SChartBasePointStyle():member">
+          <p class="Summary">Default constructor.</p>
+          <h2>Syntax</h2>
+          <div class="Signature">[MonoTouch.Foundation.Export("init")]<br />[System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Advanced)]<br />public  <b>SChartBasePointStyle</b> ()</div>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="C:ShinobiCharts.SChartBasePointStyle():Remarks">
+          </div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="C:ShinobiCharts.SChartBasePointStyle():Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.5.7.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="C:ShinobiCharts.SChartBasePointStyle(MonoTouch.Foundation.NSCoder)">SChartBasePointStyle Constructor</h3>
+        <blockquote id="C:ShinobiCharts.SChartBasePointStyle(MonoTouch.Foundation.NSCoder):member">
+          <p class="Summary">
+				A constructor that initializes the object from the data stored in the unarchiver object.
+			</p>
+          <h2>Syntax</h2>
+          <div class="Signature">[MonoTouch.Foundation.Export("initWithCoder:")]<br />[System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Advanced)]<br />public  <b>SChartBasePointStyle</b> (<a href="javascript:alert(&quot;Documentation not found.&quot;)">MonoTouch.Foundation.NSCoder</a> coder)</div>
+          <h4 class="Subsection">Parameters</h4>
+          <blockquote class="SubsectionBox" id="C:ShinobiCharts.SChartBasePointStyle(MonoTouch.Foundation.NSCoder):Parameters">
+            <dl>
+              <dt>
+                <i>coder</i>
+              </dt>
+              <dd>
+				The unarchiver object
+			</dd>
+            </dl>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="C:ShinobiCharts.SChartBasePointStyle(MonoTouch.Foundation.NSCoder):Remarks">
+				This constructor is provided to allow the class to be initialized from an unarchiver (for example, during NIB deserialization).
+			</div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="C:ShinobiCharts.SChartBasePointStyle(MonoTouch.Foundation.NSCoder):Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.5.7.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="C:ShinobiCharts.SChartBasePointStyle(MonoTouch.Foundation.NSObjectFlag)">SChartBasePointStyle Constructor</h3>
+        <blockquote id="C:ShinobiCharts.SChartBasePointStyle(MonoTouch.Foundation.NSObjectFlag):member">
+          <p class="Summary">
+				Constructor to call on derived classes to skip initialization and merely allocate the object.
+			</p>
+          <h2>Syntax</h2>
+          <div class="Signature">[System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Advanced)]<br />public  <b>SChartBasePointStyle</b> (<a href="javascript:alert(&quot;Documentation not found.&quot;)">MonoTouch.Foundation.NSObjectFlag</a> t)</div>
+          <h4 class="Subsection">Parameters</h4>
+          <blockquote class="SubsectionBox" id="C:ShinobiCharts.SChartBasePointStyle(MonoTouch.Foundation.NSObjectFlag):Parameters">
+            <dl>
+              <dt>
+                <i>t</i>
+              </dt>
+              <dd>
+				Unused sentinel value
+			</dd>
+            </dl>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="C:ShinobiCharts.SChartBasePointStyle(MonoTouch.Foundation.NSObjectFlag):Remarks">
+				You should not invoke this method directly.
+			</div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="C:ShinobiCharts.SChartBasePointStyle(MonoTouch.Foundation.NSObjectFlag):Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.5.7.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="C:ShinobiCharts.SChartBasePointStyle(System.IntPtr)">SChartBasePointStyle Constructor</h3>
+        <blockquote id="C:ShinobiCharts.SChartBasePointStyle(System.IntPtr):member">
+          <p class="Summary">
+				A constructor used when creating managed representations of unmanaged objects.
+			</p>
+          <h2>Syntax</h2>
+          <div class="Signature">[System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Advanced)]<br />public  <b>SChartBasePointStyle</b> (<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.IntPtr">IntPtr</a> handle)</div>
+          <h4 class="Subsection">Parameters</h4>
+          <blockquote class="SubsectionBox" id="C:ShinobiCharts.SChartBasePointStyle(System.IntPtr):Parameters">
+            <dl>
+              <dt>
+                <i>handle</i>
+              </dt>
+              <dd>
+				Handle of the unmanaged object
+			</dd>
+            </dl>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="C:ShinobiCharts.SChartBasePointStyle(System.IntPtr):Remarks">
+				You should not invoke this method directly.
+			</div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="C:ShinobiCharts.SChartBasePointStyle(System.IntPtr):Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.5.7.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="P:ShinobiCharts.SChartBasePointStyle.ClassHandle">ClassHandle Property</h3>
+        <blockquote id="P:ShinobiCharts.SChartBasePointStyle.ClassHandle:member">
+          <p class="Summary">
+				The handle for this class.
+			</p>
+          <h2>Syntax</h2>
+          <div class="Signature">public override <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.IntPtr">IntPtr</a> <b>ClassHandle</b>  { get; }</div>
+          <h4 class="Subsection">Value</h4>
+          <blockquote class="SubsectionBox" id="P:ShinobiCharts.SChartBasePointStyle.ClassHandle:Value">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartBasePointStyle.ClassHandle:Remarks">
+          </div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartBasePointStyle.ClassHandle:Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.5.7.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="P:ShinobiCharts.SChartBasePointStyle.Color">Color Property</h3>
+        <blockquote id="P:ShinobiCharts.SChartBasePointStyle.Color:member">
+          <p class="Summary">
+				The color of the data points.
+			</p>
+          <h2>Syntax</h2>
+          <div class="Signature">[get: MonoTouch.Foundation.Export("color", MonoTouch.ObjCRuntime.ArgumentSemantic.Retain)]<br />[set: MonoTouch.Foundation.Export("setColor:", MonoTouch.ObjCRuntime.ArgumentSemantic.Retain)]<br />public virtual <a href="javascript:alert(&quot;Documentation not found.&quot;)">MonoTouch.UIKit.UIColor</a> <b>Color</b>  { get; set; }</div>
+          <h4 class="Subsection">Value</h4>
+          <blockquote class="SubsectionBox" id="P:ShinobiCharts.SChartBasePointStyle.Color:Value">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartBasePointStyle.Color:Remarks">
+          </div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartBasePointStyle.Color:Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.5.7.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="P:ShinobiCharts.SChartBasePointStyle.ColorBelowBaseline">ColorBelowBaseline Property</h3>
+        <blockquote id="P:ShinobiCharts.SChartBasePointStyle.ColorBelowBaseline:member">
+          <p class="Summary">
+				The color of the data points when the chart series goes below its baseline.
+			</p>
+          <h2>Syntax</h2>
+          <div class="Signature">[get: MonoTouch.Foundation.Export("colorBelowBaseline", MonoTouch.ObjCRuntime.ArgumentSemantic.Retain)]<br />[set: MonoTouch.Foundation.Export("setColorBelowBaseline:", MonoTouch.ObjCRuntime.ArgumentSemantic.Retain)]<br />public virtual <a href="javascript:alert(&quot;Documentation not found.&quot;)">MonoTouch.UIKit.UIColor</a> <b>ColorBelowBaseline</b>  { get; set; }</div>
+          <h4 class="Subsection">Value</h4>
+          <blockquote class="SubsectionBox" id="P:ShinobiCharts.SChartBasePointStyle.ColorBelowBaseline:Value">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartBasePointStyle.ColorBelowBaseline:Remarks">
+          </div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartBasePointStyle.ColorBelowBaseline:Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.5.7.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="M:ShinobiCharts.SChartBasePointStyle.Dispose(System.Boolean)">Dispose Method</h3>
+        <blockquote id="M:ShinobiCharts.SChartBasePointStyle.Dispose(System.Boolean):member">
+          <p class="Summary">Releases unmanaged resources.</p>
+          <h2>Syntax</h2>
+          <div class="Signature">protected override <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Void">void</a> <b>Dispose</b> (<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Boolean">bool</a> disposing)</div>
+          <h4 class="Subsection">Parameters</h4>
+          <blockquote class="SubsectionBox" id="M:ShinobiCharts.SChartBasePointStyle.Dispose(System.Boolean):Parameters">
+            <dl>
+              <dt>
+                <i>disposing</i>
+              </dt>
+              <dd>True if called by Dispose, false if called from a finalizer</dd>
+            </dl>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="M:ShinobiCharts.SChartBasePointStyle.Dispose(System.Boolean):Remarks">
+          </div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="M:ShinobiCharts.SChartBasePointStyle.Dispose(System.Boolean):Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.5.7.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="P:ShinobiCharts.SChartBasePointStyle.Radius">Radius Property</h3>
+        <blockquote id="P:ShinobiCharts.SChartBasePointStyle.Radius:member">
+          <p class="Summary">
+				The radius of the outer section of a data point.
+			</p>
+          <h2>Syntax</h2>
+          <div class="Signature">[get: MonoTouch.Foundation.Export("radius", MonoTouch.ObjCRuntime.ArgumentSemantic.Retain)]<br />[set: MonoTouch.Foundation.Export("setRadius:", MonoTouch.ObjCRuntime.ArgumentSemantic.Retain)]<br />public virtual <a href="javascript:alert(&quot;Documentation not found.&quot;)">MonoTouch.Foundation.NSNumber</a> <b>Radius</b>  { get; set; }</div>
+          <h4 class="Subsection">Value</h4>
+          <blockquote class="SubsectionBox" id="P:ShinobiCharts.SChartBasePointStyle.Radius:Value">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartBasePointStyle.Radius:Remarks">
+          </div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartBasePointStyle.Radius:Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.5.7.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="P:ShinobiCharts.SChartBasePointStyle.ShowPoints">ShowPoints Property</h3>
+        <blockquote id="P:ShinobiCharts.SChartBasePointStyle.ShowPoints:member">
+          <p class="Summary">
+				Defines whether points should be displayed on our chart series.
+			</p>
+          <h2>Syntax</h2>
+          <div class="Signature">[get: MonoTouch.Foundation.Export("showPoints", MonoTouch.ObjCRuntime.ArgumentSemantic.Assign)]<br />[set: MonoTouch.Foundation.Export("setShowPoints:", MonoTouch.ObjCRuntime.ArgumentSemantic.Assign)]<br />public virtual <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Boolean">bool</a> <b>ShowPoints</b>  { get; set; }</div>
+          <h4 class="Subsection">Value</h4>
+          <blockquote class="SubsectionBox" id="P:ShinobiCharts.SChartBasePointStyle.ShowPoints:Value">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartBasePointStyle.ShowPoints:Remarks">
+          </div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartBasePointStyle.ShowPoints:Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.5.7.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="M:ShinobiCharts.SChartBasePointStyle.SupplementStyleFromStyle(ShinobiCharts.SChartBasePointStyle)">SupplementStyleFromStyle Method</h3>
+        <blockquote id="M:ShinobiCharts.SChartBasePointStyle.SupplementStyleFromStyle(ShinobiCharts.SChartBasePointStyle):member">
+          <p class="Summary">
+				Supplements this style object by taking styles this object doesn't have, from the argument, style
+			</p>
+          <h2>Syntax</h2>
+          <div class="Signature">[MonoTouch.Foundation.Export("supplementStyleFromStyle:")]<br />public virtual <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Void">void</a> <b>SupplementStyleFromStyle</b> (<a href="../ShinobiCharts/SChartBasePointStyle.html">SChartBasePointStyle</a> style)</div>
+          <h4 class="Subsection">Parameters</h4>
+          <blockquote class="SubsectionBox" id="M:ShinobiCharts.SChartBasePointStyle.SupplementStyleFromStyle(ShinobiCharts.SChartBasePointStyle):Parameters">
+            <dl>
+              <dt>
+                <i>style</i>
+              </dt>
+              <dd>
+                <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+              </dd>
+            </dl>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="M:ShinobiCharts.SChartBasePointStyle.SupplementStyleFromStyle(ShinobiCharts.SChartBasePointStyle):Remarks">
+          </div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="M:ShinobiCharts.SChartBasePointStyle.SupplementStyleFromStyle(ShinobiCharts.SChartBasePointStyle):Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.5.7.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="P:ShinobiCharts.SChartBasePointStyle.Texture">Texture Property</h3>
+        <blockquote id="P:ShinobiCharts.SChartBasePointStyle.Texture:member">
+          <p class="Summary">
+				An image to be used for each data point.
+			</p>
+          <h2>Syntax</h2>
+          <div class="Signature">[get: MonoTouch.Foundation.Export("texture", MonoTouch.ObjCRuntime.ArgumentSemantic.Retain)]<br />[set: MonoTouch.Foundation.Export("setTexture:", MonoTouch.ObjCRuntime.ArgumentSemantic.Retain)]<br />public virtual <a href="javascript:alert(&quot;Documentation not found.&quot;)">MonoTouch.UIKit.UIImage</a> <b>Texture</b>  { get; set; }</div>
+          <h4 class="Subsection">Value</h4>
+          <blockquote class="SubsectionBox" id="P:ShinobiCharts.SChartBasePointStyle.Texture:Value">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartBasePointStyle.Texture:Remarks">
+				If this property is set, the image will displayed rather than the default of an inner and outer circle.
+			</div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartBasePointStyle.Texture:Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.5.7.0</div>
+          <hr size="1" />
+        </blockquote>
+      </div>
+    </div>
+    <div class="Parameter">
+    </div>
+    <hr size="1" />
+    <div class="Copyright"> © 2013 Scott Logic Limited. All rights reserved </div>
+  </body>
+</html>

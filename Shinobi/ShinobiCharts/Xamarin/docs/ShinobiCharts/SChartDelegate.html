@@ -1,0 +1,1526 @@
+<html>
+  <head>
+    <title>ShinobiCharts.SChartDelegate</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <style>
+      a { text-decoration: none; color: #AD1015; font-family: Arial }
+
+      div.SideBar {
+        padding-left: 1em;
+        padding-right: 1em;
+        right: 0;
+        float: right;
+        border: thin solid black;
+        background-color: #f2f2f2;
+      }
+    
+      .CollectionTitle { font-family: Arial; font-weight: bold; background: black; color: white; padding: 10px; margin: 0 }
+      .CollectionTitle p { font-size: 150%; }
+      .PageTitle { font-size: 150%; font-weight: bold }
+
+      .Summary { }
+      .Signature { }          
+      .Remarks { }
+      .Members { }
+      .Copyright { }
+      
+      .Section { font-family: Arial; font-size: 125%; font-weight: bold }
+      p.Summary {
+        margin-left: 1em;
+      }
+      .SectionBox { margin-left: 2em }
+      .NamespaceName { font-family: Arial; font-size: 105%; font-weight: bold }
+      .NamespaceSumary { }
+      .MemberName { font-size: 115%; font-weight: bold; margin-top: 1em }
+      .Subsection { font-size: 105%; font-weight: bold }
+      .SubsectionBox { margin-left: 2em; margin-bottom: 1em }
+
+      .CodeExampleTable { background-color: #f5f5dd; border: thin solid black; padding: .25em; }
+      
+      .TypesListing {
+	font-family: Arial;
+        border-collapse: collapse;
+      }
+
+      td {
+	font-family: Arial;
+        vertical-align: top;
+      }
+      th {
+	font-family: Arial;
+        text-align: left;
+      }
+
+      .TypesListing td { 
+        margin: 0px;  
+        padding: .25em;
+        border: solid gray 1px;
+      }
+
+      .TypesListing th { 
+        margin: 0px;  
+        padding: .25em;
+        background-color: #f2f2f2;
+        border: solid gray 1px;
+      }
+
+      div.Footer {
+	font-family: Arial;
+        border-top: 1px solid gray;
+        margin-top: 1.5em;
+        padding-top: 0.6em;
+        text-align: center;
+        color: gray;
+      }
+
+      span.NotEntered /* Documentation for this section has not yet been entered */ {
+	font-family: Arial;
+        font-style: italic;
+        color: 	#C0C0C0;	
+      }
+
+      div.Header {
+	font-family: Arial;
+        background: #B0C4DE;
+        border: double;
+        border-color: white;
+        border-width: 7px;
+        padding: 0.5em;
+      }
+
+      div.Header * {
+	font-family: Arial;
+        font-size: smaller;
+      }
+
+      div.Note {
+      }
+
+      i.ParamRef {
+      }
+
+      i.subtitle {
+      }
+
+      ul.TypeMembersIndex {
+	font-family: Arial;
+        text-align: left;
+        background: #F8F8F8;
+      }
+
+      ul.TypeMembersIndex li {
+        display: inline;
+        margin:  0.5em;
+      }
+
+      table.HeaderTable {
+      }
+
+      table.SignatureTable {
+      }
+
+      table.Documentation, table.Enumeration, table.TypeDocumentation {
+        border-collapse: collapse;
+        width: 100%;
+      }
+
+      table.Documentation tr th, table.TypeMembers tr th, table.Enumeration tr th, table.TypeDocumentation tr th {
+	font-family: Arial;
+        background: whitesmoke;
+        padding: 0.8em;
+        border: 1px solid gray;
+        text-align: left;
+        vertical-align: bottom;
+      }
+
+      table.Documentation tr td, table.TypeMembers tr td, table.Enumeration tr td, table.TypeDocumentation tr td {
+	font-family: Arial;
+        padding: 0.5em;
+        border: 1px solid gray;
+        text-align: left;
+        vertical-align: top;
+      }
+
+      table.TypeMembers {
+        border: 1px solid #C0C0C0;
+        width: 100%;
+      }
+
+      table.TypeMembers tr td {
+        background: #F8F8F8;
+        border: white;
+      }
+
+      table.Documentation {
+      }
+
+      table.TypeMembers {
+      }
+
+      div.CodeExample {
+        width: 100%;
+        border: 1px solid #DDDDDD;
+        background-color: #F8F8F8;
+      }
+
+      div.CodeExample p {
+        margin: 0.5em;
+        border-bottom: 1px solid #DDDDDD;
+      }
+
+      div.CodeExample div {
+        margin: 0.5em;
+      }
+
+      h4 {
+        margin-bottom: 0;
+      }
+
+      div.Signature {
+	font-family: Arial;
+        border: 1px solid #C0C0C0;
+        background: #F2F2F2;
+        padding: 1em;
+      }
+    </style>
+    <script type="text/JavaScript">
+      function toggle_display (block) {
+        var w = document.getElementById (block);
+        var t = document.getElementById (block + ":toggle");
+        if (w.style.display == "none") {
+          w.style.display = "block";
+          t.innerHTML = "⊟";
+        } else {
+          w.style.display = "none";
+          t.innerHTML = "⊞";
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <div class="CollectionTitle">
+      <p>
+		ShinobiControls Xamarin Bindings Documentation
+	</p>
+      <a href="../index.html">ShinobiCharts</a> : <a href="index.html">ShinobiCharts Namespace</a></div>
+    <h1 class="PageTitle" id="T:ShinobiCharts.SChartDelegate">SChartDelegate  Class</h1>
+    <p class="Summary" id="T:ShinobiCharts.SChartDelegate:Summary">Abstract base class for your (optional) class that accepts notifications from the ShinobiChart
+      </p>
+    <div>
+      <h2>Syntax</h2>
+      <div class="Signature" id="T:ShinobiCharts.SChartDelegate:Signature">[MonoTouch.Foundation.Model]<br />[MonoTouch.Foundation.Register("SChartDelegate", true)]<br />public abstract class  <b>SChartDelegate</b> : <a href="javascript:alert(&quot;Documentation not found.&quot;)">MonoTouch.Foundation.NSObject</a></div>
+    </div>
+    <div class="Remarks" id="T:ShinobiCharts.SChartDelegate:Docs">
+      <h2 class="Section">Remarks</h2>
+      <div class="SectionBox" id="T:ShinobiCharts.SChartDelegate:Docs:Remarks">
+				The delegate of a ShinobiChart object must adopt the SChartDelegate protocol.
+				Optional methods of the protocol allow the delegate to respond to the following types of events:
+				<ul><li>Zooming.</li><li>Panning.</li><li>Selection on the chart.</li><li>Chart rendering.</li><li>Data loading.</li><li>Chart series animations.</li><li>Crosshair tracking.</li></ul>
+				As well as methods to respond to events on the chart, the protocol also provides methods to allow the delegate to manage
+				the chart axes, by altering tick marks on the axes, or by setting tick frequencies.
+	  </div>
+      <h2 class="Section">Requirements</h2>
+      <div class="SectionBox" id="T:ShinobiCharts.SChartDelegate:Docs:Version Information">
+        <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.5.7.0</div>
+      <h2 class="Section" id="Members">Members</h2>
+      <div class="SectionBox" id="_Members">
+        <p>
+								See Also: Inherited members from
+								<a href="javascript:alert(&quot;Documentation not found.&quot;)">MonoTouch.Foundation.NSObject</a>.
+							</p>
+        <h2 class="Section">Public Constructors</h2>
+        <div class="SectionBox" id="Public Constructors">
+          <div class="SubsectionBox">
+            <table class="TypeMembers">
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <div>
+                    <b>
+                      <a href="#C:ShinobiCharts.SChartDelegate()">SChartDelegate</a>
+                    </b>()</div>
+                </td>
+                <td>Default constructor
+      </td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <div>
+                    <b>
+                      <a href="#C:ShinobiCharts.SChartDelegate(MonoTouch.Foundation.NSCoder)">SChartDelegate</a>
+                    </b>(<a href="javascript:alert(&quot;Documentation not found.&quot;)">MonoTouch.Foundation.NSCoder</a>)</div>
+                </td>
+                <td>A constructor that initializes the object from the data stored in the unarchiver object.
+      </td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <div>
+                    <b>
+                      <a href="#C:ShinobiCharts.SChartDelegate(MonoTouch.Foundation.NSObjectFlag)">SChartDelegate</a>
+                    </b>(<a href="javascript:alert(&quot;Documentation not found.&quot;)">MonoTouch.Foundation.NSObjectFlag</a>)</div>
+                </td>
+                <td>Constructor to call on derived classes to skip initialization and merely allocate the object.
+      </td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <div>
+                    <b>
+                      <a href="#C:ShinobiCharts.SChartDelegate(System.IntPtr)">SChartDelegate</a>
+                    </b>(<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.IntPtr">IntPtr</a>)</div>
+                </td>
+                <td>A constructor used when creating managed representations of unmanaged objects.
+      </td>
+              </tr>
+            </table>
+          </div>
+        </div>
+        <h2 class="Section">Public Methods</h2>
+        <div class="SectionBox" id="Public Methods">
+          <div class="SubsectionBox">
+            <table class="TypeMembers">
+              <tr valign="top">
+                <td>
+                  <div>override </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="#M:ShinobiCharts.SChartDelegate.ConformsToProtocol(System.IntPtr)">ConformsToProtocol</a>
+                  </b>(<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.IntPtr">IntPtr</a>)<nobr> : <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Boolean">bool</a></nobr><blockquote>Internal - checks whether this object conforms to a protocol.
+      </blockquote></td>
+              </tr>
+            </table>
+          </div>
+        </div>
+        <h2 class="Section">Protected Methods</h2>
+        <div class="SectionBox" id="Protected Methods">
+          <div class="SubsectionBox">
+            <table class="TypeMembers">
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="#M:ShinobiCharts.SChartDelegate.LongestLabelStringOnAxis(ShinobiCharts.ShinobiChart,ShinobiCharts.SChartAxis)">LongestLabelStringOnAxis</a>
+                  </b>(<a href="../ShinobiCharts/ShinobiChart.html">ShinobiChart</a>, <a href="../ShinobiCharts/SChartAxis.html">SChartAxis</a>)<nobr> : <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.String">string</a></nobr><blockquote>Assist the chart in calculating tick label lengths.</blockquote></td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="#M:ShinobiCharts.SChartDelegate.OnAddingRadialLabel(ShinobiCharts.ShinobiChart,MonoTouch.UIKit.UILabel,ShinobiCharts.SChartRadialDataPoint,System.Int32,ShinobiCharts.SChartRadialSeries)">OnAddingRadialLabel</a>
+                  </b>(<a href="../ShinobiCharts/ShinobiChart.html">ShinobiChart</a>, <a href="javascript:alert(&quot;Documentation not found.&quot;)">MonoTouch.UIKit.UILabel</a>, <a href="../ShinobiCharts/SChartRadialDataPoint.html">SChartRadialDataPoint</a>, <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Int32">int</a>, <a href="../ShinobiCharts/SChartRadialSeries.html">SChartRadialSeries</a>)<blockquote>Alter a radial label before it is added to the chart.
+			</blockquote></td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="#M:ShinobiCharts.SChartDelegate.OnAddingTickMark(ShinobiCharts.ShinobiChart,ShinobiCharts.SChartTickMark,ShinobiCharts.SChartAxis)">OnAddingTickMark</a>
+                  </b>(<a href="../ShinobiCharts/ShinobiChart.html">ShinobiChart</a>, <a href="../ShinobiCharts/SChartTickMark.html">SChartTickMark</a>, <a href="../ShinobiCharts/SChartAxis.html">SChartAxis</a>)<blockquote>Alter a tick mark before it is added to an axis on the chart.
+      </blockquote></td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="#M:ShinobiCharts.SChartDelegate.OnAnimationDidFinish(ShinobiCharts.SChartSeries,ShinobiCharts.SChartAnimation)">OnAnimationDidFinish</a>
+                  </b>(<a href="../ShinobiCharts/SChartSeries.html">SChartSeries</a>, <a href="../ShinobiCharts/SChartAnimation.html">SChartAnimation</a>)<blockquote>A notification that an animation of a chart series has ended.</blockquote></td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="#M:ShinobiCharts.SChartDelegate.OnCrosshairMoved(ShinobiCharts.ShinobiChart,MonoTouch.Foundation.NSObject,MonoTouch.Foundation.NSObject)">OnCrosshairMoved</a>
+                  </b>(<a href="../ShinobiCharts/ShinobiChart.html">ShinobiChart</a>, <a href="javascript:alert(&quot;Documentation not found.&quot;)">MonoTouch.Foundation.NSObject</a>, <a href="javascript:alert(&quot;Documentation not found.&quot;)">MonoTouch.Foundation.NSObject</a>)<blockquote>Notifies the user when the crosshair moves.
+      </blockquote></td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="#M:ShinobiCharts.SChartDelegate.OnDidBoxZoom(ShinobiCharts.ShinobiChart)">OnDidBoxZoom</a>
+                  </b>(<a href="../ShinobiCharts/ShinobiChart.html">ShinobiChart</a>)<blockquote> A notification that the chart has adjusted its Zoom level using the box feature. 
+      </blockquote></td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="#M:ShinobiCharts.SChartDelegate.OnDidFinishLoadingData(ShinobiCharts.ShinobiChart)">OnDidFinishLoadingData</a>
+                  </b>(<a href="../ShinobiCharts/ShinobiChart.html">ShinobiChart</a>)<blockquote>A notification that the chart has finished loading its data.</blockquote></td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="#M:ShinobiCharts.SChartDelegate.OnFinishedPanning(ShinobiCharts.ShinobiChart)">OnFinishedPanning</a>
+                  </b>(<a href="../ShinobiCharts/ShinobiChart.html">ShinobiChart</a>)<blockquote> A notification that the chart object has finished a panning operation.
+      </blockquote></td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="#M:ShinobiCharts.SChartDelegate.OnFinishedZooming(ShinobiCharts.ShinobiChart)">OnFinishedZooming</a>
+                  </b>(<a href="../ShinobiCharts/ShinobiChart.html">ShinobiChart</a>)<blockquote> A notification that the chart object has finished a Zoom operation.
+      </blockquote></td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="#M:ShinobiCharts.SChartDelegate.OnGeneratingTickMarks(ShinobiCharts.ShinobiChart,MonoTouch.Foundation.NSObject@,MonoTouch.Foundation.NSObject@,ShinobiCharts.SChartAxis)">OnGeneratingTickMarks</a>
+                  </b>(<a href="../ShinobiCharts/ShinobiChart.html">ShinobiChart</a>, <i>ref</i> <a href="javascript:alert(&quot;Documentation not found.&quot;)">MonoTouch.Foundation.NSObject</a>, <i>ref</i> <a href="javascript:alert(&quot;Documentation not found.&quot;)">MonoTouch.Foundation.NSObject</a>, <a href="../ShinobiCharts/SChartAxis.html">SChartAxis</a>)<blockquote>Set the major and minor tick frequencies for an axis.
+      </blockquote></td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="#M:ShinobiCharts.SChartDelegate.OnPanning(ShinobiCharts.ShinobiChart)">OnPanning</a>
+                  </b>(<a href="../ShinobiCharts/ShinobiChart.html">ShinobiChart</a>)<blockquote> A notification that the chart object is panning.
+      </blockquote></td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="#M:ShinobiCharts.SChartDelegate.OnPanning(ShinobiCharts.ShinobiChart,ShinobiCharts.SChartMovementInformation)">OnPanning</a>
+                  </b>(<a href="../ShinobiCharts/ShinobiChart.html">ShinobiChart</a>, <a href="../ShinobiCharts/SChartMovementInformation.html">SChartMovementInformation</a>)<blockquote> A notification that the chart object is panning, with additional data.</blockquote></td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="#M:ShinobiCharts.SChartDelegate.OnRadialSeriesDidEndDecelerating(ShinobiCharts.ShinobiChart,ShinobiCharts.SChartRadialSeries)">OnRadialSeriesDidEndDecelerating</a>
+                  </b>(<a href="../ShinobiCharts/ShinobiChart.html">ShinobiChart</a>, <a href="../ShinobiCharts/SChartRadialSeries.html">SChartRadialSeries</a>)<blockquote>A notification that a radial series has come to a halt after being panned + released.</blockquote></td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="#M:ShinobiCharts.SChartDelegate.OnRadialSeriesIsPanning(ShinobiCharts.ShinobiChart,ShinobiCharts.SChartRadialSeries)">OnRadialSeriesIsPanning</a>
+                  </b>(<a href="../ShinobiCharts/ShinobiChart.html">ShinobiChart</a>, <a href="../ShinobiCharts/SChartRadialSeries.html">SChartRadialSeries</a>)<blockquote>A notification that a radial series is being panned.</blockquote></td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="#M:ShinobiCharts.SChartDelegate.OnRadialSeriesWillBeginDecelerating(ShinobiCharts.ShinobiChart,ShinobiCharts.SChartRadialSeries)">OnRadialSeriesWillBeginDecelerating</a>
+                  </b>(<a href="../ShinobiCharts/ShinobiChart.html">ShinobiChart</a>, <a href="../ShinobiCharts/SChartRadialSeries.html">SChartRadialSeries</a>)<blockquote>A notification that a panning gesture on a radial series has ended, and the series will begin to decelerate.</blockquote></td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="#M:ShinobiCharts.SChartDelegate.OnRenderFinished(ShinobiCharts.ShinobiChart)">OnRenderFinished</a>
+                  </b>(<a href="../ShinobiCharts/ShinobiChart.html">ShinobiChart</a>)<blockquote>A notification that the chart object has finished rendering.
+      </blockquote></td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="#M:ShinobiCharts.SChartDelegate.OnRenderStarted(ShinobiCharts.ShinobiChart,System.Boolean)">OnRenderStarted</a>
+                  </b>(<a href="../ShinobiCharts/ShinobiChart.html">ShinobiChart</a>, <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Boolean">bool</a>)<blockquote>A notification that the chart object has started rendering.
+      </blockquote></td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="#M:ShinobiCharts.SChartDelegate.OnResetZoom(ShinobiCharts.ShinobiChart)">OnResetZoom</a>
+                  </b>(<a href="../ShinobiCharts/ShinobiChart.html">ShinobiChart</a>)<blockquote> A notification that the chart object has reset the Zoom level.
+      </blockquote></td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="#M:ShinobiCharts.SChartDelegate.OnStartedPanning(ShinobiCharts.ShinobiChart)">OnStartedPanning</a>
+                  </b>(<a href="../ShinobiCharts/ShinobiChart.html">ShinobiChart</a>)<blockquote> A notification that the chart object has started a panning operation.
+       </blockquote></td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="#M:ShinobiCharts.SChartDelegate.OnStartedZooming(ShinobiCharts.ShinobiChart)">OnStartedZooming</a>
+                  </b>(<a href="../ShinobiCharts/ShinobiChart.html">ShinobiChart</a>)<blockquote> A notification that the chart object has started a Zoom operation.
+      </blockquote></td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="#M:ShinobiCharts.SChartDelegate.OnToggledSelection(ShinobiCharts.ShinobiChart,ShinobiCharts.SChartDataPoint,ShinobiCharts.SChartSeries,System.Drawing.PointF)">OnToggledSelection</a>
+                  </b>(<a href="../ShinobiCharts/ShinobiChart.html">ShinobiChart</a>, <a href="../ShinobiCharts/SChartDataPoint.html">SChartDataPoint</a>, <a href="../ShinobiCharts/SChartSeries.html">SChartSeries</a>, <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Drawing.PointF">System.Drawing.PointF</a>)<blockquote>A notification that a data point has been selected or de-selected.
+      </blockquote></td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="#M:ShinobiCharts.SChartDelegate.OnToggledSelection(ShinobiCharts.ShinobiChart,ShinobiCharts.SChartRadialDataPoint,ShinobiCharts.SChartRadialSeries,System.Drawing.PointF)">OnToggledSelection</a>
+                  </b>(<a href="../ShinobiCharts/ShinobiChart.html">ShinobiChart</a>, <a href="../ShinobiCharts/SChartRadialDataPoint.html">SChartRadialDataPoint</a>, <a href="../ShinobiCharts/SChartRadialSeries.html">SChartRadialSeries</a>, <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Drawing.PointF">System.Drawing.PointF</a>)<blockquote>
+			A notification that a data point on a radial (pie or donut, etc) chart has changed state to 'selected' from 'deselected' or vice versa.
+		</blockquote></td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="#M:ShinobiCharts.SChartDelegate.OnToggledSelection(ShinobiCharts.ShinobiChart,ShinobiCharts.SChartSeries,ShinobiCharts.SChartDataPoint,System.Drawing.PointF)">OnToggledSelection</a>
+                  </b>(<a href="../ShinobiCharts/ShinobiChart.html">ShinobiChart</a>, <a href="../ShinobiCharts/SChartSeries.html">SChartSeries</a>, <a href="../ShinobiCharts/SChartDataPoint.html">SChartDataPoint</a>, <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Drawing.PointF">System.Drawing.PointF</a>)<blockquote>A notification that a series has been selected or de-selected.
+      </blockquote></td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="#M:ShinobiCharts.SChartDelegate.OnWillStartLoadingData(ShinobiCharts.ShinobiChart)">OnWillStartLoadingData</a>
+                  </b>(<a href="../ShinobiCharts/ShinobiChart.html">ShinobiChart</a>)<blockquote>A notification that the chart will start loading its data.</blockquote></td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="#M:ShinobiCharts.SChartDelegate.OnZooming(ShinobiCharts.ShinobiChart)">OnZooming</a>
+                  </b>(<a href="../ShinobiCharts/ShinobiChart.html">ShinobiChart</a>)<blockquote> A notification that the chart object is Zooming.
+      </blockquote></td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="#M:ShinobiCharts.SChartDelegate.OnZooming(ShinobiCharts.ShinobiChart,ShinobiCharts.SChartMovementInformation)">OnZooming</a>
+                  </b>(<a href="../ShinobiCharts/ShinobiChart.html">ShinobiChart</a>, <a href="../ShinobiCharts/SChartMovementInformation.html">SChartMovementInformation</a>)<blockquote> A notification that the chart object is Zooming, with additional data.
+      </blockquote></td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="#M:ShinobiCharts.SChartDelegate.SChartRadialSeriesDidStartPanning(ShinobiCharts.ShinobiChart,ShinobiCharts.SChartRadialSeries)">SChartRadialSeriesDidStartPanning</a>
+                  </b>(<a href="../ShinobiCharts/ShinobiChart.html">ShinobiChart</a>, <a href="../ShinobiCharts/SChartRadialSeries.html">SChartRadialSeries</a>)<blockquote>
+				A notification that we have started panning on a radial series.
+			</blockquote></td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="Members" id="T:ShinobiCharts.SChartDelegate:Members">
+      <h2 class="Section" id="MemberDetails">Member Details</h2>
+      <div class="SectionBox" id="_MemberDetails">
+        <h3 id="C:ShinobiCharts.SChartDelegate()">SChartDelegate Constructor</h3>
+        <blockquote id="C:ShinobiCharts.SChartDelegate():member">
+          <p class="Summary">Default constructor
+      </p>
+          <h2>Syntax</h2>
+          <div class="Signature">[MonoTouch.Foundation.Export("init")]<br />[System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Advanced)]<br />public  <b>SChartDelegate</b> ()</div>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="C:ShinobiCharts.SChartDelegate():Remarks">
+          </div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="C:ShinobiCharts.SChartDelegate():Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.5.7.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="C:ShinobiCharts.SChartDelegate(MonoTouch.Foundation.NSCoder)">SChartDelegate Constructor</h3>
+        <blockquote id="C:ShinobiCharts.SChartDelegate(MonoTouch.Foundation.NSCoder):member">
+          <p class="Summary">A constructor that initializes the object from the data stored in the unarchiver object.
+      </p>
+          <h2>Syntax</h2>
+          <div class="Signature">[MonoTouch.Foundation.Export("initWithCoder:")]<br />[System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Advanced)]<br />public  <b>SChartDelegate</b> (<a href="javascript:alert(&quot;Documentation not found.&quot;)">MonoTouch.Foundation.NSCoder</a> coder)</div>
+          <h4 class="Subsection">Parameters</h4>
+          <blockquote class="SubsectionBox" id="C:ShinobiCharts.SChartDelegate(MonoTouch.Foundation.NSCoder):Parameters">
+            <dl>
+              <dt>
+                <i>coder</i>
+              </dt>
+              <dd>The unarchiver object</dd>
+            </dl>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="C:ShinobiCharts.SChartDelegate(MonoTouch.Foundation.NSCoder):Remarks">This constructor is provided to allow the class to be initialized from an unarchiver (for example, during NIB deserialization).</div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="C:ShinobiCharts.SChartDelegate(MonoTouch.Foundation.NSCoder):Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.5.7.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="C:ShinobiCharts.SChartDelegate(MonoTouch.Foundation.NSObjectFlag)">SChartDelegate Constructor</h3>
+        <blockquote id="C:ShinobiCharts.SChartDelegate(MonoTouch.Foundation.NSObjectFlag):member">
+          <p class="Summary">Constructor to call on derived classes to skip initialization and merely allocate the object.
+      </p>
+          <h2>Syntax</h2>
+          <div class="Signature">[System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Advanced)]<br />public  <b>SChartDelegate</b> (<a href="javascript:alert(&quot;Documentation not found.&quot;)">MonoTouch.Foundation.NSObjectFlag</a> t)</div>
+          <h4 class="Subsection">Parameters</h4>
+          <blockquote class="SubsectionBox" id="C:ShinobiCharts.SChartDelegate(MonoTouch.Foundation.NSObjectFlag):Parameters">
+            <dl>
+              <dt>
+                <i>t</i>
+              </dt>
+              <dd>Unused sentinel value</dd>
+            </dl>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="C:ShinobiCharts.SChartDelegate(MonoTouch.Foundation.NSObjectFlag):Remarks">You should not invoke this method directly.</div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="C:ShinobiCharts.SChartDelegate(MonoTouch.Foundation.NSObjectFlag):Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.5.7.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="C:ShinobiCharts.SChartDelegate(System.IntPtr)">SChartDelegate Constructor</h3>
+        <blockquote id="C:ShinobiCharts.SChartDelegate(System.IntPtr):member">
+          <p class="Summary">A constructor used when creating managed representations of unmanaged objects.
+      </p>
+          <h2>Syntax</h2>
+          <div class="Signature">[System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Advanced)]<br />public  <b>SChartDelegate</b> (<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.IntPtr">IntPtr</a> handle)</div>
+          <h4 class="Subsection">Parameters</h4>
+          <blockquote class="SubsectionBox" id="C:ShinobiCharts.SChartDelegate(System.IntPtr):Parameters">
+            <dl>
+              <dt>
+                <i>handle</i>
+              </dt>
+              <dd>Handle of the unmanaged object</dd>
+            </dl>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="C:ShinobiCharts.SChartDelegate(System.IntPtr):Remarks">You should not invoke this method directly.</div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="C:ShinobiCharts.SChartDelegate(System.IntPtr):Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.5.7.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="M:ShinobiCharts.SChartDelegate.ConformsToProtocol(System.IntPtr)">ConformsToProtocol Method</h3>
+        <blockquote id="M:ShinobiCharts.SChartDelegate.ConformsToProtocol(System.IntPtr):member">
+          <p class="Summary">Internal - checks whether this object conforms to a protocol.
+      </p>
+          <h2>Syntax</h2>
+          <div class="Signature">[MonoTouch.Foundation.Export("conformsToProtocol:")]<br />public override <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Boolean">bool</a> <b>ConformsToProtocol</b> (<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.IntPtr">IntPtr</a> protocol)</div>
+          <h4 class="Subsection">Parameters</h4>
+          <blockquote class="SubsectionBox" id="M:ShinobiCharts.SChartDelegate.ConformsToProtocol(System.IntPtr):Parameters">
+            <dl>
+              <dt>
+                <i>protocol</i>
+              </dt>
+              <dd>The protocol</dd>
+            </dl>
+          </blockquote>
+          <h4 class="Subsection">Returns</h4>
+          <blockquote class="SubsectionBox" id="M:ShinobiCharts.SChartDelegate.ConformsToProtocol(System.IntPtr):Returns">True if the object conforms to the protocol</blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="M:ShinobiCharts.SChartDelegate.ConformsToProtocol(System.IntPtr):Remarks">Not normally called from application code - used by the Shinobi framework.</div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="M:ShinobiCharts.SChartDelegate.ConformsToProtocol(System.IntPtr):Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.5.7.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="M:ShinobiCharts.SChartDelegate.LongestLabelStringOnAxis(ShinobiCharts.ShinobiChart,ShinobiCharts.SChartAxis)">LongestLabelStringOnAxis Method</h3>
+        <blockquote id="M:ShinobiCharts.SChartDelegate.LongestLabelStringOnAxis(ShinobiCharts.ShinobiChart,ShinobiCharts.SChartAxis):member">
+          <p class="Summary">Assist the chart in calculating tick label lengths.</p>
+          <h2>Syntax</h2>
+          <div class="Signature">[MonoTouch.Foundation.Export("sChart:longestLabelStringOnAxis:")]<br />protected virtual <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.String">string</a> <b>LongestLabelStringOnAxis</b> (<a href="../ShinobiCharts/ShinobiChart.html">ShinobiChart</a> chart, <a href="../ShinobiCharts/SChartAxis.html">SChartAxis</a> axis)</div>
+          <h4 class="Subsection">Parameters</h4>
+          <blockquote class="SubsectionBox" id="M:ShinobiCharts.SChartDelegate.LongestLabelStringOnAxis(ShinobiCharts.ShinobiChart,ShinobiCharts.SChartAxis):Parameters">
+            <dl>
+              <dt>
+                <i>chart</i>
+              </dt>
+              <dd>The chart containing the axis.</dd>
+              <dt>
+                <i>axis</i>
+              </dt>
+              <dd>The axis for which we are returning the longest tick label string.</dd>
+            </dl>
+          </blockquote>
+          <h4 class="Subsection">Returns</h4>
+          <blockquote class="SubsectionBox" id="M:ShinobiCharts.SChartDelegate.LongestLabelStringOnAxis(ShinobiCharts.ShinobiChart,ShinobiCharts.SChartAxis):Returns">A string of the right size, from which the axis can deduce the maximum amount of space that tick mark labels will require.</blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="M:ShinobiCharts.SChartDelegate.LongestLabelStringOnAxis(ShinobiCharts.ShinobiChart,ShinobiCharts.SChartAxis):Remarks">
+				This is useful when you provide an implementation for OnGeneratingTickMarks.
+				For example, if you lengthen the tick label strings in alterTickMark, you should hint to the axis that extra room will be
+				required by implementing this method.
+				The actual contents of this string are ignored, only its size with the current tick-label font is used.
+				For example, if you are using a currency format, a string like <tt>"$#.##"</tt> will ensure sufficient room is calculated.
+				Return null for the chart to use automatically calculated values for the tick label lengths.
+			</div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="M:ShinobiCharts.SChartDelegate.LongestLabelStringOnAxis(ShinobiCharts.ShinobiChart,ShinobiCharts.SChartAxis):Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.5.7.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="M:ShinobiCharts.SChartDelegate.OnAddingRadialLabel(ShinobiCharts.ShinobiChart,MonoTouch.UIKit.UILabel,ShinobiCharts.SChartRadialDataPoint,System.Int32,ShinobiCharts.SChartRadialSeries)">OnAddingRadialLabel Method</h3>
+        <blockquote id="M:ShinobiCharts.SChartDelegate.OnAddingRadialLabel(ShinobiCharts.ShinobiChart,MonoTouch.UIKit.UILabel,ShinobiCharts.SChartRadialDataPoint,System.Int32,ShinobiCharts.SChartRadialSeries):member">
+          <p class="Summary">Alter a radial label before it is added to the chart.
+			</p>
+          <h2>Syntax</h2>
+          <div class="Signature">[MonoTouch.Foundation.Export("sChart:alterLabel:forDatapoint:atSliceIndex:inRadialSeries:")]<br />protected virtual <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Void">void</a> <b>OnAddingRadialLabel</b> (<a href="../ShinobiCharts/ShinobiChart.html">ShinobiChart</a> chart, <a href="javascript:alert(&quot;Documentation not found.&quot;)">MonoTouch.UIKit.UILabel</a> label, <a href="../ShinobiCharts/SChartRadialDataPoint.html">SChartRadialDataPoint</a> datapoint, <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Int32">int</a> index, <a href="../ShinobiCharts/SChartRadialSeries.html">SChartRadialSeries</a> series)</div>
+          <h4 class="Subsection">Parameters</h4>
+          <blockquote class="SubsectionBox" id="M:ShinobiCharts.SChartDelegate.OnAddingRadialLabel(ShinobiCharts.ShinobiChart,MonoTouch.UIKit.UILabel,ShinobiCharts.SChartRadialDataPoint,System.Int32,ShinobiCharts.SChartRadialSeries):Parameters">
+            <dl>
+              <dt>
+                <i>chart</i>
+              </dt>
+              <dd>The chart containing the radial label.</dd>
+              <dt>
+                <i>label</i>
+              </dt>
+              <dd>The radial label being added to the chart.</dd>
+              <dt>
+                <i>datapoint</i>
+              </dt>
+              <dd>
+                <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+              </dd>
+              <dt>
+                <i>index</i>
+              </dt>
+              <dd>The index of the data point in its radial series.</dd>
+              <dt>
+                <i>series</i>
+              </dt>
+              <dd>The radial series containing the data point.</dd>
+            </dl>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="M:ShinobiCharts.SChartDelegate.OnAddingRadialLabel(ShinobiCharts.ShinobiChart,MonoTouch.UIKit.UILabel,ShinobiCharts.SChartRadialDataPoint,System.Int32,ShinobiCharts.SChartRadialSeries):Remarks">
+				This method gives you each label for each radial series before it is added to the chart.
+				Use this to set colors, borders, or reposition the label.
+			</div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="M:ShinobiCharts.SChartDelegate.OnAddingRadialLabel(ShinobiCharts.ShinobiChart,MonoTouch.UIKit.UILabel,ShinobiCharts.SChartRadialDataPoint,System.Int32,ShinobiCharts.SChartRadialSeries):Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.5.7.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="M:ShinobiCharts.SChartDelegate.OnAddingTickMark(ShinobiCharts.ShinobiChart,ShinobiCharts.SChartTickMark,ShinobiCharts.SChartAxis)">OnAddingTickMark Method</h3>
+        <blockquote id="M:ShinobiCharts.SChartDelegate.OnAddingTickMark(ShinobiCharts.ShinobiChart,ShinobiCharts.SChartTickMark,ShinobiCharts.SChartAxis):member">
+          <p class="Summary">Alter a tick mark before it is added to an axis on the chart.
+      </p>
+          <h2>Syntax</h2>
+          <div class="Signature">[MonoTouch.Foundation.Export("sChart:alterTickMark:beforeAddingToAxis:")]<br />protected virtual <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Void">void</a> <b>OnAddingTickMark</b> (<a href="../ShinobiCharts/ShinobiChart.html">ShinobiChart</a> chart, <a href="../ShinobiCharts/SChartTickMark.html">SChartTickMark</a> tickMark, <a href="../ShinobiCharts/SChartAxis.html">SChartAxis</a> axis)</div>
+          <h4 class="Subsection">Parameters</h4>
+          <blockquote class="SubsectionBox" id="M:ShinobiCharts.SChartDelegate.OnAddingTickMark(ShinobiCharts.ShinobiChart,ShinobiCharts.SChartTickMark,ShinobiCharts.SChartAxis):Parameters">
+            <dl>
+              <dt>
+                <i>chart</i>
+              </dt>
+              <dd>The chart containing the tick marks.</dd>
+              <dt>
+                <i>tickMark</i>
+              </dt>
+              <dd>The tick mark which will be added to its axis.</dd>
+              <dt>
+                <i>axis</i>
+              </dt>
+              <dd>The axis on the chart to which the tick mark will be added.</dd>
+            </dl>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="M:ShinobiCharts.SChartDelegate.OnAddingTickMark(ShinobiCharts.ShinobiChart,ShinobiCharts.SChartTickMark,ShinobiCharts.SChartAxis):Remarks">
+				This method gives you each tick mark just before it is added to its axis.
+				Use this to set colors, borders, or even move the tickmark's label elsewhere.
+			</div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="M:ShinobiCharts.SChartDelegate.OnAddingTickMark(ShinobiCharts.ShinobiChart,ShinobiCharts.SChartTickMark,ShinobiCharts.SChartAxis):Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.5.7.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="M:ShinobiCharts.SChartDelegate.OnAnimationDidFinish(ShinobiCharts.SChartSeries,ShinobiCharts.SChartAnimation)">OnAnimationDidFinish Method</h3>
+        <blockquote id="M:ShinobiCharts.SChartDelegate.OnAnimationDidFinish(ShinobiCharts.SChartSeries,ShinobiCharts.SChartAnimation):member">
+          <p class="Summary">A notification that an animation of a chart series has ended.</p>
+          <h2>Syntax</h2>
+          <div class="Signature">[MonoTouch.Foundation.Export("sChartSeries:animationDidFinish:")]<br />protected virtual <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Void">void</a> <b>OnAnimationDidFinish</b> (<a href="../ShinobiCharts/SChartSeries.html">SChartSeries</a> series, <a href="../ShinobiCharts/SChartAnimation.html">SChartAnimation</a> animation)</div>
+          <h4 class="Subsection">Parameters</h4>
+          <blockquote class="SubsectionBox" id="M:ShinobiCharts.SChartDelegate.OnAnimationDidFinish(ShinobiCharts.SChartSeries,ShinobiCharts.SChartAnimation):Parameters">
+            <dl>
+              <dt>
+                <i>series</i>
+              </dt>
+              <dd>The chart series which has finished animating.</dd>
+              <dt>
+                <i>animation</i>
+              </dt>
+              <dd>The animation which finished.</dd>
+            </dl>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="M:ShinobiCharts.SChartDelegate.OnAnimationDidFinish(ShinobiCharts.SChartSeries,ShinobiCharts.SChartAnimation):Remarks">Note that this callback will still be called should one animation be interrupted by another and the series continues to be animated by the second animation.</div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="M:ShinobiCharts.SChartDelegate.OnAnimationDidFinish(ShinobiCharts.SChartSeries,ShinobiCharts.SChartAnimation):Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.5.7.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="M:ShinobiCharts.SChartDelegate.OnCrosshairMoved(ShinobiCharts.ShinobiChart,MonoTouch.Foundation.NSObject,MonoTouch.Foundation.NSObject)">OnCrosshairMoved Method</h3>
+        <blockquote id="M:ShinobiCharts.SChartDelegate.OnCrosshairMoved(ShinobiCharts.ShinobiChart,MonoTouch.Foundation.NSObject,MonoTouch.Foundation.NSObject):member">
+          <p class="Summary">Notifies the user when the crosshair moves.
+      </p>
+          <h2>Syntax</h2>
+          <div class="Signature">[MonoTouch.Foundation.Export("sChart:crosshairMovedToXValue:andYValue:")]<br />protected virtual <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Void">void</a> <b>OnCrosshairMoved</b> (<a href="../ShinobiCharts/ShinobiChart.html">ShinobiChart</a> chart, <a href="javascript:alert(&quot;Documentation not found.&quot;)">MonoTouch.Foundation.NSObject</a> x, <a href="javascript:alert(&quot;Documentation not found.&quot;)">MonoTouch.Foundation.NSObject</a> y)</div>
+          <h4 class="Subsection">Parameters</h4>
+          <blockquote class="SubsectionBox" id="M:ShinobiCharts.SChartDelegate.OnCrosshairMoved(ShinobiCharts.ShinobiChart,MonoTouch.Foundation.NSObject,MonoTouch.Foundation.NSObject):Parameters">
+            <dl>
+              <dt>
+                <i>chart</i>
+              </dt>
+              <dd>The chart containing the crosshair.</dd>
+              <dt>
+                <i>x</i>
+              </dt>
+              <dd>The x value of the current crosshair position.</dd>
+              <dt>
+                <i>y</i>
+              </dt>
+              <dd>The y value of the current crosshair position.</dd>
+            </dl>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="M:ShinobiCharts.SChartDelegate.OnCrosshairMoved(ShinobiCharts.ShinobiChart,MonoTouch.Foundation.NSObject,MonoTouch.Foundation.NSObject):Remarks">
+				When the crosshair is panned, the new values at the crosshair point are passed into this method.
+				For a line series, the values will be interpolated if they lie between actual data points.
+				On a category axis - or bar/column series - the crosshair will snap to the discrete values.
+		</div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="M:ShinobiCharts.SChartDelegate.OnCrosshairMoved(ShinobiCharts.ShinobiChart,MonoTouch.Foundation.NSObject,MonoTouch.Foundation.NSObject):Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.5.7.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="M:ShinobiCharts.SChartDelegate.OnDidBoxZoom(ShinobiCharts.ShinobiChart)">OnDidBoxZoom Method</h3>
+        <blockquote id="M:ShinobiCharts.SChartDelegate.OnDidBoxZoom(ShinobiCharts.ShinobiChart):member">
+          <p class="Summary"> A notification that the chart has adjusted its Zoom level using the box feature. 
+      </p>
+          <h2>Syntax</h2>
+          <div class="Signature">[MonoTouch.Foundation.Export("sChartDidBoxZoom:")]<br />protected virtual <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Void">void</a> <b>OnDidBoxZoom</b> (<a href="../ShinobiCharts/ShinobiChart.html">ShinobiChart</a> chart)</div>
+          <h4 class="Subsection">Parameters</h4>
+          <blockquote class="SubsectionBox" id="M:ShinobiCharts.SChartDelegate.OnDidBoxZoom(ShinobiCharts.ShinobiChart):Parameters">
+            <dl>
+              <dt>
+                <i>chart</i>
+              </dt>
+              <dd>The chart which is zooming.</dd>
+            </dl>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="M:ShinobiCharts.SChartDelegate.OnDidBoxZoom(ShinobiCharts.ShinobiChart):Remarks">
+				The box gesture can be enabled on the chart by setting ShinobiChart.GesturePanType to SChartGesturePanTypeBoxDraw.
+				In this case, panning on the chart will cause a box to be drawn on the chart.
+				When the user finishes panning, the chart zooms to the limits of the box.
+			</div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="M:ShinobiCharts.SChartDelegate.OnDidBoxZoom(ShinobiCharts.ShinobiChart):Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.5.7.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="M:ShinobiCharts.SChartDelegate.OnDidFinishLoadingData(ShinobiCharts.ShinobiChart)">OnDidFinishLoadingData Method</h3>
+        <blockquote id="M:ShinobiCharts.SChartDelegate.OnDidFinishLoadingData(ShinobiCharts.ShinobiChart):member">
+          <p class="Summary">A notification that the chart has finished loading its data.</p>
+          <h2>Syntax</h2>
+          <div class="Signature">[MonoTouch.Foundation.Export("sChartDidFinishLoadingData:")]<br />protected virtual <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Void">void</a> <b>OnDidFinishLoadingData</b> (<a href="../ShinobiCharts/ShinobiChart.html">ShinobiChart</a> chart)</div>
+          <h4 class="Subsection">Parameters</h4>
+          <blockquote class="SubsectionBox" id="M:ShinobiCharts.SChartDelegate.OnDidFinishLoadingData(ShinobiCharts.ShinobiChart):Parameters">
+            <dl>
+              <dt>
+                <i>chart</i>
+              </dt>
+              <dd>The chart which finished loading its data.</dd>
+            </dl>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="M:ShinobiCharts.SChartDelegate.OnDidFinishLoadingData(ShinobiCharts.ShinobiChart):Remarks">
+				This is called once the chart has finished loading its data, and before it starts rendering its plot area and axes.
+				A common use of this method would be to close the activity indicator if you popped one up during loading.
+				At this point, the chart axes will have been refreshed from the new data, so you could update the chart axes here before
+				they are rendered.
+				It is important to note that this method is only called when we load data, rather than each time the chart is rendered.
+			</div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="M:ShinobiCharts.SChartDelegate.OnDidFinishLoadingData(ShinobiCharts.ShinobiChart):Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.5.7.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="M:ShinobiCharts.SChartDelegate.OnFinishedPanning(ShinobiCharts.ShinobiChart)">OnFinishedPanning Method</h3>
+        <blockquote id="M:ShinobiCharts.SChartDelegate.OnFinishedPanning(ShinobiCharts.ShinobiChart):member">
+          <p class="Summary"> A notification that the chart object has finished a panning operation.
+      </p>
+          <h2>Syntax</h2>
+          <div class="Signature">[MonoTouch.Foundation.Export("sChartDidFinishPanning:")]<br />protected virtual <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Void">void</a> <b>OnFinishedPanning</b> (<a href="../ShinobiCharts/ShinobiChart.html">ShinobiChart</a> chart)</div>
+          <h4 class="Subsection">Parameters</h4>
+          <blockquote class="SubsectionBox" id="M:ShinobiCharts.SChartDelegate.OnFinishedPanning(ShinobiCharts.ShinobiChart):Parameters">
+            <dl>
+              <dt>
+                <i>chart</i>
+              </dt>
+              <dd>The chart which finished panning.</dd>
+            </dl>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="M:ShinobiCharts.SChartDelegate.OnFinishedPanning(ShinobiCharts.ShinobiChart):Remarks">After a pan operation, the axis will have a new range available, which you can query via the SChartAxis.AxisRange property.
+		</div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="M:ShinobiCharts.SChartDelegate.OnFinishedPanning(ShinobiCharts.ShinobiChart):Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.5.7.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="M:ShinobiCharts.SChartDelegate.OnFinishedZooming(ShinobiCharts.ShinobiChart)">OnFinishedZooming Method</h3>
+        <blockquote id="M:ShinobiCharts.SChartDelegate.OnFinishedZooming(ShinobiCharts.ShinobiChart):member">
+          <p class="Summary"> A notification that the chart object has finished a Zoom operation.
+      </p>
+          <h2>Syntax</h2>
+          <div class="Signature">[MonoTouch.Foundation.Export("sChartDidFinishZooming:")]<br />protected virtual <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Void">void</a> <b>OnFinishedZooming</b> (<a href="../ShinobiCharts/ShinobiChart.html">ShinobiChart</a> chart)</div>
+          <h4 class="Subsection">Parameters</h4>
+          <blockquote class="SubsectionBox" id="M:ShinobiCharts.SChartDelegate.OnFinishedZooming(ShinobiCharts.ShinobiChart):Parameters">
+            <dl>
+              <dt>
+                <i>chart</i>
+              </dt>
+              <dd>The chart which finished zooming.</dd>
+            </dl>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="M:ShinobiCharts.SChartDelegate.OnFinishedZooming(ShinobiCharts.ShinobiChart):Remarks">The resulting zoom level is available for each axis object, via the SChartAxis.Zoom property.
+		</div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="M:ShinobiCharts.SChartDelegate.OnFinishedZooming(ShinobiCharts.ShinobiChart):Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.5.7.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="M:ShinobiCharts.SChartDelegate.OnGeneratingTickMarks(ShinobiCharts.ShinobiChart,MonoTouch.Foundation.NSObject@,MonoTouch.Foundation.NSObject@,ShinobiCharts.SChartAxis)">OnGeneratingTickMarks Method</h3>
+        <blockquote id="M:ShinobiCharts.SChartDelegate.OnGeneratingTickMarks(ShinobiCharts.ShinobiChart,MonoTouch.Foundation.NSObject@,MonoTouch.Foundation.NSObject@,ShinobiCharts.SChartAxis):member">
+          <p class="Summary">Set the major and minor tick frequencies for an axis.
+      </p>
+          <h2>Syntax</h2>
+          <div class="Signature">[MonoTouch.Foundation.Export("sChart:setMajorTickFrequency:andMinorTickFrequency:onGeneratingTickMarksforAxis:")]<br />protected virtual <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Void">void</a> <b>OnGeneratingTickMarks</b> (<a href="../ShinobiCharts/ShinobiChart.html">ShinobiChart</a> chart, <i>ref</i> <a href="javascript:alert(&quot;Documentation not found.&quot;)">MonoTouch.Foundation.NSObject</a> majorTickFrequency, <i>ref</i> <a href="javascript:alert(&quot;Documentation not found.&quot;)">MonoTouch.Foundation.NSObject</a> minorTickFrequency, <a href="../ShinobiCharts/SChartAxis.html">SChartAxis</a> axis)</div>
+          <h4 class="Subsection">Parameters</h4>
+          <blockquote class="SubsectionBox" id="M:ShinobiCharts.SChartDelegate.OnGeneratingTickMarks(ShinobiCharts.ShinobiChart,MonoTouch.Foundation.NSObject@,MonoTouch.Foundation.NSObject@,ShinobiCharts.SChartAxis):Parameters">
+            <dl>
+              <dt>
+                <i>chart</i>
+              </dt>
+              <dd>The chart containing the axis.</dd>
+              <dt>
+                <i>majorTickFrequency</i>
+              </dt>
+              <dd>A pointer to the major tick frequency on the axis. If you set this value, the axis will update to use the new value.</dd>
+              <dt>
+                <i>minorTickFrequency</i>
+              </dt>
+              <dd>A pointer to the minor tick frequency on the axis. If you set this value, the axis will update to use the new value.</dd>
+              <dt>
+                <i>axis</i>
+              </dt>
+              <dd>The axis for which we are setting the tick frequencies.</dd>
+            </dl>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="M:ShinobiCharts.SChartDelegate.OnGeneratingTickMarks(ShinobiCharts.ShinobiChart,MonoTouch.Foundation.NSObject@,MonoTouch.Foundation.NSObject@,ShinobiCharts.SChartAxis):Remarks">
+            <p>
+					Implement this method to customize your major and minor tick frequencies depending on the state of the axis.
+				</p>
+            <p>
+					Set the majorTickFrequency and minorTickFrequency pointers to objects of your choosing.
+				</p>
+            <p>
+					Not setting the minorTickFrequency, or setting it to nil, will result in minor ticks not being displayed.
+					You should set frequencies of the correct type to match the axis - for example, SChartDateFrequency for SChartDateTimeAxis,
+					or NSNumber for SChartNumberAxis.
+				</p>
+          </div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="M:ShinobiCharts.SChartDelegate.OnGeneratingTickMarks(ShinobiCharts.ShinobiChart,MonoTouch.Foundation.NSObject@,MonoTouch.Foundation.NSObject@,ShinobiCharts.SChartAxis):Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.5.7.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="M:ShinobiCharts.SChartDelegate.OnPanning(ShinobiCharts.ShinobiChart)">OnPanning Method</h3>
+        <blockquote id="M:ShinobiCharts.SChartDelegate.OnPanning(ShinobiCharts.ShinobiChart):member">
+          <p class="Summary"> A notification that the chart object is panning.
+      </p>
+          <h2>Syntax</h2>
+          <div class="Signature">[MonoTouch.Foundation.Export("sChartIsPanning:")]<br />protected virtual <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Void">void</a> <b>OnPanning</b> (<a href="../ShinobiCharts/ShinobiChart.html">ShinobiChart</a> chart)</div>
+          <h4 class="Subsection">Parameters</h4>
+          <blockquote class="SubsectionBox" id="M:ShinobiCharts.SChartDelegate.OnPanning(ShinobiCharts.ShinobiChart):Parameters">
+            <dl>
+              <dt>
+                <i>chart</i>
+              </dt>
+              <dd>The chart which is panning.</dd>
+            </dl>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="M:ShinobiCharts.SChartDelegate.OnPanning(ShinobiCharts.ShinobiChart):Remarks">
+				The range for each axis is updated as the user pans the chart.
+				You can query the axis range via the SChartAxis.AxisRange property.
+				This method is called continually during the pan gesture.
+		</div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="M:ShinobiCharts.SChartDelegate.OnPanning(ShinobiCharts.ShinobiChart):Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.5.7.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="M:ShinobiCharts.SChartDelegate.OnPanning(ShinobiCharts.ShinobiChart,ShinobiCharts.SChartMovementInformation)">OnPanning Method</h3>
+        <blockquote id="M:ShinobiCharts.SChartDelegate.OnPanning(ShinobiCharts.ShinobiChart,ShinobiCharts.SChartMovementInformation):member">
+          <p class="Summary"> A notification that the chart object is panning, with additional data.</p>
+          <h2>Syntax</h2>
+          <div class="Signature">[MonoTouch.Foundation.Export("sChartIsPanning:withChartMovementInformation:")]<br />protected virtual <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Void">void</a> <b>OnPanning</b> (<a href="../ShinobiCharts/ShinobiChart.html">ShinobiChart</a> chart, <a href="../ShinobiCharts/SChartMovementInformation.html">SChartMovementInformation</a> information)</div>
+          <h4 class="Subsection">Parameters</h4>
+          <blockquote class="SubsectionBox" id="M:ShinobiCharts.SChartDelegate.OnPanning(ShinobiCharts.ShinobiChart,ShinobiCharts.SChartMovementInformation):Parameters">
+            <dl>
+              <dt>
+                <i>chart</i>
+              </dt>
+              <dd>The chart which is panning.</dd>
+              <dt>
+                <i>information</i>
+              </dt>
+              <dd>Extra information regarding the pan.</dd>
+            </dl>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="M:ShinobiCharts.SChartDelegate.OnPanning(ShinobiCharts.ShinobiChart,ShinobiCharts.SChartMovementInformation):Remarks">
+				This method is similar to <a href="../ShinobiCharts/SChartDelegate.html#M:ShinobiCharts.SChartDelegate.OnPanning(ShinobiCharts.ShinobiChart)">SChartDelegate.OnPanning(ShinobiChart)</a>,
+				however extra data describing the pan is given as an argument.
+			</div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="M:ShinobiCharts.SChartDelegate.OnPanning(ShinobiCharts.ShinobiChart,ShinobiCharts.SChartMovementInformation):Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.5.7.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="M:ShinobiCharts.SChartDelegate.OnRadialSeriesDidEndDecelerating(ShinobiCharts.ShinobiChart,ShinobiCharts.SChartRadialSeries)">OnRadialSeriesDidEndDecelerating Method</h3>
+        <blockquote id="M:ShinobiCharts.SChartDelegate.OnRadialSeriesDidEndDecelerating(ShinobiCharts.ShinobiChart,ShinobiCharts.SChartRadialSeries):member">
+          <p class="Summary">A notification that a radial series has come to a halt after being panned + released.</p>
+          <h2>Syntax</h2>
+          <div class="Signature">[MonoTouch.Foundation.Export("sChart:radialSeriesDidEndDecelerating:")]<br />protected virtual <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Void">void</a> <b>OnRadialSeriesDidEndDecelerating</b> (<a href="../ShinobiCharts/ShinobiChart.html">ShinobiChart</a> chart, <a href="../ShinobiCharts/SChartRadialSeries.html">SChartRadialSeries</a> radialSeries)</div>
+          <h4 class="Subsection">Parameters</h4>
+          <blockquote class="SubsectionBox" id="M:ShinobiCharts.SChartDelegate.OnRadialSeriesDidEndDecelerating(ShinobiCharts.ShinobiChart,ShinobiCharts.SChartRadialSeries):Parameters">
+            <dl>
+              <dt>
+                <i>chart</i>
+              </dt>
+              <dd>The chart containing the radial series.</dd>
+              <dt>
+                <i>radialSeries</i>
+              </dt>
+              <dd>The radial series which has finished panning.</dd>
+            </dl>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="M:ShinobiCharts.SChartDelegate.OnRadialSeriesDidEndDecelerating(ShinobiCharts.ShinobiChart,ShinobiCharts.SChartRadialSeries):Remarks">
+          </div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="M:ShinobiCharts.SChartDelegate.OnRadialSeriesDidEndDecelerating(ShinobiCharts.ShinobiChart,ShinobiCharts.SChartRadialSeries):Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.5.7.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="M:ShinobiCharts.SChartDelegate.OnRadialSeriesIsPanning(ShinobiCharts.ShinobiChart,ShinobiCharts.SChartRadialSeries)">OnRadialSeriesIsPanning Method</h3>
+        <blockquote id="M:ShinobiCharts.SChartDelegate.OnRadialSeriesIsPanning(ShinobiCharts.ShinobiChart,ShinobiCharts.SChartRadialSeries):member">
+          <p class="Summary">A notification that a radial series is being panned.</p>
+          <h2>Syntax</h2>
+          <div class="Signature">[MonoTouch.Foundation.Export("sChart:radialSeriesIsPanning:")]<br />protected virtual <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Void">void</a> <b>OnRadialSeriesIsPanning</b> (<a href="../ShinobiCharts/ShinobiChart.html">ShinobiChart</a> chart, <a href="../ShinobiCharts/SChartRadialSeries.html">SChartRadialSeries</a> radialSeries)</div>
+          <h4 class="Subsection">Parameters</h4>
+          <blockquote class="SubsectionBox" id="M:ShinobiCharts.SChartDelegate.OnRadialSeriesIsPanning(ShinobiCharts.ShinobiChart,ShinobiCharts.SChartRadialSeries):Parameters">
+            <dl>
+              <dt>
+                <i>chart</i>
+              </dt>
+              <dd>The chart containing the radial series.</dd>
+              <dt>
+                <i>radialSeries</i>
+              </dt>
+              <dd>The radial series being panned.</dd>
+            </dl>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="M:ShinobiCharts.SChartDelegate.OnRadialSeriesIsPanning(ShinobiCharts.ShinobiChart,ShinobiCharts.SChartRadialSeries):Remarks">
+				The rotation of the series is updated as the user pans the chart.
+				You can query the current rotation of the series using the SChartDonutSeries.Rotation property.
+			</div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="M:ShinobiCharts.SChartDelegate.OnRadialSeriesIsPanning(ShinobiCharts.ShinobiChart,ShinobiCharts.SChartRadialSeries):Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.5.7.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="M:ShinobiCharts.SChartDelegate.OnRadialSeriesWillBeginDecelerating(ShinobiCharts.ShinobiChart,ShinobiCharts.SChartRadialSeries)">OnRadialSeriesWillBeginDecelerating Method</h3>
+        <blockquote id="M:ShinobiCharts.SChartDelegate.OnRadialSeriesWillBeginDecelerating(ShinobiCharts.ShinobiChart,ShinobiCharts.SChartRadialSeries):member">
+          <p class="Summary">A notification that a panning gesture on a radial series has ended, and the series will begin to decelerate.</p>
+          <h2>Syntax</h2>
+          <div class="Signature">[MonoTouch.Foundation.Export("sChart:radialSeriesWillBeginDecelerating:")]<br />protected virtual <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Void">void</a> <b>OnRadialSeriesWillBeginDecelerating</b> (<a href="../ShinobiCharts/ShinobiChart.html">ShinobiChart</a> chart, <a href="../ShinobiCharts/SChartRadialSeries.html">SChartRadialSeries</a> radialSeries)</div>
+          <h4 class="Subsection">Parameters</h4>
+          <blockquote class="SubsectionBox" id="M:ShinobiCharts.SChartDelegate.OnRadialSeriesWillBeginDecelerating(ShinobiCharts.ShinobiChart,ShinobiCharts.SChartRadialSeries):Parameters">
+            <dl>
+              <dt>
+                <i>chart</i>
+              </dt>
+              <dd>The chart containing the radial series.</dd>
+              <dt>
+                <i>radialSeries</i>
+              </dt>
+              <dd>The radial series which has started to decelerate.</dd>
+            </dl>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="M:ShinobiCharts.SChartDelegate.OnRadialSeriesWillBeginDecelerating(ShinobiCharts.ShinobiChart,ShinobiCharts.SChartRadialSeries):Remarks">
+          </div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="M:ShinobiCharts.SChartDelegate.OnRadialSeriesWillBeginDecelerating(ShinobiCharts.ShinobiChart,ShinobiCharts.SChartRadialSeries):Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.5.7.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="M:ShinobiCharts.SChartDelegate.OnRenderFinished(ShinobiCharts.ShinobiChart)">OnRenderFinished Method</h3>
+        <blockquote id="M:ShinobiCharts.SChartDelegate.OnRenderFinished(ShinobiCharts.ShinobiChart):member">
+          <p class="Summary">A notification that the chart object has finished rendering.
+      </p>
+          <h2>Syntax</h2>
+          <div class="Signature">[MonoTouch.Foundation.Export("sChartRenderFinished:")]<br />protected virtual <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Void">void</a> <b>OnRenderFinished</b> (<a href="../ShinobiCharts/ShinobiChart.html">ShinobiChart</a> chart)</div>
+          <h4 class="Subsection">Parameters</h4>
+          <blockquote class="SubsectionBox" id="M:ShinobiCharts.SChartDelegate.OnRenderFinished(ShinobiCharts.ShinobiChart):Parameters">
+            <dl>
+              <dt>
+                <i>chart</i>
+              </dt>
+              <dd>The chart which has finished rendering.</dd>
+            </dl>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="M:ShinobiCharts.SChartDelegate.OnRenderFinished(ShinobiCharts.ShinobiChart):Remarks">
+				This is called once the chart has finished rendering its data.
+				A common use case for this method would be to display the crosshair on the chart after it has rendered, or to add
+				annotations onto the chart.
+				You could also update other UI elements in your application so that they reflect the new state of the chart.
+				You shouldnât modify the chart plot area or its axes here, as any changes wonât be visualized until the next time that
+				the chart is rendered.
+			</div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="M:ShinobiCharts.SChartDelegate.OnRenderFinished(ShinobiCharts.ShinobiChart):Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.5.7.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="M:ShinobiCharts.SChartDelegate.OnRenderStarted(ShinobiCharts.ShinobiChart,System.Boolean)">OnRenderStarted Method</h3>
+        <blockquote id="M:ShinobiCharts.SChartDelegate.OnRenderStarted(ShinobiCharts.ShinobiChart,System.Boolean):member">
+          <p class="Summary">A notification that the chart object has started rendering.
+      </p>
+          <h2>Syntax</h2>
+          <div class="Signature">[MonoTouch.Foundation.Export("sChartRenderStarted:withFullRedraw:")]<br />protected virtual <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Void">void</a> <b>OnRenderStarted</b> (<a href="../ShinobiCharts/ShinobiChart.html">ShinobiChart</a> chart, <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Boolean">bool</a> fullRedraw)</div>
+          <h4 class="Subsection">Parameters</h4>
+          <blockquote class="SubsectionBox" id="M:ShinobiCharts.SChartDelegate.OnRenderStarted(ShinobiCharts.ShinobiChart,System.Boolean):Parameters">
+            <dl>
+              <dt>
+                <i>chart</i>
+              </dt>
+              <dd>The chart which has started rendering.</dd>
+              <dt>
+                <i>fullRedraw</i>
+              </dt>
+              <dd>If the chart is carrying out a full redraw, this argument is set to true.</dd>
+            </dl>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="M:ShinobiCharts.SChartDelegate.OnRenderStarted(ShinobiCharts.ShinobiChart,System.Boolean):Remarks">
+				This is called before the chart starts rendering its data.
+				At this point, the chart axes will be up to date with your data, so a common use case of this method would be to update
+				the chart axes before they are rendered, for example to modify the axis title or range.
+			</div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="M:ShinobiCharts.SChartDelegate.OnRenderStarted(ShinobiCharts.ShinobiChart,System.Boolean):Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.5.7.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="M:ShinobiCharts.SChartDelegate.OnResetZoom(ShinobiCharts.ShinobiChart)">OnResetZoom Method</h3>
+        <blockquote id="M:ShinobiCharts.SChartDelegate.OnResetZoom(ShinobiCharts.ShinobiChart):member">
+          <p class="Summary"> A notification that the chart object has reset the Zoom level.
+      </p>
+          <h2>Syntax</h2>
+          <div class="Signature">[MonoTouch.Foundation.Export("sChartDidResetZoom:")]<br />protected virtual <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Void">void</a> <b>OnResetZoom</b> (<a href="../ShinobiCharts/ShinobiChart.html">ShinobiChart</a> chart)</div>
+          <h4 class="Subsection">Parameters</h4>
+          <blockquote class="SubsectionBox" id="M:ShinobiCharts.SChartDelegate.OnResetZoom(ShinobiCharts.ShinobiChart):Parameters">
+            <dl>
+              <dt>
+                <i>chart</i>
+              </dt>
+              <dd>The chart which reset its zoom to the default level.</dd>
+            </dl>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="M:ShinobiCharts.SChartDelegate.OnResetZoom(ShinobiCharts.ShinobiChart):Remarks">
+				The zoom level on an axis can be reset to the default range.
+				Implement this method to be notified when the chart has reset to the default zoom level.
+		</div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="M:ShinobiCharts.SChartDelegate.OnResetZoom(ShinobiCharts.ShinobiChart):Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.5.7.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="M:ShinobiCharts.SChartDelegate.OnStartedPanning(ShinobiCharts.ShinobiChart)">OnStartedPanning Method</h3>
+        <blockquote id="M:ShinobiCharts.SChartDelegate.OnStartedPanning(ShinobiCharts.ShinobiChart):member">
+          <p class="Summary"> A notification that the chart object has started a panning operation.
+       </p>
+          <h2>Syntax</h2>
+          <div class="Signature">[MonoTouch.Foundation.Export("sChartDidStartPanning:")]<br />protected virtual <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Void">void</a> <b>OnStartedPanning</b> (<a href="../ShinobiCharts/ShinobiChart.html">ShinobiChart</a> chart)</div>
+          <h4 class="Subsection">Parameters</h4>
+          <blockquote class="SubsectionBox" id="M:ShinobiCharts.SChartDelegate.OnStartedPanning(ShinobiCharts.ShinobiChart):Parameters">
+            <dl>
+              <dt>
+                <i>chart</i>
+              </dt>
+              <dd>The chart which has started panning.</dd>
+            </dl>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="M:ShinobiCharts.SChartDelegate.OnStartedPanning(ShinobiCharts.ShinobiChart):Remarks">
+          </div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="M:ShinobiCharts.SChartDelegate.OnStartedPanning(ShinobiCharts.ShinobiChart):Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.5.7.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="M:ShinobiCharts.SChartDelegate.OnStartedZooming(ShinobiCharts.ShinobiChart)">OnStartedZooming Method</h3>
+        <blockquote id="M:ShinobiCharts.SChartDelegate.OnStartedZooming(ShinobiCharts.ShinobiChart):member">
+          <p class="Summary"> A notification that the chart object has started a Zoom operation.
+      </p>
+          <h2>Syntax</h2>
+          <div class="Signature">[MonoTouch.Foundation.Export("sChartDidStartZooming:")]<br />protected virtual <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Void">void</a> <b>OnStartedZooming</b> (<a href="../ShinobiCharts/ShinobiChart.html">ShinobiChart</a> chart)</div>
+          <h4 class="Subsection">Parameters</h4>
+          <blockquote class="SubsectionBox" id="M:ShinobiCharts.SChartDelegate.OnStartedZooming(ShinobiCharts.ShinobiChart):Parameters">
+            <dl>
+              <dt>
+                <i>chart</i>
+              </dt>
+              <dd>The chart which is zooming.</dd>
+            </dl>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="M:ShinobiCharts.SChartDelegate.OnStartedZooming(ShinobiCharts.ShinobiChart):Remarks">This method is called once at the start of a Zoom gesture by the user. Each axis maintains its own Zoom level, 
+ 				 which is available through the SChartAxis.Zoom property etc. To monitor the progress of the Zoom gesture as it happens, implement the method 'OnZooming'.
+		</div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="M:ShinobiCharts.SChartDelegate.OnStartedZooming(ShinobiCharts.ShinobiChart):Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.5.7.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="M:ShinobiCharts.SChartDelegate.OnToggledSelection(ShinobiCharts.ShinobiChart,ShinobiCharts.SChartDataPoint,ShinobiCharts.SChartSeries,System.Drawing.PointF)">OnToggledSelection Method</h3>
+        <blockquote id="M:ShinobiCharts.SChartDelegate.OnToggledSelection(ShinobiCharts.ShinobiChart,ShinobiCharts.SChartDataPoint,ShinobiCharts.SChartSeries,System.Drawing.PointF):member">
+          <p class="Summary">A notification that a data point has been selected or de-selected.
+      </p>
+          <h2>Syntax</h2>
+          <div class="Signature">[MonoTouch.Foundation.Export("sChart:toggledSelectionForPoint:inSeries:atPixelCoordinate:")]<br />protected virtual <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Void">void</a> <b>OnToggledSelection</b> (<a href="../ShinobiCharts/ShinobiChart.html">ShinobiChart</a> chart, <a href="../ShinobiCharts/SChartDataPoint.html">SChartDataPoint</a> dataPoint, <a href="../ShinobiCharts/SChartSeries.html">SChartSeries</a> series, <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Drawing.PointF">System.Drawing.PointF</a> pixelPoint)</div>
+          <h4 class="Subsection">Parameters</h4>
+          <blockquote class="SubsectionBox" id="M:ShinobiCharts.SChartDelegate.OnToggledSelection(ShinobiCharts.ShinobiChart,ShinobiCharts.SChartDataPoint,ShinobiCharts.SChartSeries,System.Drawing.PointF):Parameters">
+            <dl>
+              <dt>
+                <i>chart</i>
+              </dt>
+              <dd>The chart on which the selection has occurred.</dd>
+              <dt>
+                <i>dataPoint</i>
+              </dt>
+              <dd>The data point which was selected or de-selected.</dd>
+              <dt>
+                <i>series</i>
+              </dt>
+              <dd>The chart series which contains that data point.</dd>
+              <dt>
+                <i>pixelPoint</i>
+              </dt>
+              <dd>The pixel coordinates of that data point.</dd>
+            </dl>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="M:ShinobiCharts.SChartDelegate.OnToggledSelection(ShinobiCharts.ShinobiChart,ShinobiCharts.SChartDataPoint,ShinobiCharts.SChartSeries,System.Drawing.PointF):Remarks">
+				A touch gesture has resulted in the Selected property of the data point changing.
+				The data point is passed into the method along with the current pixel coordinates of that point and the series that it belongs to.
+		</div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="M:ShinobiCharts.SChartDelegate.OnToggledSelection(ShinobiCharts.ShinobiChart,ShinobiCharts.SChartDataPoint,ShinobiCharts.SChartSeries,System.Drawing.PointF):Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.5.7.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="M:ShinobiCharts.SChartDelegate.OnToggledSelection(ShinobiCharts.ShinobiChart,ShinobiCharts.SChartRadialDataPoint,ShinobiCharts.SChartRadialSeries,System.Drawing.PointF)">OnToggledSelection Method</h3>
+        <blockquote id="M:ShinobiCharts.SChartDelegate.OnToggledSelection(ShinobiCharts.ShinobiChart,ShinobiCharts.SChartRadialDataPoint,ShinobiCharts.SChartRadialSeries,System.Drawing.PointF):member">
+          <p class="Summary">
+			A notification that a data point on a radial (pie or donut, etc) chart has changed state to 'selected' from 'deselected' or vice versa.
+		</p>
+          <h2>Syntax</h2>
+          <div class="Signature">[MonoTouch.Foundation.Export("sChart:toggledSelectionForRadialPoint:inSeries:atPixelCoordinate:")]<br />protected virtual <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Void">void</a> <b>OnToggledSelection</b> (<a href="../ShinobiCharts/ShinobiChart.html">ShinobiChart</a> chart, <a href="../ShinobiCharts/SChartRadialDataPoint.html">SChartRadialDataPoint</a> dataPoint, <a href="../ShinobiCharts/SChartRadialSeries.html">SChartRadialSeries</a> series, <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Drawing.PointF">System.Drawing.PointF</a> pixelPoint)</div>
+          <h4 class="Subsection">Parameters</h4>
+          <blockquote class="SubsectionBox" id="M:ShinobiCharts.SChartDelegate.OnToggledSelection(ShinobiCharts.ShinobiChart,ShinobiCharts.SChartRadialDataPoint,ShinobiCharts.SChartRadialSeries,System.Drawing.PointF):Parameters">
+            <dl>
+              <dt>
+                <i>chart</i>
+              </dt>
+              <dd>The chart on which the selection has occurred.</dd>
+              <dt>
+                <i>dataPoint</i>
+              </dt>
+              <dd>The data point which was selected or de-selected.</dd>
+              <dt>
+                <i>series</i>
+              </dt>
+              <dd>The chart series which contains that data point.</dd>
+              <dt>
+                <i>pixelPoint</i>
+              </dt>
+              <dd>The pixel coordinates of that data point.</dd>
+            </dl>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="M:ShinobiCharts.SChartDelegate.OnToggledSelection(ShinobiCharts.ShinobiChart,ShinobiCharts.SChartRadialDataPoint,ShinobiCharts.SChartRadialSeries,System.Drawing.PointF):Remarks">
+				The Selected property of the data point has changed.
+				This could be as a result of a tap gesture on the chart, or of programmatically selecting the point (SChartDonutSeries.SetSliceAsSelected).
+				The data point is returned along with the series that it belongs to and the pixel coordinates of the tap, if any.
+		</div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="M:ShinobiCharts.SChartDelegate.OnToggledSelection(ShinobiCharts.ShinobiChart,ShinobiCharts.SChartRadialDataPoint,ShinobiCharts.SChartRadialSeries,System.Drawing.PointF):Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.5.7.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="M:ShinobiCharts.SChartDelegate.OnToggledSelection(ShinobiCharts.ShinobiChart,ShinobiCharts.SChartSeries,ShinobiCharts.SChartDataPoint,System.Drawing.PointF)">OnToggledSelection Method</h3>
+        <blockquote id="M:ShinobiCharts.SChartDelegate.OnToggledSelection(ShinobiCharts.ShinobiChart,ShinobiCharts.SChartSeries,ShinobiCharts.SChartDataPoint,System.Drawing.PointF):member">
+          <p class="Summary">A notification that a series has been selected or de-selected.
+      </p>
+          <h2>Syntax</h2>
+          <div class="Signature">[MonoTouch.Foundation.Export("sChart:toggledSelectionForSeries:nearPoint:atPixelCoordinate:")]<br />protected virtual <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Void">void</a> <b>OnToggledSelection</b> (<a href="../ShinobiCharts/ShinobiChart.html">ShinobiChart</a> chart, <a href="../ShinobiCharts/SChartSeries.html">SChartSeries</a> series, <a href="../ShinobiCharts/SChartDataPoint.html">SChartDataPoint</a> dataPoint, <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Drawing.PointF">System.Drawing.PointF</a> pixelPoint)</div>
+          <h4 class="Subsection">Parameters</h4>
+          <blockquote class="SubsectionBox" id="M:ShinobiCharts.SChartDelegate.OnToggledSelection(ShinobiCharts.ShinobiChart,ShinobiCharts.SChartSeries,ShinobiCharts.SChartDataPoint,System.Drawing.PointF):Parameters">
+            <dl>
+              <dt>
+                <i>chart</i>
+              </dt>
+              <dd>The chart on which the selection has occurred.</dd>
+              <dt>
+                <i>series</i>
+              </dt>
+              <dd>The series which has been selected or de-selected.</dd>
+              <dt>
+                <i>dataPoint</i>
+              </dt>
+              <dd>The nearest data point on that series to the point on the screen which was touched.</dd>
+              <dt>
+                <i>pixelPoint</i>
+              </dt>
+              <dd>The pixel coordinates of that data point.</dd>
+            </dl>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="M:ShinobiCharts.SChartDelegate.OnToggledSelection(ShinobiCharts.ShinobiChart,ShinobiCharts.SChartSeries,ShinobiCharts.SChartDataPoint,System.Drawing.PointF):Remarks">
+				A touch gesture has resulted in the Selected property of the series changing.
+				The nearest data point is passed into the method along with the current pixel coordinates of that point.
+		</div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="M:ShinobiCharts.SChartDelegate.OnToggledSelection(ShinobiCharts.ShinobiChart,ShinobiCharts.SChartSeries,ShinobiCharts.SChartDataPoint,System.Drawing.PointF):Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.5.7.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="M:ShinobiCharts.SChartDelegate.OnWillStartLoadingData(ShinobiCharts.ShinobiChart)">OnWillStartLoadingData Method</h3>
+        <blockquote id="M:ShinobiCharts.SChartDelegate.OnWillStartLoadingData(ShinobiCharts.ShinobiChart):member">
+          <p class="Summary">A notification that the chart will start loading its data.</p>
+          <h2>Syntax</h2>
+          <div class="Signature">[MonoTouch.Foundation.Export("sChartWillStartLoadingData:")]<br />protected virtual <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Void">void</a> <b>OnWillStartLoadingData</b> (<a href="../ShinobiCharts/ShinobiChart.html">ShinobiChart</a> chart)</div>
+          <h4 class="Subsection">Parameters</h4>
+          <blockquote class="SubsectionBox" id="M:ShinobiCharts.SChartDelegate.OnWillStartLoadingData(ShinobiCharts.ShinobiChart):Parameters">
+            <dl>
+              <dt>
+                <i>chart</i>
+              </dt>
+              <dd>The chart which started loading its data.</dd>
+            </dl>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="M:ShinobiCharts.SChartDelegate.OnWillStartLoadingData(ShinobiCharts.ShinobiChart):Remarks">
+				At this point, the chart has been created, but it either doesn't contain any data, or it is about to reload its data.
+				You shouldn't do anything with chart axes at this point, as they will be out of date with the new data.
+				A common use case for this method would be to pop up an activity indicator if you think the data will take a long time to load.
+			</div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="M:ShinobiCharts.SChartDelegate.OnWillStartLoadingData(ShinobiCharts.ShinobiChart):Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.5.7.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="M:ShinobiCharts.SChartDelegate.OnZooming(ShinobiCharts.ShinobiChart)">OnZooming Method</h3>
+        <blockquote id="M:ShinobiCharts.SChartDelegate.OnZooming(ShinobiCharts.ShinobiChart):member">
+          <p class="Summary"> A notification that the chart object is Zooming.
+      </p>
+          <h2>Syntax</h2>
+          <div class="Signature">[MonoTouch.Foundation.Export("sChartIsZooming:")]<br />protected virtual <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Void">void</a> <b>OnZooming</b> (<a href="../ShinobiCharts/ShinobiChart.html">ShinobiChart</a> chart)</div>
+          <h4 class="Subsection">Parameters</h4>
+          <blockquote class="SubsectionBox" id="M:ShinobiCharts.SChartDelegate.OnZooming(ShinobiCharts.ShinobiChart):Parameters">
+            <dl>
+              <dt>
+                <i>chart</i>
+              </dt>
+              <dd>The chart which is zooming.</dd>
+            </dl>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="M:ShinobiCharts.SChartDelegate.OnZooming(ShinobiCharts.ShinobiChart):Remarks">
+				This method will be continually called during a zoom operation and is particularly useful to keep multiple charts synchronised.
+				The current zoom level is available on the axis object, and other charts may be programatically zoomed to respond. 
+		</div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="M:ShinobiCharts.SChartDelegate.OnZooming(ShinobiCharts.ShinobiChart):Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.5.7.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="M:ShinobiCharts.SChartDelegate.OnZooming(ShinobiCharts.ShinobiChart,ShinobiCharts.SChartMovementInformation)">OnZooming Method</h3>
+        <blockquote id="M:ShinobiCharts.SChartDelegate.OnZooming(ShinobiCharts.ShinobiChart,ShinobiCharts.SChartMovementInformation):member">
+          <p class="Summary"> A notification that the chart object is Zooming, with additional data.
+      </p>
+          <h2>Syntax</h2>
+          <div class="Signature">[MonoTouch.Foundation.Export("sChartIsZooming:withChartMovementInformation:")]<br />protected virtual <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Void">void</a> <b>OnZooming</b> (<a href="../ShinobiCharts/ShinobiChart.html">ShinobiChart</a> chart, <a href="../ShinobiCharts/SChartMovementInformation.html">SChartMovementInformation</a> information)</div>
+          <h4 class="Subsection">Parameters</h4>
+          <blockquote class="SubsectionBox" id="M:ShinobiCharts.SChartDelegate.OnZooming(ShinobiCharts.ShinobiChart,ShinobiCharts.SChartMovementInformation):Parameters">
+            <dl>
+              <dt>
+                <i>chart</i>
+              </dt>
+              <dd>The chart which is zooming</dd>
+              <dt>
+                <i>information</i>
+              </dt>
+              <dd>Extra information describing the zoom.</dd>
+            </dl>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="M:ShinobiCharts.SChartDelegate.OnZooming(ShinobiCharts.ShinobiChart,ShinobiCharts.SChartMovementInformation):Remarks">
+				This method is similar to <a href="../ShinobiCharts/SChartDelegate.html#M:ShinobiCharts.SChartDelegate.OnZooming(ShinobiCharts.ShinobiChart)">SChartDelegate.OnZooming(ShinobiChart)</a>,
+				however extra data describing the zoom is given as an argument.
+				The other difference is that this method is called during deceleration, if an axis has momentum zooming enabled.
+				<a href="../ShinobiCharts/SChartDelegate.html#M:ShinobiCharts.SChartDelegate.OnZooming(ShinobiCharts.ShinobiChart)">SChartDelegate.OnZooming(ShinobiChart)</a> is not.
+		</div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="M:ShinobiCharts.SChartDelegate.OnZooming(ShinobiCharts.ShinobiChart,ShinobiCharts.SChartMovementInformation):Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.5.7.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="M:ShinobiCharts.SChartDelegate.SChartRadialSeriesDidStartPanning(ShinobiCharts.ShinobiChart,ShinobiCharts.SChartRadialSeries)">SChartRadialSeriesDidStartPanning Method</h3>
+        <blockquote id="M:ShinobiCharts.SChartDelegate.SChartRadialSeriesDidStartPanning(ShinobiCharts.ShinobiChart,ShinobiCharts.SChartRadialSeries):member">
+          <p class="Summary">
+				A notification that we have started panning on a radial series.
+			</p>
+          <h2>Syntax</h2>
+          <div class="Signature">[MonoTouch.Foundation.Export("sChart:radialSeriesDidStartPanning:")]<br />protected virtual <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Void">void</a> <b>SChartRadialSeriesDidStartPanning</b> (<a href="../ShinobiCharts/ShinobiChart.html">ShinobiChart</a> radial, <a href="../ShinobiCharts/SChartRadialSeries.html">SChartRadialSeries</a> radialSeries)</div>
+          <h4 class="Subsection">Parameters</h4>
+          <blockquote class="SubsectionBox" id="M:ShinobiCharts.SChartDelegate.SChartRadialSeriesDidStartPanning(ShinobiCharts.ShinobiChart,ShinobiCharts.SChartRadialSeries):Parameters">
+            <dl>
+              <dt>
+                <i>radial</i>
+              </dt>
+              <dd>The chart containing the radial series which has started panning.</dd>
+              <dt>
+                <i>radialSeries</i>
+              </dt>
+              <dd>The radial series being panned.</dd>
+            </dl>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="M:ShinobiCharts.SChartDelegate.SChartRadialSeriesDidStartPanning(ShinobiCharts.ShinobiChart,ShinobiCharts.SChartRadialSeries):Remarks">
+          </div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="M:ShinobiCharts.SChartDelegate.SChartRadialSeriesDidStartPanning(ShinobiCharts.ShinobiChart,ShinobiCharts.SChartRadialSeries):Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.5.7.0</div>
+          <hr size="1" />
+        </blockquote>
+      </div>
+    </div>
+    <div class="Parameter">
+    </div>
+    <hr size="1" />
+    <div class="Copyright"> © 2013 Scott Logic Limited. All rights reserved </div>
+  </body>
+</html>

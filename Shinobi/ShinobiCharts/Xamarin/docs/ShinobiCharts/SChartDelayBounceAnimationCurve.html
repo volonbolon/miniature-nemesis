@@ -1,0 +1,506 @@
+<html>
+  <head>
+    <title>ShinobiCharts.SChartDelayBounceAnimationCurve</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <style>
+      a { text-decoration: none; color: #AD1015; font-family: Arial }
+
+      div.SideBar {
+        padding-left: 1em;
+        padding-right: 1em;
+        right: 0;
+        float: right;
+        border: thin solid black;
+        background-color: #f2f2f2;
+      }
+    
+      .CollectionTitle { font-family: Arial; font-weight: bold; background: black; color: white; padding: 10px; margin: 0 }
+      .CollectionTitle p { font-size: 150%; }
+      .PageTitle { font-size: 150%; font-weight: bold }
+
+      .Summary { }
+      .Signature { }          
+      .Remarks { }
+      .Members { }
+      .Copyright { }
+      
+      .Section { font-family: Arial; font-size: 125%; font-weight: bold }
+      p.Summary {
+        margin-left: 1em;
+      }
+      .SectionBox { margin-left: 2em }
+      .NamespaceName { font-family: Arial; font-size: 105%; font-weight: bold }
+      .NamespaceSumary { }
+      .MemberName { font-size: 115%; font-weight: bold; margin-top: 1em }
+      .Subsection { font-size: 105%; font-weight: bold }
+      .SubsectionBox { margin-left: 2em; margin-bottom: 1em }
+
+      .CodeExampleTable { background-color: #f5f5dd; border: thin solid black; padding: .25em; }
+      
+      .TypesListing {
+	font-family: Arial;
+        border-collapse: collapse;
+      }
+
+      td {
+	font-family: Arial;
+        vertical-align: top;
+      }
+      th {
+	font-family: Arial;
+        text-align: left;
+      }
+
+      .TypesListing td { 
+        margin: 0px;  
+        padding: .25em;
+        border: solid gray 1px;
+      }
+
+      .TypesListing th { 
+        margin: 0px;  
+        padding: .25em;
+        background-color: #f2f2f2;
+        border: solid gray 1px;
+      }
+
+      div.Footer {
+	font-family: Arial;
+        border-top: 1px solid gray;
+        margin-top: 1.5em;
+        padding-top: 0.6em;
+        text-align: center;
+        color: gray;
+      }
+
+      span.NotEntered /* Documentation for this section has not yet been entered */ {
+	font-family: Arial;
+        font-style: italic;
+        color: 	#C0C0C0;	
+      }
+
+      div.Header {
+	font-family: Arial;
+        background: #B0C4DE;
+        border: double;
+        border-color: white;
+        border-width: 7px;
+        padding: 0.5em;
+      }
+
+      div.Header * {
+	font-family: Arial;
+        font-size: smaller;
+      }
+
+      div.Note {
+      }
+
+      i.ParamRef {
+      }
+
+      i.subtitle {
+      }
+
+      ul.TypeMembersIndex {
+	font-family: Arial;
+        text-align: left;
+        background: #F8F8F8;
+      }
+
+      ul.TypeMembersIndex li {
+        display: inline;
+        margin:  0.5em;
+      }
+
+      table.HeaderTable {
+      }
+
+      table.SignatureTable {
+      }
+
+      table.Documentation, table.Enumeration, table.TypeDocumentation {
+        border-collapse: collapse;
+        width: 100%;
+      }
+
+      table.Documentation tr th, table.TypeMembers tr th, table.Enumeration tr th, table.TypeDocumentation tr th {
+	font-family: Arial;
+        background: whitesmoke;
+        padding: 0.8em;
+        border: 1px solid gray;
+        text-align: left;
+        vertical-align: bottom;
+      }
+
+      table.Documentation tr td, table.TypeMembers tr td, table.Enumeration tr td, table.TypeDocumentation tr td {
+	font-family: Arial;
+        padding: 0.5em;
+        border: 1px solid gray;
+        text-align: left;
+        vertical-align: top;
+      }
+
+      table.TypeMembers {
+        border: 1px solid #C0C0C0;
+        width: 100%;
+      }
+
+      table.TypeMembers tr td {
+        background: #F8F8F8;
+        border: white;
+      }
+
+      table.Documentation {
+      }
+
+      table.TypeMembers {
+      }
+
+      div.CodeExample {
+        width: 100%;
+        border: 1px solid #DDDDDD;
+        background-color: #F8F8F8;
+      }
+
+      div.CodeExample p {
+        margin: 0.5em;
+        border-bottom: 1px solid #DDDDDD;
+      }
+
+      div.CodeExample div {
+        margin: 0.5em;
+      }
+
+      h4 {
+        margin-bottom: 0;
+      }
+
+      div.Signature {
+	font-family: Arial;
+        border: 1px solid #C0C0C0;
+        background: #F2F2F2;
+        padding: 1em;
+      }
+    </style>
+    <script type="text/JavaScript">
+      function toggle_display (block) {
+        var w = document.getElementById (block);
+        var t = document.getElementById (block + ":toggle");
+        if (w.style.display == "none") {
+          w.style.display = "block";
+          t.innerHTML = "⊟";
+        } else {
+          w.style.display = "none";
+          t.innerHTML = "⊞";
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <div class="CollectionTitle">
+      <p>
+		ShinobiControls Xamarin Bindings Documentation
+	</p>
+      <a href="../index.html">ShinobiCharts</a> : <a href="index.html">ShinobiCharts Namespace</a></div>
+    <h1 class="PageTitle" id="T:ShinobiCharts.SChartDelayBounceAnimationCurve">SChartDelayBounceAnimationCurve  Class</h1>
+    <p class="Summary" id="T:ShinobiCharts.SChartDelayBounceAnimationCurve:Summary">This curve evaluator describes a curve similar to that described by SChartBounceAnimation but at the start the curve is constant at '0', this is the 'delay' where there is no change. The 'bounce' occurs over a shorter proportion of the duration (50%) at the end.</p>
+    <div>
+      <h2>Syntax</h2>
+      <div class="Signature" id="T:ShinobiCharts.SChartDelayBounceAnimationCurve:Signature">[MonoTouch.Foundation.Register("SChartDelayBounceAnimationCurve", true)]<br />public class  <b>SChartDelayBounceAnimationCurve</b> : <a href="../ShinobiCharts/SChartAnimationCurveProtocol.html">SChartAnimationCurveProtocol</a></div>
+    </div>
+    <div class="Remarks" id="T:ShinobiCharts.SChartDelayBounceAnimationCurve:Docs">
+      <h2 class="Section">Remarks</h2>
+      <div class="SectionBox" id="T:ShinobiCharts.SChartDelayBounceAnimationCurve:Docs:Remarks">See the SChartAnimationCurveProtocol protocol for more information on curve evaluation.</div>
+      <h2 class="Section">Requirements</h2>
+      <div class="SectionBox" id="T:ShinobiCharts.SChartDelayBounceAnimationCurve:Docs:Version Information">
+        <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.5.7.0</div>
+      <h2 class="Section" id="Members">Members</h2>
+      <div class="SectionBox" id="_Members">
+        <p>
+								See Also: Inherited members from
+								<a href="../ShinobiCharts/SChartAnimationCurveProtocol.html">SChartAnimationCurveProtocol</a>.
+							</p>
+        <h2 class="Section">Public Constructors</h2>
+        <div class="SectionBox" id="Public Constructors">
+          <div class="SubsectionBox">
+            <table class="TypeMembers">
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <div>
+                    <b>
+                      <a href="#C:ShinobiCharts.SChartDelayBounceAnimationCurve()">SChartDelayBounceAnimationCurve</a>
+                    </b>()</div>
+                </td>
+                <td>Default constructor.
+      </td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <div>
+                    <b>
+                      <a href="#C:ShinobiCharts.SChartDelayBounceAnimationCurve(MonoTouch.Foundation.NSCoder)">SChartDelayBounceAnimationCurve</a>
+                    </b>(<a href="javascript:alert(&quot;Documentation not found.&quot;)">MonoTouch.Foundation.NSCoder</a>)</div>
+                </td>
+                <td>A constructor that initializes the object from the data stored in the unarchiver object.
+      </td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <div>
+                    <b>
+                      <a href="#C:ShinobiCharts.SChartDelayBounceAnimationCurve(MonoTouch.Foundation.NSObjectFlag)">SChartDelayBounceAnimationCurve</a>
+                    </b>(<a href="javascript:alert(&quot;Documentation not found.&quot;)">MonoTouch.Foundation.NSObjectFlag</a>)</div>
+                </td>
+                <td>Constructor to call on derived classes to skip initialization and merely allocate the object.
+      </td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <div>
+                    <b>
+                      <a href="#C:ShinobiCharts.SChartDelayBounceAnimationCurve(System.IntPtr)">SChartDelayBounceAnimationCurve</a>
+                    </b>(<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.IntPtr">IntPtr</a>)</div>
+                </td>
+                <td>A constructor used when creating managed representations of unmanaged objects.
+      </td>
+              </tr>
+            </table>
+          </div>
+        </div>
+        <h2 class="Section">Public Properties</h2>
+        <div class="SectionBox" id="Public Properties">
+          <div class="SubsectionBox">
+            <table class="TypeMembers">
+              <tr valign="top">
+                <td>[read-only]<div>override </div></td>
+                <td>
+                  <b>
+                    <a href="#P:ShinobiCharts.SChartDelayBounceAnimationCurve.ClassHandle">ClassHandle</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.IntPtr">IntPtr</a>
+                  </i>. The handle for this class.
+        </td>
+              </tr>
+            </table>
+          </div>
+        </div>
+        <h2 class="Section">Public Methods</h2>
+        <div class="SectionBox" id="Public Methods">
+          <div class="SubsectionBox">
+            <table class="TypeMembers">
+              <tr valign="top">
+                <td>
+                  <div>override </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="#M:ShinobiCharts.SChartDelayBounceAnimationCurve.Copy()">Copy</a>
+                  </b>()<nobr> : <a href="../ShinobiCharts/SChartAnimationCurveProtocol.html">SChartAnimationCurveProtocol</a></nobr><blockquote>Creates a copy of the curve</blockquote></td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>abstract </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="../ShinobiCharts/SChartAnimationCurveProtocol.html#M:ShinobiCharts.SChartAnimationCurveProtocol.Copy()">Copy</a>
+                  </b>()<nobr> : <a href="../ShinobiCharts/SChartAnimationCurveProtocol.html">SChartAnimationCurveProtocol</a></nobr><blockquote>DEPRECATED - Creates a copy of the curve (<i>Inherited from <a href="../ShinobiCharts/SChartAnimationCurveProtocol.html">SChartAnimationCurveProtocol</a>.</i>)</blockquote></td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>override </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="#M:ShinobiCharts.SChartDelayBounceAnimationCurve.ValueAtTime(System.Single)">ValueAtTime</a>
+                  </b>(<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Single">float</a>)<nobr> : <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Single">float</a></nobr><blockquote>Should return an appropriate value for the animation curve at the given time.</blockquote></td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>abstract </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="../ShinobiCharts/SChartAnimationCurveProtocol.html#M:ShinobiCharts.SChartAnimationCurveProtocol.ValueAtTime(System.Single)">ValueAtTime</a>
+                  </b>(<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Single">float</a>)<nobr> : <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Single">float</a></nobr><blockquote>Should return an appropriate value for the animation curve at the given time. (<i>Inherited from <a href="../ShinobiCharts/SChartAnimationCurveProtocol.html">SChartAnimationCurveProtocol</a>.</i>)</blockquote></td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="Members" id="T:ShinobiCharts.SChartDelayBounceAnimationCurve:Members">
+      <h2 class="Section" id="MemberDetails">Member Details</h2>
+      <div class="SectionBox" id="_MemberDetails">
+        <h3 id="C:ShinobiCharts.SChartDelayBounceAnimationCurve()">SChartDelayBounceAnimationCurve Constructor</h3>
+        <blockquote id="C:ShinobiCharts.SChartDelayBounceAnimationCurve():member">
+          <p class="Summary">Default constructor.
+      </p>
+          <h2>Syntax</h2>
+          <div class="Signature">[MonoTouch.Foundation.Export("init")]<br />[System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Advanced)]<br />public  <b>SChartDelayBounceAnimationCurve</b> ()</div>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="C:ShinobiCharts.SChartDelayBounceAnimationCurve():Remarks">
+          </div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="C:ShinobiCharts.SChartDelayBounceAnimationCurve():Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.5.7.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="C:ShinobiCharts.SChartDelayBounceAnimationCurve(MonoTouch.Foundation.NSCoder)">SChartDelayBounceAnimationCurve Constructor</h3>
+        <blockquote id="C:ShinobiCharts.SChartDelayBounceAnimationCurve(MonoTouch.Foundation.NSCoder):member">
+          <p class="Summary">A constructor that initializes the object from the data stored in the unarchiver object.
+      </p>
+          <h2>Syntax</h2>
+          <div class="Signature">[MonoTouch.Foundation.Export("initWithCoder:")]<br />[System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Advanced)]<br />public  <b>SChartDelayBounceAnimationCurve</b> (<a href="javascript:alert(&quot;Documentation not found.&quot;)">MonoTouch.Foundation.NSCoder</a> coder)</div>
+          <h4 class="Subsection">Parameters</h4>
+          <blockquote class="SubsectionBox" id="C:ShinobiCharts.SChartDelayBounceAnimationCurve(MonoTouch.Foundation.NSCoder):Parameters">
+            <dl>
+              <dt>
+                <i>coder</i>
+              </dt>
+              <dd>The unarchiver object</dd>
+            </dl>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="C:ShinobiCharts.SChartDelayBounceAnimationCurve(MonoTouch.Foundation.NSCoder):Remarks">This constructor is provided to allow the class to be initialized from an unarchiver (for example, during NIB deserialization).</div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="C:ShinobiCharts.SChartDelayBounceAnimationCurve(MonoTouch.Foundation.NSCoder):Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.5.7.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="C:ShinobiCharts.SChartDelayBounceAnimationCurve(MonoTouch.Foundation.NSObjectFlag)">SChartDelayBounceAnimationCurve Constructor</h3>
+        <blockquote id="C:ShinobiCharts.SChartDelayBounceAnimationCurve(MonoTouch.Foundation.NSObjectFlag):member">
+          <p class="Summary">Constructor to call on derived classes to skip initialization and merely allocate the object.
+      </p>
+          <h2>Syntax</h2>
+          <div class="Signature">[System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Advanced)]<br />public  <b>SChartDelayBounceAnimationCurve</b> (<a href="javascript:alert(&quot;Documentation not found.&quot;)">MonoTouch.Foundation.NSObjectFlag</a> t)</div>
+          <h4 class="Subsection">Parameters</h4>
+          <blockquote class="SubsectionBox" id="C:ShinobiCharts.SChartDelayBounceAnimationCurve(MonoTouch.Foundation.NSObjectFlag):Parameters">
+            <dl>
+              <dt>
+                <i>t</i>
+              </dt>
+              <dd>Unused sentinel value</dd>
+            </dl>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="C:ShinobiCharts.SChartDelayBounceAnimationCurve(MonoTouch.Foundation.NSObjectFlag):Remarks">You should not invoke this method directly.</div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="C:ShinobiCharts.SChartDelayBounceAnimationCurve(MonoTouch.Foundation.NSObjectFlag):Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.5.7.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="C:ShinobiCharts.SChartDelayBounceAnimationCurve(System.IntPtr)">SChartDelayBounceAnimationCurve Constructor</h3>
+        <blockquote id="C:ShinobiCharts.SChartDelayBounceAnimationCurve(System.IntPtr):member">
+          <p class="Summary">A constructor used when creating managed representations of unmanaged objects.
+      </p>
+          <h2>Syntax</h2>
+          <div class="Signature">[System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Advanced)]<br />public  <b>SChartDelayBounceAnimationCurve</b> (<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.IntPtr">IntPtr</a> handle)</div>
+          <h4 class="Subsection">Parameters</h4>
+          <blockquote class="SubsectionBox" id="C:ShinobiCharts.SChartDelayBounceAnimationCurve(System.IntPtr):Parameters">
+            <dl>
+              <dt>
+                <i>handle</i>
+              </dt>
+              <dd>Handle of the unmanaged object</dd>
+            </dl>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="C:ShinobiCharts.SChartDelayBounceAnimationCurve(System.IntPtr):Remarks">You should not invoke this method directly.</div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="C:ShinobiCharts.SChartDelayBounceAnimationCurve(System.IntPtr):Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.5.7.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="P:ShinobiCharts.SChartDelayBounceAnimationCurve.ClassHandle">ClassHandle Property</h3>
+        <blockquote id="P:ShinobiCharts.SChartDelayBounceAnimationCurve.ClassHandle:member">
+          <p class="Summary">The handle for this class.
+        </p>
+          <h2>Syntax</h2>
+          <div class="Signature">public override <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.IntPtr">IntPtr</a> <b>ClassHandle</b>  { get; }</div>
+          <h4 class="Subsection">Value</h4>
+          <blockquote class="SubsectionBox" id="P:ShinobiCharts.SChartDelayBounceAnimationCurve.ClassHandle:Value">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartDelayBounceAnimationCurve.ClassHandle:Remarks">Not normally used by application code</div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartDelayBounceAnimationCurve.ClassHandle:Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.5.7.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="M:ShinobiCharts.SChartDelayBounceAnimationCurve.Copy()">Copy Method</h3>
+        <blockquote id="M:ShinobiCharts.SChartDelayBounceAnimationCurve.Copy():member">
+          <p class="Summary">Creates a copy of the curve</p>
+          <h2>Syntax</h2>
+          <div class="Signature">[MonoTouch.Foundation.Export("copy")]<br />[System.Obsolete]<br />public override <a href="../ShinobiCharts/SChartAnimationCurveProtocol.html">SChartAnimationCurveProtocol</a> <b>Copy</b> ()</div>
+          <h4 class="Subsection">Returns</h4>
+          <blockquote class="SubsectionBox" id="M:ShinobiCharts.SChartDelayBounceAnimationCurve.Copy():Returns">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="M:ShinobiCharts.SChartDelayBounceAnimationCurve.Copy():Remarks">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="M:ShinobiCharts.SChartDelayBounceAnimationCurve.Copy():Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.5.7.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="M:ShinobiCharts.SChartDelayBounceAnimationCurve.ValueAtTime(System.Single)">ValueAtTime Method</h3>
+        <blockquote id="M:ShinobiCharts.SChartDelayBounceAnimationCurve.ValueAtTime(System.Single):member">
+          <p class="Summary">Should return an appropriate value for the animation curve at the given time.</p>
+          <h2>Syntax</h2>
+          <div class="Signature">[MonoTouch.Foundation.Export("valueAtTime:")]<br />public override <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Single">float</a> <b>ValueAtTime</b> (<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Single">float</a> time)</div>
+          <h4 class="Subsection">Parameters</h4>
+          <blockquote class="SubsectionBox" id="M:ShinobiCharts.SChartDelayBounceAnimationCurve.ValueAtTime(System.Single):Parameters">
+            <dl>
+              <dt>
+                <i>time</i>
+              </dt>
+              <dd>
+                <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+              </dd>
+            </dl>
+          </blockquote>
+          <h4 class="Subsection">Returns</h4>
+          <blockquote class="SubsectionBox" id="M:ShinobiCharts.SChartDelayBounceAnimationCurve.ValueAtTime(System.Single):Returns">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="M:ShinobiCharts.SChartDelayBounceAnimationCurve.ValueAtTime(System.Single):Remarks">'Time' will be provided as a float between 0.f and 1.f, where 0.f is the beginning of the animation and 1.f is the end of the animation. (time = elapsed time / duration)
+ The value returned represents the progress of the series between its beginning and end positions, where 0.f is the start state and 1.f is, nominally, the end state.
+ It is valid to return a value 'v' where either v is less than 0 or v is greater than 1 and it not necessary to return 1 at time 1.</div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="M:ShinobiCharts.SChartDelayBounceAnimationCurve.ValueAtTime(System.Single):Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.5.7.0</div>
+          <hr size="1" />
+        </blockquote>
+      </div>
+    </div>
+    <div class="Parameter">
+    </div>
+    <hr size="1" />
+    <div class="Copyright"> © 2013 Scott Logic Limited. All rights reserved </div>
+  </body>
+</html>

@@ -1,0 +1,608 @@
+<html>
+  <head>
+    <title>ShinobiCharts.SChartBoxGestureStyle</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <style>
+      a { text-decoration: none; color: #AD1015; font-family: Arial }
+
+      div.SideBar {
+        padding-left: 1em;
+        padding-right: 1em;
+        right: 0;
+        float: right;
+        border: thin solid black;
+        background-color: #f2f2f2;
+      }
+    
+      .CollectionTitle { font-family: Arial; font-weight: bold; background: black; color: white; padding: 10px; margin: 0 }
+      .CollectionTitle p { font-size: 150%; }
+      .PageTitle { font-size: 150%; font-weight: bold }
+
+      .Summary { }
+      .Signature { }          
+      .Remarks { }
+      .Members { }
+      .Copyright { }
+      
+      .Section { font-family: Arial; font-size: 125%; font-weight: bold }
+      p.Summary {
+        margin-left: 1em;
+      }
+      .SectionBox { margin-left: 2em }
+      .NamespaceName { font-family: Arial; font-size: 105%; font-weight: bold }
+      .NamespaceSumary { }
+      .MemberName { font-size: 115%; font-weight: bold; margin-top: 1em }
+      .Subsection { font-size: 105%; font-weight: bold }
+      .SubsectionBox { margin-left: 2em; margin-bottom: 1em }
+
+      .CodeExampleTable { background-color: #f5f5dd; border: thin solid black; padding: .25em; }
+      
+      .TypesListing {
+	font-family: Arial;
+        border-collapse: collapse;
+      }
+
+      td {
+	font-family: Arial;
+        vertical-align: top;
+      }
+      th {
+	font-family: Arial;
+        text-align: left;
+      }
+
+      .TypesListing td { 
+        margin: 0px;  
+        padding: .25em;
+        border: solid gray 1px;
+      }
+
+      .TypesListing th { 
+        margin: 0px;  
+        padding: .25em;
+        background-color: #f2f2f2;
+        border: solid gray 1px;
+      }
+
+      div.Footer {
+	font-family: Arial;
+        border-top: 1px solid gray;
+        margin-top: 1.5em;
+        padding-top: 0.6em;
+        text-align: center;
+        color: gray;
+      }
+
+      span.NotEntered /* Documentation for this section has not yet been entered */ {
+	font-family: Arial;
+        font-style: italic;
+        color: 	#C0C0C0;	
+      }
+
+      div.Header {
+	font-family: Arial;
+        background: #B0C4DE;
+        border: double;
+        border-color: white;
+        border-width: 7px;
+        padding: 0.5em;
+      }
+
+      div.Header * {
+	font-family: Arial;
+        font-size: smaller;
+      }
+
+      div.Note {
+      }
+
+      i.ParamRef {
+      }
+
+      i.subtitle {
+      }
+
+      ul.TypeMembersIndex {
+	font-family: Arial;
+        text-align: left;
+        background: #F8F8F8;
+      }
+
+      ul.TypeMembersIndex li {
+        display: inline;
+        margin:  0.5em;
+      }
+
+      table.HeaderTable {
+      }
+
+      table.SignatureTable {
+      }
+
+      table.Documentation, table.Enumeration, table.TypeDocumentation {
+        border-collapse: collapse;
+        width: 100%;
+      }
+
+      table.Documentation tr th, table.TypeMembers tr th, table.Enumeration tr th, table.TypeDocumentation tr th {
+	font-family: Arial;
+        background: whitesmoke;
+        padding: 0.8em;
+        border: 1px solid gray;
+        text-align: left;
+        vertical-align: bottom;
+      }
+
+      table.Documentation tr td, table.TypeMembers tr td, table.Enumeration tr td, table.TypeDocumentation tr td {
+	font-family: Arial;
+        padding: 0.5em;
+        border: 1px solid gray;
+        text-align: left;
+        vertical-align: top;
+      }
+
+      table.TypeMembers {
+        border: 1px solid #C0C0C0;
+        width: 100%;
+      }
+
+      table.TypeMembers tr td {
+        background: #F8F8F8;
+        border: white;
+      }
+
+      table.Documentation {
+      }
+
+      table.TypeMembers {
+      }
+
+      div.CodeExample {
+        width: 100%;
+        border: 1px solid #DDDDDD;
+        background-color: #F8F8F8;
+      }
+
+      div.CodeExample p {
+        margin: 0.5em;
+        border-bottom: 1px solid #DDDDDD;
+      }
+
+      div.CodeExample div {
+        margin: 0.5em;
+      }
+
+      h4 {
+        margin-bottom: 0;
+      }
+
+      div.Signature {
+	font-family: Arial;
+        border: 1px solid #C0C0C0;
+        background: #F2F2F2;
+        padding: 1em;
+      }
+    </style>
+    <script type="text/JavaScript">
+      function toggle_display (block) {
+        var w = document.getElementById (block);
+        var t = document.getElementById (block + ":toggle");
+        if (w.style.display == "none") {
+          w.style.display = "block";
+          t.innerHTML = "⊟";
+        } else {
+          w.style.display = "none";
+          t.innerHTML = "⊞";
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <div class="CollectionTitle">
+      <p>
+		ShinobiControls Xamarin Bindings Documentation
+	</p>
+      <a href="../index.html">ShinobiCharts</a> : <a href="index.html">ShinobiCharts Namespace</a></div>
+    <h1 class="PageTitle" id="T:ShinobiCharts.SChartBoxGestureStyle">SChartBoxGestureStyle  Class</h1>
+    <p class="Summary" id="T:ShinobiCharts.SChartBoxGestureStyle:Summary">Visual style properties for the box zoom feature.
+      </p>
+    <div>
+      <h2>Syntax</h2>
+      <div class="Signature" id="T:ShinobiCharts.SChartBoxGestureStyle:Signature">[MonoTouch.Foundation.Register("SChartBoxGestureStyle", true)]<br />public class  <b>SChartBoxGestureStyle</b> : <a href="javascript:alert(&quot;Documentation not found.&quot;)">MonoTouch.Foundation.NSObject</a>,	<a href="../ShinobiCharts/NSCopying.html">NSCopying</a></div>
+    </div>
+    <div class="Remarks" id="T:ShinobiCharts.SChartBoxGestureStyle:Docs">
+      <h2 class="Section">Remarks</h2>
+      <div class="SectionBox" id="T:ShinobiCharts.SChartBoxGestureStyle:Docs:Remarks">
+        <p>
+					If you set the <a href="../ShinobiCharts/ShinobiChart.html#P:ShinobiCharts.ShinobiChart.GesturePanType">ShinobiChart.GesturePanType</a> property on a chart to <a href="../ShinobiCharts/SChartGesturePanType.html#F:ShinobiCharts.SChartGesturePanType.BoxDraw">SChartGesturePanType.BoxDraw</a>,
+					the chart will draw a box on the chart during a pan.
+					When the pan is finished, the chart will zoom to the limits of the box.
+				</p>
+        <p>
+					The SChartBoxGestureStyle class manages the look and feel of the box gesture.
+					An instance of the class is contained by the chart's theme.
+					To update the look of the box gesture on a chart, you could use the following code:
+					<table class="CodeExampleTable"><tr><td><b><font size="-1"> Example</font></b></td></tr><tr><td><pre class="">chart.theme.boxGestureStyle.boxLineColor = [UIColor redColor];
+[chart applyTheme];</pre></td></tr></table></p>
+        <p>
+					The definition of the chart theme can be found in <a href="../ShinobiCharts/SChartTheme.html">ShinobiCharts.SChartTheme</a>.
+				</p>
+      </div>
+      <h2 class="Section">Requirements</h2>
+      <div class="SectionBox" id="T:ShinobiCharts.SChartBoxGestureStyle:Docs:Version Information">
+        <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.5.7.0</div>
+      <h2 class="Section" id="Members">Members</h2>
+      <div class="SectionBox" id="_Members">
+        <p>
+								See Also: Inherited members from
+								<a href="javascript:alert(&quot;Documentation not found.&quot;)">MonoTouch.Foundation.NSObject</a>.
+							</p>
+        <h2 class="Section">Public Constructors</h2>
+        <div class="SectionBox" id="Public Constructors">
+          <div class="SubsectionBox">
+            <table class="TypeMembers">
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <div>
+                    <b>
+                      <a href="#C:ShinobiCharts.SChartBoxGestureStyle()">SChartBoxGestureStyle</a>
+                    </b>()</div>
+                </td>
+                <td>Default constructor
+      </td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <div>
+                    <b>
+                      <a href="#C:ShinobiCharts.SChartBoxGestureStyle(MonoTouch.Foundation.NSCoder)">SChartBoxGestureStyle</a>
+                    </b>(<a href="javascript:alert(&quot;Documentation not found.&quot;)">MonoTouch.Foundation.NSCoder</a>)</div>
+                </td>
+                <td>A constructor that initializes the object from the data stored in the unarchiver object.
+      </td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <div>
+                    <b>
+                      <a href="#C:ShinobiCharts.SChartBoxGestureStyle(MonoTouch.Foundation.NSObjectFlag)">SChartBoxGestureStyle</a>
+                    </b>(<a href="javascript:alert(&quot;Documentation not found.&quot;)">MonoTouch.Foundation.NSObjectFlag</a>)</div>
+                </td>
+                <td>Constructor to call on derived classes to skip initialization and merely allocate the object.
+      </td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <div>
+                    <b>
+                      <a href="#C:ShinobiCharts.SChartBoxGestureStyle(System.IntPtr)">SChartBoxGestureStyle</a>
+                    </b>(<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.IntPtr">IntPtr</a>)</div>
+                </td>
+                <td>A constructor used when creating managed representations of unmanaged objects.
+      </td>
+              </tr>
+            </table>
+          </div>
+        </div>
+        <h2 class="Section">Public Properties</h2>
+        <div class="SectionBox" id="Public Properties">
+          <div class="SubsectionBox">
+            <table class="TypeMembers">
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <b>
+                    <a href="#P:ShinobiCharts.SChartBoxGestureStyle.BoxLineColor">BoxLineColor</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="javascript:alert(&quot;Documentation not found.&quot;)">MonoTouch.UIKit.UIColor</a>
+                  </i>. The color of the outline of the box that will be the new zoomed area.
+      </td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <b>
+                    <a href="#P:ShinobiCharts.SChartBoxGestureStyle.BoxLineWidth">BoxLineWidth</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Single">float</a>
+                  </i>. The width of the outline of the box that will be the new zoomed area, in points.
+      </td>
+              </tr>
+              <tr valign="top">
+                <td>[read-only]<div>override </div></td>
+                <td>
+                  <b>
+                    <a href="#P:ShinobiCharts.SChartBoxGestureStyle.ClassHandle">ClassHandle</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.IntPtr">IntPtr</a>
+                  </i>. The handle for this class.
+      </td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <b>
+                    <a href="#P:ShinobiCharts.SChartBoxGestureStyle.TrackingLineColor">TrackingLineColor</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="javascript:alert(&quot;Documentation not found.&quot;)">MonoTouch.UIKit.UIColor</a>
+                  </i>. The color of the lines that extend from the zoom box to the axes.
+      </td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <b>
+                    <a href="#P:ShinobiCharts.SChartBoxGestureStyle.TrackingLineWidth">TrackingLineWidth</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Single">float</a>
+                  </i>. The width of the lines that extend from the zoom box to the axes, in points.
+      </td>
+              </tr>
+            </table>
+          </div>
+        </div>
+        <h2 class="Section">Protected Methods</h2>
+        <div class="SectionBox" id="Protected Methods">
+          <div class="SubsectionBox">
+            <table class="TypeMembers">
+              <tr valign="top">
+                <td>
+                  <div>override </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="#M:ShinobiCharts.SChartBoxGestureStyle.Dispose(System.Boolean)">Dispose</a>
+                  </b>(<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Boolean">bool</a>)<blockquote> Releases unmanaged resources.
+      </blockquote></td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="Members" id="T:ShinobiCharts.SChartBoxGestureStyle:Members">
+      <h2 class="Section" id="MemberDetails">Member Details</h2>
+      <div class="SectionBox" id="_MemberDetails">
+        <h3 id="C:ShinobiCharts.SChartBoxGestureStyle()">SChartBoxGestureStyle Constructor</h3>
+        <blockquote id="C:ShinobiCharts.SChartBoxGestureStyle():member">
+          <p class="Summary">Default constructor
+      </p>
+          <h2>Syntax</h2>
+          <div class="Signature">[MonoTouch.Foundation.Export("init")]<br />[System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Advanced)]<br />public  <b>SChartBoxGestureStyle</b> ()</div>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="C:ShinobiCharts.SChartBoxGestureStyle():Remarks">
+          </div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="C:ShinobiCharts.SChartBoxGestureStyle():Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.5.7.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="C:ShinobiCharts.SChartBoxGestureStyle(MonoTouch.Foundation.NSCoder)">SChartBoxGestureStyle Constructor</h3>
+        <blockquote id="C:ShinobiCharts.SChartBoxGestureStyle(MonoTouch.Foundation.NSCoder):member">
+          <p class="Summary">A constructor that initializes the object from the data stored in the unarchiver object.
+      </p>
+          <h2>Syntax</h2>
+          <div class="Signature">[MonoTouch.Foundation.Export("initWithCoder:")]<br />[System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Advanced)]<br />public  <b>SChartBoxGestureStyle</b> (<a href="javascript:alert(&quot;Documentation not found.&quot;)">MonoTouch.Foundation.NSCoder</a> coder)</div>
+          <h4 class="Subsection">Parameters</h4>
+          <blockquote class="SubsectionBox" id="C:ShinobiCharts.SChartBoxGestureStyle(MonoTouch.Foundation.NSCoder):Parameters">
+            <dl>
+              <dt>
+                <i>coder</i>
+              </dt>
+              <dd>The unarchiver object</dd>
+            </dl>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="C:ShinobiCharts.SChartBoxGestureStyle(MonoTouch.Foundation.NSCoder):Remarks">This constructor is provided to allow the class to be initialized from an unarchiver (for example, during NIB deserialization).</div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="C:ShinobiCharts.SChartBoxGestureStyle(MonoTouch.Foundation.NSCoder):Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.5.7.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="C:ShinobiCharts.SChartBoxGestureStyle(MonoTouch.Foundation.NSObjectFlag)">SChartBoxGestureStyle Constructor</h3>
+        <blockquote id="C:ShinobiCharts.SChartBoxGestureStyle(MonoTouch.Foundation.NSObjectFlag):member">
+          <p class="Summary">Constructor to call on derived classes to skip initialization and merely allocate the object.
+      </p>
+          <h2>Syntax</h2>
+          <div class="Signature">[System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Advanced)]<br />public  <b>SChartBoxGestureStyle</b> (<a href="javascript:alert(&quot;Documentation not found.&quot;)">MonoTouch.Foundation.NSObjectFlag</a> t)</div>
+          <h4 class="Subsection">Parameters</h4>
+          <blockquote class="SubsectionBox" id="C:ShinobiCharts.SChartBoxGestureStyle(MonoTouch.Foundation.NSObjectFlag):Parameters">
+            <dl>
+              <dt>
+                <i>t</i>
+              </dt>
+              <dd>Unused sentinel value</dd>
+            </dl>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="C:ShinobiCharts.SChartBoxGestureStyle(MonoTouch.Foundation.NSObjectFlag):Remarks">You should not invoke this method directly.</div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="C:ShinobiCharts.SChartBoxGestureStyle(MonoTouch.Foundation.NSObjectFlag):Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.5.7.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="C:ShinobiCharts.SChartBoxGestureStyle(System.IntPtr)">SChartBoxGestureStyle Constructor</h3>
+        <blockquote id="C:ShinobiCharts.SChartBoxGestureStyle(System.IntPtr):member">
+          <p class="Summary">A constructor used when creating managed representations of unmanaged objects.
+      </p>
+          <h2>Syntax</h2>
+          <div class="Signature">[System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Advanced)]<br />public  <b>SChartBoxGestureStyle</b> (<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.IntPtr">IntPtr</a> handle)</div>
+          <h4 class="Subsection">Parameters</h4>
+          <blockquote class="SubsectionBox" id="C:ShinobiCharts.SChartBoxGestureStyle(System.IntPtr):Parameters">
+            <dl>
+              <dt>
+                <i>handle</i>
+              </dt>
+              <dd>Handle of the unmanaged object</dd>
+            </dl>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="C:ShinobiCharts.SChartBoxGestureStyle(System.IntPtr):Remarks">You should not invoke this method directly.</div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="C:ShinobiCharts.SChartBoxGestureStyle(System.IntPtr):Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.5.7.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="P:ShinobiCharts.SChartBoxGestureStyle.BoxLineColor">BoxLineColor Property</h3>
+        <blockquote id="P:ShinobiCharts.SChartBoxGestureStyle.BoxLineColor:member">
+          <p class="Summary">The color of the outline of the box that will be the new zoomed area.
+      </p>
+          <h2>Syntax</h2>
+          <div class="Signature">public <a href="javascript:alert(&quot;Documentation not found.&quot;)">MonoTouch.UIKit.UIColor</a> <b>BoxLineColor</b>  { get; set; }</div>
+          <h4 class="Subsection">Value</h4>
+          <blockquote class="SubsectionBox" id="P:ShinobiCharts.SChartBoxGestureStyle.BoxLineColor:Value">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartBoxGestureStyle.BoxLineColor:Remarks">
+          </div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartBoxGestureStyle.BoxLineColor:Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.5.7.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="P:ShinobiCharts.SChartBoxGestureStyle.BoxLineWidth">BoxLineWidth Property</h3>
+        <blockquote id="P:ShinobiCharts.SChartBoxGestureStyle.BoxLineWidth:member">
+          <p class="Summary">The width of the outline of the box that will be the new zoomed area, in points.
+      </p>
+          <h2>Syntax</h2>
+          <div class="Signature">public <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Single">float</a> <b>BoxLineWidth</b>  { get; set; }</div>
+          <h4 class="Subsection">Value</h4>
+          <blockquote class="SubsectionBox" id="P:ShinobiCharts.SChartBoxGestureStyle.BoxLineWidth:Value">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartBoxGestureStyle.BoxLineWidth:Remarks">
+          </div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartBoxGestureStyle.BoxLineWidth:Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.5.7.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="P:ShinobiCharts.SChartBoxGestureStyle.ClassHandle">ClassHandle Property</h3>
+        <blockquote id="P:ShinobiCharts.SChartBoxGestureStyle.ClassHandle:member">
+          <p class="Summary">The handle for this class.
+      </p>
+          <h2>Syntax</h2>
+          <div class="Signature">public override <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.IntPtr">IntPtr</a> <b>ClassHandle</b>  { get; }</div>
+          <h4 class="Subsection">Value</h4>
+          <blockquote class="SubsectionBox" id="P:ShinobiCharts.SChartBoxGestureStyle.ClassHandle:Value">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartBoxGestureStyle.ClassHandle:Remarks">Not normally used by application code</div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartBoxGestureStyle.ClassHandle:Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.5.7.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="M:ShinobiCharts.SChartBoxGestureStyle.Dispose(System.Boolean)">Dispose Method</h3>
+        <blockquote id="M:ShinobiCharts.SChartBoxGestureStyle.Dispose(System.Boolean):member">
+          <p class="Summary"> Releases unmanaged resources.
+      </p>
+          <h2>Syntax</h2>
+          <div class="Signature">protected override <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Void">void</a> <b>Dispose</b> (<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Boolean">bool</a> disposing)</div>
+          <h4 class="Subsection">Parameters</h4>
+          <blockquote class="SubsectionBox" id="M:ShinobiCharts.SChartBoxGestureStyle.Dispose(System.Boolean):Parameters">
+            <dl>
+              <dt>
+                <i>disposing</i>
+              </dt>
+              <dd>True if called by Dispose, false if called from a finalizer</dd>
+            </dl>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="M:ShinobiCharts.SChartBoxGestureStyle.Dispose(System.Boolean):Remarks">
+          </div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="M:ShinobiCharts.SChartBoxGestureStyle.Dispose(System.Boolean):Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.5.7.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="P:ShinobiCharts.SChartBoxGestureStyle.TrackingLineColor">TrackingLineColor Property</h3>
+        <blockquote id="P:ShinobiCharts.SChartBoxGestureStyle.TrackingLineColor:member">
+          <p class="Summary">The color of the lines that extend from the zoom box to the axes.
+      </p>
+          <h2>Syntax</h2>
+          <div class="Signature">public <a href="javascript:alert(&quot;Documentation not found.&quot;)">MonoTouch.UIKit.UIColor</a> <b>TrackingLineColor</b>  { get; set; }</div>
+          <h4 class="Subsection">Value</h4>
+          <blockquote class="SubsectionBox" id="P:ShinobiCharts.SChartBoxGestureStyle.TrackingLineColor:Value">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartBoxGestureStyle.TrackingLineColor:Remarks">
+          </div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartBoxGestureStyle.TrackingLineColor:Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.5.7.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="P:ShinobiCharts.SChartBoxGestureStyle.TrackingLineWidth">TrackingLineWidth Property</h3>
+        <blockquote id="P:ShinobiCharts.SChartBoxGestureStyle.TrackingLineWidth:member">
+          <p class="Summary">The width of the lines that extend from the zoom box to the axes, in points.
+      </p>
+          <h2>Syntax</h2>
+          <div class="Signature">public <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Single">float</a> <b>TrackingLineWidth</b>  { get; set; }</div>
+          <h4 class="Subsection">Value</h4>
+          <blockquote class="SubsectionBox" id="P:ShinobiCharts.SChartBoxGestureStyle.TrackingLineWidth:Value">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartBoxGestureStyle.TrackingLineWidth:Remarks">
+          </div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartBoxGestureStyle.TrackingLineWidth:Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.5.7.0</div>
+          <hr size="1" />
+        </blockquote>
+      </div>
+    </div>
+    <div class="Parameter">
+    </div>
+    <hr size="1" />
+    <div class="Copyright"> © 2013 Scott Logic Limited. All rights reserved </div>
+  </body>
+</html>

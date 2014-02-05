@@ -1,0 +1,847 @@
+<html>
+  <head>
+    <title>ShinobiCharts.SChartCanvas</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <style>
+      a { text-decoration: none; color: #AD1015; font-family: Arial }
+
+      div.SideBar {
+        padding-left: 1em;
+        padding-right: 1em;
+        right: 0;
+        float: right;
+        border: thin solid black;
+        background-color: #f2f2f2;
+      }
+    
+      .CollectionTitle { font-family: Arial; font-weight: bold; background: black; color: white; padding: 10px; margin: 0 }
+      .CollectionTitle p { font-size: 150%; }
+      .PageTitle { font-size: 150%; font-weight: bold }
+
+      .Summary { }
+      .Signature { }          
+      .Remarks { }
+      .Members { }
+      .Copyright { }
+      
+      .Section { font-family: Arial; font-size: 125%; font-weight: bold }
+      p.Summary {
+        margin-left: 1em;
+      }
+      .SectionBox { margin-left: 2em }
+      .NamespaceName { font-family: Arial; font-size: 105%; font-weight: bold }
+      .NamespaceSumary { }
+      .MemberName { font-size: 115%; font-weight: bold; margin-top: 1em }
+      .Subsection { font-size: 105%; font-weight: bold }
+      .SubsectionBox { margin-left: 2em; margin-bottom: 1em }
+
+      .CodeExampleTable { background-color: #f5f5dd; border: thin solid black; padding: .25em; }
+      
+      .TypesListing {
+	font-family: Arial;
+        border-collapse: collapse;
+      }
+
+      td {
+	font-family: Arial;
+        vertical-align: top;
+      }
+      th {
+	font-family: Arial;
+        text-align: left;
+      }
+
+      .TypesListing td { 
+        margin: 0px;  
+        padding: .25em;
+        border: solid gray 1px;
+      }
+
+      .TypesListing th { 
+        margin: 0px;  
+        padding: .25em;
+        background-color: #f2f2f2;
+        border: solid gray 1px;
+      }
+
+      div.Footer {
+	font-family: Arial;
+        border-top: 1px solid gray;
+        margin-top: 1.5em;
+        padding-top: 0.6em;
+        text-align: center;
+        color: gray;
+      }
+
+      span.NotEntered /* Documentation for this section has not yet been entered */ {
+	font-family: Arial;
+        font-style: italic;
+        color: 	#C0C0C0;	
+      }
+
+      div.Header {
+	font-family: Arial;
+        background: #B0C4DE;
+        border: double;
+        border-color: white;
+        border-width: 7px;
+        padding: 0.5em;
+      }
+
+      div.Header * {
+	font-family: Arial;
+        font-size: smaller;
+      }
+
+      div.Note {
+      }
+
+      i.ParamRef {
+      }
+
+      i.subtitle {
+      }
+
+      ul.TypeMembersIndex {
+	font-family: Arial;
+        text-align: left;
+        background: #F8F8F8;
+      }
+
+      ul.TypeMembersIndex li {
+        display: inline;
+        margin:  0.5em;
+      }
+
+      table.HeaderTable {
+      }
+
+      table.SignatureTable {
+      }
+
+      table.Documentation, table.Enumeration, table.TypeDocumentation {
+        border-collapse: collapse;
+        width: 100%;
+      }
+
+      table.Documentation tr th, table.TypeMembers tr th, table.Enumeration tr th, table.TypeDocumentation tr th {
+	font-family: Arial;
+        background: whitesmoke;
+        padding: 0.8em;
+        border: 1px solid gray;
+        text-align: left;
+        vertical-align: bottom;
+      }
+
+      table.Documentation tr td, table.TypeMembers tr td, table.Enumeration tr td, table.TypeDocumentation tr td {
+	font-family: Arial;
+        padding: 0.5em;
+        border: 1px solid gray;
+        text-align: left;
+        vertical-align: top;
+      }
+
+      table.TypeMembers {
+        border: 1px solid #C0C0C0;
+        width: 100%;
+      }
+
+      table.TypeMembers tr td {
+        background: #F8F8F8;
+        border: white;
+      }
+
+      table.Documentation {
+      }
+
+      table.TypeMembers {
+      }
+
+      div.CodeExample {
+        width: 100%;
+        border: 1px solid #DDDDDD;
+        background-color: #F8F8F8;
+      }
+
+      div.CodeExample p {
+        margin: 0.5em;
+        border-bottom: 1px solid #DDDDDD;
+      }
+
+      div.CodeExample div {
+        margin: 0.5em;
+      }
+
+      h4 {
+        margin-bottom: 0;
+      }
+
+      div.Signature {
+	font-family: Arial;
+        border: 1px solid #C0C0C0;
+        background: #F2F2F2;
+        padding: 1em;
+      }
+    </style>
+    <script type="text/JavaScript">
+      function toggle_display (block) {
+        var w = document.getElementById (block);
+        var t = document.getElementById (block + ":toggle");
+        if (w.style.display == "none") {
+          w.style.display = "block";
+          t.innerHTML = "⊟";
+        } else {
+          w.style.display = "none";
+          t.innerHTML = "⊞";
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <div class="CollectionTitle">
+      <p>
+		ShinobiControls Xamarin Bindings Documentation
+	</p>
+      <a href="../index.html">ShinobiCharts</a> : <a href="index.html">ShinobiCharts Namespace</a></div>
+    <h1 class="PageTitle" id="T:ShinobiCharts.SChartCanvas">SChartCanvas  Class</h1>
+    <p class="Summary" id="T:ShinobiCharts.SChartCanvas:Summary">
+				For each ShinobiChart, one single SChartCanvas will exist to contain the drawing of all of the axes and series.
+			</p>
+    <div>
+      <h2>Syntax</h2>
+      <div class="Signature" id="T:ShinobiCharts.SChartCanvas:Signature">[MonoTouch.Foundation.Register("SChartCanvas", true)]<br />public class  <b>SChartCanvas</b> : <a href="javascript:alert(&quot;Documentation not found.&quot;)">MonoTouch.UIKit.UIView</a></div>
+    </div>
+    <div class="Remarks" id="T:ShinobiCharts.SChartCanvas:Docs">
+      <h2 class="Section">Remarks</h2>
+      <div class="SectionBox" id="T:ShinobiCharts.SChartCanvas:Docs:Remarks">
+        <p>
+					Titles, legends and other chart level objects appear outside of this area in the ShinobiChart view.
+					The canvas is responsible for managing the layers that make up the axis and series.
+				</p>
+        <p>
+					The canvas itself has no objects drawn directly onto it.
+					The canvas decides how much space it will need to draw any axis and their labels.
+					The plot area view is then sized and laid down to draw the series.
+					This is followed by the SChartCanvasOverlay layer that is used to draw the axes at the highest level.
+				</p>
+        <p>
+					You should never need to modify this object directly.
+					We've included information on this class as we refer to the chart canvas at various points in our documentation.
+				</p>
+      </div>
+      <h2 class="Section">Requirements</h2>
+      <div class="SectionBox" id="T:ShinobiCharts.SChartCanvas:Docs:Version Information">
+        <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.5.7.0</div>
+      <h2 class="Section" id="Members">Members</h2>
+      <div class="SectionBox" id="_Members">
+        <p>
+								See Also: Inherited members from
+								<a href="javascript:alert(&quot;Documentation not found.&quot;)">MonoTouch.UIKit.UIView</a>.
+							</p>
+        <h2 class="Section">Public Constructors</h2>
+        <div class="SectionBox" id="Public Constructors">
+          <div class="SubsectionBox">
+            <table class="TypeMembers">
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <div>
+                    <b>
+                      <a href="#C:ShinobiCharts.SChartCanvas(MonoTouch.Foundation.NSCoder)">SChartCanvas</a>
+                    </b>(<a href="javascript:alert(&quot;Documentation not found.&quot;)">MonoTouch.Foundation.NSCoder</a>)</div>
+                </td>
+                <td>
+				A constructor that initializes the object from the data stored in the unarchiver object.
+			</td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <div>
+                    <b>
+                      <a href="#C:ShinobiCharts.SChartCanvas(MonoTouch.Foundation.NSObjectFlag)">SChartCanvas</a>
+                    </b>(<a href="javascript:alert(&quot;Documentation not found.&quot;)">MonoTouch.Foundation.NSObjectFlag</a>)</div>
+                </td>
+                <td>
+				Constructor to call on derived classes to skip initialization and merely allocate the object.
+			</td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <div>
+                    <b>
+                      <a href="#C:ShinobiCharts.SChartCanvas(System.IntPtr)">SChartCanvas</a>
+                    </b>(<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.IntPtr">IntPtr</a>)</div>
+                </td>
+                <td>
+				A constructor used when creating managed representations of unmanaged objects.
+			</td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <div>
+                    <b>
+                      <a href="#C:ShinobiCharts.SChartCanvas(System.Drawing.RectangleF,ShinobiCharts.ShinobiChart)">SChartCanvas</a>
+                    </b>(<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Drawing.RectangleF">System.Drawing.RectangleF</a>, <a href="../ShinobiCharts/ShinobiChart.html">ShinobiChart</a>)</div>
+                </td>
+                <td>
+				DEPRECATED - This should be moved into a private header.
+			</td>
+              </tr>
+            </table>
+          </div>
+        </div>
+        <h2 class="Section">Public Properties</h2>
+        <div class="SectionBox" id="Public Properties">
+          <div class="SubsectionBox">
+            <table class="TypeMembers">
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <b>
+                    <a href="#P:ShinobiCharts.SChartCanvas.Chart">Chart</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="../ShinobiCharts/ShinobiChart.html">ShinobiChart</a>
+                  </i>. 
+				The chart which contains this canvas
+			</td>
+              </tr>
+              <tr valign="top">
+                <td>[read-only]<div>override </div></td>
+                <td>
+                  <b>
+                    <a href="#P:ShinobiCharts.SChartCanvas.ClassHandle">ClassHandle</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.IntPtr">IntPtr</a>
+                  </i>. 
+				The handle for this class.
+			</td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <b>
+                    <a href="#P:ShinobiCharts.SChartCanvas.GLView">GLView</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="../ShinobiCharts/SChartGLView.html">SChartGLView</a>
+                  </i>. 
+				This is the layer upon which we draw all of our chart series and also any chart annotations.
+			</td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <b>
+                    <a href="#P:ShinobiCharts.SChartCanvas.OrientationChanged">OrientationChanged</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Boolean">bool</a>
+                  </i>. 
+				DEPRECATED - This should be moved into a private header.
+			</td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <b>
+                    <a href="#P:ShinobiCharts.SChartCanvas.Overlay">Overlay</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="../ShinobiCharts/SChartCanvasOverlay.html">SChartCanvasOverlay</a>
+                  </i>. 
+				This is the layer where we render things like the crosshair.
+			</td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <b>
+                    <a href="#P:ShinobiCharts.SChartCanvas.RedrawGL">RedrawGL</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Boolean">bool</a>
+                  </i>. 
+				DEPRECATED - This should be moved into a private header.
+			</td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <b>
+                    <a href="#P:ShinobiCharts.SChartCanvas.ReloadedData">ReloadedData</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Boolean">bool</a>
+                  </i>. 
+				DEPRECATED - This should be moved into a private header.
+			</td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <b>
+                    <a href="#P:ShinobiCharts.SChartCanvas.Underlay">Underlay</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="../ShinobiCharts/SChartCanvasUnderlay.html">SChartCanvasUnderlay</a>
+                  </i>. 
+				The underlay is the layer upon which we draw all of our axes.
+			</td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <b>
+                    <a href="#P:ShinobiCharts.SChartCanvas.UnderlayForAnnotations">UnderlayForAnnotations</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="javascript:alert(&quot;Documentation not found.&quot;)">MonoTouch.UIKit.UIView</a>
+                  </i>. 
+				This is the layer where we draw all of our annotation views that are visualised under our data
+			</td>
+              </tr>
+            </table>
+          </div>
+        </div>
+        <h2 class="Section">Public Methods</h2>
+        <div class="SectionBox" id="Public Methods">
+          <div class="SubsectionBox">
+            <table class="TypeMembers">
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="#M:ShinobiCharts.SChartCanvas.EnablePanning(System.Boolean)">EnablePanning</a>
+                  </b>(<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Boolean">bool</a>)<blockquote>
+				DEPRECATED - This should be moved into a private header.
+			</blockquote></td>
+              </tr>
+            </table>
+          </div>
+        </div>
+        <h2 class="Section">Protected Methods</h2>
+        <div class="SectionBox" id="Protected Methods">
+          <div class="SubsectionBox">
+            <table class="TypeMembers">
+              <tr valign="top">
+                <td>
+                  <div>override </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="#M:ShinobiCharts.SChartCanvas.Dispose(System.Boolean)">Dispose</a>
+                  </b>(<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Boolean">bool</a>)<blockquote>Releases unmanaged resources.</blockquote></td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="Members" id="T:ShinobiCharts.SChartCanvas:Members">
+      <h2 class="Section" id="MemberDetails">Member Details</h2>
+      <div class="SectionBox" id="_MemberDetails">
+        <h3 id="C:ShinobiCharts.SChartCanvas(MonoTouch.Foundation.NSCoder)">SChartCanvas Constructor</h3>
+        <blockquote id="C:ShinobiCharts.SChartCanvas(MonoTouch.Foundation.NSCoder):member">
+          <p class="Summary">
+				A constructor that initializes the object from the data stored in the unarchiver object.
+			</p>
+          <h2>Syntax</h2>
+          <div class="Signature">[MonoTouch.Foundation.Export("initWithCoder:")]<br />[System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Advanced)]<br />public  <b>SChartCanvas</b> (<a href="javascript:alert(&quot;Documentation not found.&quot;)">MonoTouch.Foundation.NSCoder</a> coder)</div>
+          <h4 class="Subsection">Parameters</h4>
+          <blockquote class="SubsectionBox" id="C:ShinobiCharts.SChartCanvas(MonoTouch.Foundation.NSCoder):Parameters">
+            <dl>
+              <dt>
+                <i>coder</i>
+              </dt>
+              <dd>
+				The unarchiver object
+			</dd>
+            </dl>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="C:ShinobiCharts.SChartCanvas(MonoTouch.Foundation.NSCoder):Remarks">
+				This constructor is provided to allow the class to be initialized from an unarchiver (for example, during NIB deserialization).
+			</div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="C:ShinobiCharts.SChartCanvas(MonoTouch.Foundation.NSCoder):Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.5.7.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="C:ShinobiCharts.SChartCanvas(MonoTouch.Foundation.NSObjectFlag)">SChartCanvas Constructor</h3>
+        <blockquote id="C:ShinobiCharts.SChartCanvas(MonoTouch.Foundation.NSObjectFlag):member">
+          <p class="Summary">
+				Constructor to call on derived classes to skip initialization and merely allocate the object.
+			</p>
+          <h2>Syntax</h2>
+          <div class="Signature">[System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Advanced)]<br />public  <b>SChartCanvas</b> (<a href="javascript:alert(&quot;Documentation not found.&quot;)">MonoTouch.Foundation.NSObjectFlag</a> t)</div>
+          <h4 class="Subsection">Parameters</h4>
+          <blockquote class="SubsectionBox" id="C:ShinobiCharts.SChartCanvas(MonoTouch.Foundation.NSObjectFlag):Parameters">
+            <dl>
+              <dt>
+                <i>t</i>
+              </dt>
+              <dd>
+				Unused sentinel value
+			</dd>
+            </dl>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="C:ShinobiCharts.SChartCanvas(MonoTouch.Foundation.NSObjectFlag):Remarks">
+				You should not invoke this method directly.
+			</div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="C:ShinobiCharts.SChartCanvas(MonoTouch.Foundation.NSObjectFlag):Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.5.7.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="C:ShinobiCharts.SChartCanvas(System.IntPtr)">SChartCanvas Constructor</h3>
+        <blockquote id="C:ShinobiCharts.SChartCanvas(System.IntPtr):member">
+          <p class="Summary">
+				A constructor used when creating managed representations of unmanaged objects.
+			</p>
+          <h2>Syntax</h2>
+          <div class="Signature">[System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Advanced)]<br />public  <b>SChartCanvas</b> (<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.IntPtr">IntPtr</a> handle)</div>
+          <h4 class="Subsection">Parameters</h4>
+          <blockquote class="SubsectionBox" id="C:ShinobiCharts.SChartCanvas(System.IntPtr):Parameters">
+            <dl>
+              <dt>
+                <i>handle</i>
+              </dt>
+              <dd>
+				Handle of the unmanaged object
+			</dd>
+            </dl>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="C:ShinobiCharts.SChartCanvas(System.IntPtr):Remarks">
+				You should not invoke this method directly.
+			</div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="C:ShinobiCharts.SChartCanvas(System.IntPtr):Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.5.7.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="C:ShinobiCharts.SChartCanvas(System.Drawing.RectangleF,ShinobiCharts.ShinobiChart)">SChartCanvas Constructor</h3>
+        <blockquote id="C:ShinobiCharts.SChartCanvas(System.Drawing.RectangleF,ShinobiCharts.ShinobiChart):member">
+          <p class="Summary">
+				DEPRECATED - This should be moved into a private header.
+			</p>
+          <h2>Syntax</h2>
+          <div class="Signature">[MonoTouch.Foundation.Export("initWithFrame:usingChart:")]<br />[System.Obsolete("", false)]<br />public  <b>SChartCanvas</b> (<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Drawing.RectangleF">System.Drawing.RectangleF</a> frame, <a href="../ShinobiCharts/ShinobiChart.html">ShinobiChart</a> parentChart)</div>
+          <h4 class="Subsection">Parameters</h4>
+          <blockquote class="SubsectionBox" id="C:ShinobiCharts.SChartCanvas(System.Drawing.RectangleF,ShinobiCharts.ShinobiChart):Parameters">
+            <dl>
+              <dt>
+                <i>frame</i>
+              </dt>
+              <dd>The frame rectangle for the canvas, measured in points.</dd>
+              <dt>
+                <i>parentChart</i>
+              </dt>
+              <dd>The chart which will contain the new canvas.</dd>
+            </dl>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="C:ShinobiCharts.SChartCanvas(System.Drawing.RectangleF,ShinobiCharts.ShinobiChart):Remarks">
+					Initializes and returns a newly allocated canvas object with the specified frame rectangle.
+				</div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="C:ShinobiCharts.SChartCanvas(System.Drawing.RectangleF,ShinobiCharts.ShinobiChart):Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.5.7.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="P:ShinobiCharts.SChartCanvas.Chart">Chart Property</h3>
+        <blockquote id="P:ShinobiCharts.SChartCanvas.Chart:member">
+          <p class="Summary">
+				The chart which contains this canvas
+			</p>
+          <h2>Syntax</h2>
+          <div class="Signature">[get: MonoTouch.Foundation.Export("chart", MonoTouch.ObjCRuntime.ArgumentSemantic.Assign)]<br />[set: MonoTouch.Foundation.Export("setChart:", MonoTouch.ObjCRuntime.ArgumentSemantic.Assign)]<br />public virtual <a href="../ShinobiCharts/ShinobiChart.html">ShinobiChart</a> <b>Chart</b>  { get; set; }</div>
+          <h4 class="Subsection">Value</h4>
+          <blockquote class="SubsectionBox" id="P:ShinobiCharts.SChartCanvas.Chart:Value">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartCanvas.Chart:Remarks">
+          </div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartCanvas.Chart:Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.5.7.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="P:ShinobiCharts.SChartCanvas.ClassHandle">ClassHandle Property</h3>
+        <blockquote id="P:ShinobiCharts.SChartCanvas.ClassHandle:member">
+          <p class="Summary">
+				The handle for this class.
+			</p>
+          <h2>Syntax</h2>
+          <div class="Signature">public override <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.IntPtr">IntPtr</a> <b>ClassHandle</b>  { get; }</div>
+          <h4 class="Subsection">Value</h4>
+          <blockquote class="SubsectionBox" id="P:ShinobiCharts.SChartCanvas.ClassHandle:Value">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartCanvas.ClassHandle:Remarks">
+          </div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartCanvas.ClassHandle:Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.5.7.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="M:ShinobiCharts.SChartCanvas.Dispose(System.Boolean)">Dispose Method</h3>
+        <blockquote id="M:ShinobiCharts.SChartCanvas.Dispose(System.Boolean):member">
+          <p class="Summary">Releases unmanaged resources.</p>
+          <h2>Syntax</h2>
+          <div class="Signature">protected override <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Void">void</a> <b>Dispose</b> (<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Boolean">bool</a> disposing)</div>
+          <h4 class="Subsection">Parameters</h4>
+          <blockquote class="SubsectionBox" id="M:ShinobiCharts.SChartCanvas.Dispose(System.Boolean):Parameters">
+            <dl>
+              <dt>
+                <i>disposing</i>
+              </dt>
+              <dd>True if called by Dispose, false if called from a finalizer</dd>
+            </dl>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="M:ShinobiCharts.SChartCanvas.Dispose(System.Boolean):Remarks">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="M:ShinobiCharts.SChartCanvas.Dispose(System.Boolean):Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.5.7.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="M:ShinobiCharts.SChartCanvas.EnablePanning(System.Boolean)">EnablePanning Method</h3>
+        <blockquote id="M:ShinobiCharts.SChartCanvas.EnablePanning(System.Boolean):member">
+          <p class="Summary">
+				DEPRECATED - This should be moved into a private header.
+			</p>
+          <h2>Syntax</h2>
+          <div class="Signature">[MonoTouch.Foundation.Export("enablePanning:")]<br />[System.Obsolete("", false)]<br />public virtual <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Void">void</a> <b>EnablePanning</b> (<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Boolean">bool</a> enable)</div>
+          <h4 class="Subsection">Parameters</h4>
+          <blockquote class="SubsectionBox" id="M:ShinobiCharts.SChartCanvas.EnablePanning(System.Boolean):Parameters">
+            <dl>
+              <dt>
+                <i>enable</i>
+              </dt>
+              <dd>If set to true, panning will be enabled on the canvas.</dd>
+            </dl>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="M:ShinobiCharts.SChartCanvas.EnablePanning(System.Boolean):Remarks">
+					Sets whether panning is enabled on the chart canvas.
+				</div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="M:ShinobiCharts.SChartCanvas.EnablePanning(System.Boolean):Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.5.7.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="P:ShinobiCharts.SChartCanvas.GLView">GLView Property</h3>
+        <blockquote id="P:ShinobiCharts.SChartCanvas.GLView:member">
+          <p class="Summary">
+				This is the layer upon which we draw all of our chart series and also any chart annotations.
+			</p>
+          <h2>Syntax</h2>
+          <div class="Signature">[get: MonoTouch.Foundation.Export("glView", MonoTouch.ObjCRuntime.ArgumentSemantic.Retain)]<br />[set: MonoTouch.Foundation.Export("setGlView:", MonoTouch.ObjCRuntime.ArgumentSemantic.Retain)]<br />public virtual <a href="../ShinobiCharts/SChartGLView.html">SChartGLView</a> <b>GLView</b>  { get; set; }</div>
+          <h4 class="Subsection">Value</h4>
+          <blockquote class="SubsectionBox" id="P:ShinobiCharts.SChartCanvas.GLView:Value">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartCanvas.GLView:Remarks">
+				This layer is rendered using openGL and therefore uses GL based coordinates.
+			</div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartCanvas.GLView:Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.5.7.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="P:ShinobiCharts.SChartCanvas.OrientationChanged">OrientationChanged Property</h3>
+        <blockquote id="P:ShinobiCharts.SChartCanvas.OrientationChanged:member">
+          <p class="Summary">
+				DEPRECATED - This should be moved into a private header.
+			</p>
+          <h2>Syntax</h2>
+          <div class="Signature">[System.Obsolete("", false)]<br />[get: MonoTouch.Foundation.Export("orientationChanged", MonoTouch.ObjCRuntime.ArgumentSemantic.Assign)]<br />[set: MonoTouch.Foundation.Export("setOrientationChanged:", MonoTouch.ObjCRuntime.ArgumentSemantic.Assign)]<br />public virtual <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Boolean">bool</a> <b>OrientationChanged</b>  { get; set; }</div>
+          <h4 class="Subsection">Value</h4>
+          <blockquote class="SubsectionBox" id="P:ShinobiCharts.SChartCanvas.OrientationChanged:Value">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartCanvas.OrientationChanged:Remarks">
+				We set this property to true if the chart responds to device rotations, and we rotate the device.
+			</div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartCanvas.OrientationChanged:Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.5.7.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="P:ShinobiCharts.SChartCanvas.Overlay">Overlay Property</h3>
+        <blockquote id="P:ShinobiCharts.SChartCanvas.Overlay:member">
+          <p class="Summary">
+				This is the layer where we render things like the crosshair.
+			</p>
+          <h2>Syntax</h2>
+          <div class="Signature">[get: MonoTouch.Foundation.Export("overlay", MonoTouch.ObjCRuntime.ArgumentSemantic.Retain)]<br />[set: MonoTouch.Foundation.Export("setOverlay:", MonoTouch.ObjCRuntime.ArgumentSemantic.Retain)]<br />public virtual <a href="../ShinobiCharts/SChartCanvasOverlay.html">SChartCanvasOverlay</a> <b>Overlay</b>  { get; set; }</div>
+          <h4 class="Subsection">Value</h4>
+          <blockquote class="SubsectionBox" id="P:ShinobiCharts.SChartCanvas.Overlay:Value">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartCanvas.Overlay:Remarks">
+          </div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartCanvas.Overlay:Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.5.7.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="P:ShinobiCharts.SChartCanvas.RedrawGL">RedrawGL Property</h3>
+        <blockquote id="P:ShinobiCharts.SChartCanvas.RedrawGL:member">
+          <p class="Summary">
+				DEPRECATED - This should be moved into a private header.
+			</p>
+          <h2>Syntax</h2>
+          <div class="Signature">[System.Obsolete("", false)]<br />[get: MonoTouch.Foundation.Export("redrawGL")]<br />[set: MonoTouch.Foundation.Export("setRedrawGL:")]<br />public virtual <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Boolean">bool</a> <b>RedrawGL</b>  { get; set; }</div>
+          <h4 class="Subsection">Value</h4>
+          <blockquote class="SubsectionBox" id="P:ShinobiCharts.SChartCanvas.RedrawGL:Value">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartCanvas.RedrawGL:Remarks">
+				If this property is set to true, we will refresh the canvas in the next draw cycle.
+				We set this property to true when we call ShinobiChart.RedrawChart and pass true in as the argument.
+			</div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartCanvas.RedrawGL:Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.5.7.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="P:ShinobiCharts.SChartCanvas.ReloadedData">ReloadedData Property</h3>
+        <blockquote id="P:ShinobiCharts.SChartCanvas.ReloadedData:member">
+          <p class="Summary">
+				DEPRECATED - This should be moved into a private header.
+			</p>
+          <h2>Syntax</h2>
+          <div class="Signature">[System.Obsolete("", false)]<br />[get: MonoTouch.Foundation.Export("reloadedData", MonoTouch.ObjCRuntime.ArgumentSemantic.Assign)]<br />[set: MonoTouch.Foundation.Export("setReloadedData:", MonoTouch.ObjCRuntime.ArgumentSemantic.Assign)]<br />public virtual <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Boolean">bool</a> <b>ReloadedData</b>  { get; set; }</div>
+          <h4 class="Subsection">Value</h4>
+          <blockquote class="SubsectionBox" id="P:ShinobiCharts.SChartCanvas.ReloadedData:Value">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartCanvas.ReloadedData:Remarks">
+				We set this property to true when we reload data in the chart.
+			</div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartCanvas.ReloadedData:Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.5.7.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="P:ShinobiCharts.SChartCanvas.Underlay">Underlay Property</h3>
+        <blockquote id="P:ShinobiCharts.SChartCanvas.Underlay:member">
+          <p class="Summary">
+				The underlay is the layer upon which we draw all of our axes.
+			</p>
+          <h2>Syntax</h2>
+          <div class="Signature">[get: MonoTouch.Foundation.Export("underlay", MonoTouch.ObjCRuntime.ArgumentSemantic.Retain)]<br />[set: MonoTouch.Foundation.Export("setUnderlay:", MonoTouch.ObjCRuntime.ArgumentSemantic.Retain)]<br />public virtual <a href="../ShinobiCharts/SChartCanvasUnderlay.html">SChartCanvasUnderlay</a> <b>Underlay</b>  { get; set; }</div>
+          <h4 class="Subsection">Value</h4>
+          <blockquote class="SubsectionBox" id="P:ShinobiCharts.SChartCanvas.Underlay:Value">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartCanvas.Underlay:Remarks">
+				We use pixel based coordinates on the underlay.
+			</div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartCanvas.Underlay:Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.5.7.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="P:ShinobiCharts.SChartCanvas.UnderlayForAnnotations">UnderlayForAnnotations Property</h3>
+        <blockquote id="P:ShinobiCharts.SChartCanvas.UnderlayForAnnotations:member">
+          <p class="Summary">
+				This is the layer where we draw all of our annotation views that are visualised under our data
+			</p>
+          <h2>Syntax</h2>
+          <div class="Signature">[get: MonoTouch.Foundation.Export("underlayForAnnotations", MonoTouch.ObjCRuntime.ArgumentSemantic.Retain)]<br />[set: MonoTouch.Foundation.Export("setUnderlayForAnnotations:", MonoTouch.ObjCRuntime.ArgumentSemantic.Retain)]<br />public virtual <a href="javascript:alert(&quot;Documentation not found.&quot;)">MonoTouch.UIKit.UIView</a> <b>UnderlayForAnnotations</b>  { get; set; }</div>
+          <h4 class="Subsection">Value</h4>
+          <blockquote class="SubsectionBox" id="P:ShinobiCharts.SChartCanvas.UnderlayForAnnotations:Value">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartCanvas.UnderlayForAnnotations:Remarks">
+          </div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartCanvas.UnderlayForAnnotations:Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.5.7.0</div>
+          <hr size="1" />
+        </blockquote>
+      </div>
+    </div>
+    <div class="Parameter">
+    </div>
+    <hr size="1" />
+    <div class="Copyright"> © 2013 Scott Logic Limited. All rights reserved </div>
+  </body>
+</html>

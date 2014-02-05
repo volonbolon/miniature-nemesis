@@ -1,0 +1,1235 @@
+<html>
+  <head>
+    <title>ShinobiCharts.SChartDateFrequency</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <style>
+      a { text-decoration: none; color: #AD1015; font-family: Arial }
+
+      div.SideBar {
+        padding-left: 1em;
+        padding-right: 1em;
+        right: 0;
+        float: right;
+        border: thin solid black;
+        background-color: #f2f2f2;
+      }
+    
+      .CollectionTitle { font-family: Arial; font-weight: bold; background: black; color: white; padding: 10px; margin: 0 }
+      .CollectionTitle p { font-size: 150%; }
+      .PageTitle { font-size: 150%; font-weight: bold }
+
+      .Summary { }
+      .Signature { }          
+      .Remarks { }
+      .Members { }
+      .Copyright { }
+      
+      .Section { font-family: Arial; font-size: 125%; font-weight: bold }
+      p.Summary {
+        margin-left: 1em;
+      }
+      .SectionBox { margin-left: 2em }
+      .NamespaceName { font-family: Arial; font-size: 105%; font-weight: bold }
+      .NamespaceSumary { }
+      .MemberName { font-size: 115%; font-weight: bold; margin-top: 1em }
+      .Subsection { font-size: 105%; font-weight: bold }
+      .SubsectionBox { margin-left: 2em; margin-bottom: 1em }
+
+      .CodeExampleTable { background-color: #f5f5dd; border: thin solid black; padding: .25em; }
+      
+      .TypesListing {
+	font-family: Arial;
+        border-collapse: collapse;
+      }
+
+      td {
+	font-family: Arial;
+        vertical-align: top;
+      }
+      th {
+	font-family: Arial;
+        text-align: left;
+      }
+
+      .TypesListing td { 
+        margin: 0px;  
+        padding: .25em;
+        border: solid gray 1px;
+      }
+
+      .TypesListing th { 
+        margin: 0px;  
+        padding: .25em;
+        background-color: #f2f2f2;
+        border: solid gray 1px;
+      }
+
+      div.Footer {
+	font-family: Arial;
+        border-top: 1px solid gray;
+        margin-top: 1.5em;
+        padding-top: 0.6em;
+        text-align: center;
+        color: gray;
+      }
+
+      span.NotEntered /* Documentation for this section has not yet been entered */ {
+	font-family: Arial;
+        font-style: italic;
+        color: 	#C0C0C0;	
+      }
+
+      div.Header {
+	font-family: Arial;
+        background: #B0C4DE;
+        border: double;
+        border-color: white;
+        border-width: 7px;
+        padding: 0.5em;
+      }
+
+      div.Header * {
+	font-family: Arial;
+        font-size: smaller;
+      }
+
+      div.Note {
+      }
+
+      i.ParamRef {
+      }
+
+      i.subtitle {
+      }
+
+      ul.TypeMembersIndex {
+	font-family: Arial;
+        text-align: left;
+        background: #F8F8F8;
+      }
+
+      ul.TypeMembersIndex li {
+        display: inline;
+        margin:  0.5em;
+      }
+
+      table.HeaderTable {
+      }
+
+      table.SignatureTable {
+      }
+
+      table.Documentation, table.Enumeration, table.TypeDocumentation {
+        border-collapse: collapse;
+        width: 100%;
+      }
+
+      table.Documentation tr th, table.TypeMembers tr th, table.Enumeration tr th, table.TypeDocumentation tr th {
+	font-family: Arial;
+        background: whitesmoke;
+        padding: 0.8em;
+        border: 1px solid gray;
+        text-align: left;
+        vertical-align: bottom;
+      }
+
+      table.Documentation tr td, table.TypeMembers tr td, table.Enumeration tr td, table.TypeDocumentation tr td {
+	font-family: Arial;
+        padding: 0.5em;
+        border: 1px solid gray;
+        text-align: left;
+        vertical-align: top;
+      }
+
+      table.TypeMembers {
+        border: 1px solid #C0C0C0;
+        width: 100%;
+      }
+
+      table.TypeMembers tr td {
+        background: #F8F8F8;
+        border: white;
+      }
+
+      table.Documentation {
+      }
+
+      table.TypeMembers {
+      }
+
+      div.CodeExample {
+        width: 100%;
+        border: 1px solid #DDDDDD;
+        background-color: #F8F8F8;
+      }
+
+      div.CodeExample p {
+        margin: 0.5em;
+        border-bottom: 1px solid #DDDDDD;
+      }
+
+      div.CodeExample div {
+        margin: 0.5em;
+      }
+
+      h4 {
+        margin-bottom: 0;
+      }
+
+      div.Signature {
+	font-family: Arial;
+        border: 1px solid #C0C0C0;
+        background: #F2F2F2;
+        padding: 1em;
+      }
+    </style>
+    <script type="text/JavaScript">
+      function toggle_display (block) {
+        var w = document.getElementById (block);
+        var t = document.getElementById (block + ":toggle");
+        if (w.style.display == "none") {
+          w.style.display = "block";
+          t.innerHTML = "⊟";
+        } else {
+          w.style.display = "none";
+          t.innerHTML = "⊞";
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <div class="CollectionTitle">
+      <p>
+		ShinobiControls Xamarin Bindings Documentation
+	</p>
+      <a href="../index.html">ShinobiCharts</a> : <a href="index.html">ShinobiCharts Namespace</a></div>
+    <h1 class="PageTitle" id="T:ShinobiCharts.SChartDateFrequency">SChartDateFrequency  Class</h1>
+    <p class="Summary" id="T:ShinobiCharts.SChartDateFrequency:Summary">The desired frequency of tick marks on an SChartDateTimeAxis</p>
+    <div>
+      <h2>Syntax</h2>
+      <div class="Signature" id="T:ShinobiCharts.SChartDateFrequency:Signature">[MonoTouch.Foundation.Register("SChartDateFrequency", true)]<br />public class  <b>SChartDateFrequency</b> : <a href="javascript:alert(&quot;Documentation not found.&quot;)">MonoTouch.Foundation.NSObject</a>,	<a href="../ShinobiCharts/NSCopying.html">NSCopying</a></div>
+    </div>
+    <div class="Remarks" id="T:ShinobiCharts.SChartDateFrequency:Docs">
+      <h2 class="Section">Remarks</h2>
+      <div class="SectionBox" id="T:ShinobiCharts.SChartDateFrequency:Docs:Remarks">
+        <p>
+					An SChartDateFrequency is used to specify the desired frequency of tick marks on a <a href="../ShinobiCharts/SChartDateTimeAxis.html">ShinobiCharts.SChartDateTimeAxis</a>.
+					For example, a frequency of 2 hours will cause the axis to attempt to display a tick mark at every 2 hour mark.
+					No class type other than SChartDateFrequency (or one of its subclasses) may be used to define a date frequency
+					on the axis.
+				</p>
+        <p>
+					A frequency of a particular calendar unit may be set from one of the following supported units:
+					year, month, week, day, hour, minute, second.
+					This can be done by either: 
+					<ul><li>Initialising an `SChartDateFrequency` object, then using the setter method for the appropriate unit of time (as listed above).</li><li>Using one of the convenience init methods provided (such as `initWithSecond:`).</li><li>Using one of the factory methods provided (such as `dateFrequencyWithSecond:`).</li></ul></p>
+        <p>
+					A frequency can only be specified in terms of one type of calendar unit.
+					For example - a frequency of 1 hour AND 3 minutes cannot be set.
+					In this case the frequency can only be of the type hour or of the type minute and will be set to the last
+					component specified.
+					To specify partial units it is necessary to use the lowest denominator - in the case of 1 hour and 3 minutes
+					we would create a frequency of 63 minutes.
+				</p>
+        <p>
+					If an attempt is made to set frequency to a negative or zero value, a default of 1 for the given component will be set.
+					For example, if an attempt is made to set a frequency of -9 years the actual frequency set will be 1 year.
+				</p>
+        <p>
+					Once the frequency is created, it is given a frequency denomination.
+				</p>
+      </div>
+      <h2 class="Section">Requirements</h2>
+      <div class="SectionBox" id="T:ShinobiCharts.SChartDateFrequency:Docs:Version Information">
+        <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.5.7.0</div>
+      <h2 class="Section" id="Members">Members</h2>
+      <div class="SectionBox" id="_Members">
+        <p>
+								See Also: Inherited members from
+								<a href="javascript:alert(&quot;Documentation not found.&quot;)">MonoTouch.Foundation.NSObject</a>.
+							</p>
+        <h2 class="Section">Public Constructors</h2>
+        <div class="SectionBox" id="Public Constructors">
+          <div class="SubsectionBox">
+            <table class="TypeMembers">
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <div>
+                    <b>
+                      <a href="#C:ShinobiCharts.SChartDateFrequency(MonoTouch.Foundation.NSCoder)">SChartDateFrequency</a>
+                    </b>(<a href="javascript:alert(&quot;Documentation not found.&quot;)">MonoTouch.Foundation.NSCoder</a>)</div>
+                </td>
+                <td>A constructor that initializes the object from the data stored in the unarchiver object.
+      </td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <div>
+                    <b>
+                      <a href="#C:ShinobiCharts.SChartDateFrequency(MonoTouch.Foundation.NSObjectFlag)">SChartDateFrequency</a>
+                    </b>(<a href="javascript:alert(&quot;Documentation not found.&quot;)">MonoTouch.Foundation.NSObjectFlag</a>)</div>
+                </td>
+                <td>Constructor to call on derived classes to skip initialization and merely allocate the object.
+      </td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <div>
+                    <b>
+                      <a href="#C:ShinobiCharts.SChartDateFrequency(System.IntPtr)">SChartDateFrequency</a>
+                    </b>(<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.IntPtr">IntPtr</a>)</div>
+                </td>
+                <td>A constructor used when creating managed representations of unmanaged objects.
+      </td>
+              </tr>
+            </table>
+          </div>
+        </div>
+        <h2 class="Section">Public Properties</h2>
+        <div class="SectionBox" id="Public Properties">
+          <div class="SubsectionBox">
+            <table class="TypeMembers">
+              <tr valign="top">
+                <td>[read-only]<div>override </div></td>
+                <td>
+                  <b>
+                    <a href="#P:ShinobiCharts.SChartDateFrequency.ClassHandle">ClassHandle</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.IntPtr">IntPtr</a>
+                  </i>. 
+        The handle for this class.
+        </td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <b>
+                    <a href="#P:ShinobiCharts.SChartDateFrequency.Day">Day</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Int32">int</a>
+                  </i>. DEPRECATED - We will remove this from the public API in a future commit, as it is only intended for internal use.
+      </td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <b>
+                    <a href="#P:ShinobiCharts.SChartDateFrequency.Denomination">Denomination</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="../ShinobiCharts/SChartDateFrequencyDenomination.html">SChartDateFrequencyDenomination</a>
+                  </i>. The frequency denomination of the date frequency object.
+      </td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <b>
+                    <a href="#P:ShinobiCharts.SChartDateFrequency.Hour">Hour</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Int32">int</a>
+                  </i>. DEPRECATED - We will remove this from the public API in a future commit, as it is only intended for internal use.
+      </td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <b>
+                    <a href="#P:ShinobiCharts.SChartDateFrequency.Minute">Minute</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Int32">int</a>
+                  </i>. DEPRECATED - We will remove this from the public API in a future commit, as it is only intended for internal use.
+      </td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <b>
+                    <a href="#P:ShinobiCharts.SChartDateFrequency.Month">Month</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Int32">int</a>
+                  </i>. DEPRECATED - We will remove this from the public API in a future commit, as it is only intended for internal use.
+      </td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <b>
+                    <a href="#P:ShinobiCharts.SChartDateFrequency.Second">Second</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Int32">int</a>
+                  </i>. DEPRECATED - We will remove this from the public API in a future commit, as it is only intended for internal use.
+      </td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <b>
+                    <a href="#P:ShinobiCharts.SChartDateFrequency.Week">Week</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Int32">int</a>
+                  </i>. DEPRECATED - We will remove this from the public API in a future commit, as it is only intended for internal use.
+      </td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <b>
+                    <a href="#P:ShinobiCharts.SChartDateFrequency.Year">Year</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Int32">int</a>
+                  </i>. DEPRECATED - We will remove this from the public API in a future commit, as it is only intended for internal use.
+      </td>
+              </tr>
+            </table>
+          </div>
+        </div>
+        <h2 class="Section">Public Methods</h2>
+        <div class="SectionBox" id="Public Methods">
+          <div class="SubsectionBox">
+            <table class="TypeMembers">
+              <tr valign="top">
+                <td>
+                  <div>override </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="#M:ShinobiCharts.SChartDateFrequency.ConformsToProtocol(System.IntPtr)">ConformsToProtocol</a>
+                  </b>(<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.IntPtr">IntPtr</a>)<nobr> : <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Boolean">bool</a></nobr><blockquote>Internal - checks whether this object conforms to a protocol.
+      </blockquote></td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>static </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="#M:ShinobiCharts.SChartDateFrequency.CreateWithDay(System.Int32)">CreateWithDay</a>
+                  </b>(<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Int32">int</a>)<nobr> : <a href="../ShinobiCharts/SChartDateFrequency.html">SChartDateFrequency</a></nobr><blockquote>Returns a new date frequency object, with a frequency of the specified number of days.
+      </blockquote></td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>static </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="#M:ShinobiCharts.SChartDateFrequency.CreateWithHour(System.Int32)">CreateWithHour</a>
+                  </b>(<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Int32">int</a>)<nobr> : <a href="../ShinobiCharts/SChartDateFrequency.html">SChartDateFrequency</a></nobr><blockquote>Returns a new date frequency object, with a frequency of the specified number of hours.
+      </blockquote></td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>static </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="#M:ShinobiCharts.SChartDateFrequency.CreateWithMinute(System.Int32)">CreateWithMinute</a>
+                  </b>(<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Int32">int</a>)<nobr> : <a href="../ShinobiCharts/SChartDateFrequency.html">SChartDateFrequency</a></nobr><blockquote>Returns a new date frequency object, with a frequency of the specified number of minutes.
+      </blockquote></td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>static </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="#M:ShinobiCharts.SChartDateFrequency.CreateWithMonth(System.Int32)">CreateWithMonth</a>
+                  </b>(<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Int32">int</a>)<nobr> : <a href="../ShinobiCharts/SChartDateFrequency.html">SChartDateFrequency</a></nobr><blockquote>Returns a new date frequency object, with a frequency of the specified number of months.
+      </blockquote></td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>static </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="#M:ShinobiCharts.SChartDateFrequency.CreateWithSecond(System.Int32)">CreateWithSecond</a>
+                  </b>(<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Int32">int</a>)<nobr> : <a href="../ShinobiCharts/SChartDateFrequency.html">SChartDateFrequency</a></nobr><blockquote>Returns a new date frequency object, with a frequency of the specified number of seconds.
+      </blockquote></td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>static </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="#M:ShinobiCharts.SChartDateFrequency.CreateWithWeek(System.Int32)">CreateWithWeek</a>
+                  </b>(<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Int32">int</a>)<nobr> : <a href="../ShinobiCharts/SChartDateFrequency.html">SChartDateFrequency</a></nobr><blockquote>Returns a new date frequency object, with a frequency of the specified number of weeks.
+      </blockquote></td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>static </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="#M:ShinobiCharts.SChartDateFrequency.CreateWithYear(System.Int32)">CreateWithYear</a>
+                  </b>(<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Int32">int</a>)<nobr> : <a href="../ShinobiCharts/SChartDateFrequency.html">SChartDateFrequency</a></nobr><blockquote>Returns a new date frequency object, with a frequency of the specified number of years.
+      </blockquote></td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="#M:ShinobiCharts.SChartDateFrequency.SetDay(System.Int32)">SetDay</a>
+                  </b>(<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Int32">int</a>)<blockquote>Set the date frequency to have a value of the specified number of days.</blockquote></td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="#M:ShinobiCharts.SChartDateFrequency.SetHour(System.Int32)">SetHour</a>
+                  </b>(<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Int32">int</a>)<blockquote>Set the date frequency to have a value of the specified number of hours.</blockquote></td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="#M:ShinobiCharts.SChartDateFrequency.SetMinute(System.Int32)">SetMinute</a>
+                  </b>(<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Int32">int</a>)<blockquote>Set the date frequency to have a value of the specified number of minutes.</blockquote></td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="#M:ShinobiCharts.SChartDateFrequency.SetMonth(System.Int32)">SetMonth</a>
+                  </b>(<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Int32">int</a>)<blockquote>Set the date frequency to have a value of the specified number of months.</blockquote></td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="#M:ShinobiCharts.SChartDateFrequency.SetSecond(System.Int32)">SetSecond</a>
+                  </b>(<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Int32">int</a>)<blockquote>Set the date frequency to have a value of the specified number of seconds.</blockquote></td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="#M:ShinobiCharts.SChartDateFrequency.SetWeek(System.Int32)">SetWeek</a>
+                  </b>(<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Int32">int</a>)<blockquote>Set the date frequency to have a value of the specified number of weeks.</blockquote></td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="#M:ShinobiCharts.SChartDateFrequency.SetYear(System.Int32)">SetYear</a>
+                  </b>(<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Int32">int</a>)<blockquote>Set the date frequency to have a value of the specified number of years.</blockquote></td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="#M:ShinobiCharts.SChartDateFrequency.ToSeconds()">ToSeconds</a>
+                  </b>()<nobr> : <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Double">double</a></nobr><blockquote>The number of seconds, regardless of the denomination used to create it
+      </blockquote></td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="Members" id="T:ShinobiCharts.SChartDateFrequency:Members">
+      <h2 class="Section" id="MemberDetails">Member Details</h2>
+      <div class="SectionBox" id="_MemberDetails">
+        <h3 id="C:ShinobiCharts.SChartDateFrequency(MonoTouch.Foundation.NSCoder)">SChartDateFrequency Constructor</h3>
+        <blockquote id="C:ShinobiCharts.SChartDateFrequency(MonoTouch.Foundation.NSCoder):member">
+          <p class="Summary">A constructor that initializes the object from the data stored in the unarchiver object.
+      </p>
+          <h2>Syntax</h2>
+          <div class="Signature">[MonoTouch.Foundation.Export("initWithCoder:")]<br />[System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Advanced)]<br />public  <b>SChartDateFrequency</b> (<a href="javascript:alert(&quot;Documentation not found.&quot;)">MonoTouch.Foundation.NSCoder</a> coder)</div>
+          <h4 class="Subsection">Parameters</h4>
+          <blockquote class="SubsectionBox" id="C:ShinobiCharts.SChartDateFrequency(MonoTouch.Foundation.NSCoder):Parameters">
+            <dl>
+              <dt>
+                <i>coder</i>
+              </dt>
+              <dd>The unarchiver object</dd>
+            </dl>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="C:ShinobiCharts.SChartDateFrequency(MonoTouch.Foundation.NSCoder):Remarks">This constructor is provided to allow the class to be initialized from an unarchiver (for example, during NIB deserialization).</div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="C:ShinobiCharts.SChartDateFrequency(MonoTouch.Foundation.NSCoder):Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.5.7.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="C:ShinobiCharts.SChartDateFrequency(MonoTouch.Foundation.NSObjectFlag)">SChartDateFrequency Constructor</h3>
+        <blockquote id="C:ShinobiCharts.SChartDateFrequency(MonoTouch.Foundation.NSObjectFlag):member">
+          <p class="Summary">Constructor to call on derived classes to skip initialization and merely allocate the object.
+      </p>
+          <h2>Syntax</h2>
+          <div class="Signature">[System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Advanced)]<br />public  <b>SChartDateFrequency</b> (<a href="javascript:alert(&quot;Documentation not found.&quot;)">MonoTouch.Foundation.NSObjectFlag</a> t)</div>
+          <h4 class="Subsection">Parameters</h4>
+          <blockquote class="SubsectionBox" id="C:ShinobiCharts.SChartDateFrequency(MonoTouch.Foundation.NSObjectFlag):Parameters">
+            <dl>
+              <dt>
+                <i>t</i>
+              </dt>
+              <dd>Unused sentinel value</dd>
+            </dl>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="C:ShinobiCharts.SChartDateFrequency(MonoTouch.Foundation.NSObjectFlag):Remarks">You should not invoke this method directly.</div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="C:ShinobiCharts.SChartDateFrequency(MonoTouch.Foundation.NSObjectFlag):Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.5.7.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="C:ShinobiCharts.SChartDateFrequency(System.IntPtr)">SChartDateFrequency Constructor</h3>
+        <blockquote id="C:ShinobiCharts.SChartDateFrequency(System.IntPtr):member">
+          <p class="Summary">A constructor used when creating managed representations of unmanaged objects.
+      </p>
+          <h2>Syntax</h2>
+          <div class="Signature">[System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Advanced)]<br />public  <b>SChartDateFrequency</b> (<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.IntPtr">IntPtr</a> handle)</div>
+          <h4 class="Subsection">Parameters</h4>
+          <blockquote class="SubsectionBox" id="C:ShinobiCharts.SChartDateFrequency(System.IntPtr):Parameters">
+            <dl>
+              <dt>
+                <i>handle</i>
+              </dt>
+              <dd>Handle of the unmanaged object</dd>
+            </dl>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="C:ShinobiCharts.SChartDateFrequency(System.IntPtr):Remarks">You should not invoke this method directly.</div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="C:ShinobiCharts.SChartDateFrequency(System.IntPtr):Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.5.7.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="P:ShinobiCharts.SChartDateFrequency.ClassHandle">ClassHandle Property</h3>
+        <blockquote id="P:ShinobiCharts.SChartDateFrequency.ClassHandle:member">
+          <p class="Summary">
+        The handle for this class.
+        </p>
+          <h2>Syntax</h2>
+          <div class="Signature">public override <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.IntPtr">IntPtr</a> <b>ClassHandle</b>  { get; }</div>
+          <h4 class="Subsection">Value</h4>
+          <blockquote class="SubsectionBox" id="P:ShinobiCharts.SChartDateFrequency.ClassHandle:Value">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartDateFrequency.ClassHandle:Remarks">Not normally used by application code</div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartDateFrequency.ClassHandle:Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.5.7.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="M:ShinobiCharts.SChartDateFrequency.ConformsToProtocol(System.IntPtr)">ConformsToProtocol Method</h3>
+        <blockquote id="M:ShinobiCharts.SChartDateFrequency.ConformsToProtocol(System.IntPtr):member">
+          <p class="Summary">Internal - checks whether this object conforms to a protocol.
+      </p>
+          <h2>Syntax</h2>
+          <div class="Signature">[MonoTouch.Foundation.Export("conformsToProtocol:")]<br />public override <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Boolean">bool</a> <b>ConformsToProtocol</b> (<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.IntPtr">IntPtr</a> protocol)</div>
+          <h4 class="Subsection">Parameters</h4>
+          <blockquote class="SubsectionBox" id="M:ShinobiCharts.SChartDateFrequency.ConformsToProtocol(System.IntPtr):Parameters">
+            <dl>
+              <dt>
+                <i>protocol</i>
+              </dt>
+              <dd>The protocol</dd>
+            </dl>
+          </blockquote>
+          <h4 class="Subsection">Returns</h4>
+          <blockquote class="SubsectionBox" id="M:ShinobiCharts.SChartDateFrequency.ConformsToProtocol(System.IntPtr):Returns">True if the object conforms to the protocol</blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="M:ShinobiCharts.SChartDateFrequency.ConformsToProtocol(System.IntPtr):Remarks">Not normally called from application code - used by the Shinobi framework.</div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="M:ShinobiCharts.SChartDateFrequency.ConformsToProtocol(System.IntPtr):Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.5.7.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="M:ShinobiCharts.SChartDateFrequency.CreateWithDay(System.Int32)">CreateWithDay Method</h3>
+        <blockquote id="M:ShinobiCharts.SChartDateFrequency.CreateWithDay(System.Int32):member">
+          <p class="Summary">Returns a new date frequency object, with a frequency of the specified number of days.
+      </p>
+          <h2>Syntax</h2>
+          <div class="Signature">[MonoTouch.Foundation.Export("dateFrequencyWithDay:")]<br />public static <a href="../ShinobiCharts/SChartDateFrequency.html">SChartDateFrequency</a> <b>CreateWithDay</b> (<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Int32">int</a> newDay)</div>
+          <h4 class="Subsection">Parameters</h4>
+          <blockquote class="SubsectionBox" id="M:ShinobiCharts.SChartDateFrequency.CreateWithDay(System.Int32):Parameters">
+            <dl>
+              <dt>
+                <i>newDay</i>
+              </dt>
+              <dd>The frequency to use, in days.</dd>
+            </dl>
+          </blockquote>
+          <h4 class="Subsection">Returns</h4>
+          <blockquote class="SubsectionBox" id="M:ShinobiCharts.SChartDateFrequency.CreateWithDay(System.Int32):Returns">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="M:ShinobiCharts.SChartDateFrequency.CreateWithDay(System.Int32):Remarks">
+          </div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="M:ShinobiCharts.SChartDateFrequency.CreateWithDay(System.Int32):Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.5.7.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="M:ShinobiCharts.SChartDateFrequency.CreateWithHour(System.Int32)">CreateWithHour Method</h3>
+        <blockquote id="M:ShinobiCharts.SChartDateFrequency.CreateWithHour(System.Int32):member">
+          <p class="Summary">Returns a new date frequency object, with a frequency of the specified number of hours.
+      </p>
+          <h2>Syntax</h2>
+          <div class="Signature">[MonoTouch.Foundation.Export("dateFrequencyWithHour:")]<br />public static <a href="../ShinobiCharts/SChartDateFrequency.html">SChartDateFrequency</a> <b>CreateWithHour</b> (<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Int32">int</a> newHour)</div>
+          <h4 class="Subsection">Parameters</h4>
+          <blockquote class="SubsectionBox" id="M:ShinobiCharts.SChartDateFrequency.CreateWithHour(System.Int32):Parameters">
+            <dl>
+              <dt>
+                <i>newHour</i>
+              </dt>
+              <dd>The frequency to use, in hours.</dd>
+            </dl>
+          </blockquote>
+          <h4 class="Subsection">Returns</h4>
+          <blockquote class="SubsectionBox" id="M:ShinobiCharts.SChartDateFrequency.CreateWithHour(System.Int32):Returns">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="M:ShinobiCharts.SChartDateFrequency.CreateWithHour(System.Int32):Remarks">
+          </div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="M:ShinobiCharts.SChartDateFrequency.CreateWithHour(System.Int32):Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.5.7.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="M:ShinobiCharts.SChartDateFrequency.CreateWithMinute(System.Int32)">CreateWithMinute Method</h3>
+        <blockquote id="M:ShinobiCharts.SChartDateFrequency.CreateWithMinute(System.Int32):member">
+          <p class="Summary">Returns a new date frequency object, with a frequency of the specified number of minutes.
+      </p>
+          <h2>Syntax</h2>
+          <div class="Signature">[MonoTouch.Foundation.Export("dateFrequencyWithMinute:")]<br />public static <a href="../ShinobiCharts/SChartDateFrequency.html">SChartDateFrequency</a> <b>CreateWithMinute</b> (<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Int32">int</a> newMinute)</div>
+          <h4 class="Subsection">Parameters</h4>
+          <blockquote class="SubsectionBox" id="M:ShinobiCharts.SChartDateFrequency.CreateWithMinute(System.Int32):Parameters">
+            <dl>
+              <dt>
+                <i>newMinute</i>
+              </dt>
+              <dd>The frequency to use, in minutes.</dd>
+            </dl>
+          </blockquote>
+          <h4 class="Subsection">Returns</h4>
+          <blockquote class="SubsectionBox" id="M:ShinobiCharts.SChartDateFrequency.CreateWithMinute(System.Int32):Returns">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="M:ShinobiCharts.SChartDateFrequency.CreateWithMinute(System.Int32):Remarks">
+          </div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="M:ShinobiCharts.SChartDateFrequency.CreateWithMinute(System.Int32):Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.5.7.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="M:ShinobiCharts.SChartDateFrequency.CreateWithMonth(System.Int32)">CreateWithMonth Method</h3>
+        <blockquote id="M:ShinobiCharts.SChartDateFrequency.CreateWithMonth(System.Int32):member">
+          <p class="Summary">Returns a new date frequency object, with a frequency of the specified number of months.
+      </p>
+          <h2>Syntax</h2>
+          <div class="Signature">[MonoTouch.Foundation.Export("dateFrequencyWithMonth:")]<br />public static <a href="../ShinobiCharts/SChartDateFrequency.html">SChartDateFrequency</a> <b>CreateWithMonth</b> (<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Int32">int</a> newMonth)</div>
+          <h4 class="Subsection">Parameters</h4>
+          <blockquote class="SubsectionBox" id="M:ShinobiCharts.SChartDateFrequency.CreateWithMonth(System.Int32):Parameters">
+            <dl>
+              <dt>
+                <i>newMonth</i>
+              </dt>
+              <dd>The frequency to use, in months.</dd>
+            </dl>
+          </blockquote>
+          <h4 class="Subsection">Returns</h4>
+          <blockquote class="SubsectionBox" id="M:ShinobiCharts.SChartDateFrequency.CreateWithMonth(System.Int32):Returns">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="M:ShinobiCharts.SChartDateFrequency.CreateWithMonth(System.Int32):Remarks">
+          </div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="M:ShinobiCharts.SChartDateFrequency.CreateWithMonth(System.Int32):Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.5.7.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="M:ShinobiCharts.SChartDateFrequency.CreateWithSecond(System.Int32)">CreateWithSecond Method</h3>
+        <blockquote id="M:ShinobiCharts.SChartDateFrequency.CreateWithSecond(System.Int32):member">
+          <p class="Summary">Returns a new date frequency object, with a frequency of the specified number of seconds.
+      </p>
+          <h2>Syntax</h2>
+          <div class="Signature">[MonoTouch.Foundation.Export("dateFrequencyWithSecond:")]<br />public static <a href="../ShinobiCharts/SChartDateFrequency.html">SChartDateFrequency</a> <b>CreateWithSecond</b> (<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Int32">int</a> newSecond)</div>
+          <h4 class="Subsection">Parameters</h4>
+          <blockquote class="SubsectionBox" id="M:ShinobiCharts.SChartDateFrequency.CreateWithSecond(System.Int32):Parameters">
+            <dl>
+              <dt>
+                <i>newSecond</i>
+              </dt>
+              <dd>The frequency to use, in seconds.</dd>
+            </dl>
+          </blockquote>
+          <h4 class="Subsection">Returns</h4>
+          <blockquote class="SubsectionBox" id="M:ShinobiCharts.SChartDateFrequency.CreateWithSecond(System.Int32):Returns">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="M:ShinobiCharts.SChartDateFrequency.CreateWithSecond(System.Int32):Remarks">
+          </div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="M:ShinobiCharts.SChartDateFrequency.CreateWithSecond(System.Int32):Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.5.7.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="M:ShinobiCharts.SChartDateFrequency.CreateWithWeek(System.Int32)">CreateWithWeek Method</h3>
+        <blockquote id="M:ShinobiCharts.SChartDateFrequency.CreateWithWeek(System.Int32):member">
+          <p class="Summary">Returns a new date frequency object, with a frequency of the specified number of weeks.
+      </p>
+          <h2>Syntax</h2>
+          <div class="Signature">[MonoTouch.Foundation.Export("dateFrequencyWithWeek:")]<br />public static <a href="../ShinobiCharts/SChartDateFrequency.html">SChartDateFrequency</a> <b>CreateWithWeek</b> (<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Int32">int</a> newWeek)</div>
+          <h4 class="Subsection">Parameters</h4>
+          <blockquote class="SubsectionBox" id="M:ShinobiCharts.SChartDateFrequency.CreateWithWeek(System.Int32):Parameters">
+            <dl>
+              <dt>
+                <i>newWeek</i>
+              </dt>
+              <dd>The frequency to use, in weeks.</dd>
+            </dl>
+          </blockquote>
+          <h4 class="Subsection">Returns</h4>
+          <blockquote class="SubsectionBox" id="M:ShinobiCharts.SChartDateFrequency.CreateWithWeek(System.Int32):Returns">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="M:ShinobiCharts.SChartDateFrequency.CreateWithWeek(System.Int32):Remarks">
+          </div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="M:ShinobiCharts.SChartDateFrequency.CreateWithWeek(System.Int32):Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.5.7.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="M:ShinobiCharts.SChartDateFrequency.CreateWithYear(System.Int32)">CreateWithYear Method</h3>
+        <blockquote id="M:ShinobiCharts.SChartDateFrequency.CreateWithYear(System.Int32):member">
+          <p class="Summary">Returns a new date frequency object, with a frequency of the specified number of years.
+      </p>
+          <h2>Syntax</h2>
+          <div class="Signature">[MonoTouch.Foundation.Export("dateFrequencyWithYear:")]<br />public static <a href="../ShinobiCharts/SChartDateFrequency.html">SChartDateFrequency</a> <b>CreateWithYear</b> (<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Int32">int</a> newYear)</div>
+          <h4 class="Subsection">Parameters</h4>
+          <blockquote class="SubsectionBox" id="M:ShinobiCharts.SChartDateFrequency.CreateWithYear(System.Int32):Parameters">
+            <dl>
+              <dt>
+                <i>newYear</i>
+              </dt>
+              <dd>
+                <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+              </dd>
+            </dl>
+          </blockquote>
+          <h4 class="Subsection">Returns</h4>
+          <blockquote class="SubsectionBox" id="M:ShinobiCharts.SChartDateFrequency.CreateWithYear(System.Int32):Returns">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="M:ShinobiCharts.SChartDateFrequency.CreateWithYear(System.Int32):Remarks">
+          </div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="M:ShinobiCharts.SChartDateFrequency.CreateWithYear(System.Int32):Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.5.7.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="P:ShinobiCharts.SChartDateFrequency.Day">Day Property</h3>
+        <blockquote id="P:ShinobiCharts.SChartDateFrequency.Day:member">
+          <p class="Summary">DEPRECATED - We will remove this from the public API in a future commit, as it is only intended for internal use.
+      </p>
+          <h2>Syntax</h2>
+          <div class="Signature">[System.Obsolete("Use SetDay and ToSeconds instead", false)]<br />public <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Int32">int</a> <b>Day</b>  { get; set; }</div>
+          <h4 class="Subsection">Value</h4>
+          <blockquote class="SubsectionBox" id="P:ShinobiCharts.SChartDateFrequency.Day:Value">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartDateFrequency.Day:Remarks">
+          </div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartDateFrequency.Day:Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.5.7.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="P:ShinobiCharts.SChartDateFrequency.Denomination">Denomination Property</h3>
+        <blockquote id="P:ShinobiCharts.SChartDateFrequency.Denomination:member">
+          <p class="Summary">The frequency denomination of the date frequency object.
+      </p>
+          <h2>Syntax</h2>
+          <div class="Signature">public <a href="../ShinobiCharts/SChartDateFrequencyDenomination.html">SChartDateFrequencyDenomination</a> <b>Denomination</b>  { get; set; }</div>
+          <h4 class="Subsection">Value</h4>
+          <blockquote class="SubsectionBox" id="P:ShinobiCharts.SChartDateFrequency.Denomination:Value">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartDateFrequency.Denomination:Remarks">
+          </div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartDateFrequency.Denomination:Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.5.7.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="P:ShinobiCharts.SChartDateFrequency.Hour">Hour Property</h3>
+        <blockquote id="P:ShinobiCharts.SChartDateFrequency.Hour:member">
+          <p class="Summary">DEPRECATED - We will remove this from the public API in a future commit, as it is only intended for internal use.
+      </p>
+          <h2>Syntax</h2>
+          <div class="Signature">[System.Obsolete("Use SetHour and ToSeconds instead", false)]<br />public <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Int32">int</a> <b>Hour</b>  { get; set; }</div>
+          <h4 class="Subsection">Value</h4>
+          <blockquote class="SubsectionBox" id="P:ShinobiCharts.SChartDateFrequency.Hour:Value">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartDateFrequency.Hour:Remarks">
+          </div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartDateFrequency.Hour:Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.5.7.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="P:ShinobiCharts.SChartDateFrequency.Minute">Minute Property</h3>
+        <blockquote id="P:ShinobiCharts.SChartDateFrequency.Minute:member">
+          <p class="Summary">DEPRECATED - We will remove this from the public API in a future commit, as it is only intended for internal use.
+      </p>
+          <h2>Syntax</h2>
+          <div class="Signature">[System.Obsolete("Use SetMinute and ToSeconds instead", false)]<br />public <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Int32">int</a> <b>Minute</b>  { get; set; }</div>
+          <h4 class="Subsection">Value</h4>
+          <blockquote class="SubsectionBox" id="P:ShinobiCharts.SChartDateFrequency.Minute:Value">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartDateFrequency.Minute:Remarks">
+          </div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartDateFrequency.Minute:Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.5.7.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="P:ShinobiCharts.SChartDateFrequency.Month">Month Property</h3>
+        <blockquote id="P:ShinobiCharts.SChartDateFrequency.Month:member">
+          <p class="Summary">DEPRECATED - We will remove this from the public API in a future commit, as it is only intended for internal use.
+      </p>
+          <h2>Syntax</h2>
+          <div class="Signature">[System.Obsolete("Use SetMonth and ToSeconds instead", false)]<br />public <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Int32">int</a> <b>Month</b>  { get; set; }</div>
+          <h4 class="Subsection">Value</h4>
+          <blockquote class="SubsectionBox" id="P:ShinobiCharts.SChartDateFrequency.Month:Value">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartDateFrequency.Month:Remarks">
+          </div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartDateFrequency.Month:Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.5.7.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="P:ShinobiCharts.SChartDateFrequency.Second">Second Property</h3>
+        <blockquote id="P:ShinobiCharts.SChartDateFrequency.Second:member">
+          <p class="Summary">DEPRECATED - We will remove this from the public API in a future commit, as it is only intended for internal use.
+      </p>
+          <h2>Syntax</h2>
+          <div class="Signature">[System.Obsolete("Use SetSecond and ToSeconds instead", false)]<br />public <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Int32">int</a> <b>Second</b>  { get; set; }</div>
+          <h4 class="Subsection">Value</h4>
+          <blockquote class="SubsectionBox" id="P:ShinobiCharts.SChartDateFrequency.Second:Value">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartDateFrequency.Second:Remarks">
+          </div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartDateFrequency.Second:Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.5.7.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="M:ShinobiCharts.SChartDateFrequency.SetDay(System.Int32)">SetDay Method</h3>
+        <blockquote id="M:ShinobiCharts.SChartDateFrequency.SetDay(System.Int32):member">
+          <p class="Summary">Set the date frequency to have a value of the specified number of days.</p>
+          <h2>Syntax</h2>
+          <div class="Signature">[MonoTouch.Foundation.Export("setDay:")]<br />public virtual <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Void">void</a> <b>SetDay</b> (<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Int32">int</a> v)</div>
+          <h4 class="Subsection">Parameters</h4>
+          <blockquote class="SubsectionBox" id="M:ShinobiCharts.SChartDateFrequency.SetDay(System.Int32):Parameters">
+            <dl>
+              <dt>
+                <i>v</i>
+              </dt>
+              <dd>The new frequency to set, in days.</dd>
+            </dl>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="M:ShinobiCharts.SChartDateFrequency.SetDay(System.Int32):Remarks">Before the new value is set, we clear any existing values in the object.</div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="M:ShinobiCharts.SChartDateFrequency.SetDay(System.Int32):Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.5.7.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="M:ShinobiCharts.SChartDateFrequency.SetHour(System.Int32)">SetHour Method</h3>
+        <blockquote id="M:ShinobiCharts.SChartDateFrequency.SetHour(System.Int32):member">
+          <p class="Summary">Set the date frequency to have a value of the specified number of hours.</p>
+          <h2>Syntax</h2>
+          <div class="Signature">[MonoTouch.Foundation.Export("setHour:")]<br />public virtual <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Void">void</a> <b>SetHour</b> (<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Int32">int</a> v)</div>
+          <h4 class="Subsection">Parameters</h4>
+          <blockquote class="SubsectionBox" id="M:ShinobiCharts.SChartDateFrequency.SetHour(System.Int32):Parameters">
+            <dl>
+              <dt>
+                <i>v</i>
+              </dt>
+              <dd>The new frequency to set, in hours.</dd>
+            </dl>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="M:ShinobiCharts.SChartDateFrequency.SetHour(System.Int32):Remarks">Before the new value is set, we clear any existing values in the object.</div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="M:ShinobiCharts.SChartDateFrequency.SetHour(System.Int32):Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.5.7.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="M:ShinobiCharts.SChartDateFrequency.SetMinute(System.Int32)">SetMinute Method</h3>
+        <blockquote id="M:ShinobiCharts.SChartDateFrequency.SetMinute(System.Int32):member">
+          <p class="Summary">Set the date frequency to have a value of the specified number of minutes.</p>
+          <h2>Syntax</h2>
+          <div class="Signature">[MonoTouch.Foundation.Export("setMinute:")]<br />public virtual <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Void">void</a> <b>SetMinute</b> (<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Int32">int</a> v)</div>
+          <h4 class="Subsection">Parameters</h4>
+          <blockquote class="SubsectionBox" id="M:ShinobiCharts.SChartDateFrequency.SetMinute(System.Int32):Parameters">
+            <dl>
+              <dt>
+                <i>v</i>
+              </dt>
+              <dd>The new frequency to set, in minutes.</dd>
+            </dl>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="M:ShinobiCharts.SChartDateFrequency.SetMinute(System.Int32):Remarks">Before the new value is set, we clear any existing values in the object.</div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="M:ShinobiCharts.SChartDateFrequency.SetMinute(System.Int32):Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.5.7.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="M:ShinobiCharts.SChartDateFrequency.SetMonth(System.Int32)">SetMonth Method</h3>
+        <blockquote id="M:ShinobiCharts.SChartDateFrequency.SetMonth(System.Int32):member">
+          <p class="Summary">Set the date frequency to have a value of the specified number of months.</p>
+          <h2>Syntax</h2>
+          <div class="Signature">[MonoTouch.Foundation.Export("setMonth:")]<br />public virtual <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Void">void</a> <b>SetMonth</b> (<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Int32">int</a> v)</div>
+          <h4 class="Subsection">Parameters</h4>
+          <blockquote class="SubsectionBox" id="M:ShinobiCharts.SChartDateFrequency.SetMonth(System.Int32):Parameters">
+            <dl>
+              <dt>
+                <i>v</i>
+              </dt>
+              <dd>The new frequency to set, in months.</dd>
+            </dl>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="M:ShinobiCharts.SChartDateFrequency.SetMonth(System.Int32):Remarks">Before the new value is set, we clear any existing values in the object.</div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="M:ShinobiCharts.SChartDateFrequency.SetMonth(System.Int32):Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.5.7.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="M:ShinobiCharts.SChartDateFrequency.SetSecond(System.Int32)">SetSecond Method</h3>
+        <blockquote id="M:ShinobiCharts.SChartDateFrequency.SetSecond(System.Int32):member">
+          <p class="Summary">Set the date frequency to have a value of the specified number of seconds.</p>
+          <h2>Syntax</h2>
+          <div class="Signature">[MonoTouch.Foundation.Export("setSecond:")]<br />public virtual <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Void">void</a> <b>SetSecond</b> (<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Int32">int</a> v)</div>
+          <h4 class="Subsection">Parameters</h4>
+          <blockquote class="SubsectionBox" id="M:ShinobiCharts.SChartDateFrequency.SetSecond(System.Int32):Parameters">
+            <dl>
+              <dt>
+                <i>v</i>
+              </dt>
+              <dd>The new frequency to set, in seconds.</dd>
+            </dl>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="M:ShinobiCharts.SChartDateFrequency.SetSecond(System.Int32):Remarks">Before the new value is set, we clear any existing values in the object.</div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="M:ShinobiCharts.SChartDateFrequency.SetSecond(System.Int32):Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.5.7.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="M:ShinobiCharts.SChartDateFrequency.SetWeek(System.Int32)">SetWeek Method</h3>
+        <blockquote id="M:ShinobiCharts.SChartDateFrequency.SetWeek(System.Int32):member">
+          <p class="Summary">Set the date frequency to have a value of the specified number of weeks.</p>
+          <h2>Syntax</h2>
+          <div class="Signature">[MonoTouch.Foundation.Export("setWeek:")]<br />public virtual <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Void">void</a> <b>SetWeek</b> (<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Int32">int</a> v)</div>
+          <h4 class="Subsection">Parameters</h4>
+          <blockquote class="SubsectionBox" id="M:ShinobiCharts.SChartDateFrequency.SetWeek(System.Int32):Parameters">
+            <dl>
+              <dt>
+                <i>v</i>
+              </dt>
+              <dd>The new frequency to set, in weeks.</dd>
+            </dl>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="M:ShinobiCharts.SChartDateFrequency.SetWeek(System.Int32):Remarks">Before the new value is set, we clear any existing values in the object.</div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="M:ShinobiCharts.SChartDateFrequency.SetWeek(System.Int32):Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.5.7.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="M:ShinobiCharts.SChartDateFrequency.SetYear(System.Int32)">SetYear Method</h3>
+        <blockquote id="M:ShinobiCharts.SChartDateFrequency.SetYear(System.Int32):member">
+          <p class="Summary">Set the date frequency to have a value of the specified number of years.</p>
+          <h2>Syntax</h2>
+          <div class="Signature">[MonoTouch.Foundation.Export("setYear:")]<br />public virtual <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Void">void</a> <b>SetYear</b> (<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Int32">int</a> v)</div>
+          <h4 class="Subsection">Parameters</h4>
+          <blockquote class="SubsectionBox" id="M:ShinobiCharts.SChartDateFrequency.SetYear(System.Int32):Parameters">
+            <dl>
+              <dt>
+                <i>v</i>
+              </dt>
+              <dd>The new frequency to set, in years.</dd>
+            </dl>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="M:ShinobiCharts.SChartDateFrequency.SetYear(System.Int32):Remarks">Before the new value is set, we clear any existing values in the object.</div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="M:ShinobiCharts.SChartDateFrequency.SetYear(System.Int32):Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.5.7.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="M:ShinobiCharts.SChartDateFrequency.ToSeconds()">ToSeconds Method</h3>
+        <blockquote id="M:ShinobiCharts.SChartDateFrequency.ToSeconds():member">
+          <p class="Summary">The number of seconds, regardless of the denomination used to create it
+      </p>
+          <h2>Syntax</h2>
+          <div class="Signature">public <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Double">double</a> <b>ToSeconds</b> ()</div>
+          <h4 class="Subsection">Returns</h4>
+          <blockquote class="SubsectionBox" id="M:ShinobiCharts.SChartDateFrequency.ToSeconds():Returns">The number of seconds, regardless of the denomination used to create it</blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="M:ShinobiCharts.SChartDateFrequency.ToSeconds():Remarks">
+          </div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="M:ShinobiCharts.SChartDateFrequency.ToSeconds():Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.5.7.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="P:ShinobiCharts.SChartDateFrequency.Week">Week Property</h3>
+        <blockquote id="P:ShinobiCharts.SChartDateFrequency.Week:member">
+          <p class="Summary">DEPRECATED - We will remove this from the public API in a future commit, as it is only intended for internal use.
+      </p>
+          <h2>Syntax</h2>
+          <div class="Signature">[System.Obsolete("Use SetWeek and ToSeconds instead", false)]<br />public <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Int32">int</a> <b>Week</b>  { get; set; }</div>
+          <h4 class="Subsection">Value</h4>
+          <blockquote class="SubsectionBox" id="P:ShinobiCharts.SChartDateFrequency.Week:Value">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartDateFrequency.Week:Remarks">
+          </div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartDateFrequency.Week:Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.5.7.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="P:ShinobiCharts.SChartDateFrequency.Year">Year Property</h3>
+        <blockquote id="P:ShinobiCharts.SChartDateFrequency.Year:member">
+          <p class="Summary">DEPRECATED - We will remove this from the public API in a future commit, as it is only intended for internal use.
+      </p>
+          <h2>Syntax</h2>
+          <div class="Signature">[System.Obsolete("Use SetYear and ToSeconds instead", false)]<br />public <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Int32">int</a> <b>Year</b>  { get; set; }</div>
+          <h4 class="Subsection">Value</h4>
+          <blockquote class="SubsectionBox" id="P:ShinobiCharts.SChartDateFrequency.Year:Value">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartDateFrequency.Year:Remarks">
+          </div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartDateFrequency.Year:Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.5.7.0</div>
+          <hr size="1" />
+        </blockquote>
+      </div>
+    </div>
+    <div class="Parameter">
+    </div>
+    <hr size="1" />
+    <div class="Copyright"> © 2013 Scott Logic Limited. All rights reserved </div>
+  </body>
+</html>

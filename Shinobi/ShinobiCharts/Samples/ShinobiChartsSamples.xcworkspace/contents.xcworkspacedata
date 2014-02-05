@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workspace version="1.0">
+  <FileRef location="group:AddingAnnotations/AddingAnnotations.xcodeproj"/>
+  <FileRef location="group:AppendData/AppendData.xcodeproj"/>
+  <FileRef location="group:BubbleSeries/BubbleSeries.xcodeproj"/>
+  <FileRef location="group:CandlestickChart/CandlestickChart.xcodeproj"/>
+  <FileRef location="group:ColumnSeries/ColumnSeries.xcodeproj"/>
+  <FileRef location="group:GettingStarted/GettingStarted.xcodeproj"/>
+  <FileRef location="group:HandlingSelection/HandlingSelection.xcodeproj"/>
+  <FileRef location="group:MultipleAxes/MultipleAxes.xcodeproj"/>
+  <FileRef location="group:PieChart/PieChart.xcodeproj"/>
+  <FileRef location="group:TimeSeriesChart/TimeSeriesChart.xcodeproj"/>
+</Workspace>

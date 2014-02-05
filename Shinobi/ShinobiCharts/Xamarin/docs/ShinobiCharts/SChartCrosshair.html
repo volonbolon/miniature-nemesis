@@ -1,0 +1,1374 @@
+<html>
+  <head>
+    <title>ShinobiCharts.SChartCrosshair</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <style>
+      a { text-decoration: none; color: #AD1015; font-family: Arial }
+
+      div.SideBar {
+        padding-left: 1em;
+        padding-right: 1em;
+        right: 0;
+        float: right;
+        border: thin solid black;
+        background-color: #f2f2f2;
+      }
+    
+      .CollectionTitle { font-family: Arial; font-weight: bold; background: black; color: white; padding: 10px; margin: 0 }
+      .CollectionTitle p { font-size: 150%; }
+      .PageTitle { font-size: 150%; font-weight: bold }
+
+      .Summary { }
+      .Signature { }          
+      .Remarks { }
+      .Members { }
+      .Copyright { }
+      
+      .Section { font-family: Arial; font-size: 125%; font-weight: bold }
+      p.Summary {
+        margin-left: 1em;
+      }
+      .SectionBox { margin-left: 2em }
+      .NamespaceName { font-family: Arial; font-size: 105%; font-weight: bold }
+      .NamespaceSumary { }
+      .MemberName { font-size: 115%; font-weight: bold; margin-top: 1em }
+      .Subsection { font-size: 105%; font-weight: bold }
+      .SubsectionBox { margin-left: 2em; margin-bottom: 1em }
+
+      .CodeExampleTable { background-color: #f5f5dd; border: thin solid black; padding: .25em; }
+      
+      .TypesListing {
+	font-family: Arial;
+        border-collapse: collapse;
+      }
+
+      td {
+	font-family: Arial;
+        vertical-align: top;
+      }
+      th {
+	font-family: Arial;
+        text-align: left;
+      }
+
+      .TypesListing td { 
+        margin: 0px;  
+        padding: .25em;
+        border: solid gray 1px;
+      }
+
+      .TypesListing th { 
+        margin: 0px;  
+        padding: .25em;
+        background-color: #f2f2f2;
+        border: solid gray 1px;
+      }
+
+      div.Footer {
+	font-family: Arial;
+        border-top: 1px solid gray;
+        margin-top: 1.5em;
+        padding-top: 0.6em;
+        text-align: center;
+        color: gray;
+      }
+
+      span.NotEntered /* Documentation for this section has not yet been entered */ {
+	font-family: Arial;
+        font-style: italic;
+        color: 	#C0C0C0;	
+      }
+
+      div.Header {
+	font-family: Arial;
+        background: #B0C4DE;
+        border: double;
+        border-color: white;
+        border-width: 7px;
+        padding: 0.5em;
+      }
+
+      div.Header * {
+	font-family: Arial;
+        font-size: smaller;
+      }
+
+      div.Note {
+      }
+
+      i.ParamRef {
+      }
+
+      i.subtitle {
+      }
+
+      ul.TypeMembersIndex {
+	font-family: Arial;
+        text-align: left;
+        background: #F8F8F8;
+      }
+
+      ul.TypeMembersIndex li {
+        display: inline;
+        margin:  0.5em;
+      }
+
+      table.HeaderTable {
+      }
+
+      table.SignatureTable {
+      }
+
+      table.Documentation, table.Enumeration, table.TypeDocumentation {
+        border-collapse: collapse;
+        width: 100%;
+      }
+
+      table.Documentation tr th, table.TypeMembers tr th, table.Enumeration tr th, table.TypeDocumentation tr th {
+	font-family: Arial;
+        background: whitesmoke;
+        padding: 0.8em;
+        border: 1px solid gray;
+        text-align: left;
+        vertical-align: bottom;
+      }
+
+      table.Documentation tr td, table.TypeMembers tr td, table.Enumeration tr td, table.TypeDocumentation tr td {
+	font-family: Arial;
+        padding: 0.5em;
+        border: 1px solid gray;
+        text-align: left;
+        vertical-align: top;
+      }
+
+      table.TypeMembers {
+        border: 1px solid #C0C0C0;
+        width: 100%;
+      }
+
+      table.TypeMembers tr td {
+        background: #F8F8F8;
+        border: white;
+      }
+
+      table.Documentation {
+      }
+
+      table.TypeMembers {
+      }
+
+      div.CodeExample {
+        width: 100%;
+        border: 1px solid #DDDDDD;
+        background-color: #F8F8F8;
+      }
+
+      div.CodeExample p {
+        margin: 0.5em;
+        border-bottom: 1px solid #DDDDDD;
+      }
+
+      div.CodeExample div {
+        margin: 0.5em;
+      }
+
+      h4 {
+        margin-bottom: 0;
+      }
+
+      div.Signature {
+	font-family: Arial;
+        border: 1px solid #C0C0C0;
+        background: #F2F2F2;
+        padding: 1em;
+      }
+    </style>
+    <script type="text/JavaScript">
+      function toggle_display (block) {
+        var w = document.getElementById (block);
+        var t = document.getElementById (block + ":toggle");
+        if (w.style.display == "none") {
+          w.style.display = "block";
+          t.innerHTML = "⊟";
+        } else {
+          w.style.display = "none";
+          t.innerHTML = "⊞";
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <div class="CollectionTitle">
+      <p>
+		ShinobiControls Xamarin Bindings Documentation
+	</p>
+      <a href="../index.html">ShinobiCharts</a> : <a href="index.html">ShinobiCharts Namespace</a></div>
+    <h1 class="PageTitle" id="T:ShinobiCharts.SChartCrosshair">SChartCrosshair  Class</h1>
+    <p class="Summary" id="T:ShinobiCharts.SChartCrosshair:Summary">A small circle target with lines extending to the axes, which follows the user's finger after a tap-and-hold gesture 
+      </p>
+    <div>
+      <h2>Syntax</h2>
+      <div class="Signature" id="T:ShinobiCharts.SChartCrosshair:Signature">[MonoTouch.Foundation.Register("SChartCrosshair", true)]<br />public class  <b>SChartCrosshair</b> : <a href="javascript:alert(&quot;Documentation not found.&quot;)">MonoTouch.UIKit.UIView</a></div>
+    </div>
+    <div class="Remarks" id="T:ShinobiCharts.SChartCrosshair:Docs">
+      <h2 class="Section">Remarks</h2>
+      <div class="SectionBox" id="T:ShinobiCharts.SChartCrosshair:Docs:Remarks">
+        <p>
+					This is accompanied by a tooltip object - nominally a UIView.
+					The default implementation for the tooltip is provided by <a href="../ShinobiCharts/SChartCrosshairTooltip.html">ShinobiCharts.SChartCrosshairTooltip</a>.
+					For data points with multiple values at a single point, another implementation,
+					<a href="../ShinobiCharts/SChartCrosshairMultiValueTooltip.html">ShinobiCharts.SChartCrosshairMultiValueTooltip</a>, has also been provided.
+				</p>
+        <p>
+					The crosshair is enabled with a 'tap-and-hold gesture' and will lock to the nearest series to pan through the values.
+					On a line series the values will be interpolated between data points, on all other series types the crosshair will
+					jump from data point to data point.
+					Note that line series interpolation can be switched off by setting InterpolatePoints to <tt>false</tt>.
+				</p>
+        <p>
+					In order for a crosshair to be displayed on a chart series, the series must have its
+					SChartSeries.CrosshairEnabled property set to <tt>true</tt>.
+					This defaults to <tt>false</tt>, so you will need to set this property on the series in your chart.
+				</p>
+      </div>
+      <h2 class="Section">Requirements</h2>
+      <div class="SectionBox" id="T:ShinobiCharts.SChartCrosshair:Docs:Version Information">
+        <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.5.7.0</div>
+      <h2 class="Section" id="Members">Members</h2>
+      <div class="SectionBox" id="_Members">
+        <p>
+								See Also: Inherited members from
+								<a href="javascript:alert(&quot;Documentation not found.&quot;)">MonoTouch.UIKit.UIView</a>.
+							</p>
+        <h2 class="Section">Public Constructors</h2>
+        <div class="SectionBox" id="Public Constructors">
+          <div class="SubsectionBox">
+            <table class="TypeMembers">
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <div>
+                    <b>
+                      <a href="#C:ShinobiCharts.SChartCrosshair(MonoTouch.Foundation.NSCoder)">SChartCrosshair</a>
+                    </b>(<a href="javascript:alert(&quot;Documentation not found.&quot;)">MonoTouch.Foundation.NSCoder</a>)</div>
+                </td>
+                <td>A constructor that initializes the object from the data stored in the unarchiver object.
+      </td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <div>
+                    <b>
+                      <a href="#C:ShinobiCharts.SChartCrosshair(MonoTouch.Foundation.NSObjectFlag)">SChartCrosshair</a>
+                    </b>(<a href="javascript:alert(&quot;Documentation not found.&quot;)">MonoTouch.Foundation.NSObjectFlag</a>)</div>
+                </td>
+                <td>Constructor to call on derived classes to skip initialization and merely allocate the object.
+      </td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <div>
+                    <b>
+                      <a href="#C:ShinobiCharts.SChartCrosshair(ShinobiCharts.ShinobiChart)">SChartCrosshair</a>
+                    </b>(<a href="../ShinobiCharts/ShinobiChart.html">ShinobiChart</a>)</div>
+                </td>
+                <td>Initializes and returns a newly allocated crosshair object, which is associated with the specified chart.
+      </td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <div>
+                    <b>
+                      <a href="#C:ShinobiCharts.SChartCrosshair(System.IntPtr)">SChartCrosshair</a>
+                    </b>(<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.IntPtr">IntPtr</a>)</div>
+                </td>
+                <td>A constructor used when creating managed representations of unmanaged objects.
+      </td>
+              </tr>
+            </table>
+          </div>
+        </div>
+        <h2 class="Section">Public Properties</h2>
+        <div class="SectionBox" id="Public Properties">
+          <div class="SubsectionBox">
+            <table class="TypeMembers">
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <b>
+                    <a href="#P:ShinobiCharts.SChartCrosshair.AnimationDelay">AnimationDelay</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Single">float</a>
+                  </i>. DEPRECATED - This property will be taken off the API in future releases.
+      </td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <b>
+                    <a href="#P:ShinobiCharts.SChartCrosshair.AnimationDuration">AnimationDuration</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Single">float</a>
+                  </i>. DEPRECATED - This property will be taken off the API in future releases.
+      </td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <b>
+                    <a href="#P:ShinobiCharts.SChartCrosshair.AnimationEnabled">AnimationEnabled</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Boolean">bool</a>
+                  </i>. DEPRECATED - This property will be taken off the API in future releases.
+      </td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <b>
+                    <a href="#P:ShinobiCharts.SChartCrosshair.AnimationOptions">AnimationOptions</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="javascript:alert(&quot;Documentation not found.&quot;)">MonoTouch.UIKit.UIViewAnimationOptions</a>
+                  </i>. DEPRECATED - This property will be taken off the API in future releases.
+      </td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <b>
+                    <a href="#P:ShinobiCharts.SChartCrosshair.Chart">Chart</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="../ShinobiCharts/ShinobiChart.html">ShinobiChart</a>
+                  </i>. The crosshair holds a reference to the chart which contains it.
+      </td>
+              </tr>
+              <tr valign="top">
+                <td>[read-only]<div>override </div></td>
+                <td>
+                  <b>
+                    <a href="#P:ShinobiCharts.SChartCrosshair.ClassHandle">ClassHandle</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.IntPtr">IntPtr</a>
+                  </i>. The handle for this class.
+        </td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <b>
+                    <a href="#P:ShinobiCharts.SChartCrosshair.EnableLines">EnableLines</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Boolean">bool</a>
+                  </i>.  When set to true the lines from the target point to the axis will be displayed. 
+      </td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <b>
+                    <a href="#P:ShinobiCharts.SChartCrosshair.InterpolatePoints">InterpolatePoints</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Boolean">bool</a>
+                  </i>.  If set to true the Crosshair will move smoothly between points when tracking a line series.
+      </td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <b>
+                    <a href="#P:ShinobiCharts.SChartCrosshair.Mode">Mode</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="../ShinobiCharts/SChartCrosshairMode.html">SChartCrosshairMode</a>
+                  </i>. This describes whether the crosshair is in floating mode or not.
+      </td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <b>
+                    <a href="#P:ShinobiCharts.SChartCrosshair.OutOfRangeBehavior">OutOfRangeBehavior</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="../ShinobiCharts/SChartCrosshairOutOfRangeBehavior.html">SChartCrosshairOutOfRangeBehavior</a>
+                  </i>. Defines the behavior of the crosshair when it goes out of range.
+      </td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <b>
+                    <a href="#P:ShinobiCharts.SChartCrosshair.Style">Style</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="../ShinobiCharts/SChartCrosshairStyle.html">SChartCrosshairStyle</a>
+                  </i>. The SChartCrosshairStyle object manages the look of the crosshair.
+      </td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <b>
+                    <a href="#P:ShinobiCharts.SChartCrosshair.Tooltip">Tooltip</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="../ShinobiCharts/SChartCrosshairTooltip.html">SChartCrosshairTooltip</a>
+                  </i>. The tooltip which presents the current data values to the user.
+      </td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <b>
+                    <a href="#P:ShinobiCharts.SChartCrosshair.TrackingPoint">TrackingPoint</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="../ShinobiCharts/SChartPoint.html">SChartPoint</a>
+                  </i>. Configures the crosshair to track a particular data point on the chart.
+      </td>
+              </tr>
+            </table>
+          </div>
+        </div>
+        <h2 class="Section">Public Methods</h2>
+        <div class="SectionBox" id="Public Methods">
+          <div class="SubsectionBox">
+            <table class="TypeMembers">
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="#M:ShinobiCharts.SChartCrosshair.DrawLines()">DrawLines</a>
+                  </b>()<blockquote> Performs the drawing of the lines and the target circle element of the Crosshair.
+      </blockquote></td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="#M:ShinobiCharts.SChartCrosshair.Hide()">Hide</a>
+                  </b>()<nobr> : <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Boolean">bool</a></nobr><blockquote> Hides the Crosshair (with lines and Tooltip) on the chart.
+      </blockquote></td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="#M:ShinobiCharts.SChartCrosshair.MoveToFloatingPixelPosition(System.Drawing.PointF)">MoveToFloatingPixelPosition</a>
+                  </b>(<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Drawing.PointF">System.Drawing.PointF</a>)<blockquote>Moves the crosshair to the specified pixel coordinates.
+      </blockquote></td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="#M:ShinobiCharts.SChartCrosshair.MoveToFloatingPosition(ShinobiCharts.SChartPoint,ShinobiCharts.SChartAxis,ShinobiCharts.SChartAxis)">MoveToFloatingPosition</a>
+                  </b>(<a href="../ShinobiCharts/SChartPoint.html">SChartPoint</a>, <a href="../ShinobiCharts/SChartAxis.html">SChartAxis</a>, <a href="../ShinobiCharts/SChartAxis.html">SChartAxis</a>)<blockquote>Moves the crosshair to the coordinates on the chart corresponding to the specified data point relative to the specified axes.
+      </blockquote></td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="#M:ShinobiCharts.SChartCrosshair.SetDefaultTooltip()">SetDefaultTooltip</a>
+                  </b>()<blockquote> Sets the current Tooltip element of the Crosshair to be and instance of the default Baseclass - <a href="../ShinobiCharts/SChartCrosshairTooltip.html">ShinobiCharts.SChartCrosshairTooltip</a>. 
+      </blockquote></td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="#M:ShinobiCharts.SChartCrosshair.ShouldDrawCrosshairLinesForPoint(System.Drawing.PointF,System.Drawing.RectangleF)">ShouldDrawCrosshairLinesForPoint</a>
+                  </b>(<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Drawing.PointF">System.Drawing.PointF</a>, <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Drawing.RectangleF">System.Drawing.RectangleF</a>)<nobr> : <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Boolean">bool</a></nobr><blockquote> A boolean controlling whether the crosshair should draw its tracking lines, at the pixel point, inside a frame.
+      </blockquote></td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="#M:ShinobiCharts.SChartCrosshair.Show()">Show</a>
+                  </b>()<blockquote> Displays the Crosshair (with lines and Tooltip) on the chart.
+      </blockquote></td>
+              </tr>
+            </table>
+          </div>
+        </div>
+        <h2 class="Section">Protected Methods</h2>
+        <div class="SectionBox" id="Protected Methods">
+          <div class="SubsectionBox">
+            <table class="TypeMembers">
+              <tr valign="top">
+                <td>
+                  <div>override </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="#M:ShinobiCharts.SChartCrosshair.Dispose(System.Boolean)">Dispose</a>
+                  </b>(<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Boolean">bool</a>)<blockquote> Releases unmanaged resources.
+      </blockquote></td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="#M:ShinobiCharts.SChartCrosshair.MoveToPositionAndDisplayDataPoint(ShinobiCharts.SChartPoint,ShinobiCharts.SChartPoint,ShinobiCharts.SChartCartesianSeries,ShinobiCharts.SChartData)">MoveToPositionAndDisplayDataPoint</a>
+                  </b>(<a href="../ShinobiCharts/SChartPoint.html">SChartPoint</a>, <a href="../ShinobiCharts/SChartPoint.html">SChartPoint</a>, <a href="../ShinobiCharts/SChartCartesianSeries.html">SChartCartesianSeries</a>, <a href="../ShinobiCharts/SChartData.html">SChartData</a>)<blockquote>This method is called when the crosshair changes position.
+      </blockquote></td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="#M:ShinobiCharts.SChartCrosshair.OnChartDidReload()">OnChartDidReload</a>
+                  </b>()<blockquote>Notifies the crosshair that its parent chart reloaded its data.
+      </blockquote></td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="#M:ShinobiCharts.SChartCrosshair.OnChartGotLongPressAt(System.Drawing.PointF)">OnChartGotLongPressAt</a>
+                  </b>(<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Drawing.PointF">System.Drawing.PointF</a>)<blockquote>This method informs the crosshair that there was a long press gesture on the chart at a point.
+      </blockquote></td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="#M:ShinobiCharts.SChartCrosshair.OnChartGotPinchAndPan()">OnChartGotPinchAndPan</a>
+                  </b>()<blockquote>This method informs the crosshair that there was a pinch/pan gesture on the chart.
+      </blockquote></td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="#M:ShinobiCharts.SChartCrosshair.OnChartGotTapAt(System.Drawing.PointF)">OnChartGotTapAt</a>
+                  </b>(<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Drawing.PointF">System.Drawing.PointF</a>)<blockquote>This method informs the crosshair that there was a tap gesture on the chart at a point.
+      </blockquote></td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="#M:ShinobiCharts.SChartCrosshair.OnMovedOutOfRange()">OnMovedOutOfRange</a>
+                  </b>()<blockquote>This method is called when the crosshair moves out of the visible range of the chart.
+      </blockquote></td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="#M:ShinobiCharts.SChartCrosshair.OnTrackingFailed()">OnTrackingFailed</a>
+                  </b>()<blockquote>This method informs the crosshair that a gesture was performed which failed to select any series.
+      </blockquote></td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="#M:ShinobiCharts.SChartCrosshair.ShouldKeepTracking()">ShouldKeepTracking</a>
+                  </b>()<nobr> : <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Boolean">bool</a></nobr><blockquote>Returns whether the crosshair should keep tracking.
+      </blockquote></td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="Members" id="T:ShinobiCharts.SChartCrosshair:Members">
+      <h2 class="Section" id="MemberDetails">Member Details</h2>
+      <div class="SectionBox" id="_MemberDetails">
+        <h3 id="C:ShinobiCharts.SChartCrosshair(MonoTouch.Foundation.NSCoder)">SChartCrosshair Constructor</h3>
+        <blockquote id="C:ShinobiCharts.SChartCrosshair(MonoTouch.Foundation.NSCoder):member">
+          <p class="Summary">A constructor that initializes the object from the data stored in the unarchiver object.
+      </p>
+          <h2>Syntax</h2>
+          <div class="Signature">[MonoTouch.Foundation.Export("initWithCoder:")]<br />[System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Advanced)]<br />public  <b>SChartCrosshair</b> (<a href="javascript:alert(&quot;Documentation not found.&quot;)">MonoTouch.Foundation.NSCoder</a> coder)</div>
+          <h4 class="Subsection">Parameters</h4>
+          <blockquote class="SubsectionBox" id="C:ShinobiCharts.SChartCrosshair(MonoTouch.Foundation.NSCoder):Parameters">
+            <dl>
+              <dt>
+                <i>coder</i>
+              </dt>
+              <dd>The unarchiver object</dd>
+            </dl>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="C:ShinobiCharts.SChartCrosshair(MonoTouch.Foundation.NSCoder):Remarks">This constructor is provided to allow the class to be initialized from an unarchiver (for example, during NIB deserialization).</div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="C:ShinobiCharts.SChartCrosshair(MonoTouch.Foundation.NSCoder):Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.5.7.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="C:ShinobiCharts.SChartCrosshair(MonoTouch.Foundation.NSObjectFlag)">SChartCrosshair Constructor</h3>
+        <blockquote id="C:ShinobiCharts.SChartCrosshair(MonoTouch.Foundation.NSObjectFlag):member">
+          <p class="Summary">Constructor to call on derived classes to skip initialization and merely allocate the object.
+      </p>
+          <h2>Syntax</h2>
+          <div class="Signature">[System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Advanced)]<br />public  <b>SChartCrosshair</b> (<a href="javascript:alert(&quot;Documentation not found.&quot;)">MonoTouch.Foundation.NSObjectFlag</a> t)</div>
+          <h4 class="Subsection">Parameters</h4>
+          <blockquote class="SubsectionBox" id="C:ShinobiCharts.SChartCrosshair(MonoTouch.Foundation.NSObjectFlag):Parameters">
+            <dl>
+              <dt>
+                <i>t</i>
+              </dt>
+              <dd>Unused sentinel value</dd>
+            </dl>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="C:ShinobiCharts.SChartCrosshair(MonoTouch.Foundation.NSObjectFlag):Remarks">You should not invoke this method directly.</div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="C:ShinobiCharts.SChartCrosshair(MonoTouch.Foundation.NSObjectFlag):Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.5.7.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="C:ShinobiCharts.SChartCrosshair(ShinobiCharts.ShinobiChart)">SChartCrosshair Constructor</h3>
+        <blockquote id="C:ShinobiCharts.SChartCrosshair(ShinobiCharts.ShinobiChart):member">
+          <p class="Summary">Initializes and returns a newly allocated crosshair object, which is associated with the specified chart.
+      </p>
+          <h2>Syntax</h2>
+          <div class="Signature">[MonoTouch.Foundation.Export("initWithChart:")]<br />public  <b>SChartCrosshair</b> (<a href="../ShinobiCharts/ShinobiChart.html">ShinobiChart</a> parentChart)</div>
+          <h4 class="Subsection">Parameters</h4>
+          <blockquote class="SubsectionBox" id="C:ShinobiCharts.SChartCrosshair(ShinobiCharts.ShinobiChart):Parameters">
+            <dl>
+              <dt>
+                <i>parentChart</i>
+              </dt>
+              <dd>
+              </dd>
+            </dl>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="C:ShinobiCharts.SChartCrosshair(ShinobiCharts.ShinobiChart):Remarks">
+          </div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="C:ShinobiCharts.SChartCrosshair(ShinobiCharts.ShinobiChart):Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.5.7.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="C:ShinobiCharts.SChartCrosshair(System.IntPtr)">SChartCrosshair Constructor</h3>
+        <blockquote id="C:ShinobiCharts.SChartCrosshair(System.IntPtr):member">
+          <p class="Summary">A constructor used when creating managed representations of unmanaged objects.
+      </p>
+          <h2>Syntax</h2>
+          <div class="Signature">[System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Advanced)]<br />public  <b>SChartCrosshair</b> (<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.IntPtr">IntPtr</a> handle)</div>
+          <h4 class="Subsection">Parameters</h4>
+          <blockquote class="SubsectionBox" id="C:ShinobiCharts.SChartCrosshair(System.IntPtr):Parameters">
+            <dl>
+              <dt>
+                <i>handle</i>
+              </dt>
+              <dd>Handle of the unmanaged object</dd>
+            </dl>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="C:ShinobiCharts.SChartCrosshair(System.IntPtr):Remarks">You should not invoke this method directly.</div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="C:ShinobiCharts.SChartCrosshair(System.IntPtr):Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.5.7.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="P:ShinobiCharts.SChartCrosshair.AnimationDelay">AnimationDelay Property</h3>
+        <blockquote id="P:ShinobiCharts.SChartCrosshair.AnimationDelay:member">
+          <p class="Summary">DEPRECATED - This property will be taken off the API in future releases.
+      </p>
+          <h2>Syntax</h2>
+          <div class="Signature">[System.Obsolete("", false)]<br />public <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Single">float</a> <b>AnimationDelay</b>  { get; set; }</div>
+          <h4 class="Subsection">Value</h4>
+          <blockquote class="SubsectionBox" id="P:ShinobiCharts.SChartCrosshair.AnimationDelay:Value">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartCrosshair.AnimationDelay:Remarks">
+          </div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartCrosshair.AnimationDelay:Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.5.7.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="P:ShinobiCharts.SChartCrosshair.AnimationDuration">AnimationDuration Property</h3>
+        <blockquote id="P:ShinobiCharts.SChartCrosshair.AnimationDuration:member">
+          <p class="Summary">DEPRECATED - This property will be taken off the API in future releases.
+      </p>
+          <h2>Syntax</h2>
+          <div class="Signature">[System.Obsolete("", false)]<br />public <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Single">float</a> <b>AnimationDuration</b>  { get; set; }</div>
+          <h4 class="Subsection">Value</h4>
+          <blockquote class="SubsectionBox" id="P:ShinobiCharts.SChartCrosshair.AnimationDuration:Value">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartCrosshair.AnimationDuration:Remarks">
+          </div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartCrosshair.AnimationDuration:Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.5.7.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="P:ShinobiCharts.SChartCrosshair.AnimationEnabled">AnimationEnabled Property</h3>
+        <blockquote id="P:ShinobiCharts.SChartCrosshair.AnimationEnabled:member">
+          <p class="Summary">DEPRECATED - This property will be taken off the API in future releases.
+      </p>
+          <h2>Syntax</h2>
+          <div class="Signature">[System.Obsolete("", false)]<br />public <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Boolean">bool</a> <b>AnimationEnabled</b>  { get; set; }</div>
+          <h4 class="Subsection">Value</h4>
+          <blockquote class="SubsectionBox" id="P:ShinobiCharts.SChartCrosshair.AnimationEnabled:Value">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartCrosshair.AnimationEnabled:Remarks">
+          </div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartCrosshair.AnimationEnabled:Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.5.7.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="P:ShinobiCharts.SChartCrosshair.AnimationOptions">AnimationOptions Property</h3>
+        <blockquote id="P:ShinobiCharts.SChartCrosshair.AnimationOptions:member">
+          <p class="Summary">DEPRECATED - This property will be taken off the API in future releases.
+      </p>
+          <h2>Syntax</h2>
+          <div class="Signature">[System.Obsolete("", false)]<br />public <a href="javascript:alert(&quot;Documentation not found.&quot;)">MonoTouch.UIKit.UIViewAnimationOptions</a> <b>AnimationOptions</b>  { get; set; }</div>
+          <h4 class="Subsection">Value</h4>
+          <blockquote class="SubsectionBox" id="P:ShinobiCharts.SChartCrosshair.AnimationOptions:Value">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartCrosshair.AnimationOptions:Remarks">
+          </div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartCrosshair.AnimationOptions:Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.5.7.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="P:ShinobiCharts.SChartCrosshair.Chart">Chart Property</h3>
+        <blockquote id="P:ShinobiCharts.SChartCrosshair.Chart:member">
+          <p class="Summary">The crosshair holds a reference to the chart which contains it.
+      </p>
+          <h2>Syntax</h2>
+          <div class="Signature">public <a href="../ShinobiCharts/ShinobiChart.html">ShinobiChart</a> <b>Chart</b>  { get; set; }</div>
+          <h4 class="Subsection">Value</h4>
+          <blockquote class="SubsectionBox" id="P:ShinobiCharts.SChartCrosshair.Chart:Value">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartCrosshair.Chart:Remarks">
+          </div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartCrosshair.Chart:Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.5.7.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="P:ShinobiCharts.SChartCrosshair.ClassHandle">ClassHandle Property</h3>
+        <blockquote id="P:ShinobiCharts.SChartCrosshair.ClassHandle:member">
+          <p class="Summary">The handle for this class.
+        </p>
+          <h2>Syntax</h2>
+          <div class="Signature">public override <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.IntPtr">IntPtr</a> <b>ClassHandle</b>  { get; }</div>
+          <h4 class="Subsection">Value</h4>
+          <blockquote class="SubsectionBox" id="P:ShinobiCharts.SChartCrosshair.ClassHandle:Value">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartCrosshair.ClassHandle:Remarks">Not normally used by application code</div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartCrosshair.ClassHandle:Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.5.7.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="M:ShinobiCharts.SChartCrosshair.Dispose(System.Boolean)">Dispose Method</h3>
+        <blockquote id="M:ShinobiCharts.SChartCrosshair.Dispose(System.Boolean):member">
+          <p class="Summary"> Releases unmanaged resources.
+      </p>
+          <h2>Syntax</h2>
+          <div class="Signature">protected override <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Void">void</a> <b>Dispose</b> (<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Boolean">bool</a> disposing)</div>
+          <h4 class="Subsection">Parameters</h4>
+          <blockquote class="SubsectionBox" id="M:ShinobiCharts.SChartCrosshair.Dispose(System.Boolean):Parameters">
+            <dl>
+              <dt>
+                <i>disposing</i>
+              </dt>
+              <dd>True if called by Dispose, false if called from a finalizer</dd>
+            </dl>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="M:ShinobiCharts.SChartCrosshair.Dispose(System.Boolean):Remarks">
+          </div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="M:ShinobiCharts.SChartCrosshair.Dispose(System.Boolean):Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.5.7.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="M:ShinobiCharts.SChartCrosshair.DrawLines()">DrawLines Method</h3>
+        <blockquote id="M:ShinobiCharts.SChartCrosshair.DrawLines():member">
+          <p class="Summary"> Performs the drawing of the lines and the target circle element of the Crosshair.
+      </p>
+          <h2>Syntax</h2>
+          <div class="Signature">[MonoTouch.Foundation.Export("drawCrosshairLines")]<br />public virtual <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Void">void</a> <b>DrawLines</b> ()</div>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="M:ShinobiCharts.SChartCrosshair.DrawLines():Remarks"> Override this function to provide custom lines or other drawn elements. 
+		</div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="M:ShinobiCharts.SChartCrosshair.DrawLines():Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.5.7.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="P:ShinobiCharts.SChartCrosshair.EnableLines">EnableLines Property</h3>
+        <blockquote id="P:ShinobiCharts.SChartCrosshair.EnableLines:member">
+          <p class="Summary"> When set to true the lines from the target point to the axis will be displayed. 
+      </p>
+          <h2>Syntax</h2>
+          <div class="Signature">public <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Boolean">bool</a> <b>EnableLines</b>  { get; set; }</div>
+          <h4 class="Subsection">Value</h4>
+          <blockquote class="SubsectionBox" id="P:ShinobiCharts.SChartCrosshair.EnableLines:Value">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartCrosshair.EnableLines:Remarks">
+          </div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartCrosshair.EnableLines:Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.5.7.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="M:ShinobiCharts.SChartCrosshair.Hide()">Hide Method</h3>
+        <blockquote id="M:ShinobiCharts.SChartCrosshair.Hide():member">
+          <p class="Summary"> Hides the Crosshair (with lines and Tooltip) on the chart.
+      </p>
+          <h2>Syntax</h2>
+          <div class="Signature">[MonoTouch.Foundation.Export("removeCrosshair")]<br />public virtual <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Boolean">bool</a> <b>Hide</b> ()</div>
+          <h4 class="Subsection">Returns</h4>
+          <blockquote class="SubsectionBox" id="M:ShinobiCharts.SChartCrosshair.Hide():Returns">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="M:ShinobiCharts.SChartCrosshair.Hide():Remarks"> This method is called by the chart when the Crosshair should be dismissed. Override this method to control the display of the Crosshair in subclasses. 
+		</div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="M:ShinobiCharts.SChartCrosshair.Hide():Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.5.7.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="P:ShinobiCharts.SChartCrosshair.InterpolatePoints">InterpolatePoints Property</h3>
+        <blockquote id="P:ShinobiCharts.SChartCrosshair.InterpolatePoints:member">
+          <p class="Summary"> If set to true the Crosshair will move smoothly between points when tracking a line series.
+      </p>
+          <h2>Syntax</h2>
+          <div class="Signature">public <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Boolean">bool</a> <b>InterpolatePoints</b>  { get; set; }</div>
+          <h4 class="Subsection">Value</h4>
+          <blockquote class="SubsectionBox" id="P:ShinobiCharts.SChartCrosshair.InterpolatePoints:Value">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartCrosshair.InterpolatePoints:Remarks">Otherwise the crosshair will jump from point to point as it tracks.</div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartCrosshair.InterpolatePoints:Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.5.7.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="P:ShinobiCharts.SChartCrosshair.Mode">Mode Property</h3>
+        <blockquote id="P:ShinobiCharts.SChartCrosshair.Mode:member">
+          <p class="Summary">This describes whether the crosshair is in floating mode or not.
+      </p>
+          <h2>Syntax</h2>
+          <div class="Signature">public <a href="../ShinobiCharts/SChartCrosshairMode.html">SChartCrosshairMode</a> <b>Mode</b>  { get; set; }</div>
+          <h4 class="Subsection">Value</h4>
+          <blockquote class="SubsectionBox" id="P:ShinobiCharts.SChartCrosshair.Mode:Value">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartCrosshair.Mode:Remarks">
+				When the crosshair is in floating mode, it will display on the closest data point, regardless of which series it is in.
+				When the crosshair is in single series mode, it will lock to a single series, and display on the closest data point in that series only.
+			</div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartCrosshair.Mode:Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.5.7.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="M:ShinobiCharts.SChartCrosshair.MoveToFloatingPixelPosition(System.Drawing.PointF)">MoveToFloatingPixelPosition Method</h3>
+        <blockquote id="M:ShinobiCharts.SChartCrosshair.MoveToFloatingPixelPosition(System.Drawing.PointF):member">
+          <p class="Summary">Moves the crosshair to the specified pixel coordinates.
+      </p>
+          <h2>Syntax</h2>
+          <div class="Signature">public <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Void">void</a> <b>MoveToFloatingPixelPosition</b> (<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Drawing.PointF">System.Drawing.PointF</a> floatingCoords)</div>
+          <h4 class="Subsection">Parameters</h4>
+          <blockquote class="SubsectionBox" id="M:ShinobiCharts.SChartCrosshair.MoveToFloatingPixelPosition(System.Drawing.PointF):Parameters">
+            <dl>
+              <dt>
+                <i>floatingCoords</i>
+              </dt>
+              <dd>The pixel coordinates to which to move the crosshair.</dd>
+            </dl>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="M:ShinobiCharts.SChartCrosshair.MoveToFloatingPixelPosition(System.Drawing.PointF):Remarks">
+          </div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="M:ShinobiCharts.SChartCrosshair.MoveToFloatingPixelPosition(System.Drawing.PointF):Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.5.7.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="M:ShinobiCharts.SChartCrosshair.MoveToFloatingPosition(ShinobiCharts.SChartPoint,ShinobiCharts.SChartAxis,ShinobiCharts.SChartAxis)">MoveToFloatingPosition Method</h3>
+        <blockquote id="M:ShinobiCharts.SChartCrosshair.MoveToFloatingPosition(ShinobiCharts.SChartPoint,ShinobiCharts.SChartAxis,ShinobiCharts.SChartAxis):member">
+          <p class="Summary">Moves the crosshair to the coordinates on the chart corresponding to the specified data point relative to the specified axes.
+      </p>
+          <h2>Syntax</h2>
+          <div class="Signature">public <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Void">void</a> <b>MoveToFloatingPosition</b> (<a href="../ShinobiCharts/SChartPoint.html">SChartPoint</a> point, <a href="../ShinobiCharts/SChartAxis.html">SChartAxis</a> xAxis, <a href="../ShinobiCharts/SChartAxis.html">SChartAxis</a> yAxis)</div>
+          <h4 class="Subsection">Parameters</h4>
+          <blockquote class="SubsectionBox" id="M:ShinobiCharts.SChartCrosshair.MoveToFloatingPosition(ShinobiCharts.SChartPoint,ShinobiCharts.SChartAxis,ShinobiCharts.SChartAxis):Parameters">
+            <dl>
+              <dt>
+                <i>point</i>
+              </dt>
+              <dd>The data point to which to move the crosshair.</dd>
+              <dt>
+                <i>xAxis</i>
+              </dt>
+              <dd>The x axis with which the data point is associated.  The x value of the data point will be mapped to this axis.</dd>
+              <dt>
+                <i>yAxis</i>
+              </dt>
+              <dd>The y axis with which the data point is associated.  The y value of the data point will be mapped to this axis.</dd>
+            </dl>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="M:ShinobiCharts.SChartCrosshair.MoveToFloatingPosition(ShinobiCharts.SChartPoint,ShinobiCharts.SChartAxis,ShinobiCharts.SChartAxis):Remarks">
+          </div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="M:ShinobiCharts.SChartCrosshair.MoveToFloatingPosition(ShinobiCharts.SChartPoint,ShinobiCharts.SChartAxis,ShinobiCharts.SChartAxis):Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.5.7.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="M:ShinobiCharts.SChartCrosshair.MoveToPositionAndDisplayDataPoint(ShinobiCharts.SChartPoint,ShinobiCharts.SChartPoint,ShinobiCharts.SChartCartesianSeries,ShinobiCharts.SChartData)">MoveToPositionAndDisplayDataPoint Method</h3>
+        <blockquote id="M:ShinobiCharts.SChartCrosshair.MoveToPositionAndDisplayDataPoint(ShinobiCharts.SChartPoint,ShinobiCharts.SChartPoint,ShinobiCharts.SChartCartesianSeries,ShinobiCharts.SChartData):member">
+          <p class="Summary">This method is called when the crosshair changes position.
+      </p>
+          <h2>Syntax</h2>
+          <div class="Signature">[MonoTouch.Foundation.Export("moveToPosition:andDisplayDataPoint:fromSeries:andSeriesDataPoint:")]<br />protected virtual <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Void">void</a> <b>MoveToPositionAndDisplayDataPoint</b> (<a href="../ShinobiCharts/SChartPoint.html">SChartPoint</a> coords, <a href="../ShinobiCharts/SChartPoint.html">SChartPoint</a> dataPoint, <a href="../ShinobiCharts/SChartCartesianSeries.html">SChartCartesianSeries</a> series, <a href="../ShinobiCharts/SChartData.html">SChartData</a> dataseriesPoint)</div>
+          <h4 class="Subsection">Parameters</h4>
+          <blockquote class="SubsectionBox" id="M:ShinobiCharts.SChartCrosshair.MoveToPositionAndDisplayDataPoint(ShinobiCharts.SChartPoint,ShinobiCharts.SChartPoint,ShinobiCharts.SChartCartesianSeries,ShinobiCharts.SChartData):Parameters">
+            <dl>
+              <dt>
+                <i>coords</i>
+              </dt>
+              <dd>The location on the chart where the crosshair should appear, in points.</dd>
+              <dt>
+                <i>dataPoint</i>
+              </dt>
+              <dd>The crosshair tooltip will display the value of this data point.  This can either be an interpolated point, or the nearest actual point on the series, depending on the configuration of the crosshair.</dd>
+              <dt>
+                <i>series</i>
+              </dt>
+              <dd>The series on the chart which the crosshair is locked to.</dd>
+              <dt>
+                <i>dataseriesPoint</i>
+              </dt>
+              <dd>This parameter is used by SChartCrosshairMultiValueTooltip.  In this case, the tooltip will display the values contained in this point rather than the value of dataPoint.  For other types of tooltip, this parameter is ignored.</dd>
+            </dl>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="M:ShinobiCharts.SChartCrosshair.MoveToPositionAndDisplayDataPoint(ShinobiCharts.SChartPoint,ShinobiCharts.SChartPoint,ShinobiCharts.SChartCartesianSeries,ShinobiCharts.SChartData):Remarks">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="M:ShinobiCharts.SChartCrosshair.MoveToPositionAndDisplayDataPoint(ShinobiCharts.SChartPoint,ShinobiCharts.SChartPoint,ShinobiCharts.SChartCartesianSeries,ShinobiCharts.SChartData):Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.5.7.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="M:ShinobiCharts.SChartCrosshair.OnChartDidReload()">OnChartDidReload Method</h3>
+        <blockquote id="M:ShinobiCharts.SChartCrosshair.OnChartDidReload():member">
+          <p class="Summary">Notifies the crosshair that its parent chart reloaded its data.
+      </p>
+          <h2>Syntax</h2>
+          <div class="Signature">[MonoTouch.Foundation.Export("chartDidReload")]<br />protected virtual <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Void">void</a> <b>OnChartDidReload</b> ()</div>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="M:ShinobiCharts.SChartCrosshair.OnChartDidReload():Remarks">The default behavior in this case is to remove the crosshair.</div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="M:ShinobiCharts.SChartCrosshair.OnChartDidReload():Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.5.7.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="M:ShinobiCharts.SChartCrosshair.OnChartGotLongPressAt(System.Drawing.PointF)">OnChartGotLongPressAt Method</h3>
+        <blockquote id="M:ShinobiCharts.SChartCrosshair.OnChartGotLongPressAt(System.Drawing.PointF):member">
+          <p class="Summary">This method informs the crosshair that there was a long press gesture on the chart at a point.
+      </p>
+          <h2>Syntax</h2>
+          <div class="Signature">[MonoTouch.Foundation.Export("crosshairChartGotLongPressAt:")]<br />protected virtual <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Void">void</a> <b>OnChartGotLongPressAt</b> (<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Drawing.PointF">System.Drawing.PointF</a> longpress)</div>
+          <h4 class="Subsection">Parameters</h4>
+          <blockquote class="SubsectionBox" id="M:ShinobiCharts.SChartCrosshair.OnChartGotLongPressAt(System.Drawing.PointF):Parameters">
+            <dl>
+              <dt>
+                <i>longpress</i>
+              </dt>
+              <dd>
+                <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+              </dd>
+            </dl>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="M:ShinobiCharts.SChartCrosshair.OnChartGotLongPressAt(System.Drawing.PointF):Remarks">
+				The default behavior of the crosshair is to do nothing.
+				If you wish to do something with the crosshair on receiving this event, you can subclass SChartCrosshair, and override this method.
+			</div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="M:ShinobiCharts.SChartCrosshair.OnChartGotLongPressAt(System.Drawing.PointF):Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.5.7.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="M:ShinobiCharts.SChartCrosshair.OnChartGotPinchAndPan()">OnChartGotPinchAndPan Method</h3>
+        <blockquote id="M:ShinobiCharts.SChartCrosshair.OnChartGotPinchAndPan():member">
+          <p class="Summary">This method informs the crosshair that there was a pinch/pan gesture on the chart.
+      </p>
+          <h2>Syntax</h2>
+          <div class="Signature">[MonoTouch.Foundation.Export("crosshairChartGotPinchAndPan")]<br />protected virtual <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Void">void</a> <b>OnChartGotPinchAndPan</b> ()</div>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="M:ShinobiCharts.SChartCrosshair.OnChartGotPinchAndPan():Remarks">The default behavior in this case is to remove the crosshair.</div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="M:ShinobiCharts.SChartCrosshair.OnChartGotPinchAndPan():Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.5.7.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="M:ShinobiCharts.SChartCrosshair.OnChartGotTapAt(System.Drawing.PointF)">OnChartGotTapAt Method</h3>
+        <blockquote id="M:ShinobiCharts.SChartCrosshair.OnChartGotTapAt(System.Drawing.PointF):member">
+          <p class="Summary">This method informs the crosshair that there was a tap gesture on the chart at a point.
+      </p>
+          <h2>Syntax</h2>
+          <div class="Signature">[MonoTouch.Foundation.Export("crosshairChartGotTapAt:")]<br />protected virtual <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Void">void</a> <b>OnChartGotTapAt</b> (<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Drawing.PointF">System.Drawing.PointF</a> tap)</div>
+          <h4 class="Subsection">Parameters</h4>
+          <blockquote class="SubsectionBox" id="M:ShinobiCharts.SChartCrosshair.OnChartGotTapAt(System.Drawing.PointF):Parameters">
+            <dl>
+              <dt>
+                <i>tap</i>
+              </dt>
+              <dd>The point on the chart which was tapped.</dd>
+            </dl>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="M:ShinobiCharts.SChartCrosshair.OnChartGotTapAt(System.Drawing.PointF):Remarks">The default behavior in this case is to remove the crosshair.</div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="M:ShinobiCharts.SChartCrosshair.OnChartGotTapAt(System.Drawing.PointF):Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.5.7.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="M:ShinobiCharts.SChartCrosshair.OnMovedOutOfRange()">OnMovedOutOfRange Method</h3>
+        <blockquote id="M:ShinobiCharts.SChartCrosshair.OnMovedOutOfRange():member">
+          <p class="Summary">This method is called when the crosshair moves out of the visible range of the chart.
+      </p>
+          <h2>Syntax</h2>
+          <div class="Signature">[MonoTouch.Foundation.Export("crosshairMovedOutOfRange")]<br />protected virtual <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Void">void</a> <b>OnMovedOutOfRange</b> ()</div>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="M:ShinobiCharts.SChartCrosshair.OnMovedOutOfRange():Remarks">The behaviour of the crosshair at this point is defined by its Mode property.</div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="M:ShinobiCharts.SChartCrosshair.OnMovedOutOfRange():Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.5.7.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="M:ShinobiCharts.SChartCrosshair.OnTrackingFailed()">OnTrackingFailed Method</h3>
+        <blockquote id="M:ShinobiCharts.SChartCrosshair.OnTrackingFailed():member">
+          <p class="Summary">This method informs the crosshair that a gesture was performed which failed to select any series.
+      </p>
+          <h2>Syntax</h2>
+          <div class="Signature">[MonoTouch.Foundation.Export("crosshairTrackingFailed")]<br />protected virtual <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Void">void</a> <b>OnTrackingFailed</b> ()</div>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="M:ShinobiCharts.SChartCrosshair.OnTrackingFailed():Remarks">The default behavior in this case is to remove the crosshair.</div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="M:ShinobiCharts.SChartCrosshair.OnTrackingFailed():Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.5.7.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="P:ShinobiCharts.SChartCrosshair.OutOfRangeBehavior">OutOfRangeBehavior Property</h3>
+        <blockquote id="P:ShinobiCharts.SChartCrosshair.OutOfRangeBehavior:member">
+          <p class="Summary">Defines the behavior of the crosshair when it goes out of range.
+      </p>
+          <h2>Syntax</h2>
+          <div class="Signature">public <a href="../ShinobiCharts/SChartCrosshairOutOfRangeBehavior.html">SChartCrosshairOutOfRangeBehavior</a> <b>OutOfRangeBehavior</b>  { get; set; }</div>
+          <h4 class="Subsection">Value</h4>
+          <blockquote class="SubsectionBox" id="P:ShinobiCharts.SChartCrosshair.OutOfRangeBehavior:Value">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartCrosshair.OutOfRangeBehavior:Remarks">In this context, "out of range" refers to the case when a series goes off the screen -
+				i.e. it is out of range on one axis, but not the other.
+				The crosshair has different behaviors for when it goes out of range.
+				It can hide, but continue to track the series until it comes back in range, or it can track the edge -
+				the tooltip will move along the edge of the canvas until the series comes back into range.
+				The final option is for the crosshair to remove itself entirely, leaving the chart open for panning or tracking
+				a new series.
+				The crosshair defaults to SChartCrosshairRangeBehavior.Hide.
+		</div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartCrosshair.OutOfRangeBehavior:Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.5.7.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="M:ShinobiCharts.SChartCrosshair.SetDefaultTooltip()">SetDefaultTooltip Method</h3>
+        <blockquote id="M:ShinobiCharts.SChartCrosshair.SetDefaultTooltip():member">
+          <p class="Summary"> Sets the current Tooltip element of the Crosshair to be and instance of the default Baseclass - <a href="../ShinobiCharts/SChartCrosshairTooltip.html">ShinobiCharts.SChartCrosshairTooltip</a>. 
+      </p>
+          <h2>Syntax</h2>
+          <div class="Signature">public <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Void">void</a> <b>SetDefaultTooltip</b> ()</div>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="M:ShinobiCharts.SChartCrosshair.SetDefaultTooltip():Remarks">
+          </div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="M:ShinobiCharts.SChartCrosshair.SetDefaultTooltip():Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.5.7.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="M:ShinobiCharts.SChartCrosshair.ShouldDrawCrosshairLinesForPoint(System.Drawing.PointF,System.Drawing.RectangleF)">ShouldDrawCrosshairLinesForPoint Method</h3>
+        <blockquote id="M:ShinobiCharts.SChartCrosshair.ShouldDrawCrosshairLinesForPoint(System.Drawing.PointF,System.Drawing.RectangleF):member">
+          <p class="Summary"> A boolean controlling whether the crosshair should draw its tracking lines, at the pixel point, inside a frame.
+      </p>
+          <h2>Syntax</h2>
+          <div class="Signature">[MonoTouch.Foundation.Export("shouldDrawCrosshairLinesForPoint:inFrame:")]<br />public virtual <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Boolean">bool</a> <b>ShouldDrawCrosshairLinesForPoint</b> (<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Drawing.PointF">System.Drawing.PointF</a> point, <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Drawing.RectangleF">System.Drawing.RectangleF</a> frame)</div>
+          <h4 class="Subsection">Parameters</h4>
+          <blockquote class="SubsectionBox" id="M:ShinobiCharts.SChartCrosshair.ShouldDrawCrosshairLinesForPoint(System.Drawing.PointF,System.Drawing.RectangleF):Parameters">
+            <dl>
+              <dt>
+                <i>point</i>
+              </dt>
+              <dd>
+              </dd>
+              <dt>
+                <i>frame</i>
+              </dt>
+              <dd>
+              </dd>
+            </dl>
+          </blockquote>
+          <h4 class="Subsection">Returns</h4>
+          <blockquote class="SubsectionBox" id="M:ShinobiCharts.SChartCrosshair.ShouldDrawCrosshairLinesForPoint(System.Drawing.PointF,System.Drawing.RectangleF):Returns">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="M:ShinobiCharts.SChartCrosshair.ShouldDrawCrosshairLinesForPoint(System.Drawing.PointF,System.Drawing.RectangleF):Remarks">Returns <tt>true</tt> if the crosshair should draw its tracking lines to the specified point, given the specified frame.
+			This defaults to a simple bounds check - whether the point is inside the frame.</div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="M:ShinobiCharts.SChartCrosshair.ShouldDrawCrosshairLinesForPoint(System.Drawing.PointF,System.Drawing.RectangleF):Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.5.7.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="M:ShinobiCharts.SChartCrosshair.ShouldKeepTracking()">ShouldKeepTracking Method</h3>
+        <blockquote id="M:ShinobiCharts.SChartCrosshair.ShouldKeepTracking():member">
+          <p class="Summary">Returns whether the crosshair should keep tracking.
+      </p>
+          <h2>Syntax</h2>
+          <div class="Signature">[MonoTouch.Foundation.Export("crosshairShouldKeepTracking")]<br />protected virtual <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Boolean">bool</a> <b>ShouldKeepTracking</b> ()</div>
+          <h4 class="Subsection">Returns</h4>
+          <blockquote class="SubsectionBox" id="M:ShinobiCharts.SChartCrosshair.ShouldKeepTracking():Returns">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="M:ShinobiCharts.SChartCrosshair.ShouldKeepTracking():Remarks">If this is the case, the crosshair should provide a series to track, using its TrackingSeries property.</div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="M:ShinobiCharts.SChartCrosshair.ShouldKeepTracking():Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.5.7.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="M:ShinobiCharts.SChartCrosshair.Show()">Show Method</h3>
+        <blockquote id="M:ShinobiCharts.SChartCrosshair.Show():member">
+          <p class="Summary"> Displays the Crosshair (with lines and Tooltip) on the chart.
+      </p>
+          <h2>Syntax</h2>
+          <div class="Signature">[MonoTouch.Foundation.Export("showCrosshair")]<br />public virtual <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Void">void</a> <b>Show</b> ()</div>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="M:ShinobiCharts.SChartCrosshair.Show():Remarks"> This method is called by the chart when the Crosshair should be displayed. Override this method to control the display of the Crosshair in subclasses. 
+		</div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="M:ShinobiCharts.SChartCrosshair.Show():Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.5.7.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="P:ShinobiCharts.SChartCrosshair.Style">Style Property</h3>
+        <blockquote id="P:ShinobiCharts.SChartCrosshair.Style:member">
+          <p class="Summary">The SChartCrosshairStyle object manages the look of the crosshair.
+      </p>
+          <h2>Syntax</h2>
+          <div class="Signature">public <a href="../ShinobiCharts/SChartCrosshairStyle.html">SChartCrosshairStyle</a> <b>Style</b>  { get; set; }</div>
+          <h4 class="Subsection">Value</h4>
+          <blockquote class="SubsectionBox" id="P:ShinobiCharts.SChartCrosshair.Style:Value">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartCrosshair.Style:Remarks">The default style for the crosshair is defined in the chart theme.
+			If you wish to modify the look of the crosshair later on, you can set the properties on this object to achieve the desired look.</div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartCrosshair.Style:Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.5.7.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="P:ShinobiCharts.SChartCrosshair.Tooltip">Tooltip Property</h3>
+        <blockquote id="P:ShinobiCharts.SChartCrosshair.Tooltip:member">
+          <p class="Summary">The tooltip which presents the current data values to the user.
+      </p>
+          <h2>Syntax</h2>
+          <div class="Signature">public <a href="../ShinobiCharts/SChartCrosshairTooltip.html">SChartCrosshairTooltip</a> <b>Tooltip</b>  { get; set; }</div>
+          <h4 class="Subsection">Value</h4>
+          <blockquote class="SubsectionBox" id="P:ShinobiCharts.SChartCrosshair.Tooltip:Value">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartCrosshair.Tooltip:Remarks">By default, this will be an instance of SChartCrosshairTooltip.
+				You can also override this class to present the crosshair data in a custom way.
+	  </div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartCrosshair.Tooltip:Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.5.7.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="P:ShinobiCharts.SChartCrosshair.TrackingPoint">TrackingPoint Property</h3>
+        <blockquote id="P:ShinobiCharts.SChartCrosshair.TrackingPoint:member">
+          <p class="Summary">Configures the crosshair to track a particular data point on the chart.
+      </p>
+          <h2>Syntax</h2>
+          <div class="Signature">public <a href="../ShinobiCharts/SChartPoint.html">SChartPoint</a> <b>TrackingPoint</b>  { get; set; }</div>
+          <h4 class="Subsection">Value</h4>
+          <blockquote class="SubsectionBox" id="P:ShinobiCharts.SChartCrosshair.TrackingPoint:Value">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartCrosshair.TrackingPoint:Remarks">If this property isn't set, the crosshair will lock to the nearest data point on the nearest series in the chart when it is drawn.</div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartCrosshair.TrackingPoint:Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.5.7.0</div>
+          <hr size="1" />
+        </blockquote>
+      </div>
+    </div>
+    <div class="Parameter">
+    </div>
+    <hr size="1" />
+    <div class="Copyright"> © 2013 Scott Logic Limited. All rights reserved </div>
+  </body>
+</html>

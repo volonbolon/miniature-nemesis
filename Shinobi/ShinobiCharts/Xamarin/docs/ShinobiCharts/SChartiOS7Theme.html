@@ -1,0 +1,1198 @@
+<html>
+  <head>
+    <title>ShinobiCharts.SChartiOS7Theme</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <style>
+      a { text-decoration: none; color: #AD1015; font-family: Arial }
+
+      div.SideBar {
+        padding-left: 1em;
+        padding-right: 1em;
+        right: 0;
+        float: right;
+        border: thin solid black;
+        background-color: #f2f2f2;
+      }
+    
+      .CollectionTitle { font-family: Arial; font-weight: bold; background: black; color: white; padding: 10px; margin: 0 }
+      .CollectionTitle p { font-size: 150%; }
+      .PageTitle { font-size: 150%; font-weight: bold }
+
+      .Summary { }
+      .Signature { }          
+      .Remarks { }
+      .Members { }
+      .Copyright { }
+      
+      .Section { font-family: Arial; font-size: 125%; font-weight: bold }
+      p.Summary {
+        margin-left: 1em;
+      }
+      .SectionBox { margin-left: 2em }
+      .NamespaceName { font-family: Arial; font-size: 105%; font-weight: bold }
+      .NamespaceSumary { }
+      .MemberName { font-size: 115%; font-weight: bold; margin-top: 1em }
+      .Subsection { font-size: 105%; font-weight: bold }
+      .SubsectionBox { margin-left: 2em; margin-bottom: 1em }
+
+      .CodeExampleTable { background-color: #f5f5dd; border: thin solid black; padding: .25em; }
+      
+      .TypesListing {
+	font-family: Arial;
+        border-collapse: collapse;
+      }
+
+      td {
+	font-family: Arial;
+        vertical-align: top;
+      }
+      th {
+	font-family: Arial;
+        text-align: left;
+      }
+
+      .TypesListing td { 
+        margin: 0px;  
+        padding: .25em;
+        border: solid gray 1px;
+      }
+
+      .TypesListing th { 
+        margin: 0px;  
+        padding: .25em;
+        background-color: #f2f2f2;
+        border: solid gray 1px;
+      }
+
+      div.Footer {
+	font-family: Arial;
+        border-top: 1px solid gray;
+        margin-top: 1.5em;
+        padding-top: 0.6em;
+        text-align: center;
+        color: gray;
+      }
+
+      span.NotEntered /* Documentation for this section has not yet been entered */ {
+	font-family: Arial;
+        font-style: italic;
+        color: 	#C0C0C0;	
+      }
+
+      div.Header {
+	font-family: Arial;
+        background: #B0C4DE;
+        border: double;
+        border-color: white;
+        border-width: 7px;
+        padding: 0.5em;
+      }
+
+      div.Header * {
+	font-family: Arial;
+        font-size: smaller;
+      }
+
+      div.Note {
+      }
+
+      i.ParamRef {
+      }
+
+      i.subtitle {
+      }
+
+      ul.TypeMembersIndex {
+	font-family: Arial;
+        text-align: left;
+        background: #F8F8F8;
+      }
+
+      ul.TypeMembersIndex li {
+        display: inline;
+        margin:  0.5em;
+      }
+
+      table.HeaderTable {
+      }
+
+      table.SignatureTable {
+      }
+
+      table.Documentation, table.Enumeration, table.TypeDocumentation {
+        border-collapse: collapse;
+        width: 100%;
+      }
+
+      table.Documentation tr th, table.TypeMembers tr th, table.Enumeration tr th, table.TypeDocumentation tr th {
+	font-family: Arial;
+        background: whitesmoke;
+        padding: 0.8em;
+        border: 1px solid gray;
+        text-align: left;
+        vertical-align: bottom;
+      }
+
+      table.Documentation tr td, table.TypeMembers tr td, table.Enumeration tr td, table.TypeDocumentation tr td {
+	font-family: Arial;
+        padding: 0.5em;
+        border: 1px solid gray;
+        text-align: left;
+        vertical-align: top;
+      }
+
+      table.TypeMembers {
+        border: 1px solid #C0C0C0;
+        width: 100%;
+      }
+
+      table.TypeMembers tr td {
+        background: #F8F8F8;
+        border: white;
+      }
+
+      table.Documentation {
+      }
+
+      table.TypeMembers {
+      }
+
+      div.CodeExample {
+        width: 100%;
+        border: 1px solid #DDDDDD;
+        background-color: #F8F8F8;
+      }
+
+      div.CodeExample p {
+        margin: 0.5em;
+        border-bottom: 1px solid #DDDDDD;
+      }
+
+      div.CodeExample div {
+        margin: 0.5em;
+      }
+
+      h4 {
+        margin-bottom: 0;
+      }
+
+      div.Signature {
+	font-family: Arial;
+        border: 1px solid #C0C0C0;
+        background: #F2F2F2;
+        padding: 1em;
+      }
+    </style>
+    <script type="text/JavaScript">
+      function toggle_display (block) {
+        var w = document.getElementById (block);
+        var t = document.getElementById (block + ":toggle");
+        if (w.style.display == "none") {
+          w.style.display = "block";
+          t.innerHTML = "⊟";
+        } else {
+          w.style.display = "none";
+          t.innerHTML = "⊞";
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <div class="CollectionTitle">
+      <p>
+		ShinobiControls Xamarin Bindings Documentation
+	</p>
+      <a href="../index.html">ShinobiCharts</a> : <a href="index.html">ShinobiCharts Namespace</a></div>
+    <h1 class="PageTitle" id="T:ShinobiCharts.SChartiOS7Theme">SChartiOS7Theme  Class</h1>
+    <p class="Summary" id="T:ShinobiCharts.SChartiOS7Theme:Summary">
+				The SChartiOS7Theme features solid-colored series without gradients on a light background and crisp and clear
+				text to fit in with your iOS 7 app.
+			</p>
+    <div>
+      <h2>Syntax</h2>
+      <div class="Signature" id="T:ShinobiCharts.SChartiOS7Theme:Signature">[MonoTouch.Foundation.Register("SChartiOS7Theme", true)]<br />public class  <b>SChartiOS7Theme</b> : <a href="../ShinobiCharts/SChartTheme.html">SChartTheme</a></div>
+    </div>
+    <div class="Remarks" id="T:ShinobiCharts.SChartiOS7Theme:Docs">
+      <h2 class="Section">Remarks</h2>
+      <div class="SectionBox" id="T:ShinobiCharts.SChartiOS7Theme:Docs:Remarks">
+				See <tt>SChartTheme</tt> for an explanation of how themes work.
+			</div>
+      <h2 class="Section">Requirements</h2>
+      <div class="SectionBox" id="T:ShinobiCharts.SChartiOS7Theme:Docs:Version Information">
+        <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.5.7.0</div>
+      <h2 class="Section" id="Members">Members</h2>
+      <div class="SectionBox" id="_Members">
+        <p>
+								See Also: Inherited members from
+								<a href="../ShinobiCharts/SChartTheme.html">SChartTheme</a>.
+							</p>
+        <h2 class="Section">Public Constructors</h2>
+        <div class="SectionBox" id="Public Constructors">
+          <div class="SubsectionBox">
+            <table class="TypeMembers">
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <div>
+                    <b>
+                      <a href="#C:ShinobiCharts.SChartiOS7Theme()">SChartiOS7Theme</a>
+                    </b>()</div>
+                </td>
+                <td>Default constructor.</td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <div>
+                    <b>
+                      <a href="#C:ShinobiCharts.SChartiOS7Theme(MonoTouch.Foundation.NSCoder)">SChartiOS7Theme</a>
+                    </b>(<a href="javascript:alert(&quot;Documentation not found.&quot;)">MonoTouch.Foundation.NSCoder</a>)</div>
+                </td>
+                <td>
+				A constructor that initializes the object from the data stored in the unarchiver object.
+			</td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <div>
+                    <b>
+                      <a href="#C:ShinobiCharts.SChartiOS7Theme(MonoTouch.Foundation.NSObjectFlag)">SChartiOS7Theme</a>
+                    </b>(<a href="javascript:alert(&quot;Documentation not found.&quot;)">MonoTouch.Foundation.NSObjectFlag</a>)</div>
+                </td>
+                <td>
+				Constructor to call on derived classes to skip initialization and merely allocate the object.
+			</td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <div>
+                    <b>
+                      <a href="#C:ShinobiCharts.SChartiOS7Theme(System.IntPtr)">SChartiOS7Theme</a>
+                    </b>(<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.IntPtr">IntPtr</a>)</div>
+                </td>
+                <td>
+				A constructor used when creating managed representations of unmanaged objects.
+			</td>
+              </tr>
+            </table>
+          </div>
+        </div>
+        <h2 class="Section">Public Properties</h2>
+        <div class="SectionBox" id="Public Properties">
+          <div class="SubsectionBox">
+            <table class="TypeMembers">
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <b>
+                    <a href="../ShinobiCharts/SChartTheme.html#P:ShinobiCharts.SChartTheme.BarLineWidth">BarLineWidth</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="javascript:alert(&quot;Documentation not found.&quot;)">MonoTouch.Foundation.NSNumber</a>
+                  </i>. Use this setting to apply a consistent line Width across all bar series
+			 (<i>Inherited from <a href="../ShinobiCharts/SChartTheme.html">SChartTheme</a>.</i>)</td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <b>
+                    <a href="../ShinobiCharts/SChartTheme.html#P:ShinobiCharts.SChartTheme.BlackColor">BlackColor</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="javascript:alert(&quot;Documentation not found.&quot;)">MonoTouch.UIKit.UIColor</a>
+                  </i>. Black palette color.
+       (<i>Inherited from <a href="../ShinobiCharts/SChartTheme.html">SChartTheme</a>.</i>)</td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <b>
+                    <a href="../ShinobiCharts/SChartTheme.html#P:ShinobiCharts.SChartTheme.BlackColorLowAlpha">BlackColorLowAlpha</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="javascript:alert(&quot;Documentation not found.&quot;)">MonoTouch.UIKit.UIColor</a>
+                  </i>. Black palette color with reduced alpha.
+       (<i>Inherited from <a href="../ShinobiCharts/SChartTheme.html">SChartTheme</a>.</i>)</td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <b>
+                    <a href="../ShinobiCharts/SChartTheme.html#P:ShinobiCharts.SChartTheme.BlueColorDark">BlueColorDark</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="javascript:alert(&quot;Documentation not found.&quot;)">MonoTouch.UIKit.UIColor</a>
+                  </i>. Blue palette color.
+       (<i>Inherited from <a href="../ShinobiCharts/SChartTheme.html">SChartTheme</a>.</i>)</td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <b>
+                    <a href="../ShinobiCharts/SChartTheme.html#P:ShinobiCharts.SChartTheme.BlueColorLight">BlueColorLight</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="javascript:alert(&quot;Documentation not found.&quot;)">MonoTouch.UIKit.UIColor</a>
+                  </i>. Blue palette color with increased brightness.
+       (<i>Inherited from <a href="../ShinobiCharts/SChartTheme.html">SChartTheme</a>.</i>)</td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <b>
+                    <a href="../ShinobiCharts/SChartTheme.html#P:ShinobiCharts.SChartTheme.BoldFontName">BoldFontName</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.String">string</a>
+                  </i>. The name of the bold font to use within the theme. (<i>Inherited from <a href="../ShinobiCharts/SChartTheme.html">SChartTheme</a>.</i>)</td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <b>
+                    <a href="../ShinobiCharts/SChartTheme.html#P:ShinobiCharts.SChartTheme.BoxGestureStyle">BoxGestureStyle</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="../ShinobiCharts/SChartBoxGestureStyle.html">SChartBoxGestureStyle</a>
+                  </i>. Style options relating to the box gesture.
+       (<i>Inherited from <a href="../ShinobiCharts/SChartTheme.html">SChartTheme</a>.</i>)</td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <b>
+                    <a href="../ShinobiCharts/SChartTheme.html#P:ShinobiCharts.SChartTheme.ChartStyle">ChartStyle</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="../ShinobiCharts/SChartStyle.html">SChartStyle</a>
+                  </i>. 
+				Style options relating to the overall chart. 
+			 (<i>Inherited from <a href="../ShinobiCharts/SChartTheme.html">SChartTheme</a>.</i>)</td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <b>
+                    <a href="../ShinobiCharts/SChartTheme.html#P:ShinobiCharts.SChartTheme.ChartTitleStyle">ChartTitleStyle</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="../ShinobiCharts/SChartMainTitleStyle.html">SChartMainTitleStyle</a>
+                  </i>. Style options relating to the chart title.
+       (<i>Inherited from <a href="../ShinobiCharts/SChartTheme.html">SChartTheme</a>.</i>)</td>
+              </tr>
+              <tr valign="top">
+                <td>[read-only]<div>override </div></td>
+                <td>
+                  <b>
+                    <a href="#P:ShinobiCharts.SChartiOS7Theme.ClassHandle">ClassHandle</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.IntPtr">IntPtr</a>
+                  </i>. 
+				The handle for this class.
+			</td>
+              </tr>
+              <tr valign="top">
+                <td>[read-only]<div>override </div></td>
+                <td>
+                  <b>
+                    <a href="../ShinobiCharts/SChartTheme.html#P:ShinobiCharts.SChartTheme.ClassHandle">ClassHandle</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.IntPtr">IntPtr</a>
+                  </i>. 
+        The handle for this class.
+         (<i>Inherited from <a href="../ShinobiCharts/SChartTheme.html">SChartTheme</a>.</i>)</td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <b>
+                    <a href="../ShinobiCharts/SChartTheme.html#P:ShinobiCharts.SChartTheme.ColumnLineWidth">ColumnLineWidth</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="javascript:alert(&quot;Documentation not found.&quot;)">MonoTouch.Foundation.NSNumber</a>
+                  </i>. Use this setting to apply a consistent line Width across all column series
+			 (<i>Inherited from <a href="../ShinobiCharts/SChartTheme.html">SChartTheme</a>.</i>)</td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <b>
+                    <a href="../ShinobiCharts/SChartTheme.html#P:ShinobiCharts.SChartTheme.CrosshairStyle">CrosshairStyle</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="../ShinobiCharts/SChartCrosshairStyle.html">SChartCrosshairStyle</a>
+                  </i>. Style options relating to the chart crosshair.
+       (<i>Inherited from <a href="../ShinobiCharts/SChartTheme.html">SChartTheme</a>.</i>)</td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <b>
+                    <a href="../ShinobiCharts/SChartTheme.html#P:ShinobiCharts.SChartTheme.DonutCrustThickness">DonutCrustThickness</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="javascript:alert(&quot;Documentation not found.&quot;)">MonoTouch.Foundation.NSNumber</a>
+                  </i>. Use this setting to apply a consistent crust thickness across all donut series
+			 (<i>Inherited from <a href="../ShinobiCharts/SChartTheme.html">SChartTheme</a>.</i>)</td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <b>
+                    <a href="../ShinobiCharts/SChartTheme.html#P:ShinobiCharts.SChartTheme.GreenColorBrightLight">GreenColorBrightLight</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="javascript:alert(&quot;Documentation not found.&quot;)">MonoTouch.UIKit.UIColor</a>
+                  </i>. Green palette color with increased brightness.
+       (<i>Inherited from <a href="../ShinobiCharts/SChartTheme.html">SChartTheme</a>.</i>)</td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <b>
+                    <a href="../ShinobiCharts/SChartTheme.html#P:ShinobiCharts.SChartTheme.GreenColorDark">GreenColorDark</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="javascript:alert(&quot;Documentation not found.&quot;)">MonoTouch.UIKit.UIColor</a>
+                  </i>. Green palette color.
+       (<i>Inherited from <a href="../ShinobiCharts/SChartTheme.html">SChartTheme</a>.</i>)</td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <b>
+                    <a href="../ShinobiCharts/SChartTheme.html#P:ShinobiCharts.SChartTheme.GreenColorLight">GreenColorLight</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="javascript:alert(&quot;Documentation not found.&quot;)">MonoTouch.UIKit.UIColor</a>
+                  </i>. Green palette color with increased brightness.
+       (<i>Inherited from <a href="../ShinobiCharts/SChartTheme.html">SChartTheme</a>.</i>)</td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <b>
+                    <a href="../ShinobiCharts/SChartTheme.html#P:ShinobiCharts.SChartTheme.LegendStyle">LegendStyle</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="../ShinobiCharts/SChartLegendStyle.html">SChartLegendStyle</a>
+                  </i>. Style options relating to the chart legend.
+       (<i>Inherited from <a href="../ShinobiCharts/SChartTheme.html">SChartTheme</a>.</i>)</td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <b>
+                    <a href="../ShinobiCharts/SChartTheme.html#P:ShinobiCharts.SChartTheme.LightFontName">LightFontName</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.String">string</a>
+                  </i>. The name of the light font to use within the theme. (<i>Inherited from <a href="../ShinobiCharts/SChartTheme.html">SChartTheme</a>.</i>)</td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <b>
+                    <a href="../ShinobiCharts/SChartTheme.html#P:ShinobiCharts.SChartTheme.LineWidth">LineWidth</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="javascript:alert(&quot;Documentation not found.&quot;)">MonoTouch.Foundation.NSNumber</a>
+                  </i>. Use this setting to apply a consistent line width across all line series.
+			 (<i>Inherited from <a href="../ShinobiCharts/SChartTheme.html">SChartTheme</a>.</i>)</td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <b>
+                    <a href="../ShinobiCharts/SChartTheme.html#P:ShinobiCharts.SChartTheme.OrangeColorDark">OrangeColorDark</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="javascript:alert(&quot;Documentation not found.&quot;)">MonoTouch.UIKit.UIColor</a>
+                  </i>. Orange palette color.
+       (<i>Inherited from <a href="../ShinobiCharts/SChartTheme.html">SChartTheme</a>.</i>)</td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <b>
+                    <a href="../ShinobiCharts/SChartTheme.html#P:ShinobiCharts.SChartTheme.OrangeColorLight">OrangeColorLight</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="javascript:alert(&quot;Documentation not found.&quot;)">MonoTouch.UIKit.UIColor</a>
+                  </i>. Orange palette color with increased brightness.
+       (<i>Inherited from <a href="../ShinobiCharts/SChartTheme.html">SChartTheme</a>.</i>)</td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <b>
+                    <a href="../ShinobiCharts/SChartTheme.html#P:ShinobiCharts.SChartTheme.PieCrustThickness">PieCrustThickness</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="javascript:alert(&quot;Documentation not found.&quot;)">MonoTouch.Foundation.NSNumber</a>
+                  </i>. Use this setting to apply a consistent crust thickness across all pie series
+			 (<i>Inherited from <a href="../ShinobiCharts/SChartTheme.html">SChartTheme</a>.</i>)</td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <b>
+                    <a href="../ShinobiCharts/SChartTheme.html#P:ShinobiCharts.SChartTheme.PurpleColorDark">PurpleColorDark</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="javascript:alert(&quot;Documentation not found.&quot;)">MonoTouch.UIKit.UIColor</a>
+                  </i>. Purple palette color.
+       (<i>Inherited from <a href="../ShinobiCharts/SChartTheme.html">SChartTheme</a>.</i>)</td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <b>
+                    <a href="../ShinobiCharts/SChartTheme.html#P:ShinobiCharts.SChartTheme.PurpleColorLight">PurpleColorLight</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="javascript:alert(&quot;Documentation not found.&quot;)">MonoTouch.UIKit.UIColor</a>
+                  </i>. Purple palette color with increased brightness.
+       (<i>Inherited from <a href="../ShinobiCharts/SChartTheme.html">SChartTheme</a>.</i>)</td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <b>
+                    <a href="../ShinobiCharts/SChartTheme.html#P:ShinobiCharts.SChartTheme.RedColorBrightLight">RedColorBrightLight</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="javascript:alert(&quot;Documentation not found.&quot;)">MonoTouch.UIKit.UIColor</a>
+                  </i>. Red palette color with increased brightness.
+       (<i>Inherited from <a href="../ShinobiCharts/SChartTheme.html">SChartTheme</a>.</i>)</td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <b>
+                    <a href="../ShinobiCharts/SChartTheme.html#P:ShinobiCharts.SChartTheme.RedColorDark">RedColorDark</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="javascript:alert(&quot;Documentation not found.&quot;)">MonoTouch.UIKit.UIColor</a>
+                  </i>. Red palette color.
+       (<i>Inherited from <a href="../ShinobiCharts/SChartTheme.html">SChartTheme</a>.</i>)</td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <b>
+                    <a href="../ShinobiCharts/SChartTheme.html#P:ShinobiCharts.SChartTheme.RedColorLight">RedColorLight</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="javascript:alert(&quot;Documentation not found.&quot;)">MonoTouch.UIKit.UIColor</a>
+                  </i>. Red palette color with increased brightness.
+       (<i>Inherited from <a href="../ShinobiCharts/SChartTheme.html">SChartTheme</a>.</i>)</td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <b>
+                    <a href="../ShinobiCharts/SChartTheme.html#P:ShinobiCharts.SChartTheme.RegularFontName">RegularFontName</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.String">string</a>
+                  </i>. The name of the regular font to use within the theme. (<i>Inherited from <a href="../ShinobiCharts/SChartTheme.html">SChartTheme</a>.</i>)</td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <b>
+                    <a href="../ShinobiCharts/SChartTheme.html#P:ShinobiCharts.SChartTheme.XAxisStyle">XAxisStyle</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="../ShinobiCharts/SChartAxisStyle.html">SChartAxisStyle</a>
+                  </i>. Style options relating to the x axis.
+       (<i>Inherited from <a href="../ShinobiCharts/SChartTheme.html">SChartTheme</a>.</i>)</td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <b>
+                    <a href="../ShinobiCharts/SChartTheme.html#P:ShinobiCharts.SChartTheme.YAxisStyle">YAxisStyle</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="../ShinobiCharts/SChartAxisStyle.html">SChartAxisStyle</a>
+                  </i>. Style options relating to the y axis.
+       (<i>Inherited from <a href="../ShinobiCharts/SChartTheme.html">SChartTheme</a>.</i>)</td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <b>
+                    <a href="../ShinobiCharts/SChartTheme.html#P:ShinobiCharts.SChartTheme.YellowColorDark">YellowColorDark</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="javascript:alert(&quot;Documentation not found.&quot;)">MonoTouch.UIKit.UIColor</a>
+                  </i>. Yellow palette color.
+       (<i>Inherited from <a href="../ShinobiCharts/SChartTheme.html">SChartTheme</a>.</i>)</td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <b>
+                    <a href="../ShinobiCharts/SChartTheme.html#P:ShinobiCharts.SChartTheme.YellowColorLight">YellowColorLight</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="javascript:alert(&quot;Documentation not found.&quot;)">MonoTouch.UIKit.UIColor</a>
+                  </i>. Yellow palette color with increased brightness.
+       (<i>Inherited from <a href="../ShinobiCharts/SChartTheme.html">SChartTheme</a>.</i>)</td>
+              </tr>
+            </table>
+          </div>
+        </div>
+        <h2 class="Section">Public Methods</h2>
+        <div class="SectionBox" id="Public Methods">
+          <div class="SubsectionBox">
+            <table class="TypeMembers">
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="../ShinobiCharts/SChartTheme.html#M:ShinobiCharts.SChartTheme.AddBandSeriesStyle(ShinobiCharts.SChartBandSeriesStyle,System.Boolean)">AddBandSeriesStyle</a>
+                  </b>(<a href="../ShinobiCharts/SChartBandSeriesStyle.html">SChartBandSeriesStyle</a>, <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Boolean">bool</a>)<blockquote>Stores the series style in the array of band series styles.
+       (<i>Inherited from <a href="../ShinobiCharts/SChartTheme.html">SChartTheme</a>.</i>)</blockquote></td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="../ShinobiCharts/SChartTheme.html#M:ShinobiCharts.SChartTheme.AddBarSeriesStyle(ShinobiCharts.SChartBarSeriesStyle,System.Boolean)">AddBarSeriesStyle</a>
+                  </b>(<a href="../ShinobiCharts/SChartBarSeriesStyle.html">SChartBarSeriesStyle</a>, <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Boolean">bool</a>)<blockquote>Stores the series style in the array of bar series styles.
+       (<i>Inherited from <a href="../ShinobiCharts/SChartTheme.html">SChartTheme</a>.</i>)</blockquote></td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="../ShinobiCharts/SChartTheme.html#M:ShinobiCharts.SChartTheme.AddCandlestickSeriesStyle(ShinobiCharts.SChartCandlestickSeriesStyle,System.Boolean)">AddCandlestickSeriesStyle</a>
+                  </b>(<a href="../ShinobiCharts/SChartCandlestickSeriesStyle.html">SChartCandlestickSeriesStyle</a>, <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Boolean">bool</a>)<blockquote>Stores the series style in the array of candlestick series styles.
+       (<i>Inherited from <a href="../ShinobiCharts/SChartTheme.html">SChartTheme</a>.</i>)</blockquote></td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="../ShinobiCharts/SChartTheme.html#M:ShinobiCharts.SChartTheme.AddColumnSeriesStyle(ShinobiCharts.SChartColumnSeriesStyle,System.Boolean)">AddColumnSeriesStyle</a>
+                  </b>(<a href="../ShinobiCharts/SChartColumnSeriesStyle.html">SChartColumnSeriesStyle</a>, <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Boolean">bool</a>)<blockquote>Stores the series style in the array of column series styles.
+       (<i>Inherited from <a href="../ShinobiCharts/SChartTheme.html">SChartTheme</a>.</i>)</blockquote></td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="../ShinobiCharts/SChartTheme.html#M:ShinobiCharts.SChartTheme.AddDonutSeriesStyle(ShinobiCharts.SChartDonutSeriesStyle,System.Boolean)">AddDonutSeriesStyle</a>
+                  </b>(<a href="../ShinobiCharts/SChartDonutSeriesStyle.html">SChartDonutSeriesStyle</a>, <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Boolean">bool</a>)<blockquote>Encodes the donut series style object and stores in the array of donut series styles.
+       (<i>Inherited from <a href="../ShinobiCharts/SChartTheme.html">SChartTheme</a>.</i>)</blockquote></td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="../ShinobiCharts/SChartTheme.html#M:ShinobiCharts.SChartTheme.AddLineSeriesStyle(ShinobiCharts.SChartLineSeriesStyle,System.Boolean)">AddLineSeriesStyle</a>
+                  </b>(<a href="../ShinobiCharts/SChartLineSeriesStyle.html">SChartLineSeriesStyle</a>, <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Boolean">bool</a>)<blockquote>Adds a series style to the array of line series styles contained within the theme.
+       (<i>Inherited from <a href="../ShinobiCharts/SChartTheme.html">SChartTheme</a>.</i>)</blockquote></td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="../ShinobiCharts/SChartTheme.html#M:ShinobiCharts.SChartTheme.AddOHLCSeriesStyle(ShinobiCharts.SChartOHLCSeriesStyle,System.Boolean)">AddOHLCSeriesStyle</a>
+                  </b>(<a href="../ShinobiCharts/SChartOHLCSeriesStyle.html">SChartOHLCSeriesStyle</a>, <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Boolean">bool</a>)<blockquote>Stores the series style in the array of ohlc series styles.
+       (<i>Inherited from <a href="../ShinobiCharts/SChartTheme.html">SChartTheme</a>.</i>)</blockquote></td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="../ShinobiCharts/SChartTheme.html#M:ShinobiCharts.SChartTheme.AddScatterSeriesStyle(ShinobiCharts.SChartScatterSeriesStyle,System.Boolean)">AddScatterSeriesStyle</a>
+                  </b>(<a href="../ShinobiCharts/SChartScatterSeriesStyle.html">SChartScatterSeriesStyle</a>, <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Boolean">bool</a>)<blockquote>Stores the series style in the array of scatter series styles.
+       (<i>Inherited from <a href="../ShinobiCharts/SChartTheme.html">SChartTheme</a>.</i>)</blockquote></td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="../ShinobiCharts/SChartTheme.html#M:ShinobiCharts.SChartTheme.ConfigureBarSeriesStyle(ShinobiCharts.SChartBarSeriesStyle)">ConfigureBarSeriesStyle</a>
+                  </b>(<a href="../ShinobiCharts/SChartBarSeriesStyle.html">SChartBarSeriesStyle</a>)<blockquote>DEPRECATED - We will move this off the public API in a future commit. (<i>Inherited from <a href="../ShinobiCharts/SChartTheme.html">SChartTheme</a>.</i>)</blockquote></td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="../ShinobiCharts/SChartTheme.html#M:ShinobiCharts.SChartTheme.ConfigureColumnSeriesStyle(ShinobiCharts.SChartColumnSeriesStyle)">ConfigureColumnSeriesStyle</a>
+                  </b>(<a href="../ShinobiCharts/SChartColumnSeriesStyle.html">SChartColumnSeriesStyle</a>)<blockquote>DEPRECATED - We will move this off the public API in a future commit. (<i>Inherited from <a href="../ShinobiCharts/SChartTheme.html">SChartTheme</a>.</i>)</blockquote></td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="../ShinobiCharts/SChartTheme.html#M:ShinobiCharts.SChartTheme.ConfigureLineSeriesStyle(ShinobiCharts.SChartLineSeriesStyle)">ConfigureLineSeriesStyle</a>
+                  </b>(<a href="../ShinobiCharts/SChartLineSeriesStyle.html">SChartLineSeriesStyle</a>)<blockquote>DEPRECATED - We will move this off the public API in a future commit. (<i>Inherited from <a href="../ShinobiCharts/SChartTheme.html">SChartTheme</a>.</i>)</blockquote></td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="../ShinobiCharts/SChartTheme.html#M:ShinobiCharts.SChartTheme.ConfigureScatterSeriesStyle(ShinobiCharts.SChartScatterSeriesStyle)">ConfigureScatterSeriesStyle</a>
+                  </b>(<a href="../ShinobiCharts/SChartScatterSeriesStyle.html">SChartScatterSeriesStyle</a>)<blockquote>DEPRECATED - We will move this off the public API in a future commit. (<i>Inherited from <a href="../ShinobiCharts/SChartTheme.html">SChartTheme</a>.</i>)</blockquote></td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="../ShinobiCharts/SChartTheme.html#M:ShinobiCharts.SChartTheme.GetBandSeriesStyle(System.Int32,System.Boolean)">GetBandSeriesStyle</a>
+                  </b>(<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Int32">int</a>, <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Boolean">bool</a>)<nobr> : <a href="../ShinobiCharts/SChartBandSeriesStyle.html">SChartBandSeriesStyle</a></nobr><blockquote>Returns the band series style for the specified series on the chart.
+			 (<i>Inherited from <a href="../ShinobiCharts/SChartTheme.html">SChartTheme</a>.</i>)</blockquote></td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="../ShinobiCharts/SChartTheme.html#M:ShinobiCharts.SChartTheme.GetBarSeriesStyle(System.Int32,System.Boolean)">GetBarSeriesStyle</a>
+                  </b>(<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Int32">int</a>, <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Boolean">bool</a>)<nobr> : <a href="../ShinobiCharts/SChartBarSeriesStyle.html">SChartBarSeriesStyle</a></nobr><blockquote>Returns the bar series style for the specified series on the chart. 
+       (<i>Inherited from <a href="../ShinobiCharts/SChartTheme.html">SChartTheme</a>.</i>)</blockquote></td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="../ShinobiCharts/SChartTheme.html#M:ShinobiCharts.SChartTheme.GetBubbleSeriesStyle(System.Int32,System.Boolean)">GetBubbleSeriesStyle</a>
+                  </b>(<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Int32">int</a>, <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Boolean">bool</a>)<nobr> : <a href="../ShinobiCharts/SChartBubbleSeriesStyle.html">SChartBubbleSeriesStyle</a></nobr><blockquote>Returns the bubble series style for the specified series on the chart. (<i>Inherited from <a href="../ShinobiCharts/SChartTheme.html">SChartTheme</a>.</i>)</blockquote></td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="../ShinobiCharts/SChartTheme.html#M:ShinobiCharts.SChartTheme.GetCandlestickSeriesStyle(System.Int32,System.Boolean)">GetCandlestickSeriesStyle</a>
+                  </b>(<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Int32">int</a>, <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Boolean">bool</a>)<nobr> : <a href="../ShinobiCharts/SChartCandlestickSeriesStyle.html">SChartCandlestickSeriesStyle</a></nobr><blockquote>Returns the candlestick series style for the specified series on the chart.
+			 (<i>Inherited from <a href="../ShinobiCharts/SChartTheme.html">SChartTheme</a>.</i>)</blockquote></td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="../ShinobiCharts/SChartTheme.html#M:ShinobiCharts.SChartTheme.GetColumnSeriesStyle(System.Int32,System.Boolean)">GetColumnSeriesStyle</a>
+                  </b>(<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Int32">int</a>, <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Boolean">bool</a>)<nobr> : <a href="../ShinobiCharts/SChartColumnSeriesStyle.html">SChartColumnSeriesStyle</a></nobr><blockquote>Returns the column series style for the specified series on the chart. 
+       (<i>Inherited from <a href="../ShinobiCharts/SChartTheme.html">SChartTheme</a>.</i>)</blockquote></td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="../ShinobiCharts/SChartTheme.html#M:ShinobiCharts.SChartTheme.GetDonutSeriesStyle(System.Int32,System.Boolean)">GetDonutSeriesStyle</a>
+                  </b>(<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Int32">int</a>, <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Boolean">bool</a>)<nobr> : <a href="../ShinobiCharts/SChartDonutSeriesStyle.html">SChartDonutSeriesStyle</a></nobr><blockquote>Returns the donut series style for the specified series on the chart. 
+       (<i>Inherited from <a href="../ShinobiCharts/SChartTheme.html">SChartTheme</a>.</i>)</blockquote></td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="../ShinobiCharts/SChartTheme.html#M:ShinobiCharts.SChartTheme.GetLineSeriesStyle(System.Int32,System.Boolean)">GetLineSeriesStyle</a>
+                  </b>(<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Int32">int</a>, <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Boolean">bool</a>)<nobr> : <a href="../ShinobiCharts/SChartLineSeriesStyle.html">SChartLineSeriesStyle</a></nobr><blockquote>Returns the line series style for the specified series on the chart.
+			 (<i>Inherited from <a href="../ShinobiCharts/SChartTheme.html">SChartTheme</a>.</i>)</blockquote></td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="../ShinobiCharts/SChartTheme.html#M:ShinobiCharts.SChartTheme.GetOHLCSeriesStyle(System.Int32,System.Boolean)">GetOHLCSeriesStyle</a>
+                  </b>(<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Int32">int</a>, <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Boolean">bool</a>)<nobr> : <a href="../ShinobiCharts/SChartOHLCSeriesStyle.html">SChartOHLCSeriesStyle</a></nobr><blockquote>Returns the OHLC series style for the specified series on the chart. 
+       (<i>Inherited from <a href="../ShinobiCharts/SChartTheme.html">SChartTheme</a>.</i>)</blockquote></td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="../ShinobiCharts/SChartTheme.html#M:ShinobiCharts.SChartTheme.GetScatterSeriesStyle(System.Int32,System.Boolean)">GetScatterSeriesStyle</a>
+                  </b>(<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Int32">int</a>, <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Boolean">bool</a>)<nobr> : <a href="../ShinobiCharts/SChartScatterSeriesStyle.html">SChartScatterSeriesStyle</a></nobr><blockquote>Returns the scatter series style for the specified series on the chart.
+       (<i>Inherited from <a href="../ShinobiCharts/SChartTheme.html">SChartTheme</a>.</i>)</blockquote></td>
+              </tr>
+            </table>
+          </div>
+        </div>
+        <h2 class="Section">Protected Methods</h2>
+        <div class="SectionBox" id="Protected Methods">
+          <div class="SubsectionBox">
+            <table class="TypeMembers">
+              <tr valign="top">
+                <td>
+                  <div>override </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="../ShinobiCharts/SChartTheme.html#M:ShinobiCharts.SChartTheme.Dispose(System.Boolean)">Dispose</a>
+                  </b>(<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Boolean">bool</a>)<blockquote> Releases unmanaged resources.
+       (<i>Inherited from <a href="../ShinobiCharts/SChartTheme.html">SChartTheme</a>.</i>)</blockquote></td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="Members" id="T:ShinobiCharts.SChartiOS7Theme:Members">
+      <h2 class="Section" id="MemberDetails">Member Details</h2>
+      <div class="SectionBox" id="_MemberDetails">
+        <h3 id="C:ShinobiCharts.SChartiOS7Theme()">SChartiOS7Theme Constructor</h3>
+        <blockquote id="C:ShinobiCharts.SChartiOS7Theme():member">
+          <p class="Summary">Default constructor.</p>
+          <h2>Syntax</h2>
+          <div class="Signature">[MonoTouch.Foundation.Export("init")]<br />[System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Advanced)]<br />public  <b>SChartiOS7Theme</b> ()</div>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="C:ShinobiCharts.SChartiOS7Theme():Remarks">
+          </div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="C:ShinobiCharts.SChartiOS7Theme():Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.5.7.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="C:ShinobiCharts.SChartiOS7Theme(MonoTouch.Foundation.NSCoder)">SChartiOS7Theme Constructor</h3>
+        <blockquote id="C:ShinobiCharts.SChartiOS7Theme(MonoTouch.Foundation.NSCoder):member">
+          <p class="Summary">
+				A constructor that initializes the object from the data stored in the unarchiver object.
+			</p>
+          <h2>Syntax</h2>
+          <div class="Signature">[MonoTouch.Foundation.Export("initWithCoder:")]<br />[System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Advanced)]<br />public  <b>SChartiOS7Theme</b> (<a href="javascript:alert(&quot;Documentation not found.&quot;)">MonoTouch.Foundation.NSCoder</a> coder)</div>
+          <h4 class="Subsection">Parameters</h4>
+          <blockquote class="SubsectionBox" id="C:ShinobiCharts.SChartiOS7Theme(MonoTouch.Foundation.NSCoder):Parameters">
+            <dl>
+              <dt>
+                <i>coder</i>
+              </dt>
+              <dd>
+				The unarchiver object
+			</dd>
+            </dl>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="C:ShinobiCharts.SChartiOS7Theme(MonoTouch.Foundation.NSCoder):Remarks">
+				This constructor is provided to allow the class to be initialized from an unarchiver (for example, during NIB deserialization).
+			</div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="C:ShinobiCharts.SChartiOS7Theme(MonoTouch.Foundation.NSCoder):Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.5.7.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="C:ShinobiCharts.SChartiOS7Theme(MonoTouch.Foundation.NSObjectFlag)">SChartiOS7Theme Constructor</h3>
+        <blockquote id="C:ShinobiCharts.SChartiOS7Theme(MonoTouch.Foundation.NSObjectFlag):member">
+          <p class="Summary">
+				Constructor to call on derived classes to skip initialization and merely allocate the object.
+			</p>
+          <h2>Syntax</h2>
+          <div class="Signature">[System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Advanced)]<br />public  <b>SChartiOS7Theme</b> (<a href="javascript:alert(&quot;Documentation not found.&quot;)">MonoTouch.Foundation.NSObjectFlag</a> t)</div>
+          <h4 class="Subsection">Parameters</h4>
+          <blockquote class="SubsectionBox" id="C:ShinobiCharts.SChartiOS7Theme(MonoTouch.Foundation.NSObjectFlag):Parameters">
+            <dl>
+              <dt>
+                <i>t</i>
+              </dt>
+              <dd>
+				Unused sentinel value
+			</dd>
+            </dl>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="C:ShinobiCharts.SChartiOS7Theme(MonoTouch.Foundation.NSObjectFlag):Remarks">
+				You should not invoke this method directly.
+			</div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="C:ShinobiCharts.SChartiOS7Theme(MonoTouch.Foundation.NSObjectFlag):Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.5.7.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="C:ShinobiCharts.SChartiOS7Theme(System.IntPtr)">SChartiOS7Theme Constructor</h3>
+        <blockquote id="C:ShinobiCharts.SChartiOS7Theme(System.IntPtr):member">
+          <p class="Summary">
+				A constructor used when creating managed representations of unmanaged objects.
+			</p>
+          <h2>Syntax</h2>
+          <div class="Signature">[System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Advanced)]<br />public  <b>SChartiOS7Theme</b> (<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.IntPtr">IntPtr</a> handle)</div>
+          <h4 class="Subsection">Parameters</h4>
+          <blockquote class="SubsectionBox" id="C:ShinobiCharts.SChartiOS7Theme(System.IntPtr):Parameters">
+            <dl>
+              <dt>
+                <i>handle</i>
+              </dt>
+              <dd>
+				Handle of the unmanaged object
+			</dd>
+            </dl>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="C:ShinobiCharts.SChartiOS7Theme(System.IntPtr):Remarks">
+				You should not invoke this method directly.
+			</div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="C:ShinobiCharts.SChartiOS7Theme(System.IntPtr):Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.5.7.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="P:ShinobiCharts.SChartiOS7Theme.ClassHandle">ClassHandle Property</h3>
+        <blockquote id="P:ShinobiCharts.SChartiOS7Theme.ClassHandle:member">
+          <p class="Summary">
+				The handle for this class.
+			</p>
+          <h2>Syntax</h2>
+          <div class="Signature">public override <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.IntPtr">IntPtr</a> <b>ClassHandle</b>  { get; }</div>
+          <h4 class="Subsection">Value</h4>
+          <blockquote class="SubsectionBox" id="P:ShinobiCharts.SChartiOS7Theme.ClassHandle:Value">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartiOS7Theme.ClassHandle:Remarks">
+          </div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartiOS7Theme.ClassHandle:Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.5.7.0</div>
+          <hr size="1" />
+        </blockquote>
+      </div>
+    </div>
+    <div class="Parameter">
+    </div>
+    <hr size="1" />
+    <div class="Copyright"> © 2013 Scott Logic Limited. All rights reserved </div>
+  </body>
+</html>

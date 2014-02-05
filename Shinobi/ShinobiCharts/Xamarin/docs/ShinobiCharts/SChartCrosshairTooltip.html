@@ -1,0 +1,836 @@
+<html>
+  <head>
+    <title>ShinobiCharts.SChartCrosshairTooltip</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <style>
+      a { text-decoration: none; color: #AD1015; font-family: Arial }
+
+      div.SideBar {
+        padding-left: 1em;
+        padding-right: 1em;
+        right: 0;
+        float: right;
+        border: thin solid black;
+        background-color: #f2f2f2;
+      }
+    
+      .CollectionTitle { font-family: Arial; font-weight: bold; background: black; color: white; padding: 10px; margin: 0 }
+      .CollectionTitle p { font-size: 150%; }
+      .PageTitle { font-size: 150%; font-weight: bold }
+
+      .Summary { }
+      .Signature { }          
+      .Remarks { }
+      .Members { }
+      .Copyright { }
+      
+      .Section { font-family: Arial; font-size: 125%; font-weight: bold }
+      p.Summary {
+        margin-left: 1em;
+      }
+      .SectionBox { margin-left: 2em }
+      .NamespaceName { font-family: Arial; font-size: 105%; font-weight: bold }
+      .NamespaceSumary { }
+      .MemberName { font-size: 115%; font-weight: bold; margin-top: 1em }
+      .Subsection { font-size: 105%; font-weight: bold }
+      .SubsectionBox { margin-left: 2em; margin-bottom: 1em }
+
+      .CodeExampleTable { background-color: #f5f5dd; border: thin solid black; padding: .25em; }
+      
+      .TypesListing {
+	font-family: Arial;
+        border-collapse: collapse;
+      }
+
+      td {
+	font-family: Arial;
+        vertical-align: top;
+      }
+      th {
+	font-family: Arial;
+        text-align: left;
+      }
+
+      .TypesListing td { 
+        margin: 0px;  
+        padding: .25em;
+        border: solid gray 1px;
+      }
+
+      .TypesListing th { 
+        margin: 0px;  
+        padding: .25em;
+        background-color: #f2f2f2;
+        border: solid gray 1px;
+      }
+
+      div.Footer {
+	font-family: Arial;
+        border-top: 1px solid gray;
+        margin-top: 1.5em;
+        padding-top: 0.6em;
+        text-align: center;
+        color: gray;
+      }
+
+      span.NotEntered /* Documentation for this section has not yet been entered */ {
+	font-family: Arial;
+        font-style: italic;
+        color: 	#C0C0C0;	
+      }
+
+      div.Header {
+	font-family: Arial;
+        background: #B0C4DE;
+        border: double;
+        border-color: white;
+        border-width: 7px;
+        padding: 0.5em;
+      }
+
+      div.Header * {
+	font-family: Arial;
+        font-size: smaller;
+      }
+
+      div.Note {
+      }
+
+      i.ParamRef {
+      }
+
+      i.subtitle {
+      }
+
+      ul.TypeMembersIndex {
+	font-family: Arial;
+        text-align: left;
+        background: #F8F8F8;
+      }
+
+      ul.TypeMembersIndex li {
+        display: inline;
+        margin:  0.5em;
+      }
+
+      table.HeaderTable {
+      }
+
+      table.SignatureTable {
+      }
+
+      table.Documentation, table.Enumeration, table.TypeDocumentation {
+        border-collapse: collapse;
+        width: 100%;
+      }
+
+      table.Documentation tr th, table.TypeMembers tr th, table.Enumeration tr th, table.TypeDocumentation tr th {
+	font-family: Arial;
+        background: whitesmoke;
+        padding: 0.8em;
+        border: 1px solid gray;
+        text-align: left;
+        vertical-align: bottom;
+      }
+
+      table.Documentation tr td, table.TypeMembers tr td, table.Enumeration tr td, table.TypeDocumentation tr td {
+	font-family: Arial;
+        padding: 0.5em;
+        border: 1px solid gray;
+        text-align: left;
+        vertical-align: top;
+      }
+
+      table.TypeMembers {
+        border: 1px solid #C0C0C0;
+        width: 100%;
+      }
+
+      table.TypeMembers tr td {
+        background: #F8F8F8;
+        border: white;
+      }
+
+      table.Documentation {
+      }
+
+      table.TypeMembers {
+      }
+
+      div.CodeExample {
+        width: 100%;
+        border: 1px solid #DDDDDD;
+        background-color: #F8F8F8;
+      }
+
+      div.CodeExample p {
+        margin: 0.5em;
+        border-bottom: 1px solid #DDDDDD;
+      }
+
+      div.CodeExample div {
+        margin: 0.5em;
+      }
+
+      h4 {
+        margin-bottom: 0;
+      }
+
+      div.Signature {
+	font-family: Arial;
+        border: 1px solid #C0C0C0;
+        background: #F2F2F2;
+        padding: 1em;
+      }
+    </style>
+    <script type="text/JavaScript">
+      function toggle_display (block) {
+        var w = document.getElementById (block);
+        var t = document.getElementById (block + ":toggle");
+        if (w.style.display == "none") {
+          w.style.display = "block";
+          t.innerHTML = "⊟";
+        } else {
+          w.style.display = "none";
+          t.innerHTML = "⊞";
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <div class="CollectionTitle">
+      <p>
+		ShinobiControls Xamarin Bindings Documentation
+	</p>
+      <a href="../index.html">ShinobiCharts</a> : <a href="index.html">ShinobiCharts Namespace</a></div>
+    <h1 class="PageTitle" id="T:ShinobiCharts.SChartCrosshairTooltip">SChartCrosshairTooltip  Class</h1>
+    <p class="Summary" id="T:ShinobiCharts.SChartCrosshairTooltip:Summary">A text label that moves with the chart crosshair
+      </p>
+    <div>
+      <h2>Syntax</h2>
+      <div class="Signature" id="T:ShinobiCharts.SChartCrosshairTooltip:Signature">[MonoTouch.Foundation.Register("SChartCrosshairTooltip", true)]<br />public class  <b>SChartCrosshairTooltip</b> : <a href="javascript:alert(&quot;Documentation not found.&quot;)">MonoTouch.UIKit.UIView</a></div>
+    </div>
+    <div class="Remarks" id="T:ShinobiCharts.SChartCrosshairTooltip:Docs">
+      <h4 class="Subsection">See Also</h4>
+      <blockquote class="SubsectionBox" id="T:ShinobiCharts.SChartCrosshairTooltip:Docs:See Also">
+        <div>
+          <a href="../ShinobiCharts/SChartCrosshair.html">SChartCrosshair</a>
+        </div>
+      </blockquote>
+      <h2 class="Section">Remarks</h2>
+      <div class="SectionBox" id="T:ShinobiCharts.SChartCrosshairTooltip:Docs:Remarks">
+        <p>To create a custom Tooltip - subclass this class and override the functions below. When the standard <a href="../ShinobiCharts/SChartCrosshair.html">ShinobiCharts.SChartCrosshair</a> moves position it will call the following functions in order:</p>
+        <p>
+          <a href="../ShinobiCharts/SChartCrosshairTooltip.html#M:ShinobiCharts.SChartCrosshairTooltip.SetTooltipStyle">SChartCrosshairTooltip.SetTooltipStyle</a>
+        </p>
+        <p>
+          <a href="../ShinobiCharts/SChartCrosshairTooltip.html#M:ShinobiCharts.SChartCrosshairTooltip.SetDataPoint">SChartCrosshairTooltip.SetDataPoint</a>
+        </p>
+        <p>
+          <a href="../ShinobiCharts/SChartCrosshairTooltip.html#M:ShinobiCharts.SChartCrosshairTooltip.SetPosition">SChartCrosshairTooltip.SetPosition</a>
+        </p>
+      </div>
+      <h2 class="Section">Requirements</h2>
+      <div class="SectionBox" id="T:ShinobiCharts.SChartCrosshairTooltip:Docs:Version Information">
+        <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.5.7.0</div>
+      <h2 class="Section" id="Members">Members</h2>
+      <div class="SectionBox" id="_Members">
+        <p>
+								See Also: Inherited members from
+								<a href="javascript:alert(&quot;Documentation not found.&quot;)">MonoTouch.UIKit.UIView</a>.
+							</p>
+        <h2 class="Section">Public Constructors</h2>
+        <div class="SectionBox" id="Public Constructors">
+          <div class="SubsectionBox">
+            <table class="TypeMembers">
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <div>
+                    <b>
+                      <a href="#C:ShinobiCharts.SChartCrosshairTooltip()">SChartCrosshairTooltip</a>
+                    </b>()</div>
+                </td>
+                <td>Default constructor
+      </td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <div>
+                    <b>
+                      <a href="#C:ShinobiCharts.SChartCrosshairTooltip(MonoTouch.Foundation.NSCoder)">SChartCrosshairTooltip</a>
+                    </b>(<a href="javascript:alert(&quot;Documentation not found.&quot;)">MonoTouch.Foundation.NSCoder</a>)</div>
+                </td>
+                <td>A constructor that initializes the object from the data stored in the unarchiver object.
+      </td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <div>
+                    <b>
+                      <a href="#C:ShinobiCharts.SChartCrosshairTooltip(MonoTouch.Foundation.NSObjectFlag)">SChartCrosshairTooltip</a>
+                    </b>(<a href="javascript:alert(&quot;Documentation not found.&quot;)">MonoTouch.Foundation.NSObjectFlag</a>)</div>
+                </td>
+                <td>Constructor to call on derived classes to skip initialization and merely allocate the object.
+      </td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <div>
+                    <b>
+                      <a href="#C:ShinobiCharts.SChartCrosshairTooltip(System.Drawing.RectangleF)">SChartCrosshairTooltip</a>
+                    </b>(<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Drawing.RectangleF">System.Drawing.RectangleF</a>)</div>
+                </td>
+                <td>	Create an SChartCanvasOverlay with frame RectangleF.
+      </td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <div>
+                    <b>
+                      <a href="#C:ShinobiCharts.SChartCrosshairTooltip(System.IntPtr)">SChartCrosshairTooltip</a>
+                    </b>(<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.IntPtr">IntPtr</a>)</div>
+                </td>
+                <td>A constructor used when creating managed representations of unmanaged objects.
+      </td>
+              </tr>
+            </table>
+          </div>
+        </div>
+        <h2 class="Section">Public Properties</h2>
+        <div class="SectionBox" id="Public Properties">
+          <div class="SubsectionBox">
+            <table class="TypeMembers">
+              <tr valign="top">
+                <td>[read-only]<div>override </div></td>
+                <td>
+                  <b>
+                    <a href="#P:ShinobiCharts.SChartCrosshairTooltip.ClassHandle">ClassHandle</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.IntPtr">IntPtr</a>
+                  </i>. The handle for this class.
+      </td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <b>
+                    <a href="#P:ShinobiCharts.SChartCrosshairTooltip.Inset">Inset</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Single">float</a>
+                  </i>. The inset that is used in the implementation of layoutContents for all subviews.</td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <b>
+                    <a href="#P:ShinobiCharts.SChartCrosshairTooltip.Label">Label</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="javascript:alert(&quot;Documentation not found.&quot;)">MonoTouch.UIKit.UILabel</a>
+                  </i>. This is the label that this tooltip uses to display the related data point info.
+      </td>
+              </tr>
+            </table>
+          </div>
+        </div>
+        <h2 class="Section">Public Methods</h2>
+        <div class="SectionBox" id="Public Methods">
+          <div class="SubsectionBox">
+            <table class="TypeMembers">
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="#M:ShinobiCharts.SChartCrosshairTooltip.LayoutContents()">LayoutContents</a>
+                  </b>()<blockquote>This method is called everytime the tooltip needs to layout its contents and is called as part of OnSettingPosition.</blockquote></td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="#M:ShinobiCharts.SChartCrosshairTooltip.SetDefaults()">SetDefaults</a>
+                  </b>()<blockquote>A method that is called to setup default properties of the tooltip (such as Inset and Label.)</blockquote></td>
+              </tr>
+            </table>
+          </div>
+        </div>
+        <h2 class="Section">Protected Methods</h2>
+        <div class="SectionBox" id="Protected Methods">
+          <div class="SubsectionBox">
+            <table class="TypeMembers">
+              <tr valign="top">
+                <td>
+                  <div>override </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="#M:ShinobiCharts.SChartCrosshairTooltip.Dispose(System.Boolean)">Dispose</a>
+                  </b>(<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Boolean">bool</a>)<blockquote> Releases unmanaged resources.
+      </blockquote></td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="#M:ShinobiCharts.SChartCrosshairTooltip.OnFloatingAt(System.Drawing.PointF)">OnFloatingAt</a>
+                  </b>(<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Drawing.PointF">System.Drawing.PointF</a>)<blockquote> When the crosshair is in floating mode, this is called for the current floating-position.
+ This is primarily for use in a subclass, where the label text can be set to a custom string.
+ By default, no useful information is shown in the label. Called by the standard Crosshair. 
+      </blockquote></td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="#M:ShinobiCharts.SChartCrosshairTooltip.OnSettingDataPoint(ShinobiCharts.SChartData,ShinobiCharts.SChartSeries,ShinobiCharts.ShinobiChart)">OnSettingDataPoint</a>
+                  </b>(<a href="../ShinobiCharts/SChartData.html">SChartData</a>, <a href="../ShinobiCharts/SChartSeries.html">SChartSeries</a>, <a href="../ShinobiCharts/ShinobiChart.html">ShinobiChart</a>)<blockquote> Passes in information about the current Crosshair data point. To convert dataPoint to a useful value. Called by the standard Crosshair. 
+      </blockquote></td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="#M:ShinobiCharts.SChartCrosshairTooltip.OnSettingPosition(ShinobiCharts.SChartPoint,ShinobiCharts.SChartCanvas)">OnSettingPosition</a>
+                  </b>(<a href="../ShinobiCharts/SChartPoint.html">SChartPoint</a>, <a href="../ShinobiCharts/SChartCanvas.html">SChartCanvas</a>)<blockquote> Passes in the Position of the Crosshair target and the current Canvas. This allows Positioning of the Tooltip, using the Canvas to do border checks. Called by the standard Crosshair. 
+      </blockquote></td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="#M:ShinobiCharts.SChartCrosshairTooltip.OnSettingResolvedDataPoint(ShinobiCharts.SChartPoint,ShinobiCharts.SChartSeries,ShinobiCharts.ShinobiChart)">OnSettingResolvedDataPoint</a>
+                  </b>(<a href="../ShinobiCharts/SChartPoint.html">SChartPoint</a>, <a href="../ShinobiCharts/SChartSeries.html">SChartSeries</a>, <a href="../ShinobiCharts/ShinobiChart.html">ShinobiChart</a>)<blockquote> Passes in information about the current crosshair data point's resolved value. You can use dataPoint to obtain the interpolated value. Called by the standard Crosshair. 
+      </blockquote></td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="#M:ShinobiCharts.SChartCrosshairTooltip.OnSettingTooltipStyle(ShinobiCharts.SChartCrosshairStyle)">OnSettingTooltipStyle</a>
+                  </b>(<a href="../ShinobiCharts/SChartCrosshairStyle.html">SChartCrosshairStyle</a>)<blockquote> Passes in the Crosshair Style object to update the look and feel of the Tooltip. Called by the standard Crosshair. 
+      </blockquote></td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="Members" id="T:ShinobiCharts.SChartCrosshairTooltip:Members">
+      <h2 class="Section" id="MemberDetails">Member Details</h2>
+      <div class="SectionBox" id="_MemberDetails">
+        <h3 id="C:ShinobiCharts.SChartCrosshairTooltip()">SChartCrosshairTooltip Constructor</h3>
+        <blockquote id="C:ShinobiCharts.SChartCrosshairTooltip():member">
+          <p class="Summary">Default constructor
+      </p>
+          <h2>Syntax</h2>
+          <div class="Signature">[MonoTouch.Foundation.Export("init")]<br />[System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Advanced)]<br />public  <b>SChartCrosshairTooltip</b> ()</div>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="C:ShinobiCharts.SChartCrosshairTooltip():Remarks">
+          </div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="C:ShinobiCharts.SChartCrosshairTooltip():Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.5.7.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="C:ShinobiCharts.SChartCrosshairTooltip(MonoTouch.Foundation.NSCoder)">SChartCrosshairTooltip Constructor</h3>
+        <blockquote id="C:ShinobiCharts.SChartCrosshairTooltip(MonoTouch.Foundation.NSCoder):member">
+          <p class="Summary">A constructor that initializes the object from the data stored in the unarchiver object.
+      </p>
+          <h2>Syntax</h2>
+          <div class="Signature">[MonoTouch.Foundation.Export("initWithCoder:")]<br />[System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Advanced)]<br />public  <b>SChartCrosshairTooltip</b> (<a href="javascript:alert(&quot;Documentation not found.&quot;)">MonoTouch.Foundation.NSCoder</a> coder)</div>
+          <h4 class="Subsection">Parameters</h4>
+          <blockquote class="SubsectionBox" id="C:ShinobiCharts.SChartCrosshairTooltip(MonoTouch.Foundation.NSCoder):Parameters">
+            <dl>
+              <dt>
+                <i>coder</i>
+              </dt>
+              <dd>The unarchiver object</dd>
+            </dl>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="C:ShinobiCharts.SChartCrosshairTooltip(MonoTouch.Foundation.NSCoder):Remarks">This constructor is provided to allow the class to be initialized from an unarchiver (for example, during NIB deserialization).</div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="C:ShinobiCharts.SChartCrosshairTooltip(MonoTouch.Foundation.NSCoder):Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.5.7.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="C:ShinobiCharts.SChartCrosshairTooltip(MonoTouch.Foundation.NSObjectFlag)">SChartCrosshairTooltip Constructor</h3>
+        <blockquote id="C:ShinobiCharts.SChartCrosshairTooltip(MonoTouch.Foundation.NSObjectFlag):member">
+          <p class="Summary">Constructor to call on derived classes to skip initialization and merely allocate the object.
+      </p>
+          <h2>Syntax</h2>
+          <div class="Signature">[System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Advanced)]<br />public  <b>SChartCrosshairTooltip</b> (<a href="javascript:alert(&quot;Documentation not found.&quot;)">MonoTouch.Foundation.NSObjectFlag</a> t)</div>
+          <h4 class="Subsection">Parameters</h4>
+          <blockquote class="SubsectionBox" id="C:ShinobiCharts.SChartCrosshairTooltip(MonoTouch.Foundation.NSObjectFlag):Parameters">
+            <dl>
+              <dt>
+                <i>t</i>
+              </dt>
+              <dd>Unused sentinel value</dd>
+            </dl>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="C:ShinobiCharts.SChartCrosshairTooltip(MonoTouch.Foundation.NSObjectFlag):Remarks">You should not invoke this method directly.</div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="C:ShinobiCharts.SChartCrosshairTooltip(MonoTouch.Foundation.NSObjectFlag):Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.5.7.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="C:ShinobiCharts.SChartCrosshairTooltip(System.Drawing.RectangleF)">SChartCrosshairTooltip Constructor</h3>
+        <blockquote id="C:ShinobiCharts.SChartCrosshairTooltip(System.Drawing.RectangleF):member">
+          <p class="Summary">	Create an SChartCanvasOverlay with frame RectangleF.
+      </p>
+          <h2>Syntax</h2>
+          <div class="Signature">public  <b>SChartCrosshairTooltip</b> (<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Drawing.RectangleF">System.Drawing.RectangleF</a> frame)</div>
+          <h4 class="Subsection">Parameters</h4>
+          <blockquote class="SubsectionBox" id="C:ShinobiCharts.SChartCrosshairTooltip(System.Drawing.RectangleF):Parameters">
+            <dl>
+              <dt>
+                <i>frame</i>
+              </dt>
+              <dd>
+                <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+              </dd>
+            </dl>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="C:ShinobiCharts.SChartCrosshairTooltip(System.Drawing.RectangleF):Remarks">
+          </div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="C:ShinobiCharts.SChartCrosshairTooltip(System.Drawing.RectangleF):Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.5.7.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="C:ShinobiCharts.SChartCrosshairTooltip(System.IntPtr)">SChartCrosshairTooltip Constructor</h3>
+        <blockquote id="C:ShinobiCharts.SChartCrosshairTooltip(System.IntPtr):member">
+          <p class="Summary">A constructor used when creating managed representations of unmanaged objects.
+      </p>
+          <h2>Syntax</h2>
+          <div class="Signature">[System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Advanced)]<br />public  <b>SChartCrosshairTooltip</b> (<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.IntPtr">IntPtr</a> handle)</div>
+          <h4 class="Subsection">Parameters</h4>
+          <blockquote class="SubsectionBox" id="C:ShinobiCharts.SChartCrosshairTooltip(System.IntPtr):Parameters">
+            <dl>
+              <dt>
+                <i>handle</i>
+              </dt>
+              <dd>Handle of the unmanaged object</dd>
+            </dl>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="C:ShinobiCharts.SChartCrosshairTooltip(System.IntPtr):Remarks">You should not invoke this method directly.</div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="C:ShinobiCharts.SChartCrosshairTooltip(System.IntPtr):Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.5.7.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="P:ShinobiCharts.SChartCrosshairTooltip.ClassHandle">ClassHandle Property</h3>
+        <blockquote id="P:ShinobiCharts.SChartCrosshairTooltip.ClassHandle:member">
+          <p class="Summary">The handle for this class.
+      </p>
+          <h2>Syntax</h2>
+          <div class="Signature">public override <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.IntPtr">IntPtr</a> <b>ClassHandle</b>  { get; }</div>
+          <h4 class="Subsection">Value</h4>
+          <blockquote class="SubsectionBox" id="P:ShinobiCharts.SChartCrosshairTooltip.ClassHandle:Value">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartCrosshairTooltip.ClassHandle:Remarks">Not normally used by application code</div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartCrosshairTooltip.ClassHandle:Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.5.7.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="M:ShinobiCharts.SChartCrosshairTooltip.Dispose(System.Boolean)">Dispose Method</h3>
+        <blockquote id="M:ShinobiCharts.SChartCrosshairTooltip.Dispose(System.Boolean):member">
+          <p class="Summary"> Releases unmanaged resources.
+      </p>
+          <h2>Syntax</h2>
+          <div class="Signature">protected override <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Void">void</a> <b>Dispose</b> (<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Boolean">bool</a> disposing)</div>
+          <h4 class="Subsection">Parameters</h4>
+          <blockquote class="SubsectionBox" id="M:ShinobiCharts.SChartCrosshairTooltip.Dispose(System.Boolean):Parameters">
+            <dl>
+              <dt>
+                <i>disposing</i>
+              </dt>
+              <dd>True if called by Dispose, false if called from a finalizer</dd>
+            </dl>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="M:ShinobiCharts.SChartCrosshairTooltip.Dispose(System.Boolean):Remarks">
+          </div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="M:ShinobiCharts.SChartCrosshairTooltip.Dispose(System.Boolean):Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.5.7.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="P:ShinobiCharts.SChartCrosshairTooltip.Inset">Inset Property</h3>
+        <blockquote id="P:ShinobiCharts.SChartCrosshairTooltip.Inset:member">
+          <p class="Summary">The inset that is used in the implementation of layoutContents for all subviews.</p>
+          <h2>Syntax</h2>
+          <div class="Signature">[get: MonoTouch.Foundation.Export("inset", MonoTouch.ObjCRuntime.ArgumentSemantic.Assign)]<br />[set: MonoTouch.Foundation.Export("setInset:", MonoTouch.ObjCRuntime.ArgumentSemantic.Assign)]<br />public virtual <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Single">float</a> <b>Inset</b>  { get; set; }</div>
+          <h4 class="Subsection">Value</h4>
+          <blockquote class="SubsectionBox" id="P:ShinobiCharts.SChartCrosshairTooltip.Inset:Value">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartCrosshairTooltip.Inset:Remarks">
+          </div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartCrosshairTooltip.Inset:Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.5.7.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="P:ShinobiCharts.SChartCrosshairTooltip.Label">Label Property</h3>
+        <blockquote id="P:ShinobiCharts.SChartCrosshairTooltip.Label:member">
+          <p class="Summary">This is the label that this tooltip uses to display the related data point info.
+      </p>
+          <h2>Syntax</h2>
+          <div class="Signature">public <a href="javascript:alert(&quot;Documentation not found.&quot;)">MonoTouch.UIKit.UILabel</a> <b>Label</b>  { get; set; }</div>
+          <h4 class="Subsection">Value</h4>
+          <blockquote class="SubsectionBox" id="P:ShinobiCharts.SChartCrosshairTooltip.Label:Value">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartCrosshairTooltip.Label:Remarks">
+          </div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartCrosshairTooltip.Label:Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.5.7.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="M:ShinobiCharts.SChartCrosshairTooltip.LayoutContents()">LayoutContents Method</h3>
+        <blockquote id="M:ShinobiCharts.SChartCrosshairTooltip.LayoutContents():member">
+          <p class="Summary">This method is called everytime the tooltip needs to layout its contents and is called as part of OnSettingPosition.</p>
+          <h2>Syntax</h2>
+          <div class="Signature">[MonoTouch.Foundation.Export("layoutContents")]<br />public virtual <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Void">void</a> <b>LayoutContents</b> ()</div>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="M:ShinobiCharts.SChartCrosshairTooltip.LayoutContents():Remarks">
+          </div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="M:ShinobiCharts.SChartCrosshairTooltip.LayoutContents():Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.5.7.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="M:ShinobiCharts.SChartCrosshairTooltip.OnFloatingAt(System.Drawing.PointF)">OnFloatingAt Method</h3>
+        <blockquote id="M:ShinobiCharts.SChartCrosshairTooltip.OnFloatingAt(System.Drawing.PointF):member">
+          <p class="Summary"> When the crosshair is in floating mode, this is called for the current floating-position.
+ This is primarily for use in a subclass, where the label text can be set to a custom string.
+ By default, no useful information is shown in the label. Called by the standard Crosshair. 
+      </p>
+          <h2>Syntax</h2>
+          <div class="Signature">[MonoTouch.Foundation.Export("floatingAt:")]<br />protected virtual <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Void">void</a> <b>OnFloatingAt</b> (<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Drawing.PointF">System.Drawing.PointF</a> coords)</div>
+          <h4 class="Subsection">Parameters</h4>
+          <blockquote class="SubsectionBox" id="M:ShinobiCharts.SChartCrosshairTooltip.OnFloatingAt(System.Drawing.PointF):Parameters">
+            <dl>
+              <dt>
+                <i>coords</i>
+              </dt>
+              <dd>
+              </dd>
+            </dl>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="M:ShinobiCharts.SChartCrosshairTooltip.OnFloatingAt(System.Drawing.PointF):Remarks">
+          </div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="M:ShinobiCharts.SChartCrosshairTooltip.OnFloatingAt(System.Drawing.PointF):Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.5.7.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="M:ShinobiCharts.SChartCrosshairTooltip.OnSettingDataPoint(ShinobiCharts.SChartData,ShinobiCharts.SChartSeries,ShinobiCharts.ShinobiChart)">OnSettingDataPoint Method</h3>
+        <blockquote id="M:ShinobiCharts.SChartCrosshairTooltip.OnSettingDataPoint(ShinobiCharts.SChartData,ShinobiCharts.SChartSeries,ShinobiCharts.ShinobiChart):member">
+          <p class="Summary"> Passes in information about the current Crosshair data point. To convert dataPoint to a useful value. Called by the standard Crosshair. 
+      </p>
+          <h2>Syntax</h2>
+          <div class="Signature">[MonoTouch.Foundation.Export("setDataPoint:fromSeries:fromChart:")]<br />protected virtual <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Void">void</a> <b>OnSettingDataPoint</b> (<a href="../ShinobiCharts/SChartData.html">SChartData</a> dataPoint, <a href="../ShinobiCharts/SChartSeries.html">SChartSeries</a> series, <a href="../ShinobiCharts/ShinobiChart.html">ShinobiChart</a> chart)</div>
+          <h4 class="Subsection">Parameters</h4>
+          <blockquote class="SubsectionBox" id="M:ShinobiCharts.SChartCrosshairTooltip.OnSettingDataPoint(ShinobiCharts.SChartData,ShinobiCharts.SChartSeries,ShinobiCharts.ShinobiChart):Parameters">
+            <dl>
+              <dt>
+                <i>dataPoint</i>
+              </dt>
+              <dd>
+              </dd>
+              <dt>
+                <i>series</i>
+              </dt>
+              <dd>
+              </dd>
+              <dt>
+                <i>chart</i>
+              </dt>
+              <dd>
+              </dd>
+            </dl>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="M:ShinobiCharts.SChartCrosshairTooltip.OnSettingDataPoint(ShinobiCharts.SChartData,ShinobiCharts.SChartSeries,ShinobiCharts.ShinobiChart):Remarks">
+          </div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="M:ShinobiCharts.SChartCrosshairTooltip.OnSettingDataPoint(ShinobiCharts.SChartData,ShinobiCharts.SChartSeries,ShinobiCharts.ShinobiChart):Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.5.7.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="M:ShinobiCharts.SChartCrosshairTooltip.OnSettingPosition(ShinobiCharts.SChartPoint,ShinobiCharts.SChartCanvas)">OnSettingPosition Method</h3>
+        <blockquote id="M:ShinobiCharts.SChartCrosshairTooltip.OnSettingPosition(ShinobiCharts.SChartPoint,ShinobiCharts.SChartCanvas):member">
+          <p class="Summary"> Passes in the Position of the Crosshair target and the current Canvas. This allows Positioning of the Tooltip, using the Canvas to do border checks. Called by the standard Crosshair. 
+      </p>
+          <h2>Syntax</h2>
+          <div class="Signature">[MonoTouch.Foundation.Export("setPosition:onCanvas:")]<br />protected virtual <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Void">void</a> <b>OnSettingPosition</b> (<a href="../ShinobiCharts/SChartPoint.html">SChartPoint</a> pos, <a href="../ShinobiCharts/SChartCanvas.html">SChartCanvas</a> canvas)</div>
+          <h4 class="Subsection">Parameters</h4>
+          <blockquote class="SubsectionBox" id="M:ShinobiCharts.SChartCrosshairTooltip.OnSettingPosition(ShinobiCharts.SChartPoint,ShinobiCharts.SChartCanvas):Parameters">
+            <dl>
+              <dt>
+                <i>pos</i>
+              </dt>
+              <dd>
+              </dd>
+              <dt>
+                <i>canvas</i>
+              </dt>
+              <dd>
+              </dd>
+            </dl>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="M:ShinobiCharts.SChartCrosshairTooltip.OnSettingPosition(ShinobiCharts.SChartPoint,ShinobiCharts.SChartCanvas):Remarks">
+          </div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="M:ShinobiCharts.SChartCrosshairTooltip.OnSettingPosition(ShinobiCharts.SChartPoint,ShinobiCharts.SChartCanvas):Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.5.7.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="M:ShinobiCharts.SChartCrosshairTooltip.OnSettingResolvedDataPoint(ShinobiCharts.SChartPoint,ShinobiCharts.SChartSeries,ShinobiCharts.ShinobiChart)">OnSettingResolvedDataPoint Method</h3>
+        <blockquote id="M:ShinobiCharts.SChartCrosshairTooltip.OnSettingResolvedDataPoint(ShinobiCharts.SChartPoint,ShinobiCharts.SChartSeries,ShinobiCharts.ShinobiChart):member">
+          <p class="Summary"> Passes in information about the current crosshair data point's resolved value. You can use dataPoint to obtain the interpolated value. Called by the standard Crosshair. 
+      </p>
+          <h2>Syntax</h2>
+          <div class="Signature">[MonoTouch.Foundation.Export("setResolvedDataPoint:fromSeries:fromChart:")]<br />protected virtual <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Void">void</a> <b>OnSettingResolvedDataPoint</b> (<a href="../ShinobiCharts/SChartPoint.html">SChartPoint</a> dataPoint, <a href="../ShinobiCharts/SChartSeries.html">SChartSeries</a> series, <a href="../ShinobiCharts/ShinobiChart.html">ShinobiChart</a> chart)</div>
+          <h4 class="Subsection">Parameters</h4>
+          <blockquote class="SubsectionBox" id="M:ShinobiCharts.SChartCrosshairTooltip.OnSettingResolvedDataPoint(ShinobiCharts.SChartPoint,ShinobiCharts.SChartSeries,ShinobiCharts.ShinobiChart):Parameters">
+            <dl>
+              <dt>
+                <i>dataPoint</i>
+              </dt>
+              <dd>
+              </dd>
+              <dt>
+                <i>series</i>
+              </dt>
+              <dd>
+              </dd>
+              <dt>
+                <i>chart</i>
+              </dt>
+              <dd>
+              </dd>
+            </dl>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="M:ShinobiCharts.SChartCrosshairTooltip.OnSettingResolvedDataPoint(ShinobiCharts.SChartPoint,ShinobiCharts.SChartSeries,ShinobiCharts.ShinobiChart):Remarks">
+          </div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="M:ShinobiCharts.SChartCrosshairTooltip.OnSettingResolvedDataPoint(ShinobiCharts.SChartPoint,ShinobiCharts.SChartSeries,ShinobiCharts.ShinobiChart):Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.5.7.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="M:ShinobiCharts.SChartCrosshairTooltip.OnSettingTooltipStyle(ShinobiCharts.SChartCrosshairStyle)">OnSettingTooltipStyle Method</h3>
+        <blockquote id="M:ShinobiCharts.SChartCrosshairTooltip.OnSettingTooltipStyle(ShinobiCharts.SChartCrosshairStyle):member">
+          <p class="Summary"> Passes in the Crosshair Style object to update the look and feel of the Tooltip. Called by the standard Crosshair. 
+      </p>
+          <h2>Syntax</h2>
+          <div class="Signature">[MonoTouch.Foundation.Export("setTooltipStyle:")]<br />protected virtual <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Void">void</a> <b>OnSettingTooltipStyle</b> (<a href="../ShinobiCharts/SChartCrosshairStyle.html">SChartCrosshairStyle</a> style)</div>
+          <h4 class="Subsection">Parameters</h4>
+          <blockquote class="SubsectionBox" id="M:ShinobiCharts.SChartCrosshairTooltip.OnSettingTooltipStyle(ShinobiCharts.SChartCrosshairStyle):Parameters">
+            <dl>
+              <dt>
+                <i>style</i>
+              </dt>
+              <dd>
+              </dd>
+            </dl>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="M:ShinobiCharts.SChartCrosshairTooltip.OnSettingTooltipStyle(ShinobiCharts.SChartCrosshairStyle):Remarks">
+          </div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="M:ShinobiCharts.SChartCrosshairTooltip.OnSettingTooltipStyle(ShinobiCharts.SChartCrosshairStyle):Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.5.7.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="M:ShinobiCharts.SChartCrosshairTooltip.SetDefaults()">SetDefaults Method</h3>
+        <blockquote id="M:ShinobiCharts.SChartCrosshairTooltip.SetDefaults():member">
+          <p class="Summary">A method that is called to setup default properties of the tooltip (such as Inset and Label.)</p>
+          <h2>Syntax</h2>
+          <div class="Signature">[MonoTouch.Foundation.Export("setDefaults")]<br />public virtual <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Void">void</a> <b>SetDefaults</b> ()</div>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="M:ShinobiCharts.SChartCrosshairTooltip.SetDefaults():Remarks">
+          </div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="M:ShinobiCharts.SChartCrosshairTooltip.SetDefaults():Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.5.7.0</div>
+          <hr size="1" />
+        </blockquote>
+      </div>
+    </div>
+    <div class="Parameter">
+    </div>
+    <hr size="1" />
+    <div class="Copyright"> © 2013 Scott Logic Limited. All rights reserved </div>
+  </body>
+</html>
